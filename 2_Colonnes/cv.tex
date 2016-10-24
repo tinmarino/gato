@@ -4,20 +4,35 @@
 \usepackage[T1]{fontenc}							% For true french font 
 \usepackage{lmodern}								% For scalable font in T1 (instead of OT1).
 \usepackage{amsfonts} 								% for the \checkmark command 
+\usepackage[pdftex]{graphicx}							% Enable pdflatex and includegraphics = foto pona
+
+\usepackage[overlay,absolute]{textpos}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
 
 
 
 \begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\part{Roc\'io Sanhueza}
-
-
+\begin{textblock}{6.5}(1,1)
 \personal
     []
-    {16 Rue Chicogné\newline 35000 -- Rennes}
+    {16 Rue Chicogné, 35000 -- Rennes}
     {+33 07 83 88 33 32}
     {r.sanhuezarepetto@gmail.com}
+\end{textblock}
 
+\begin{textblock}{5}(8,2)
+    \usekomafont{part} Roc\'io Sanhueza
+\end{textblock}
+
+\begin{textblock}{21}(17,0.2)
+		\includegraphics[width=3cm]{../Figure/Rocio1.png}
+\end{textblock}  
+
+
+\vspace*{3cm}
 
 
 \section{Experience Professionnelle}
