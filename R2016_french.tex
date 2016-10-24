@@ -1,0 +1,208 @@
+%%% ------------------------------------------------------------
+%%% BEGIN PREAMBLE
+%%% ------------------------------------------------------------
+\documentclass[paper=a4,fontsize=12pt]{scrartcl}	 			% KOMA-article class
+\usepackage[english]{babel}
+%%\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}							% For true french font 
+\usepackage{lmodern}								% For scalable font in T1 (instead of OT1).
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{00A0}{ } % no utf8 pb 
+
+\linespread{1.2}  								%% interligne
+\textheight=700px								% Saving trees ;-) 
+
+\usepackage[protrusion=true,expansion=true]{microtype}				% Better typography
+\usepackage[pdftex]{graphicx}							% Enable pdflatex
+\usepackage[svgnames]{xcolor}							% Colors by their 'svgnames'
+
+\usepackage[bottom=0in,top=1.5in]{geometry}					% Geometry
+	\addtolength{\oddsidemargin}{-0.25in}
+	\addtolength{\evensidemargin}{-0.25in}
+        \addtolength{\textwidth}{0.5in}
+        \addtolength{\textheight}{3in}
+        	
+\usepackage{url}								% Clickable URL's
+\usepackage{wrapfig}								% Wrap text along figures
+\frenchspacing									% Better looking spacings after periods
+\pagestyle{empty}								% No pagenumbers/headers/footers
+%\usepackage{bbding}								% Symbols
+
+
+% Martin packages
+\usepackage[absolute]{textpos}
+    \setlength{\TPHorizModule}{1mm} % sets our horizontal unit of measuring
+    \setlength{\TPVertModule}{1mm} % sets our vertical unit of measuring
+    \textblockorigin{0mm}{0mm} % and we start measuring in the top left corner
+
+
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}							% Custom sectioning (see below)
+
+\sectionfont{%								% Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%					% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}
+	}
+	
+
+	
+	
+	
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}				% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}			% Vertical space macro
+
+
+% \newcommand{\MyName}[1]{
+% 		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1 		% Name
+% 		\par \normalsize \normalfont}
+
+\newcommand{\MyName}[1]{ %Name
+%       \begin{center}
+   \begin{textblock}{100}(70,20)\centering
+     % (x,y) les coord du cntre 
+     % 8.5 = width of the block
+     % 0 = zero horizontal units away from our origin
+     % 4 = four vertical units away from our origin
+          \LARGE\bfseries {#1}
+   \end{textblock}  
+%       \end{center}
+}
+
+
+\newcommand{\MyFoto}[1]{ % path of the foto  
+  \begin{textblock}{210}(170,2)
+		\includegraphics[width=3cm]{#1}
+  \end{textblock}  
+   }
+   
+\newcommand{\MyData}[1]{ % string of the personal data 
+    \begin{textblock}{210}(5,2)
+      { \vbox to 2cm { \vfill  { \flushleft  #1 }  }  }
+    \end{textblock}  
+    }
+      
+      
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=1em\hangafter=0 		% Indentation
+		\parbox{\spacebox}{						% Box to align text
+		   \textit{#1}}								% Entry name (birth, address, etc.)
+		 #2 \par}					% Entry value
+
+\newcommand{\SkillsEntry}[2]{						% Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 		% Indentation
+		\parbox{\spacebox}{						% Box to align text
+		\textit{#1}}								% Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}					% Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill 					% Study
+		\colorbox{Black}{%
+			\parbox{4.5em}{%
+			\hfill\color{White}#2}} \par				% Duration
+		\noindent \textit{#3} \par					% School
+		\noindent\hangindent=2em\hangafter=0 \small #4 	% Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{						% Same as \EducationEntry
+		\noindent \textbf{#1} \hfill 					% Jobname
+		\colorbox{Black}{\color{White}#2} \par		% Duration
+		\noindent \textit{#3} \par					% Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 	% Description
+		\normalsize \par}
+
+
+
+		
+		
+		
+	
+
+%%% ------------------------------------------------------------
+%%% BEGIN DOCUMENT
+%%% ------------------------------------------------------------
+\begin{document}
+
+
+\MyName{Roc\'io Sanhueza Repetto}
+\MyFoto{Figure/Rocio1.png}
+\MyData{
+  \PersonalEntry{Née le :}   {4 Août 1989} 
+  \PersonalEntry{Email :}{\url{r.sanhuezarepetto@gmail.com}}
+  \PersonalEntry{Nationalité :}  {Chileno-Italienne} 
+  \PersonalEntry{Tel :}  {07 83 88 33 32} 
+}
+
+
+
+
+%%% 1/  Education
+%%% ------------------------------------------------------------
+\NewPart{Formation}{} 
+
+
+\EducationEntry{Master 1 - Science Politique }{2015-2016}
+    {Université de Rennes 1, Rennes, France}
+    {}
+
+
+\EducationEntry{Maîtrise en communication sociale - titre de journaliste}{2008-2013}
+    {Universidad de Santiago de Chile, Santiago, Chili}
+    {}
+
+\EducationEntry{\'Echange universitaire - journalisme}{2011}
+    {Universidade Estadual Paulista “Julio de Mesquita Filho”(UNESP), Sao Paulo, Brésil}
+    {}
+
+
+
+\EducationEntry{Lycée}{2004-2007}
+  {Liceo Augusto D'Halmar, Santiago, Chili}
+
+  
+  
+%%% 2/ WORK EXPERIENCE
+%%% ------------------------------------------------------------
+\NewPart{Expérience Professionnelle}{}
+
+
+\EducationEntry{Conseillère communicationnelle du sénateur Felipe Harboe}{2014}{Sénat du Chili}
+{Gestion communicationelle au sénat.} 
+
+\EducationEntry{Productrice générale}{2013-2014}{Aluro procucciones, Santiago, Chili}
+{ Production générale de la première et deuxième saison du programme culturel 
+   “La Bicicleta, cultura entre ruedas” transmit par le canal 13C. 
+}
+
+\EducationEntry{Journaliste}{2013}{M\'as comunicaciones, Santiago, Chili}
+{Gestion de presse pour des marques comme Dole, Artilec, MOR et Flores.}
+
+\EducationEntry{Chargée de projet}{2012}{Killalue Corporaci\'on, Santiago, Chili}
+{Recherche en affaires légales et environnementales :
+  rédaction d'actes, maintenance de site web.
+}
+
+
+
+
+
+%%% 3/ Skills
+%%% ------------------------------------------------------------
+\NewPart{Compétences}{}
+
+\SkillsEntry{Langues}{Espagnol (langue maternelle)}
+\SkillsEntry{}{Français (courant)}
+\SkillsEntry{}{Anglais (courant)}
+\SkillsEntry{}{Portugais (courant)} 
+
+\SkillsEntry{Softwares}{Microsoft Word, Excel, Power Point, Adobe Photoshop, Premiere.}
+
+
+
+\end{document}
