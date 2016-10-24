@@ -5,6 +5,10 @@
 \usepackage{lmodern}								% For scalable font in T1 (instead of OT1).
 \usepackage{amsfonts} 								% for the \checkmark command 
 \usepackage[pdftex]{graphicx}							% Enable pdflatex and includegraphics = foto pona
+\usepackage{vwcol} 								% Avoir des colu,ne de tailles differerentes
+
+
+ \usepackage[margin=0.8cm]{geometry}
 
 \usepackage[overlay,absolute]{textpos}
 \setlength{\TPHorizModule}{1cm}
@@ -15,6 +19,7 @@
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{minipage}{\textwidth} 
 \begin{textblock}{6.5}(1,1)
 \personal
     []
@@ -31,16 +36,18 @@
 		\includegraphics[width=3cm]{../Figure/Rocio1.png}
 \end{textblock}  
 
+\end{minipage}
 
-\vspace*{3cm}
-
-
-
+\vspace*{-1cm}
 
 
+
+
+
+%\begin{vwcol}[widths={3cm,3cm}, justify=left,rule=0pt,indent=1em] 
+\begin{minipage}{0.29\textwidth} 
 
 \section{Education}
-
 \begin{yearlist}
 
 \item[Master 1 Science politique]{2015 -- 2016}
@@ -85,10 +92,12 @@ Gimp,
 HTML5,
 \LaTeX.
 
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%&
+\end{minipage}
 \pagebreak
-\vspace*{3cm}
+\begin{minipage}{0.69\textwidth} 
+%\vspace*{3cm}
 \section{Experience Professionnelle}
 
 \begin{eventlist}
@@ -170,4 +179,7 @@ HTML5,
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\end{vwcol}
+%\end{tabularx}
+\end{minipage}
 \end{document}
