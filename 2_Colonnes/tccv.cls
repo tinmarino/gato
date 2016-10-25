@@ -67,7 +67,11 @@
 \definecolor{mybluegrey}{HTML}{101080}
 \setkomafont{section}{\color[HTML]{101080}\scshape\Large\mdseries}
 
-
+% Font 
+\RequirePackage{fontawesome}
+\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
+\fontdir
+\definecolor{awesome-skyblue}{HTML}{0395DE}
 
 
 % Overrides the \section command to capitalize every
