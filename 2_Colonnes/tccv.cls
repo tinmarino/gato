@@ -64,7 +64,11 @@
 \definecolor{link}{HTML}{506060} % Hyperlinks
 \hypersetup{colorlinks,breaklinks,urlcolor=link,linkcolor=link}
 %\setkomafont{disposition}{\color[HTML]{801010}}
-\setkomafont{section}{\scshape\Large\mdseries}
+\definecolor{mybluegrey}{HTML}{101080}
+\setkomafont{section}{\color[HTML]{101080}\scshape\Large\mdseries}
+
+
+
 
 % Overrides the \section command to capitalize every
 % word for cosmetic purposes and draws a rule under it.
