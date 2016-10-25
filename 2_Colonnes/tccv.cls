@@ -74,6 +74,108 @@
 \definecolor{awesome-skyblue}{HTML}{0395DE}
 
 
+%-------------------------------------------------------------------------------
+%                Configuration for colors
+%-------------------------------------------------------------------------------
+% Gray-scale colors
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{black}{HTML}{000000}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{5D5D5D}
+\definecolor{lightgray}{HTML}{999999}
+% Basic colors
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+% Text colors
+\definecolor{darktext}{HTML}{414141}
+\colorlet{text}{darkgray}
+\colorlet{graytext}{gray}
+\colorlet{lighttext}{lightgray}
+% Awesome colors
+\definecolor{awesome-emerald}{HTML}{00A388}
+\definecolor{awesome-skyblue}{HTML}{0395DE}
+\definecolor{awesome-red}{HTML}{DC3522}
+\definecolor{awesome-pink}{HTML}{EF4089}
+\definecolor{awesome-orange}{HTML}{FF6138}
+\definecolor{awesome-nephritis}{HTML}{27AE60}
+\definecolor{awesome-concrete}{HTML}{95A5A6}
+\definecolor{awesome-darknight}{HTML}{131A28}
+\colorlet{awesome}{awesome-red}
+
+% Awesome section color
+\newcounter{colorCounter}
+\def\@sectioncolor#1#2#3{%
+  {%
+    \color{%
+      \ifcase\value{colorCounter}%
+        awesome\or%
+        awesome\or%
+        awesome\or%
+        awesome\or%
+        awesome\else%
+        awesome\fi%
+    } #1#2#3%
+  }%
+  \stepcounter{colorCounter}%
+}
+
+
+%-------------------------------------------------------------------------------
+%                Configuration for fonts
+%-------------------------------------------------------------------------------
+% Set font for header (default is Roboto)
+\newfontfamily\headerfont[
+  Path=\@fontdir,
+  UprightFont=*-Regular,
+  ItalicFont=*-Italic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic,
+]{Roboto}
+
+\newfontfamily\headerfontlight[
+  Path=\@fontdir,
+  UprightFont=*-Thin,
+  ItalicFont=*-ThinItalic,
+  BoldFont=*-Medium,
+  BoldItalicFont=*-MediumItalic,
+]{Roboto}
+
+% Set font for footer (default is Source Sans Pro)
+\newfontfamily\footerfont[
+  Path=\@fontdir,
+  UprightFont=*-Regular,
+  ItalicFont=*-It,
+  BoldFont=*-Bold
+]{SourceSansPro}
+
+% Set font for body (default is Source Sans Pro)
+\newfontfamily\bodyfont[
+  Path=\@fontdir,
+  UprightFont=*-Regular,
+  ItalicFont=*-It,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldIt
+]{SourceSansPro}
+
+\newfontfamily\bodyfontlight[
+  Path=\@fontdir,
+  UprightFont=*-Light,
+  ItalicFont=*-LightIt,
+  BoldFont=*-Semibold,
+  BoldItalicFont=*-SemiboldIt
+]{SourceSansPro}
+
+
+
+
+\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}		% Description
+
+
+
+
 % Overrides the \section command to capitalize every
 % word for cosmetic purposes and draws a rule under it.
 \makeatletter
@@ -125,9 +227,9 @@
 \newenvironment{eventlist}{%
     \setlength\itemsep{0cm}
     \renewcommand\item[3]{%
-	{\raggedleft\sc ##1\\[1pt]}
-	{\Large ##3\\[1pt]}
-	{##2}
+	{\raggedleft\sc{\bodyfont{##1}}\\[1pt]}
+	{\Large{\bodyfont{##3}}\\[1pt]}
+	\bodyfont{##2} 
     }
 }
 
@@ -139,9 +241,9 @@
 % ]|
 \newenvironment{yearlist}{%
     \renewcommand\item[4][]{%
-	\sc{##2} \hspace{0.2cm} \bfseries{##3} \\
-	\sc{##1} \\
-	\hspace*{0.2cm} \it{##4} \\
+	\sc{\bodyfont{##2}} \hspace{0.2cm} \bfseries{\bodyfont{##3}} \\
+	\sc{\bodyfont{##1}} \\
+	\hspace*{0.2cm} \it{\descriptionstyle{##4}} \\
     }  
 }
 
@@ -159,7 +261,7 @@
     \unbaseline=\dimexpr-\baselinestretch\baselineskip\relax
     \renewcommand\item[2]{%
 	%\raggedleft\textsc{##1} & {\raggedleft ##2\medskip\\}\\[\unbaseline]}
-	\raggedleft\textsc{##1} & {\raggedleft ##2}\\
+	\raggedleft\textsc{\bodyfont{##1}} & {\raggedleft\bodyfont{##2}}\\
     }
     \tabularx{\linewidth}{ll}}
     {\endtabularx}
@@ -168,7 +270,7 @@
     \newdimen\unbaseline
     \unbaseline=\dimexpr-\baselinestretch\baselineskip\relax
     \renewcommand\item[1]{%
-	\raggedleft{##1}\\
+	\raggedleft{\bodyfont{##1}}\\
     }
     \tabularx{\linewidth}{r}}
     {\endtabularx}
