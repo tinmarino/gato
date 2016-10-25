@@ -6,7 +6,7 @@
 \usepackage{amsfonts} 								% for the \checkmark command 
 \usepackage[pdftex]{graphicx}							% Enable pdflatex and includegraphics = foto pona
 \usepackage{vwcol} 								% Avoir des colu,ne de tailles differerentes
-
+\usepackage[framemethod=TikZ]{mdframed}
 
  \usepackage[hmargin=0.2cm,vmargin=0cm]{geometry}
 
@@ -16,10 +16,21 @@
 
 
 
+\mdfsetup{%
+   middlelinecolor=blue,
+   middlelinewidth=2pt,
+   backgroundcolor=white!0,
+   roundcorner=10pt,
+   skipabove=0,   
+   fontcolor=black,
+   lowerbox=invisible,
+   }
+
+
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{minipage}{\textwidth} 
+
 \begin{textblock}{6.5}(0.5,0.5)
 \personal
     []
@@ -36,9 +47,8 @@
 		\includegraphics[width=3cm]{../Figure/Rocio1.png}
 \end{textblock}  
 
-\end{minipage}
 
-\vspace*{2cm}
+
 
 
 
@@ -46,6 +56,8 @@
 
 
 \begin{textblock}{7}(0.2,4)
+\begin{mdframed}
+
 \section{Education}
 \begin{yearlist}
 
@@ -69,9 +81,10 @@
 
 
 \end{yearlist}
+\end{mdframed}
 
 
-
+\begin{mdframed}
 \section{Compétences linguistiques}
 
 \begin{factlist}
@@ -94,6 +107,7 @@ HTML5,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %&
+\end{mdframed}
 \end{textblock}
 
 

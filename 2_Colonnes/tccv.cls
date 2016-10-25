@@ -63,7 +63,7 @@
 \color[HTML]{303030} % Default foreground color
 \definecolor{link}{HTML}{506060} % Hyperlinks
 \hypersetup{colorlinks,breaklinks,urlcolor=link,linkcolor=link}
-\setkomafont{disposition}{\color[HTML]{801010}}
+%\setkomafont{disposition}{\color[HTML]{801010}}
 \setkomafont{section}{\scshape\Large\mdseries}
 
 % Overrides the \section command to capitalize every
