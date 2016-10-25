@@ -131,12 +131,12 @@
 % ]|
 \newenvironment{yearlist}{%
     \renewcommand\item[4][]{%
-	{\sc ##2} & {\bfseries ##3} \\
-	\ifstrempty{##1}{}{\multicolumn{2}{l}{\raggedleft\sc ##1}  \\}
-	\multicolumn{2}{p{\linewidth}}{\indent \it{##4}}\medskip\\
-    }
-    \tabularx{\linewidth}{p{0.4\linewidth}p{0.6\linewidth}}} %p{0.4\linewidth}p{0.6\linewidth}
-    {\endtabularx}
+	\sc{##2} \hspace{0.2cm} \bfseries{##3} \\
+	\sc{##1} \\
+	\hspace*{0.2cm} \it{##4} \\
+    }  
+}
+
 
 
 
