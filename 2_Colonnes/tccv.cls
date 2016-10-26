@@ -172,7 +172,8 @@
 
 
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}		% Description
-
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
 
 
 
@@ -210,9 +211,9 @@
     \newdimen\boxwidth%
     \boxwidth=\dimexpr\linewidth-2\fboxsep\relax%
     \begin{tabularx}{\boxwidth}{c|X}
-    \Writinghand & {#2}\smallskip\\
-    \Telefon     & {#3}\smallskip\\
-    \Letter      & \href{mailto:#4}{#4}
+    \Writinghand & \bodyfont{#2}\smallskip\\
+    \Telefon     & \bodyfont{#3}\smallskip\\
+    \Letter      & \href{mailto:#4}{\bodyfont{#4}}
     \ifstrempty{#1}{}{\smallskip\\ \Lightning & \href{http://#1}{#1}}
     \end{tabularx}}
 
@@ -242,7 +243,7 @@
 \newenvironment{yearlist}{%
     \renewcommand\item[4][]{%
 	\sc{\bodyfont{##2}} \hspace{0.2cm} \bfseries{\bodyfont{##3}} \\
-	\sc{\bodyfont{##1}} \\
+	\sc{\bodyfont{##1}} \\							
 	\hspace*{0.2cm} \it{\descriptionstyle{##4}} \\
     }  
 }
