@@ -225,7 +225,7 @@
 % Description of what achieved during this application.
 % ]|
 \newenvironment{eventlist}{%
-    \setlength\itemsep{0cm}
+   % \setlength\itemsep{0cm}
     \renewcommand\item[3]{%
 	{\raggedleft\sc{\bodyfont{##1}}\\[1pt]}                 % YEAR 
 	\sc\bfseries{\bodyfont{##3}}\\[1pt]             	% POSTE 
