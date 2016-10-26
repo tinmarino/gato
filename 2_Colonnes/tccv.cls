@@ -65,7 +65,7 @@
 \hypersetup{colorlinks,breaklinks,urlcolor=link,linkcolor=link}
 %\setkomafont{disposition}{\color[HTML]{801010}}
 \definecolor{mybluegrey}{HTML}{101080}
-\setkomafont{section}{\color[HTML]{101080}\scshape\Large\mdseries}
+\setkomafont{section}{\bodyfont\color[HTML]{101080}\scshape\Large\mdseries}
 
 % Font 
 \RequirePackage{fontawesome}
@@ -174,8 +174,7 @@
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}		% Description
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
-
-
+\newenvironment{descriptionenvironement}{\descriptionstyle}{\par}
 
 % Overrides the \section command to capitalize every
 % word for cosmetic purposes and draws a rule under it.
@@ -230,7 +229,7 @@
     \renewcommand\item[3]{%
 	{\raggedleft\sc{\bodyfont{##1}}\\[1pt]}      % YEAR 
 	\sc\bfseries{\bodyfont{##3}}\\[1pt]             % POSTE 
-	\sc\bodyfont{##2} 		             % COMPANY
+	\sc\bodyfont{##2}\\ 		             % COMPANY
     }
 }
 
@@ -244,7 +243,7 @@
     \renewcommand\item[4][]{%
 	\sc{\bodyfont{##2}} \hspace{0.2cm} \bfseries{\bodyfont{##3}} \\
 	\sc{\bodyfont{##1}} \\							
-	\hspace*{0.2cm} \it{\descriptionstyle{##4}} \\
+	\it{\descriptionstyle{##4}} \\
     }  
 }
 
@@ -261,8 +260,7 @@
     \newdimen\unbaseline
     \unbaseline=\dimexpr-\baselinestretch\baselineskip\relax
     \renewcommand\item[2]{%
-	%\raggedleft\textsc{##1} & {\raggedleft ##2\medskip\\}\\[\unbaseline]}
-	\raggedleft\textsc{\bodyfont{##1}} & {\raggedleft\bodyfont{##2}}\\
+	\raggedleft\textsc{\bodyfont{##1}} & {\raggedleft\descriptionstyle{##2}}\\
     }
     \tabularx{\linewidth}{ll}}
     {\endtabularx}
