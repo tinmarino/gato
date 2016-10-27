@@ -168,7 +168,14 @@
   BoldItalicFont=*-SemiboldIt
 ]{SourceSansPro}
 
-
+% Main roman font 
+\setromanfont[
+  Path=\@fontdir,
+  UprightFont=*-Light,
+  ItalicFont=*-LightIt,
+  BoldFont=*-Semibold,
+  BoldItalicFont=*-SemiboldIt,
+]{SourceSansPro}
 
 
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}		% Description
