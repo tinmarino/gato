@@ -248,8 +248,8 @@
 % ]|
 \newenvironment{yearlist}{%
     \renewcommand\item[4][]{%
-	\sc{\bodyfont{##2}} \hspace{0.2cm} \bfseries{\bodyfont{##3}} \\
-	\sc{\bodyfont{##1}} \\							
+	\sc{\bodyfont{##2}} \hspace{0.2cm} \bfseries{\bodyfont{##3}} \\[1pt]
+	\sc{\bodyfont{##1}} \\[4pt]						
 	\it{\descriptionstyle{##4}} \\
     }  
 }
