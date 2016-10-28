@@ -182,6 +182,9 @@
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
 \newenvironment{descriptionenvironement}{\descriptionstyle}{\par}
+\usepackage{color, hyperref}
+\newcommand{\Myhref}[2]{\href{#1}{\color{mybluegrey}{#2}}}					% ici la pona choisit la couleur pour la fonction "Myhref"
+
 
 % Overrides the \section command to capitalize every
 % word for cosmetic purposes and draws a rule under it.
@@ -217,9 +220,9 @@
     \newdimen\boxwidth%
     \boxwidth=\dimexpr\linewidth-2\fboxsep\relax%
     \begin{tabularx}{\boxwidth}{c|X}
-    \Writinghand & \bodyfont{#2}\smallskip\\
-    \Telefon     & \bodyfont{#3}\smallskip\\
-    \Letter      & \href{mailto:#4}{\bodyfont{#4}}
+    \Writinghand & \normalsize  \bodyfont{#2}\smallskip\\   %ADDR 
+    \Telefon     & \normalsize  \bodyfont{#3}\smallskip\\	% TEL 
+    \Letter      & \normalsize  \bodyfont{#4}	% EMAIL 
     \ifstrempty{#1}{}{\smallskip\\ \Lightning & \href{http://#1}{#1}}
     \end{tabularx}}
 
