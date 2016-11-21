@@ -75,6 +75,10 @@
 \colorlet{awesome}{awesome-skyblue}
 
 
+\newcommand{\mission}[1]{\makebox[1.4cm][l]{\underline{#1}}}
+
+
+
 %-------------------------------------------------------------------------------
 %                Configuration for colors
 %-------------------------------------------------------------------------------
@@ -311,6 +315,7 @@
 \newenvironment{experience}
 {
 
+
     \mdfsetup{
       middlelinecolor=mybluegrey,
       middlelinewidth=1pt,
@@ -322,7 +327,7 @@
       innerrightmargin=17pt,
       middlelinecolor=white!0
     }
-
+    
 
     \begin{textblock}{13.3}(7.3,4)
     \begin{mdframed}
