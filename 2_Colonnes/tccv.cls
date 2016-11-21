@@ -75,7 +75,7 @@
 \colorlet{awesome}{awesome-skyblue}
 
 
-\newcommand{\mission}[1]{\makebox[1.4cm][l]{\underline{#1}}}
+\newcommand{\mission}[1]{\makebox[1.4cm][l]{\textbf{#1}}}
 
 
 
