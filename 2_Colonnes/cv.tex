@@ -2,31 +2,16 @@
 \usepackage[hmargin=0.2cm,vmargin=0cm]{geometry}
 \usepackage{amsfonts} 								% for the \checkmark command 
 \usepackage[framemethod=TikZ]{mdframed}						% For box around text
-
-\usepackage[overlay,absolute]{textpos}
+\usepackage[overlay,absolute]{textpos}						% For Textblock
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
-
-\usepackage{fontspec}
-\usepackage{enumitem}
-
+\usepackage{fontspec}								% For extended fonts
+\usepackage{enumitem}								% For aptitudes enumeration 
 
 
 
-\mdfsetup{
-   middlelinecolor=mybluegrey,
-   middlelinewidth=1pt,
-   backgroundcolor=white!0,
-   roundcorner=10pt,
-   skipabove=30,
-   fontcolor=black,
-   innertopmargin=-10pt,
-   innerrightmargin=17pt,
-}
 
-\fontdir[fonts/]
-\colorlet{awesome}{awesome-skyblue}
-%\defaultfontfeatures{Ligatures=TeX,Color=text}
+
 
 
 
@@ -34,7 +19,13 @@
 \begin{upshape}
 \fontsize{9pt}{1em}\color{text}\selectfont
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%			0/ HEADER
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -65,9 +56,9 @@
 	{\fontsize{14pt}{5em}\scshape\bfseries Journaliste attachée de presse avec double formation \\} 
 
 	\vspace{5pt}
-Connaissances développées en communication sociale et science politique 			 \\
-Expériences dans le milieu politique parlementaire et culturel télévisuelle 		 \\
-Compétences en stratégie de communication et administration de réseaux sociaux 		\\
+Connaissances développées en communication sociale et science politique 			\\
+Expériences dans le milieu politique parlementaire et culturel télévisuelle 		 	\\
+Compétences en stratégie de communication et administration de réseaux sociaux 			\\
 
 \end{center}
 \end{textblock}  
@@ -76,12 +67,17 @@ Compétences en stratégie de communication et administration de réseaux sociau
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%			1/ EDUCATION
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{textblock}{6.5}(0.5,4)
-\begin{mdframed}
 
-\section{Éducation}
-\begin{yearlist}
+
+
+\begin{education}
+
 \vspace{0.5cm}
 \item[Master 1 Science politique]{2015 -- 2016}
      {Université de Rennes 1}
@@ -105,13 +101,17 @@ Compétences en stratégie de communication et administration de réseaux sociau
      Langue portugaise: littérature, sémiotique, stra\-té\-gies de communication publique}
 
 
-\end{yearlist}
-\end{mdframed}
+\end{education}
 
-\vspace{0.5cm}
 
-\begin{mdframed}
-\section{Compétences linguistiques}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%			2/ COMPETENCE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{competence}
 
 \begin{factlist}
 \item{Espagnol} {Langue maternelle}	
@@ -122,10 +122,9 @@ Compétences en stratégie de communication et administration de réseaux sociau
 
 \vspace{0.5cm}
 \section{Logiciels}
-Environnement PC et Linux,
+Environnement PC et Linux, \\
 Pack office et Libre office,
 Adobe Photoshop, Premiere, \\
-%Python, 
 Gimp,
 \LaTeX.
 
@@ -140,20 +139,20 @@ Gimp,
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%&
-\end{mdframed}
-\end{textblock}
+\end{competence}
 
 
-\mdfsetup{middlelinecolor=white!0}
-
-\begin{textblock}{13.3}(7.3,4)
-\begin{mdframed}
-\section{Expérience Professionnelle}
 
 
-\begin{eventlist}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%			3/ EXPERIENCE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{experience}
+
 
 \setlength{\parskip}{0pt}
 \item{\color{text} Avril 2014 -- Mars 2015}
@@ -265,12 +264,12 @@ pour des marques comme Dole, Artilec, MOR et Flores\\
 
    
 
+\end{experience}
 
-\end{eventlist}
 
 
-\end{mdframed}
-\end{textblock}
+
+
 
 \end{upshape}
 \end{document}

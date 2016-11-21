@@ -30,8 +30,6 @@
 \LoadClass[10pt]{scrartcl}
 
 \setcounter{secnumdepth}{-1}
-%\RequirePackage[hmargin=1.25cm,vmargin=1.25cm,twocolumn,columnsep=1.25cm]{geometry}
-%\Requirepackage[hmargin=2cm]{geometry}
 \RequirePackage{bookman,etoolbox,hyperref,marvosym,needspace,tabularx,xcolor}
 \let\cvitem\item
 
@@ -72,6 +70,9 @@
 \newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
 \fontdir
 \definecolor{awesome-skyblue}{HTML}{0395DE}
+
+\fontdir[fonts/]
+\colorlet{awesome}{awesome-skyblue}
 
 
 %-------------------------------------------------------------------------------
@@ -257,6 +258,82 @@
     }  
 }
 
+\newenvironment{education}
+{
+    \mdfsetup{
+      middlelinecolor=mybluegrey,
+      middlelinewidth=1pt,
+      backgroundcolor=white!0,
+      roundcorner=10pt,
+      skipabove=30,
+      fontcolor=black,
+      innertopmargin=-10pt,
+      innerrightmargin=17pt,
+    }
+
+    \begin{textblock}{6.5}(0.5,4)
+    \begin{mdframed}
+    \section{Éducation}
+    \begin{yearlist}
+}
+{
+    \end{yearlist}
+    \end{mdframed}
+    \end{textblock}
+}
+
+\newenvironment{competence}
+{
+    \mdfsetup{
+      middlelinecolor=mybluegrey,
+      middlelinewidth=1pt,
+      backgroundcolor=white!0,
+      roundcorner=10pt,
+      skipabove=30,
+      fontcolor=black,
+      innertopmargin=-10pt,
+      innerrightmargin=17pt,
+    }
+    
+    \begin{textblock}{6.5}(0.5,16)
+    \begin{mdframed}
+    \section{Compétences linguistiques}
+
+}
+{
+     
+    \end{mdframed}
+    \end{textblock}
+}
+
+
+
+\newenvironment{experience}
+{
+
+    \mdfsetup{
+      middlelinecolor=mybluegrey,
+      middlelinewidth=1pt,
+      backgroundcolor=white!0,
+      roundcorner=10pt,
+      skipabove=30,
+      fontcolor=black,
+      innertopmargin=-10pt,
+      innerrightmargin=17pt,
+      middlelinecolor=white!0
+    }
+
+
+    \begin{textblock}{13.3}(7.3,4)
+    \begin{mdframed}
+    \section{Expérience Professionnelle}
+    \begin{eventlist}
+}
+{
+    \end{eventlist}
+    \end{mdframed}
+    \end{textblock}
+}
 
 
 
@@ -285,7 +362,7 @@
     {\endtabularx}
 
     
-    
+
     
     
 %%
