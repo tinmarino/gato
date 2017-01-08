@@ -327,7 +327,7 @@
     }
     
 
-    \begin{textblock}{13.3}(7.3,4)
+    \begin{textblock}{11}(10,4)
     \begin{mdframed}
     \section{Expérience Professionnelle}
     \begin{eventlist}
