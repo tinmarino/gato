@@ -275,7 +275,7 @@
       innerrightmargin=17pt,
     }
 
-    \begin{textblock}{8}(1,4)
+    \begin{textblock}{9}(1,4)
     \begin{mdframed}
     \section{Éducation}
     \begin{yearlist}
@@ -299,7 +299,7 @@
       innerrightmargin=17pt,
     }
     
-    \begin{textblock}{8}(1,16)
+    \begin{textblock}{9}(1,19)
     \begin{mdframed}
 }
 {
@@ -308,7 +308,27 @@
     \end{textblock}
 }
 
-
+\newenvironment{aptitude}
+{
+    \mdfsetup{
+      middlelinecolor=mybluegrey,
+      middlelinewidth=1pt,
+      backgroundcolor=white!0,
+      roundcorner=10pt,
+      skipabove=30,
+      fontcolor=black,
+      innertopmargin=-10pt,
+      innerrightmargin=17pt,
+    }
+    
+    \begin{textblock}{11}(10,17)
+    \begin{mdframed}
+}
+{
+     
+    \end{mdframed}
+    \end{textblock}
+}
 
 \newenvironment{experience}
 {
