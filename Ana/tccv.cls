@@ -275,7 +275,7 @@
       innerrightmargin=17pt,
     }
 
-    \begin{textblock}{8}(1,4)
+    \begin{textblock}{8.4}(1,4)
     \begin{mdframed}
     \section{Éducation}
     \begin{yearlist}
@@ -299,7 +299,7 @@
       innerrightmargin=17pt,
     }
     
-    \begin{textblock}{8}(1,23)
+    \begin{textblock}{8.4}(1,24)
     \begin{mdframed}
 }
 {
