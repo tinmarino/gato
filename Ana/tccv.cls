@@ -275,7 +275,7 @@
       innerrightmargin=17pt,
     }
 
-    \begin{textblock}{9}(1,4)
+    \begin{textblock}{8}(1,4)
     \begin{mdframed}
     \section{Éducation}
     \begin{yearlist}
@@ -299,7 +299,7 @@
       innerrightmargin=17pt,
     }
     
-    \begin{textblock}{9}(1,23)
+    \begin{textblock}{8}(1,23)
     \begin{mdframed}
 }
 {
@@ -321,7 +321,7 @@
       innerrightmargin=17pt,
     }
     
-    \begin{textblock}{11}(10,17)
+    \begin{textblock}{10.5}(10,17)
     \begin{mdframed}
 }
 {
@@ -347,7 +347,7 @@
     }
     
 
-    \begin{textblock}{11}(10,4)
+    \begin{textblock}{10.5}(10,4)
     \begin{mdframed}
     \section{Expérience Professionnelle}
     \begin{eventlist}
