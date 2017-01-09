@@ -75,7 +75,7 @@
 \colorlet{awesome}{awesome-skyblue}
 
 
-\newcommand{\mission}[1]{\makebox[1.4cm][l]{\textbf{#1}}}
+\newcommand{\mission}[1]{\makebox[1.6cm][l]{\textbf{#1}}}
 
 
 
@@ -292,14 +292,14 @@
       middlelinecolor=mybluegrey,
       middlelinewidth=1pt,
       backgroundcolor=white!0,
-      roundcorner=10pt,
+      roundcorner=2pt,
       skipabove=30,
       fontcolor=black,
       innertopmargin=-10pt,
       innerrightmargin=17pt,
     }
     
-    \begin{textblock}{9}(1,20)
+    \begin{textblock}{9}(1,23)
     \begin{mdframed}
 }
 {
