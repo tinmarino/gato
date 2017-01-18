@@ -275,7 +275,7 @@
       innerrightmargin=17pt,
     }
 
-    \begin{textblock}{6.5}(0.5,4)
+    \begin{textblock}{6.5}(0.5,3.2)
     \begin{mdframed}
     \section{Éducation}
     \begin{yearlist}
@@ -299,8 +299,9 @@
       innerrightmargin=17pt,
     }
     
-    \begin{textblock}{6.5}(0.5,16)
+    \begin{textblock}{6.5}(0.5,17.5)
     \begin{mdframed}
+    
     \section{Compétences linguistiques}
 
 }
@@ -329,7 +330,7 @@
     }
     
 
-    \begin{textblock}{13.3}(7.3,4)
+    \begin{textblock}{13.3}(7.3,3.2)
     \begin{mdframed}
     \section{Expérience Professionnelle}
     \begin{eventlist}
