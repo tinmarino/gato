@@ -148,23 +148,20 @@ Gimp,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{experience}
+\begin{flat_frame}{Expérience Professionnelle}{13.3}{7.3}{3.2}{}
+\begin{eventlist}
 
 
     
     
     
-\setlength{\parskip}{0pt}        
+%\setlength{\parskip}{0pt}
 \item{Déc 2016 -- Mars 2017}
      {Rennes Métropole, Rennes}
      {Animatrice périscolaire}
      \fontsize{9pt}{1em}\color{text}\bodyfontlight\upshape\selectfont
-%
-\mission{Missions :}
     
-    \setlength{\parskip}{-10pt}
     \begin{itemize}
-      \setlength\itemsep{-3pt} 
       \cvitem[\checkmark] Accueillir les enfants et les familles                      
       \cvitem[\checkmark] Encadrer par l’animation un groupe d’enfants
       \cvitem[\checkmark] Animer, construire et maintenir la dynamique de groupe               
@@ -179,19 +176,14 @@ Gimp,
   {Agence Zouzous Rennais, Rennes}     
   {Babysitting}
      \fontsize{9pt}{1em}\color{text}\bodyfontlight\upshape\selectfont
-%    
-\mission{Missions :}
 
-\setlength{\parskip}{-10pt}
 \begin{itemize}
-      \setlength\itemsep{-3pt} 
       \cvitem[\checkmark]  Prendre en charge l’enfant à son domicile                                    
       \cvitem[\checkmark]  Animer des activités ludiques ou l’aider lors d’activités d’éveil et d’apprentissage                                            
       \cvitem[\checkmark]  Assurer un suivi des devoirs
       \cvitem[\checkmark]  Préparer et donner un repas
 
 \end{itemize}       
-\vspace{0.5cm}
 
 
 
@@ -204,11 +196,8 @@ Gimp,
   {Attachée et cordinatrice de presse}
   \fontsize{9pt}{1em}\color{text}\bodyfontlight\upshape\selectfont
 
-\mission{Missions :}
   
-\setlength{\parskip}{-10pt}
 \begin{itemize}
-      \setlength\itemsep{-3pt} 
       \cvitem[\checkmark] Élaboration et mise en œuvre des stratégies de communication conjointement avec la Chef de cabinet
       \cvitem[\checkmark] Rédaction des articles, communiqués et dossiers de presse
       \cvitem[\checkmark] Suivre et relances du contenu envoyé à la presse
@@ -223,12 +212,9 @@ Gimp,
   {Aluro 35, Santiago, Chili}     
   {Productrice générale}
 \fontsize{9pt}{1em}\color{text}\bodyfontlight\upshape\selectfont
-%
-\mission{Missions :}
-     
-\setlength{\parskip}{-10pt}
+
+    
 \begin{itemize}
-      \setlength\itemsep{-3pt} 
       \cvitem[\checkmark] Génération de rapports avec la chaîne et négociation de budgets                   
       \cvitem[\checkmark] Préparation des lieux de tournage, mobilisation et interviews. Aide à la préparation du contenu des entretiens   
       \cvitem[\checkmark] Administration des réseaux sociaux et animation des communautés (Facebook, Twitter, Instagram)                                                                    
@@ -242,12 +228,8 @@ Gimp,
      {Capperi, Santiago, Chili}
      {Serveuse en restaurant Italian}
      \fontsize{9pt}{1em}\color{text}\bodyfontlight\upshape\selectfont
-%
-\mission{Missions :} 
 
-    \setlength{\parskip}{-10pt}
     \begin{itemize}
-      \setlength\itemsep{-3pt} 
       \cvitem[\checkmark] Accueillir, installer et prendre les commandes des clients
       \cvitem[\checkmark] Suivre la sortie des plats de la cuisine selon les bons de commande
       \cvitem[\checkmark] Débarrasser les tables et les (re)dresser
@@ -257,7 +239,7 @@ Gimp,
   
   
 
-\end{experience}
+\end{flat_frame}
 
 
 

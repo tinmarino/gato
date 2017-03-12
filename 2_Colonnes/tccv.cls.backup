@@ -225,10 +225,13 @@
     \newdimen\boxwidth%
     \boxwidth=\dimexpr\linewidth-2\fboxsep\relax%
     \begin{tabularx}{\boxwidth}{c|X}
-    \Writinghand & \normalsize  \bodyfont{#2}\smallskip\\   %ADDR 
+    \Writinghand & \normalsize  \bodyfont{#2}\smallskip\\   	%ADDR 
     \Telefon     & \normalsize  \bodyfont{#3}\smallskip\\	% TEL 
-    \Letter      & \normalsize  \bodyfont{#4}	% EMAIL 
-    \ifstrempty{#1}{}{\smallskip\\ \Lightning & \href{http://#1}{#1}}
+    \Letter      & \normalsize  \bodyfont{#4\smallskip\\	% EMAIL 
+    %\ifstrempty{#1}{}{\smallskip\\ \Lightning & \href{http://#1}{#1}} % URL
+    % para nationalisded
+    \ifstrempty{#1}{}{\Letter      & \normalsize  \bodyfont{#4}	} % flag
+	   
     \end{tabularx}}
 
 % Every \item can be followed by one or more paragraphs
@@ -262,25 +265,8 @@
     }  
 }
 
-\newenvironment{rounded}[5]
-{
-    \mdfsetup{
-      middlelinecolor=mybluegrey,
-      middlelinewidth=1pt,
-      backgroundcolor=white!0,
-      roundcorner=10pt,
-      skipabove=30,
-      fontcolor=black,
-      innertopmargin=-10pt,
-      innerrightmargin=17pt,
-    }
-    \begin{internal}
 
-}
-{
-    \end{internal}
-}
-
+% Name, size, x, y, nada 
 \newenvironment{internal}[5]
 {
     \begin{textblock}{#2}(#3, #4)
@@ -288,13 +274,11 @@
     \section{#1}
 }
 {
-    \end{yearlist}
     \end{mdframed}
     \end{textblock}
 }
 
-
-\newenvironment{competence}
+\newenvironment{rounded_frame}[5]
 {
     \mdfsetup{
       middlelinecolor=mybluegrey,
@@ -306,25 +290,19 @@
       innertopmargin=-10pt,
       innerrightmargin=17pt,
     }
-    
-    \begin{textblock}{6.5}(0.5,17.5)
-    \begin{mdframed}
-    
-    \section{Compétences linguistiques}
-
+    \begin{internal}{#1}{#2}{#3}{#4}{#5}
 }
 {
-     
-    \end{mdframed}
-    \end{textblock}
+    \end{internal}
 }
 
 
 
-\newenvironment{experience}
+
+
+
+\newenvironment{flat_frame}[5]
 {
-
-
     \mdfsetup{
       middlelinecolor=mybluegrey,
       middlelinewidth=1pt,
@@ -336,17 +314,10 @@
       innerrightmargin=17pt,
       middlelinecolor=white!0
     }
-    
-
-    \begin{textblock}{13.3}(7.3,3.2)
-    \begin{mdframed}
-    \section{Expérience Professionnelle}
-    \begin{eventlist}
+    \begin{internal}{#1}{#2}{#3}{#4}{#5}    
 }
 {
-    \end{eventlist}
-    \end{mdframed}
-    \end{textblock}
+    \end{internal}
 }
 
 

@@ -225,10 +225,12 @@
     \newdimen\boxwidth%
     \boxwidth=\dimexpr\linewidth-2\fboxsep\relax%
     \begin{tabularx}{\boxwidth}{c|X}
-    \Writinghand & \normalsize  \bodyfont{#2}\smallskip\\   %ADDR 
+    \Writinghand & \normalsize  \bodyfont{#2}\smallskip\\   	%ADDR 
     \Telefon     & \normalsize  \bodyfont{#3}\smallskip\\	% TEL 
-    \Letter      & \normalsize  \bodyfont{#4}	% EMAIL 
-    \ifstrempty{#1}{}{\smallskip\\ \Lightning & \href{http://#1}{#1}}
+    \Letter      & \normalsize  \bodyfont{#4}\smallskip\\	% EMAIL 
+    % para nationalisded
+    \ifstrempty{#1}{}{\includegraphics[width=0.05\textwidth]{../Figure/flag.png}    & \normalsize  \bodyfont{#1}	} % flag
+    %\ifstrempty{#1}{}{\smallskip\\ \Lightning & \href{http://#1}{#1}} % URL	   
     \end{tabularx}}
 
 % Every \item can be followed by one or more paragraphs
@@ -263,7 +265,7 @@
 }
 
 
-% Name, size, x, y 
+% Name, size, x, y, nada 
 \newenvironment{internal}[5]
 {
     \begin{textblock}{#2}(#3, #4)
