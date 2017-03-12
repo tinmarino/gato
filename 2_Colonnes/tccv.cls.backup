@@ -262,20 +262,7 @@
     }  
 }
 
-
-% Name, size, x, y 
-\newenvironment{internal}[5]
-{
-    \begin{textblock}{#2}(#3, #4)
-    \begin{mdframed}
-    \section{#1}
-}
-{
-    \end{mdframed}
-    \end{textblock}
-}
-
-\newenvironment{rounded_frame}[5]
+\newenvironment{rounded}[5]
 {
     \mdfsetup{
       middlelinecolor=mybluegrey,
@@ -287,19 +274,57 @@
       innertopmargin=-10pt,
       innerrightmargin=17pt,
     }
-    \begin{internal}{#1}{#2}{#3}{#4}{#5}
+    \begin{internal}
+
 }
 {
     \end{internal}
 }
 
-
-
-
-
-
-\newenvironment{flat_frame}[5]
+\newenvironment{internal}[5]
 {
+    \begin{textblock}{#2}(#3, #4)
+    \begin{mdframed}
+    \section{#1}
+}
+{
+    \end{yearlist}
+    \end{mdframed}
+    \end{textblock}
+}
+
+
+\newenvironment{competence}
+{
+    \mdfsetup{
+      middlelinecolor=mybluegrey,
+      middlelinewidth=1pt,
+      backgroundcolor=white!0,
+      roundcorner=10pt,
+      skipabove=30,
+      fontcolor=black,
+      innertopmargin=-10pt,
+      innerrightmargin=17pt,
+    }
+    
+    \begin{textblock}{6.5}(0.5,17.5)
+    \begin{mdframed}
+    
+    \section{Compétences linguistiques}
+
+}
+{
+     
+    \end{mdframed}
+    \end{textblock}
+}
+
+
+
+\newenvironment{experience}
+{
+
+
     \mdfsetup{
       middlelinecolor=mybluegrey,
       middlelinewidth=1pt,
@@ -311,10 +336,17 @@
       innerrightmargin=17pt,
       middlelinecolor=white!0
     }
-    \begin{internal}{#1}{#2}{#3}{#4}{#5}    
+    
+
+    \begin{textblock}{13.3}(7.3,3.2)
+    \begin{mdframed}
+    \section{Expérience Professionnelle}
+    \begin{eventlist}
 }
 {
-    \end{internal}
+    \end{eventlist}
+    \end{mdframed}
+    \end{textblock}
 }
 
 

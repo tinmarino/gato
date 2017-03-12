@@ -57,8 +57,8 @@
 
 	\vspace{5pt}
 Connaissances développées en communication sociale et science politique 			\\
-Expériences dans le milieu parlamentaire, production de télévision et agence de communication 		 	\\
- 			\\
+Expériences dans le milieu parlamentaire et production de télévision  		 	\\
+Expériences dans le milieu parlamentaire, production de télévision et agence de communication 	\\
 
 \end{center}
 \end{textblock}  
@@ -76,7 +76,8 @@ Expériences dans le milieu parlamentaire, production de télévision et agence 
 
 
 
-\begin{education}
+\begin{rounded}{Éducation}{6.5}{0.5}{3.2}{}
+\begin{yearlist}
 
 \vspace{0.5cm}
 \item[Master 1 Science politique]{2015 -- 2016}
@@ -90,7 +91,7 @@ Expériences dans le milieu parlamentaire, production de télévision et agence 
 \vspace{0.5cm}
 \item[Diplôme en Communication sociale et journalisme (Bac+5)]{2008 -- 2013}
      {Universidad de Santiago de Chile}
-     {Spécialité: culture 
+     {Spécialité politique
      }
 
  \vspace{0.5cm}    
@@ -100,7 +101,8 @@ Expériences dans le milieu parlamentaire, production de télévision et agence 
      Langue portugaise: littérature, sémiotique, stra\-té\-gies de communication publique}
 
 
-\end{education}
+\end{yearlist}
+\end{rounded}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,7 +112,8 @@ Expériences dans le milieu parlamentaire, production de télévision et agence 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{competence}
+\begin{rounded}{Compétences linguistiques}{6.5}{0.5}{17.5}{}
+
 
 \begin{factlist}
 \item{Espagnol} {Langue maternelle}	
@@ -131,7 +134,7 @@ Gimp,
 \section{Savoir-faire}
 \begin{itemize}[leftmargin=13pt]
   \setlength\itemsep{-3pt} 
-  \cvitem[\checkmark]  
+  \cvitem[\checkmark]  Organisation d'évènementiel.
   \cvitem[\checkmark]  Préparation et rédaction de communiqués et articles de presse.
   \cvitem[\checkmark]  Maîtrise de réseaux sociaux.
   \cvitem[\checkmark]  Gérer des relations presse.
@@ -139,7 +142,7 @@ Gimp,
 
 
 
-\end{competence}
+\end{rounded}
 
 
 
@@ -151,7 +154,9 @@ Gimp,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{experience}
+aaa
+\begin{flat_frame}{Expérience Professionnelle}{13.3}{7.3}{3.2}{}
+\begin{eventlist}
 
 
 
@@ -168,8 +173,8 @@ Gimp,
     \begin{itemize}
       \setlength\itemsep{-3pt} 
       \cvitem[\checkmark] Élaboration et mise en œuvre des stratégies de communication conjointement avec la Chef de cabinet
-      \cvitem[\checkmark] Proposition et suivi des actions de communication. Suivre et relances des communiqués et des articles
-      \cvitem[\checkmark] Rédaction des articles, communiqués et dossiers de presse. Supervision des interviews avec les médias
+      \cvitem[\checkmark] Rédaction des articles, communiqués et dossiers de presse
+      \cvitem[\checkmark] Suivre et relances du contenu envoyé à la presse
       \cvitem[\checkmark] Analyse et suivi des contenus des médias à fin de faciliter l'Identification des thèmes pertinents
       
     \end{itemize}     
@@ -274,7 +279,9 @@ pour des marques comme Dole, Artilec, MOR et Flores\\
 
    
 
-\end{experience}
+\end{eventlist}
+\end{flat_frame}
+
 
 
 
