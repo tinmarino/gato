@@ -258,9 +258,9 @@
 % ]|
 \newenvironment{yearlist}{%
     \renewcommand\item[4][]{%
-	\normalfont \scshape{\bodyfont{##2}} \hspace{0.2cm} \bfseries{\bodyfont{##3}} \\[1pt]
-	\normalfont \scshape{\bodyfont{##1}} \\[4pt]						
-	\normalfont \itshape{\descriptionstyle{##4}} \\
+	\sc{\bodyfont{##2}} \hspace{0.2cm} \bfseries{\bodyfont{##3}} \\[1pt]
+	\sc{\bodyfont{##1}} \\[4pt]						
+	\it{\descriptionstyle{##4}}
     }  
 }
 
@@ -331,7 +331,7 @@
     \newdimen\unbaseline
     \unbaseline=\dimexpr-\baselinestretch\baselineskip\relax
     \renewcommand\item[2]{%
-	\raggedleft\textsc{\bodyfont{##1}} & {\raggedleft\descriptionstyle{##2}}\\
+	\raggedleft\textsc{\bodyfont{##1}} & {\raggedleft\descriptionstyle{##2}} \\[1pt]
     }
     \tabularx{\linewidth}{ll}}
     {\endtabularx}
