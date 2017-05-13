@@ -1,3 +1,7 @@
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+ls-R
 *pdf
 *out
 *log
