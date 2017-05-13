@@ -7,9 +7,9 @@
 %%% ------------------------------------------------------------
 %%% BEGIN PREAMBLE 
 %%% ------------------------------------------------------------
-\documentclass[paper=a4, fontsize=11pt, french]{scrartcl}	 			% KOMA-article class
+\documentclass[paper=a4, fontsize=11pt, french]{old_school}	 			% KOMA-article class
 % \usepackage[utf8]{inputenc}
-\usepackage[francais]{babel}
+% \usepackage[francais]{babel}
 
 % \usepackage[protrusion=true,expansion=true]{microtype}		% Better typography FIXED not working with pdflatex
 \usepackage{amsmath,amsfonts,amsthm}					% Math packages
@@ -68,14 +68,14 @@
 
 
 % My name
-\newcommand{\MyName}[1]{
+\newcommand{\tbfname}[2]{
    \begin{textblock}{100}(70,20)
-	   \centering\huge\bfseries {#1}
+	   \centering\huge\bfseries {#1 #2}
    \end{textblock}  
    }
 
 
-\newcommand{\MyFoto}[1]{ % path of the foto  
+\newcommand{\tbffoto}[1]{ % path of the foto  
 	\begin{textblock}{210}(170,2)
 		\includegraphics[width=3cm]{#1}
 	\end{textblock}  
@@ -95,190 +95,135 @@
 
 
 
-\newcommand{\PersonalEntry}[2]{
-		\noindent\hangindent=1em\hangafter=0 		% Indentation
-		\parbox{\spacebox}{						% Box to align text
-		   \textit{#1}}								% Entry name (birth, address, etc.)
-		 #2 \par}					% Entry value
-
-\newcommand{\SkillsEntry}[2]{						% Same as \PersonalEntry
-		\noindent\hangindent=2em\hangafter=0 		% Indentation
-		\parbox{\spacebox}{						% Box to align text
-		\textit{#1}}								% Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}					% Entry value	
-		
-\newcommand{\EducationEntry}[4]{
-		\noindent \textbf{#1} \hfill 					% Study
-		\colorbox{Black}{%
-			\parbox{4.5em}{%
-			\hfill\color{White}#2}} \par				% Duration
-		\noindent \textit{#3} \par					% School
-		\noindent\hangindent=2em\hangafter=0 \small #4 	% Description
-		\normalsize \par}
-
-\newcommand{\WorkEntry}[4]{						% Same as \EducationEntry
-		\noindent \textbf{#1} \hfill 					% Jobname
-		\colorbox{Black}{\color{White}#2} \par		% Duration
-		\noindent \textit{#3} \par					% Company
-		\noindent\hangindent=2em\hangafter=0 \small #4 	% Description
-		\normalsize \par}
-
-
-
 		
 		
 		
-	
-%\renewcommand{\familydefault}{\sfdefault}
-%\renewcommand{\familydefault}{}
-%     \renewcommand{\sfdefault}{ptm}
-%     \renewcommand{\familydefault}{\sfdefault}
-    
-% \usepackage[active,tightpage]{preview}
-
-% \renewcommand{\PreviewBorder}{1in}
-
 
 %%% ------------------------------------------------------------
 %%% BEGIN DOCUMENT
 %%% ------------------------------------------------------------
 \begin{document}
-% \begin{preview}
 
 
 
-% \begin{wrapfigure}{l}{0.5\textwidth}
-% 	\vspace*{-2em}
-% 		\includegraphics[width=0.15\textwidth]{photo}
-% \end{wrapfigure}
+\tbfname{Martin}{Tourneboeuf}
 
-\MyName{Martin Tourneboeuf}
-% \sepspace
-
-\MyFoto{../Figure/martin2015.jpg}
+\tbffoto{../Figure/martin2015.jpg}
 
 
 \MyData
 {
-\PersonalEntry{Né le :}   {25 Décembre 1988} 
-\PersonalEntry{Email :}{\url{martin.tourneboeuf@gmail.com}}
-\PersonalEntry{Tel :}  {02 33 54 69 46} 
+\tbfbirth{25 Décembre 1988} 
+\tbfmail{\url{martin.tourneboeuf@gmail.com}}
+\tbftel{07 83 54 64 41} 
+\tbfaddr{49 Quai de la Prévalaye}
+\tbfvoidpersonal{35000 Rennes}
 }
 
 
 
 
 
-% \begin{tabular}{p{7cm}p{6cm}}
-% 
-%      & December 25, 1988 \\
-%    
-%      & \url{tinmarino@gmail.com}%
-%     \end{tabular}
-    
-
-  
-  
-  
-% \MyBirth}{December 25, 1988} 
-% % \PersonalEntry{Address}{}
-% % \PersonalEntry{Phone}{}
-% \MyMail{Mail}{\url{tinmarino@gmail.com}}
-
-
-%%% Education
-%%% ------------------------------------------------------------
+% Education
 \NewPart{Formation}{} 
 
-% \EducationEntry{MSc. Name of Education}{2010-2012}{Name of University}{Descriptive text goes here
+\begin{yearlist}
+
+\vspace{0.5cm}
+\item[Master d'Astrophysique]{2011 -- 2013}
+	{Pontificia Universidad Cat\'olica (PUC), Santiago, Chili}
+    {L'université Chilienne d'astronomie. 
+    Le Chili est un leader mondial dans l'observation astronomique.}
 
 
-\EducationEntry{Master d'Astrophysique}{2011-2013}{Pontificia Universidad Cat\'olica (PUC), Santiago, Chili}
-    { L'université Chilienne d'astronomie. 
-    Le Chili est un leader mondial dans l'observation astronomique. }
-
-\EducationEntry{Diplôme d'ingénieur}{2008-2013}{\'Ecole Polytechnique (X), Paris, France}
+\vspace{0.5cm}
+\item[Diplôme d'ingénieur]{2008 -- 2013}
+	{\'Ecole Polytechnique (X), Paris, France}
     {Enseignement d'ingénieur pluridisciplinaire puis spécialisation en Physique 
-    ``des particules aux étoiles''.}
+    "des particules aux étoiles".}
+
+
+\vspace{0.5cm}    
+\item[Math Sup - Math Spé]{2006 -- 2008}
+	{Lyc\'ee Victor Grignard, Cherbourg, France}
+	{Math, Physique, Sciences de l'Ingénieur (MPSI);
+ 	deux ans de classes préparatoires aux concours des grandes écoles (CPGE).}
+
+
+\vspace{0.5cm}    
+\item[Baccalaur\'eat]{2003 -- 2005}
+	{Lyc\'ee Victor Grignard, Cherbourg, France}
+	{Baccalauréat série S mention très bien.}
+\end{yearlist}
 
 
 
-\EducationEntry{Math Sup - Math Spé}{2006-2008}{Lyc\'ee Victor Grignard, Cherbourg, France}
-{Math, Physique, Sciences de l'Ingénieur (MPSI);
- deux ans de classes préparatoires aux concours des grandes écoles (CPGE).
-}
-
-
-\EducationEntry{Baccalaur\'eat}{2003-2005}{Lyc\'ee Victor Grignard, Cherbourg, France}
-{Baccalauréat série S mention très bien. 
-}
-
-
-
-%%% Work experience
-%%% ------------------------------------------------------------
+% 2/ Experience
 \NewPart{Expérience Professionnelle}{}
+\begin{joblist}
+\item[Programmeur Java]{2014}
+	{Santiago, Chili}
+	{Développement de jeux vidéos, applications android (Java SDK, NDK).}
 
 
-\EducationEntry{Programmeur Java}{2014}{Santiago, Chili}
-{ Développement de jeux vidéos, applications android (Java SDK, NDK). 
-}
-
-\EducationEntry{Serveur-Barman}{2014}{Insert-Coin, Santiago, Chili}
-{ Serveur dans un restaurant avec consoles de jeu vidéo. 
-}
-
-\EducationEntry{Astronome}{2013}{European Southern Observatories (ESO), Santiago, Chili}
-{Développement de ``ABISM'', un GUI en Python pour mesurer la qualité d'une image.
- Le but étant d'aider l'observateur à changer de routine d'optique adaptative sur NaCo, VLT.
-}
-
-\EducationEntry{Astronome}{2012}{Canada France Hawaii Telescope (CFHT, Waimea, USA}
-{ 
-    Etude statistique de l'histoire de formation stéllaire au sein des galaxies. 
-}
+\item[Serveur-Barman]{2014}
+	{Insert-Coin, Santiago, Chili}
+	{Serveur dans un restaurant avec consoles de jeu vidéo.}
 
 
-\EducationEntry{Commandos Marine}{2008-2009}{Base des Fusiliers marins, Lorient, France}
-{Huit mois d'entraînement au commandement inclus dans le cursus scolaire de Polytechnique.}
-
-\EducationEntry{Ostreiculture}{2006-2008}{St-Vaast-la-Houge, France}
-{Travail d'été consistant à retourner des poches à huître pendant la marée basse. 
-}
+\item[Astronome]{2013}
+	{European Southern Observatories (ESO), Santiago, Chili}
+	{Développement de ``ABISM'', un GUI en Python pour mesurer la qualité d'une image.
+ 	Le but étant d'aider l'observateur à changer de routine d'optique adaptative sur NaCo, VLT.}
 
 
-\EducationEntry{Animateur}{2006-2008}{Camp de vacances, France}
-{Cinq camps de vacances en tant qu'animateur (BAFA).}
+\item[Astronome]{2012}
+	{Canada France Hawaii Telescope (CFHT, Waimea, USA}
+	{Etude statistique de l'histoire de formation stéllaire au sein des galaxies.}
+
+
+\item[Commandos Marine]{2008 -- 2009}
+	{Base des Fusiliers marins, Lorient, France}
+	{Huit mois d'entraînement au commandement inclus dans le cursus scolaire de Polytechnique.}
+
+
+\item[Ostreiculture]{2006 -- 2008}
+	{St-Vaast-la-Houge, France}
+	{Travail d'été consistant à retourner des poches à huître pendant la marée basse.}
+
+
+\item[Animateur]{2006 -- 2008}
+	{Camp de vacances, France}
+	{Cinq camps de vacances en tant qu'animateur (BAFA).}
+
+\end{joblist}
 
 
 
-
-
-%%% Skills
-%%% ------------------------------------------------------------
+% 3/ Competence
 \NewPart{Compétences}{}
 
-\SkillsEntry{Langues}{Français (langue maternelle)}
-\SkillsEntry{}{Espagnol (courant)}
-\SkillsEntry{}{Anglais (courant)} 
+\tbfskill{Langue}
 
-\SkillsEntry{Softwares}{Python, 
-         BaSh, 
-         C, 
-         Java,
-         IRAF, 
-         Assembly (NASM, GAS), 
-         Vim, 
-         \LaTeX. 
-         }
+\begin{languagelist}
+\item{Français}	{langue maternelle}
+\item{Espagnol}	{bilingue}
+\item{Anglais}	{courant} 
+\end{languagelist}
 
-\SkillsEntry{Activités}{Sport, voyage, programmation, bricolage}
+\tbfskill{Logiciels}
+		Python, 
+		BaSh, 
+		C, 
+		Java,
+		IRAF, 
+		Assembly (NASM, GAS), 
+		Vim, 
+		\LaTeX
 
-%%% References
-%%% ------------------------------------------------------------
-% \NewPart{References}{}
-% Available upon request
+\tbfskill{Activités}
+	Sport, voyage, programmation, bricolage
 
 
-% \end{preview}
+
 \end{document}
