@@ -7,13 +7,13 @@
 %%% ------------------------------------------------------------
 %%% BEGIN PREAMBLE 
 %%% ------------------------------------------------------------
-\documentclass[paper=a4,fontsize=11pt]{scrartcl}	 			% KOMA-article class
-\usepackage[utf8]{inputenc}
+\documentclass[paper=a4, fontsize=11pt, french]{scrartcl}	 			% KOMA-article class
+% \usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
 
-\usepackage[protrusion=true,expansion=true]{microtype}		% Better typography
+% \usepackage[protrusion=true,expansion=true]{microtype}		% Better typography FIXED not working with pdflatex
 \usepackage{amsmath,amsfonts,amsthm}					% Math packages
-% \usepackage[pdftex]{graphicx}								% Enable pdflatex
+%\usepackage[pdftex]{graphicx}								% Enable pdflatex
 \usepackage[svgnames]{xcolor}							% Colors by their 'svgnames'
 
 \usepackage[bottom=0in,top=1.5in]{geometry}
@@ -24,7 +24,7 @@
         		
         	\addtolength{\textheight}{3in}
         	
-\textheight=700px									% Saving trees ;-) 
+% \textheight=700px									% Saving trees ;-) 
 \usepackage{url}										% Clickable URL's
 \usepackage{wrapfig}									% Wrap text along figures
 
@@ -51,6 +51,12 @@
 	}
 	
 
+
+% NEw 
+\usepackage{amsfonts} 										% for the \checkmark command 
+\usepackage[framemethod=TikZ]{mdframed}						% For box around text
+\usepackage{fontspec}										% For extended fonts
+\usepackage{enumitem}										% For aptitudes enumeration 
 	
 	
 	
@@ -61,21 +67,12 @@
 \newcommand{\sepspace}{\vspace*{1em}}			% Vertical space macro
 
 
-% \newcommand{\MyName}[1]{
-% 		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1 		% Name
-% 		\par \normalsize \normalfont}
-
-\newcommand{\MyName}[1]{ %Name
-%       \begin{center}
-   \begin{textblock}{100}(70,20)\centering
-     % (x,y) les coord du cntre 
-     % 8.5 = width of the block
-     % 0 = zero horizontal units away from our origin
-     % 4 = four vertical units away from our origin
-          \huge\bfseries {#1}
+% My name
+\newcommand{\MyName}[1]{
+   \begin{textblock}{100}(70,20)
+	   \centering\huge\bfseries {#1}
    \end{textblock}  
-%       \end{center}
-      }
+   }
 
 
 \newcommand{\MyFoto}[1]{ % path of the foto  
