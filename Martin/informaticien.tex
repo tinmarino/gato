@@ -1,0 +1,193 @@
+\documentclass[30pt, french]{tccv}
+\usepackage[hmargin=0.2cm,vmargin=0cm]{geometry}
+\usepackage{amsfonts} 										% for the \checkmark command 
+\usepackage[framemethod=TikZ]{mdframed}						% For box around text
+\usepackage[overlay,absolute]{textpos}						% For Textblock
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+\usepackage{fontspec}										% For extended fonts
+\usepackage{enumitem}										% For aptitudes enumeration 
+
+
+
+
+\newcommand{\specialcell}[2][l]{%
+  \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}
+}
+
+
+\newcommand\tbfname[2]{
+	\begin{textblock}{21}( 0 , 1 )
+		 \centering{\headerfirstnamestyle{#1}   \headerlastnamestyle{#2}}
+	\end{textblock}
+}
+
+\newcommand\tbffoto[1]{
+	\begin{textblock}{21}( 17.2 , 0.6 )
+		\includegraphics[width=3cm]{#1}
+	\end{textblock}  
+}
+
+
+\newcommand\tbfdescription[1]{
+	\begin{textblock}{21}(0,2.3)
+	\begin{center}
+	\fontsize{10pt}{1.5em}\color{text}\bodyfontlight\upshape\selectfont
+
+		{\fontsize{14pt}{5em}\scshape\bfseries #1}
+		\vspace{5pt}
+
+
+	\end{center}
+	\end{textblock}  
+}
+
+
+\begin{document}
+\begin{upshape}
+\fontsize{9pt}{1em}\color{text}\selectfont
+
+
+
+
+
+
+% 0/ Header
+\begin{textblock}{6.5}( 0.5 , 0.6 )
+\personal
+    []
+    {\specialcell{49 Quai de la Prévalaye \\ 35000 Rennes}}
+    {07 83 54 64 41}
+    {martin.tourneboeuf@gmail.com}
+\end{textblock}
+
+\tbfname{Martin}{Tourneboeuf}
+
+\tbffoto{../Figure/martin2015.jpg}
+
+\tbfdescription{Il aime Rocio \\ Il aime les nainai de la Pona}
+
+
+
+
+
+
+
+
+
+% 1/ EDUCATION
+\begin{rounded_frame}{Formation}{6.5}{0.5}{3.2}{}
+\begin{yearlist}
+
+\vspace{0.5cm}
+\item[Master d'Astrophysique]{2011 -- 2013}
+	{Pontificia Universidad Cat\'olica (PUC), Santiago, Chili}
+    {L'université Chilienne d'astronomie. 
+    Le Chili est un leader mondial dans l'observation astronomique.}
+
+
+\vspace{0.5cm}
+\item[Diplôme d'ingénieur]{2008 -- 2013}
+	{\'Ecole Polytechnique (X), Paris, France}
+    {Enseignement d'ingénieur pluridisciplinaire puis spécialisation en Physique 
+    "des particules aux étoiles".}
+
+
+\vspace{0.5cm}    
+\item[Math Sup - Math Spé]{2006 -- 2008}
+	{Lyc\'ee Victor Grignard, Cherbourg, France}
+	{Math, Physique, Sciences de l'Ingénieur (MPSI);
+ 	deux ans de classes préparatoires aux concours des grandes écoles (CPGE).}
+
+
+\vspace{0.5cm}    
+\item[Baccalaur\'eat]{2003 -- 2005}
+	{Lyc\'ee Victor Grignard, Cherbourg, France}
+	{Baccalauréat série S mention très bien.}
+
+
+\end{yearlist}
+\end{rounded_frame}
+
+
+
+
+
+
+
+
+% 2/ EXPERIENCE
+\begin{flat_frame}{Expérience Professionnelle}{13.3}{7.3}{3.2}{}
+\begin{joblist}
+\item[Programmeur Java]{2014}
+	{Santiago, Chili}
+	{Développement de jeux vidéos, applications android (Java SDK, NDK).}
+
+
+\item[Serveur-Barman]{2014}
+	{Insert-Coin, Santiago, Chili}
+	{Serveur dans un restaurant avec consoles de jeu vidéo.}
+
+
+\item[Astronome]{2013}
+	{European Southern Observatories (ESO), Santiago, Chili}
+	{Développement de ``ABISM'', un GUI en Python pour mesurer la qualité d'une image.
+ 	Le but étant d'aider l'observateur à changer de routine d'optique adaptative sur NaCo, VLT.}
+
+
+\item[Astronome]{2012}
+	{Canada France Hawaii Telescope (CFHT, Waimea, USA}
+	{Etude statistique de l'histoire de formation stéllaire au sein des galaxies.}
+
+
+\item[Commandos Marine]{2008 -- 2009}
+	{Base des Fusiliers marins, Lorient, France}
+	{Huit mois d'entraînement au commandement inclus dans le cursus scolaire de Polytechnique.}
+
+
+\item[Ostreiculture]{2006 -- 2008}
+	{St-Vaast-la-Houge, France}
+	{Travail d'été consistant à retourner des poches à huître pendant la marée basse.}
+
+
+\item[Animateur]{2006 -- 2008}
+	{Camp de vacances, France}
+	{Cinq camps de vacances en tant qu'animateur (BAFA).}
+
+\end{joblist}
+\end{flat_frame}
+
+
+
+% 3/ COMPETENCE
+\begin{rounded_frame}{Compétences linguistiques}{ 6.5 } { 0.5 }{ 15.8 }{}
+
+
+\begin{factlist}
+\item{Français}	{langue maternelle}
+\item{Espagnol}	{bilingue}
+\item{Anglais}	{courant} 
+\end{factlist}
+
+\section{Logiciels}
+		Python, 
+		BaSh, 
+		C, 
+		Java,
+		IRAF, 
+		Assembly (NASM, GAS), 
+		Vim, 
+		\LaTeX
+
+
+\section{Activité}
+	Sport, voyage, programmation, bricolage
+
+
+
+\end{rounded_frame}
+
+
+
+\end{upshape}
+\end{document}
