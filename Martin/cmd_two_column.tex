@@ -1,4 +1,6 @@
+\documentclass[paper=a4, fontsize=11pt]{tccv}					% Unfortynately must keep some stuff in class for now
 
+\usepackage[utf8]{inputenc}										% True encoding
 \usepackage{graphicx}											% include foto
 \usepackage{tabularx}											% for coordinates
 \usepackage[framemethod=TikZ]{mdframed}							% For box around text
@@ -6,10 +8,27 @@
 	\setlength{\TPHorizModule}{1cm}
 	\setlength{\TPVertModule}{1cm}
 \usepackage{fontspec}											% For extended fonts
+\usepackage{enumitem}											% For aptitudes enumeration 
+\usepackage{genealogytree}										% Born 
+\frenchspacing													% Better looking spacings after periods
 
-\usepackage{enumitem}										% For aptitudes enumeration 
+\usepackage{fontspec}											% Xelatex
+\usepackage{polyglossia}										% french
+\setmainlanguage{francais}
+\usepackage{url}												% Clickable URL's
 
 
+% -1/ Config from tccv.cls
+
+\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}		% Description
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
+\newenvironment{descriptionenvironement}{\descriptionstyle}{\par}
+\usepackage{color, hyperref}
+\newcommand{\Myhref}[2]{\href{#1}{\color{mybluegrey}{#2}}}					% ici la pona choisit la couleur pour la fonction "Myhref"
+
+
+\newcommand{\mission}[1]{\makebox[1.4cm][l]{\textbf{#1}}}
 
 
 % 0/ TOOLS
@@ -147,7 +166,7 @@
 	\end{textblock}
 }
 	\newcommand\tbfbirth[1]{
-    	*      & \normalsize  \bodyfont{#1}\smallskip\\	% EMAIL 
+    	\gtrsymBorn & \normalsize  \bodyfont{#1}\smallskip\\	% EMAIL 
 	}
 	\newcommand\tbfmail[1]{
     	\Letter      & \normalsize  \bodyfont{#1}\smallskip\\	% EMAIL 
@@ -165,14 +184,21 @@
     	\ifstrempty{#1}{}{\includegraphics[width=0.05\textwidth]{../Figure/flag.png}    & \normalsize  \bodyfont{#1}} % flag
 	}
 
+
 \newenvironment{languagelist}{
-    \renewcommand\item[2]{
-	##1 ##2	
+	\renewcommand\item[2]{
+		##1 & ##2 \\
 	}
+	\begin{tabular}[t]{ll}
 }{
+	\end{tabular}
 }
 
 
 
 
-
+	% \vspace{-2mm}
+	% \renewcommand\item[2][]{
+	% 	\hspace{1mm} \newline
+	% \parbox[t]{2cm}{##1} \parbox{2}{##2}
+	% }

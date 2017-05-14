@@ -1,7 +1,6 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl}
 
-
-
-\usepackage[svgnames]{xcolor}									% Colors by their 'svgnames'
+\usepackage{xcolor}									% Colors by their 'svgnames'
 
 \usepackage[bottom=0in,top=1.5in]{geometry}						% Set geometry
 	\addtolength{\oddsidemargin}{-0.25in}
@@ -18,7 +17,11 @@
 \newlength{\spacebox}
 \settowidth{\spacebox}{8888888888}								% Box to align text
 \newcommand{\sepspace}{\vspace*{1em}}							% Vertical space macro
+\usepackage{url}												% Clickable URL's
+\usepackage{graphicx}											% include foto
 
+\usepackage{polyglossia}										% french
+\setmainlanguage{francais}
 
 % 1/ Command
 
@@ -78,10 +81,11 @@
 
 % 2/ Environment
 \newenvironment{yearlist}{%
+	\tbfpart{Education}
     \renewcommand\item[4][]{
 	\vspace{0.5cm}
 	\noindent \textbf{##1} \hfill 					% Study
-	\colorbox{Black}{\color{White}##2} \par			% Duration
+	\colorbox{black}{\color{white}##2} \par			% Duration
 	\noindent \textit{##3} \par						% School
 	\noindent\hangindent=2em\hangafter=0 \small ##4 	% Description
 	\normalsize \par
@@ -99,9 +103,10 @@
 }
 
 \newenvironment{joblist}{
+	\tbfpart{Work}
     \renewcommand\item[4][]{
 	\noindent \textbf{##1} \hfill 					% Jobname
-	\colorbox{Black}{\color{White}##2} \par			% Duration
+	\colorbox{black}{\color{white}##2} \par			% Duration
 	\noindent \textit{##3} \par						% Company
 	\noindent\hangindent=2em\hangafter=0 \small ##4 % Description
 	\normalsize \par
@@ -110,13 +115,18 @@
 
 
 \newenvironment{languagelist}{
-	\vspace{-2mm}
-	\renewcommand\item[2][]{
-		\hspace{1mm} \newline
-		##1 ##2
+	\renewcommand\item[2]{
+		##1 & ##2 \\
 	}
+	\begin{tabular}[t]{ll}
+}{
+	\end{tabular}
 }
 
+
+\newenvironment{skilllist}{
+	\tbfpart{Skills}
+}
 
 \newcommand{\tbfskilltwo}[2]{
 	\noindent
