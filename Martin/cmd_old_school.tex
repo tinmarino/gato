@@ -1,0 +1,119 @@
+
+
+
+\usepackage[svgnames]{xcolor}									% Colors by their 'svgnames'
+
+\usepackage[bottom=0in,top=1.5in]{geometry}						% Set geometry
+	\addtolength{\oddsidemargin}{-0.25in}
+	\addtolength{\evensidemargin}{-0.25in}
+    \addtolength{\textwidth}{0.5in}
+    \addtolength{\textheight}{3in}
+
+
+\usepackage[absolute]{textpos}
+    \setlength{\TPHorizModule}{1cm} % sets our horizontal unit of measuring
+    \setlength{\TPVertModule}{1cm} % sets our vertical unit of measuring
+    \textblockorigin{0mm}{0mm} % and we start measuring in the top left corner
+
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}								% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}							% Vertical space macro
+
+
+% 1/ Command
+
+\usepackage{sectsty}							% Custom sectioning (see below)
+\sectionfont{%									% Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%					% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}
+	}
+\newcommand{\tbfpart}[1]{\section*{\uppercase{#1}}}
+
+
+% My name
+\newcommand{\tbfname}[2]{
+   \begin{textblock}{10}(7,2)
+	   \centering\huge\bfseries {#1 #2}
+   \end{textblock}  
+}
+
+
+
+\newcommand{\tbffoto}[1]{ % path of the foto  
+	\begin{textblock}{21}(17, 0.2)
+		\includegraphics[width=3cm]{#1}
+	\end{textblock}  
+}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=1em\hangafter=0 		% Indentation
+		\parbox{\spacebox}{						% Box to align text
+		   \textit{#1}}								% Entry name (birth, address, etc.)
+		 #2 \par
+}
+
+
+
+
+
+% Alias
+
+\newcommand\tbfbirth[1]{
+	\PersonalEntry{Né le :}{#1}
+}
+\newcommand\tbfmail[1]{
+	\PersonalEntry{Email :}{#1}
+}
+\newcommand\tbftel[1]{
+	\PersonalEntry{Tel :}{#1}
+}
+\newcommand\tbfaddr[1]{
+	\PersonalEntry{Addr :}{#1}
+}
+\newcommand\tbfvoidpersonal[1]{
+	\PersonalEntry{}{#1}
+}
+
+
+
+% 2/ Environment
+\newenvironment{yearlist}{%
+    \renewcommand\item[4][]{
+	\vspace{0.5cm}
+	\noindent \textbf{##1} \hfill 					% Study
+	\colorbox{Black}{\color{White}##2} \par			% Duration
+	\noindent \textit{##3} \par						% School
+	\noindent\hangindent=2em\hangafter=0 \small ##4 	% Description
+	\normalsize \par
+	}
+}
+
+
+\newenvironment{joblist}{
+    \renewcommand\item[4][]{
+	\noindent \textbf{##1} \hfill 					% Jobname
+	\colorbox{Black}{\color{White}##2} \par			% Duration
+	\noindent \textit{##3} \par						% Company
+	\noindent\hangindent=2em\hangafter=0 \small ##4 % Description
+	\normalsize \par
+	}
+}
+
+
+\newenvironment{languagelist}{
+	\vspace{-2mm}
+	\renewcommand\item[2][]{
+		\hspace{1mm} \newline
+		##1 ##2
+	}
+}
+
+
+\newcommand{\tbfskilltwo}[2]{
+	\noindent
+	\parbox[0cm][1.5cm][t]{2cm}{\textit{#1}\vfill}
+	\parbox[5cm][1.5cm][t]{15cm}{#2}
+}
+
+
+

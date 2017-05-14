@@ -1,0 +1,56 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl}
+\usepackage[utf8]{inputenc}										% True encoding
+\usepackage{graphicx}											% include foto
+\usepackage{url}												% Clickable URL's
+\frenchspacing													% Better looking spacings after periods
+
+\usepackage{fontspec}											% Xelatex
+\usepackage{polyglossia}										% french
+\setmainlanguage{francais}
+
+
+
+
+	
+
+
+\input{cmd_old_school.tex}
+
+
+   
+\newcommand{\MyData}[1]{ % string of the personal data 
+    \begin{textblock}{21}(0.5, 0.2)
+      { \vbox to 2cm { \vfill  { \flushleft  #1 }  }  }
+    \end{textblock}  
+}
+      
+      
+
+
+		
+		
+		
+
+\begin{document}
+
+
+
+\tbfname{Martin}{Tourneboeuf}
+
+\tbffoto{../Figure/martin2015.jpg}
+
+
+\MyData
+{
+\tbfbirth{25 Décembre 1988} 
+\tbfmail{\url{martin.tourneboeuf@gmail.com}}
+\tbftel{07 83 54 64 41} 
+\tbfaddr{49 Quai de la Prévalaye}
+\tbfvoidpersonal{35000 Rennes}
+}
+
+
+
+\include{data_french_2017}
+
+\end{document}
