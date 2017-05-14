@@ -88,6 +88,15 @@
 	}
 }
 
+\newenvironment{coordinatelist}{
+	\begin{textblock}{21}(0.5, 0.2)
+    \renewcommand\item[1][]{
+		  { \vbox to 2cm { \vfill  { \flushleft  ##1 }  }  }
+	}
+}
+{
+	\end{textblock}
+}
 
 \newenvironment{joblist}{
     \renewcommand\item[4][]{

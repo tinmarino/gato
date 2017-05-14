@@ -1,0 +1,178 @@
+
+\usepackage{graphicx}											% include foto
+\usepackage{tabularx}											% for coordinates
+\usepackage[framemethod=TikZ]{mdframed}							% For box around text
+\usepackage[overlay,absolute]{textpos}							% For Textblock
+	\setlength{\TPHorizModule}{1cm}
+	\setlength{\TPVertModule}{1cm}
+\usepackage{fontspec}											% For extended fonts
+
+\usepackage{enumitem}										% For aptitudes enumeration 
+
+
+
+
+% 0/ TOOLS
+% Name, size, x, y, nada 
+\newenvironment{internal}[5]
+{
+    \begin{textblock}{#2}(#3, #4)
+    \begin{mdframed}
+    \section{#1}
+}
+{
+    \end{mdframed}
+    \end{textblock}
+}
+
+\newenvironment{rounded_frame}[5]
+{
+    \mdfsetup{
+      middlelinecolor=mybluegrey,
+      middlelinewidth=1pt,
+      backgroundcolor=white!0,
+      roundcorner=10pt,
+      skipabove=30,
+      fontcolor=black,
+      innertopmargin=-10pt,
+      innerrightmargin=17pt,
+    }
+    \begin{internal}{#1}{#2}{#3}{#4}{#5}
+}
+{
+    \end{internal}
+}
+
+
+
+
+
+
+\newenvironment{flat_frame}[5]
+{
+    \mdfsetup{
+      middlelinecolor=mybluegrey,
+      middlelinewidth=1pt,
+      backgroundcolor=white!0,
+      roundcorner=10pt,
+      skipabove=30,
+      fontcolor=black,
+      innertopmargin=-10pt,
+      innerrightmargin=17pt,
+      middlelinecolor=white!0
+    }
+    \begin{internal}{#1}{#2}{#3}{#4}{#5}    
+}
+{
+    \end{internal}
+}
+
+
+
+% 1/ Commands
+\newcommand\tbfpart[1]{#1}
+\newcommand\tbfname[2]{
+	\begin{textblock}{21}( 0 , 1 )
+		 \centering{\headerfirstnamestyle{#1}   \headerlastnamestyle{#2}}
+	\end{textblock}
+}
+
+\newcommand\tbffoto[1]{
+	\begin{textblock}{21}( 17.2 , 0.6 )
+		\includegraphics[width=3cm]{#1}
+	\end{textblock}  
+}
+
+
+\newcommand\tbfdescription[1]{
+	\begin{textblock}{21}(0,2.3)
+	\begin{center}
+	\fontsize{10pt}{1.5em}\color{text}\bodyfontlight\upshape\selectfont
+
+		{\fontsize{14pt}{5em}\scshape\bfseries #1}
+		\vspace{5pt}
+
+
+	\end{center}
+	\end{textblock}  
+}
+
+\newcommand\tbfskilltwo[2]{
+	\section{#1} 
+	#2
+}
+
+
+% 2/ Environment
+\newenvironment{yearlist}{
+	\begin{rounded_frame}{Formation}{6.5}{0.5}{3.2}{}
+    \renewcommand\item[4][]{
+		\sc{\bodyfont{##2}} \hspace{0.2cm} \bfseries{\bodyfont{##3}} \\[1pt]
+		\sc{\bodyfont{##1}} \\[4pt]						
+		\textit{\descriptionstyle{##4}}
+    }  
+}{
+	\end{rounded_frame}
+}
+
+
+% [job] { years }  {company } { more }
+\newenvironment{joblist}{
+	\begin{flat_frame}{Expérience Professionnelle}{13.3}{7.3}{3.2}{}
+	\renewcommand\item[4][]{
+		{\raggedleft\sc{\bodyfont{##2}}\\[1pt]}                 % YEAR 
+		\sc\bfseries{\bodyfont{##1}}\\[1pt]             	% POSTE 
+		\sc\bodyfont{##3}\\[1pt]		                % COMPANY
+		\fontsize{9pt}{1em}\color{text}\bodyfontlight\upshape\selectfont ##4 \\[1pt]%Descritpion
+    }
+}{
+	\end{flat_frame}
+}
+
+\newenvironment{skilllist}{
+	\begin{rounded_frame}{Compétences}{ 6.5 } { 0.5 }{ 15.8 }{}
+}{
+	\end{rounded_frame}
+}
+
+
+\newenvironment{coordinatelist}{
+    \needspace{0.5\textheight}
+    \newdimen\boxwidth
+    \boxwidth=\dimexpr\linewidth-2\fboxsep\relax
+	\begin{textblock}{6.5}( 0.5 , 0.6 )
+    \begin{tabular}{l|l}
+}{
+    \end{tabular}
+	\end{textblock}
+}
+	\newcommand\tbfbirth[1]{
+    	*      & \normalsize  \bodyfont{#1}\smallskip\\	% EMAIL 
+	}
+	\newcommand\tbfmail[1]{
+    	\Letter      & \normalsize  \bodyfont{#1}\smallskip\\	% EMAIL 
+	}
+	\newcommand\tbfaddr[1]{
+    	\Writinghand & \normalsize  \bodyfont{#1}\smallskip\\   	%ADDR 
+	}
+	\newcommand\tbftel[1]{
+    	\Telefon     & \normalsize  \bodyfont{#1}\smallskip\\	% TEL 
+	}
+	\newcommand\tbfvoidpersonal[1]{
+    		\hspace{1mm}		& \normalsize  \bodyfont{#1}\smallskip\\	% TEL 
+	}
+	\newcommand\tbfflag[1]{
+    	\ifstrempty{#1}{}{\includegraphics[width=0.05\textwidth]{../Figure/flag.png}    & \normalsize  \bodyfont{#1}} % flag
+	}
+
+\newenvironment{languagelist}{
+    \renewcommand\item[2]{
+	##1 ##2	
+	}
+}{
+}
+
+
+
+
+
