@@ -17,23 +17,23 @@
 \setmainlanguage{francais}
 \usepackage{url}												% Clickable URL's
 
+\usepackage{amsfonts} 											% For checkmark
+
+
+
+% -2/ must be configured
+%\newif\iftbftiny
 
 % -1/ Config from tccv.cls
 
-\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}		% Description
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
-\newenvironment{descriptionenvironement}{\descriptionstyle}{\par}
-\usepackage{color, hyperref}
-\newcommand{\Myhref}[2]{\href{#1}{\color{mybluegrey}{#2}}}					% ici la pona choisit la couleur pour la fonction "Myhref"
 
 
-\newcommand{\mission}[1]{\makebox[1.4cm][l]{\textbf{#1}}}
+\providecommand\mission[1]{\makebox[1.6cm][l]{\textbf{#1}}}
 
 
 % 0/ TOOLS
 % Name, size, x, y, nada 
-\newenvironment{internal}[5]
+\newenvironment*{internal}[5]
 {
     \begin{textblock}{#2}(#3, #4)
     \begin{mdframed}
@@ -44,7 +44,7 @@
     \end{textblock}
 }
 
-\newenvironment{rounded_frame}[5]
+\newenvironment*{rounded_frame}[5]
 {
     \mdfsetup{
       middlelinecolor=mybluegrey,
@@ -106,11 +106,9 @@
 \newcommand\tbfdescription[1]{
 	\begin{textblock}{21}(0,2.3)
 	\begin{center}
-	\fontsize{10pt}{1.5em}\color{text}\bodyfontlight\upshape\selectfont
 
-		{\fontsize{14pt}{5em}\scshape\bfseries #1}
-		\vspace{5pt}
-
+	{\fontsize{14pt}{5em}\scshape\bfseries #1}
+	\vspace{5pt}
 
 	\end{center}
 	\end{textblock}  
@@ -139,6 +137,7 @@
 \newenvironment{joblist}{
 	\begin{flat_frame}{Expérience Professionnelle}{13.3}{7.3}{3.2}{}
 	\renewcommand\item[4][]{
+  		\iftbftiny \setlength{\parskip}{-10pt} \fi
 		{\raggedleft\sc{\bodyfont{##2}}\\[1pt]}                 % YEAR 
 		\sc\bfseries{\bodyfont{##1}}\\[1pt]             	% POSTE 
 		\sc\bodyfont{##3}\\[1pt]		                % COMPANY
@@ -166,22 +165,22 @@
 	\end{textblock}
 }
 	\newcommand\tbfbirth[1]{
-    	\gtrsymBorn & \normalsize  \bodyfont{#1}\smallskip\\	% EMAIL 
+    	\gtrsymBorn & \normalsize  \bodyfont{#1}\smallskip\\
 	}
 	\newcommand\tbfmail[1]{
-    	\Letter      & \normalsize  \bodyfont{#1}\smallskip\\	% EMAIL 
+    	\Letter      & \normalsize  \bodyfont{#1}\smallskip\\
 	}
 	\newcommand\tbfaddr[1]{
-    	\Writinghand & \normalsize  \bodyfont{#1}\smallskip\\   	%ADDR 
+    	\Writinghand & \normalsize  \bodyfont{#1}\smallskip\\
 	}
 	\newcommand\tbftel[1]{
-    	\Telefon     & \normalsize  \bodyfont{#1}\smallskip\\	% TEL 
+    	\Telefon     & \normalsize  \bodyfont{#1}\smallskip\\
 	}
 	\newcommand\tbfvoidpersonal[1]{
-    		\hspace{1mm}		& \normalsize  \bodyfont{#1}\smallskip\\	% TEL 
+    		\hspace{1mm}		& \normalsize  \bodyfont{#1}\smallskip\\
 	}
 	\newcommand\tbfflag[1]{
-    	\ifstrempty{#1}{}{\includegraphics[width=0.05\textwidth]{../Figure/flag.png}    & \normalsize  \bodyfont{#1}} % flag
+    	\includegraphics[width=0.05\textwidth]{../Figure/flag.png}    & \normalsize  \bodyfont{#1} \smallskip\\
 	}
 
 
