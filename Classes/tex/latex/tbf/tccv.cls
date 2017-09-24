@@ -31,7 +31,6 @@
 
 \setcounter{secnumdepth}{-1}
 \RequirePackage{bookman,etoolbox,hyperref,marvosym,needspace,tabularx,xcolor}
-\let\cvitem\item
 
 
 % Capitalize words of at least a minimum length (default to 3 chars).
@@ -195,3 +194,11 @@
     \vskip\raising\hrule height 0.4pt\vskip-\raising}
 \makeatother
 
+
+
+\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}		% Description
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
+\newenvironment{descriptionenvironement}{\descriptionstyle}{\par}
+\usepackage{color, hyperref}
+\newcommand{\Myhref}[2]{\href{#1}{\color{mybluegrey}{#2}}}					% ici la pona choisit la couleur pour la fonction "Myhref"

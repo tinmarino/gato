@@ -1,11 +1,6 @@
 \documentclass[30pt, french]{tccv}
 \usepackage[hmargin=0.2cm,vmargin=0cm]{geometry}
 \usepackage{amsfonts} 										% for the \checkmark command 
-\usepackage[framemethod=TikZ]{mdframed}						% For box around text
-\usepackage[overlay,absolute]{textpos}						% For Textblock
-\setlength{\TPHorizModule}{1cm}
-\setlength{\TPVertModule}{1cm}
-\usepackage{fontspec}										% For extended fonts
 \usepackage{enumitem}										% For aptitudes enumeration 
 
 
@@ -16,32 +11,7 @@
 }
 
 
-\newcommand\tbfname[2]{
-	\begin{textblock}{21}( 0 , 1 )
-		 \centering{\headerfirstnamestyle{#1}   \headerlastnamestyle{#2}}
-	\end{textblock}
-}
-
-\newcommand\tbffoto[1]{
-	\begin{textblock}{21}( 17.2 , 0.6 )
-		\includegraphics[width=3cm]{#1}
-	\end{textblock}  
-}
-
-
-\newcommand\tbfdescription[1]{
-	\begin{textblock}{21}(0,2.3)
-	\begin{center}
-	\fontsize{10pt}{1.5em}\color{text}\bodyfontlight\upshape\selectfont
-
-		{\fontsize{14pt}{5em}\scshape\bfseries #1}
-		\vspace{5pt}
-
-
-	\end{center}
-	\end{textblock}  
-}
-
+\input{cmd_two_column}
 
 \begin{document}
 \begin{upshape}
@@ -53,7 +23,6 @@
 
 
 % 0/ Header
-\begin{textblock}{6.5}( 0.5 , 0.6 )
 \personal
     []
     {\specialcell{49 Quai de la Prévalaye \\ 35000 Rennes}}
@@ -76,38 +45,32 @@
 
 
 % 1/ EDUCATION
-\begin{rounded_frame}{Formation}{6.5}{0.5}{3.2}{}
 \begin{yearlist}
 
-\vspace{0.5cm}
 \item[Master d'Astrophysique]{2011 -- 2013}
 	{Pontificia Universidad Cat\'olica (PUC), Santiago, Chili}
     {L'université Chilienne d'astronomie. 
     Le Chili est un leader mondial dans l'observation astronomique.}
 
 
-\vspace{0.5cm}
 \item[Diplôme d'ingénieur]{2008 -- 2013}
 	{\'Ecole Polytechnique (X), Paris, France}
     {Enseignement d'ingénieur pluridisciplinaire puis spécialisation en Physique 
     "des particules aux étoiles".}
 
 
-\vspace{0.5cm}    
 \item[Math Sup - Math Spé]{2006 -- 2008}
 	{Lyc\'ee Victor Grignard, Cherbourg, France}
 	{Math, Physique, Sciences de l'Ingénieur (MPSI);
  	deux ans de classes préparatoires aux concours des grandes écoles (CPGE).}
 
 
-\vspace{0.5cm}    
 \item[Baccalaur\'eat]{2003 -- 2005}
 	{Lyc\'ee Victor Grignard, Cherbourg, France}
 	{Baccalauréat série S mention très bien.}
 
 
 \end{yearlist}
-\end{rounded_frame}
 
 
 
@@ -117,7 +80,6 @@
 
 
 % 2/ EXPERIENCE
-\begin{flat_frame}{Expérience Professionnelle}{13.3}{7.3}{3.2}{}
 \begin{joblist}
 \item[Programmeur Java]{2014}
 	{Santiago, Chili}
@@ -155,7 +117,6 @@
 	{Cinq camps de vacances en tant qu'animateur (BAFA).}
 
 \end{joblist}
-\end{flat_frame}
 
 
 
@@ -163,11 +124,11 @@
 \begin{rounded_frame}{Compétences linguistiques}{ 6.5 } { 0.5 }{ 15.8 }{}
 
 
-\begin{factlist}
+\begin{languagelist}
 \item{Français}	{langue maternelle}
 \item{Espagnol}	{bilingue}
 \item{Anglais}	{courant} 
-\end{factlist}
+\end{languagelist}
 
 \section{Logiciels}
 		Python, 

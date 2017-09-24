@@ -23,7 +23,19 @@
 \usepackage{polyglossia}										% french
 \setmainlanguage{francais}
 
+\usepackage{amsfonts} 											% For checkmark
+
+
+
+
+
+
+
+
 % 1/ Command
+\let\cvitem\item
+
+\providecommand\mission[1]{\makebox[1.6cm][l]{\textbf{#1}}}
 
 \usepackage{sectsty}							% Custom sectioning (see below)
 \sectionfont{%									% Change font of \section command
@@ -35,11 +47,14 @@
 
 % My name
 \newcommand{\tbfname}[2]{
-   \begin{textblock}{10}(7,2)
+   \begin{textblock}{10}(7, 2)
 	   \centering\huge\bfseries {#1 #2}
    \end{textblock}  
 }
 
+\newcommand{\tbfdescription}[1]{
+	#1
+}
 
 
 \newcommand{\tbffoto}[1]{ % path of the foto  
@@ -61,6 +76,9 @@
 
 % Alias
 
+\newcommand\tbfflag[1]{
+	\PersonalEntry{Nat :}{#1}
+}
 \newcommand\tbfbirth[1]{
 	\PersonalEntry{Né le :}{#1}
 }
