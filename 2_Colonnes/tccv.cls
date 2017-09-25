@@ -224,7 +224,7 @@
     \needspace{0.5\textheight}%
     \newdimen\boxwidth%
     \boxwidth=\dimexpr\linewidth-2\fboxsep\relax%
-    \begin{tabularx}{\boxwidth}{c|X}
+    \begin{tabularx}{\boxwidth}{c|l}
     \Writinghand & \normalsize  \bodyfont{#2}\smallskip\\   	%ADDR 
     \Telefon     & \normalsize  \bodyfont{#3}\smallskip\\	% TEL 
     \Letter      & \normalsize  \bodyfont{#4}\smallskip\\	% EMAIL 
@@ -244,9 +244,9 @@
 \newenvironment{eventlist}{%
    % \setlength\itemsep{0cm}
     \renewcommand\item[3]{%
-	{\raggedleft\sc{\bodyfont{##1}}\\[1pt]}                 % YEAR 
-	\sc\bfseries{\bodyfont{##3}}\\[1pt]             	% POSTE 
-	\sc\bodyfont{##2}\\[1pt]		                % COMPANY
+	{\raggedleft\normalfont \scshape{\bodyfont{##1}}\\[1pt]}                 % YEAR 
+	\normalfont \scshape\bfseries{\bodyfont{##3}}\\[1pt]             	% POSTE 
+	\normalfont \scshape\bodyfont{##2}\\[1pt]		                % COMPANY
     }
 }
 
@@ -258,9 +258,9 @@
 % ]|
 \newenvironment{yearlist}{%
     \renewcommand\item[4][]{%
-	\sc{\bodyfont{##2}} \hspace{0.2cm} \bfseries{\bodyfont{##3}} \\[1pt]
-	\sc{\bodyfont{##1}} \\[4pt]						
-	\it{\descriptionstyle{##4}} \\
+	\normalfont \scshape{\bodyfont{##2}} \hspace{0.2cm} \bfseries{\bodyfont{##3}} \\[1pt]
+	\normalfont \scshape{\bodyfont{##1}} \\[4pt]						
+	\normalfont \itshape{\descriptionstyle{##4}} \\
     }  
 }
 
