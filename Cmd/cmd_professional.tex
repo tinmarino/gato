@@ -1,0 +1,154 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+
+% Now I add 
+\usepackage{amsfonts} 											% For checkmark
+
+\newif\iftbftiny
+
+
+\pagestyle{empty} % non-numbered pages
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+
+
+\let\cvitem\item
+\providecommand\mission[1]{\makebox[1.6cm][l]{\textbf{#1}}}
+
+
+%%
+%		Name
+%% 
+\newcommand{\tbfname}[2]{
+    \par{\centering
+		{\Huge Rocio \textsc{Sanhueza}
+	}\bigskip\par
+    }
+}
+
+
+%%
+%		Coordinates
+%% 
+\newenvironment{coordinatelist}{
+    \section{Informations personnels}
+    \begin{tabular}{rl}
+}{
+    \end{tabular}
+}
+\newcommand{\PersonalEntry}[2]{
+    \textsc{#1} & #2 \\
+}
+\newcommand\tbfflag[1]{
+	\PersonalEntry{Nat :}{#1}
+}
+\newcommand\tbfbirth[1]{
+	\PersonalEntry{Place and Date of Birth:}{#1}
+}
+\newcommand\tbfmail[1]{
+	\PersonalEntry{Email :}{#1}
+}
+\newcommand\tbftel[1]{
+	\PersonalEntry{Phone:}{#1}
+}
+\newcommand\tbfaddr[1]{
+	\PersonalEntry{Address:}{#1}
+}
+\newcommand\tbfvoidpersonal[1]{
+	\PersonalEntry{}{#1}
+}
+
+
+
+\newenvironment{yearlist}{
+    \section{Education}
+    \begin{tabular}{ r p{11cm}}
+    \renewcommand\item[4][]{
+    ##2 & ##1 \\
+    & \normalsize\textbf{##3}	\\
+    & ##4 
+    }
+}{
+    \end{tabular}
+}
+
+\newenvironment{joblist}{
+    \section{Experience profesionnelle}
+    \begin{tabular}{r|p{11cm}}
+    \renewcommand\item[4][]{
+    ##2 & ##1 			\\
+    & \emph{##3}		\\
+    & \begin{minipage}[b]{11cm}
+       ##4
+      \end{minipage} \\
+    }
+}{
+    \end{tabular}
+}
+
+\newenvironment{skilllist}{}
+
+\newenvironment{languagelist}{
+    \section{Languages}
+    \renewcommand\item[2]{
+	##1 & ##2 \\
+    }
+    % Note: tabular must be after the defition
+    \begin{tabular}[t]{rl} 
+}{
+    \end{tabular}
+}
+
+\newcommand{\tbfskilltwo}[2]{
+    \section{#1}
+    #2
+}
+
+
+
