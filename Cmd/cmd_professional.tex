@@ -38,7 +38,6 @@ ItalicFont = Fontin-Italic.otf
 %Italian hyphenation for the word: ''corporations''
 \hyphenation{im-pre-se}
 
-%-------------WATERMARK TEST [**not part of a CV**]---------------
 \usepackage[absolute]{textpos}
 
 \setlength{\TPHorizModule}{30mm}
@@ -49,7 +48,7 @@ ItalicFont = Fontin-Italic.otf
 
 % Now I add 
 \usepackage{amsfonts} 											% For checkmark
-
+\usepackage{longtable}											% Spread table on multiple pages
 \newif\iftbftiny
 
 
@@ -71,6 +70,8 @@ ItalicFont = Fontin-Italic.otf
 	}\bigskip\par
     }
 }
+\newcommand{\tbffoto}[1]{}
+\newcommand{\tbfdescription}[1]{}
 
 
 %%
@@ -107,32 +108,38 @@ ItalicFont = Fontin-Italic.otf
 
 
 \newenvironment{yearlist}{
-    \section{Education}
-    \begin{tabular}{ r p{11cm}}
     \renewcommand\item[4][]{
-    ##2 & ##1 \\
+    ##2 & ##1 			\\
     & \normalsize\textbf{##3}	\\
-    & ##4 
+    & ##4 			\\
+    \multicolumn{2}{c}{} 	\\    
     }
+    \section{Education}
+    \begin{longtable}{p{.20\textwidth} p{.80\textwidth}} 
 }{
-    \end{tabular}
+    \end{longtable}
 }
 
+
 \newenvironment{joblist}{
-    \section{Experience profesionnelle}
-    \begin{tabular}{r|p{11cm}}
     \renewcommand\item[4][]{
     ##2 & ##1 			\\
     & \emph{##3}		\\
     & \begin{minipage}[b]{11cm}
        ##4
-      \end{minipage} \\
+      \end{minipage} 		\\
+    \multicolumn{2}{c}{} 	\\
     }
+    % Note: tabular must be after the defition
+    \section{Experience profesionnelle}
+    \begin{longtable}{p{.20\textwidth} | p{.80\textwidth}} 
 }{
-    \end{tabular}
+    \end{longtable}
 }
 
+
 \newenvironment{skilllist}{}
+
 
 \newenvironment{languagelist}{
     \section{Languages}
@@ -140,10 +147,11 @@ ItalicFont = Fontin-Italic.otf
 	##1 & ##2 \\
     }
     % Note: tabular must be after the defition
-    \begin{tabular}[t]{rl} 
+    \begin{longtable}{p{.20\textwidth} p{.80\textwidth}} 
 }{
-    \end{tabular}
+    \end{longtable}
 }
+
 
 \newcommand{\tbfskilltwo}[2]{
     \section{#1}
