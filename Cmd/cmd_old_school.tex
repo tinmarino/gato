@@ -1,105 +1,127 @@
 \documentclass[paper=a4, fontsize=11pt]{scrartcl}
 
-\usepackage{xcolor}									% Colors by their 'svgnames'
+\usepackage{xcolor}			% Colors by their 'svgnames'
+\usepackage{graphicx}			% include foto
+\usepackage{polyglossia}		% french
+\setmainlanguage{francais}
+\usepackage{amsfonts} 			% For checkmark
+\usepackage{hyperref}			% for href
+\usepackage{url}			% Clickable URL's
 
-\usepackage[bottom=0in,top=1.5in]{geometry}						% Set geometry
-	\addtolength{\oddsidemargin}{-0.25in}
-	\addtolength{\evensidemargin}{-0.25in}
+
+
+\usepackage[bottom=0in,top=1.5in]{geometry}	% Set geometry
+    \addtolength{\oddsidemargin}{-0.25in}
+    \addtolength{\evensidemargin}{-0.25in}
     \addtolength{\textwidth}{0.5in}
     \addtolength{\textheight}{3in}
-
-
+    
 \usepackage[absolute]{textpos}
-    \setlength{\TPHorizModule}{1cm} % sets our horizontal unit of measuring
-    \setlength{\TPVertModule}{1cm} % sets our vertical unit of measuring
-    \textblockorigin{0mm}{0mm} % and we start measuring in the top left corner
+    \setlength{\TPHorizModule}{1cm} 	% sets our horizontal unit of measuring
+    \setlength{\TPVertModule}{1cm} 	% sets our vertical unit of measuring
+    \textblockorigin{0mm}{0mm} 		% and we start measuring in the top left corner
 
 \newlength{\spacebox}
-\settowidth{\spacebox}{8888888888}								% Box to align text
-\newcommand{\sepspace}{\vspace*{1em}}							% Vertical space macro
-\usepackage{url}												% Clickable URL's
-\usepackage{graphicx}											% include foto
+\settowidth{\spacebox}{8888888888}	% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}	% Vertical space macro
 
-\usepackage{polyglossia}										% french
-\setmainlanguage{francais}
+\newif\iftbftiny			% My varaible to know if I wanna contract
+\let\cvitem\item			% item -> cvitem cause I override item (for retro-compatibility)
 
-\usepackage{amsfonts} 											% For checkmark
-\usepackage{hyperref}											% for href
-
-
-
-
-\newif\iftbftiny
-
-
-
-
-% 1/ Command
-\let\cvitem\item
-
+% New command mission for Rocio
 \providecommand\mission[1]{\makebox[1.6cm][l]{\textbf{#1}}}
 
-\usepackage{sectsty}							% Custom sectioning (see below)
-\sectionfont{%									% Change font of \section command
-	\usefont{OT1}{phv}{b}{n}%					% bch-b-n: CharterBT-Bold font
+\usepackage{sectsty}				% Custom sectioning (see below)
+\sectionfont{%					% Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
 	\sectionrule{0pt}{0pt}{-5pt}{3pt}
 	}
+	
+% A Main part like Education, Formation ... 
 \newcommand{\tbfpart}[1]{\section*{\uppercase{#1}}}
 
 
 % My name
 \newcommand{\tbfname}[2]{
-   \begin{textblock}{10}(7, 2)
-	   \centering\huge\bfseries {#1 #2}
-   \end{textblock}  
+    \begin{textblock}{10}(7, 2)
+    \centering\huge\bfseries {#1 #2}
+    \end{textblock}  
 }
 
+% 2 lines describing my mood, speciality
 \newcommand{\tbfdescription}[1]{
-	#1
+    #1
+}
+
+% Foto
+% 1: Path to the image like ../Firgures/Rocio.png
+\newcommand{\tbffoto}[1]{ 
+    \begin{textblock}{21}(17, 0.2)
+    \includegraphics[width=3cm]{#1}
+    \end{textblock}  
 }
 
 
-\newcommand{\tbffoto}[1]{ % path of the foto  
-	\begin{textblock}{21}(17, 0.2)
-		\includegraphics[width=3cm]{#1}
-	\end{textblock}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%			1/ Coordinates
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{coordinatelist}{
+    \begin{textblock}{21}(0.5, 0.2)
+}
+{
+    \end{textblock}
 }
 
+
+% Coordinates main function
+% 1: Object (tel, email)
+% 2: Value (0669696969, toto@pona.fr)
 \newcommand{\PersonalEntry}[2]{
-		\noindent\hangindent=1em\hangafter=0 		% Indentation
-		\parbox{\spacebox}{						% Box to align text
-		   \textit{#1}}								% Entry name (birth, address, etc.)
-		 #2 \par
+    \noindent\hangindent=1em\hangafter=0 	% Indentation
+    \parbox{\spacebox}{				% Box to align text
+    \textit{#1}}				% Entry name (birth, address, etc.)
+    #2 \par
 }
-
-
-
-
 
 % Alias
+% 1: Value (birthdate, email) 
 \newcommand\tbfflag[1]{
-	\PersonalEntry{Nat :}{#1}
+    \PersonalEntry{Nat :}{#1}
 }
 \newcommand\tbfbirth[1]{
-	\PersonalEntry{Né le :}{#1}
+    \PersonalEntry{Né le :}{#1}
 }
 \newcommand\tbfmail[1]{
-	\PersonalEntry{Email :}{#1}
+    \PersonalEntry{Email :}{#1}
 }
 \newcommand\tbftel[1]{
-	\PersonalEntry{Tel :}{#1}
+    \PersonalEntry{Tel :}{#1}
 }
 \newcommand\tbfaddr[1]{
-	\PersonalEntry{Addr :}{#1}
+    \PersonalEntry{Addr :}{#1}
 }
 \newcommand\tbfvoidpersonal[1]{
-	\PersonalEntry{}{#1}
+    \PersonalEntry{}{#1}
 }
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%			2/ Education
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% 2/ Environment
-\newenvironment{yearlist}{%
+
+% Education: Yearlist
+% Item takes 4 arguments
+% 1: Studies (Master de popo)
+% 2: Year (1969)
+% 3: Place (Ecole de la fete)
+% 4: Descritpion (I learnt to smoke and drink)
+\newenvironment{yearlist}{
 	\tbfpart{Education}
 	\renewcommand\item[4][]{
 	\vspace{0.5cm}
@@ -111,47 +133,57 @@
 	}
 }
 
-\newenvironment{coordinatelist}{
-	\begin{textblock}{21}(0.5, 0.2)
-    \renewcommand\item[1][]{
-		  { \vbox to 2cm { \vfill  { \flushleft  ##1 }  }  }
-	}
-}
-{
-	\end{textblock}
-}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%			3/ Work
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Work: joblist
+% Item takes 4 arguments, exactely as a yearlist
+% 1: Jobname
+% 2: Year (1969)
+% 3: Place (Ecole de la fete)
+% 4: Descritpion (I learnt to smoke and drink)
 \newenvironment{joblist}{
-	\tbfpart{Work}
+    \tbfpart{Work}
     \renewcommand\item[4][]{
-	\noindent \textbf{##1} \hfill 					% Jobname
+	\noindent \textbf{##1} \hfill 				% Jobname
 	\colorbox{black}{\color{white}##2} \par			% Duration
-	\noindent \textit{##3} \par						% Company
-	\noindent\hangindent=2em\hangafter=0 \small ##4 % Description
+	\noindent \textit{##3} \par				% Company
+	\noindent\hangindent=2em\hangafter=0 \small ##4 	% Description
 	\normalsize \par
 	}
 }
 
-
+% Language: What you spoke
+% 1: Language (French)
+% 2: Level (native)
 \newenvironment{languagelist}{
-	\renewcommand\item[2]{
-		##1 & ##2 \\
-	}
-	\begin{tabular}[t]{ll}
+    \renewcommand\item[2]{
+	##1 & ##2 \\
+    }
+    \begin{tabular}[t]{ll}
 }{
-	\end{tabular}
+    \end{tabular}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%			4/ Skills
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Skill, just like that
 \newenvironment{skilllist}{
-	\tbfpart{Skills}
+    \tbfpart{Skills}
 }
 
+% 1: Categorie of skill (Logiciels)
+% 2: Enumerations of skills (Word, Excel, Python)
 \newcommand{\tbfskilltwo}[2]{
 	\noindent
 	\parbox[0cm][1.5cm][t]{2cm}{\textit{#1}\vfill}
 	\parbox[5cm][1.5cm][t]{15cm}{#2}
 }
-
-
-
