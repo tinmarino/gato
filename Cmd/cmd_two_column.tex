@@ -22,7 +22,7 @@
 
 
 % -2/ must be configured
-%\newif\iftbftiny
+\newif\iftbftiny
 
 % -1/ Config from tccv.cls
 
@@ -137,7 +137,7 @@
 \newenvironment{joblist}{
 	\begin{flat_frame}{Expérience Professionnelle}{13.3}{7.3}{3.2}{}
 	\renewcommand\item[4][]{
-  		% \iftbftiny \setlength{\parskip}{-10pt} \fi
+  		\iftbftiny \setlength{\parskip}{-10pt} \fi
 		{\raggedleft\sc{\bodyfont{##2}}\\[1pt]}                 % YEAR 
 		\sc\bfseries{\bodyfont{##1}}\\[1pt]             	% POSTE 
 		\sc\bodyfont{##3}\\[1pt]		                % COMPANY

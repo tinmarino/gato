@@ -24,10 +24,12 @@
 \setmainlanguage{francais}
 
 \usepackage{amsfonts} 											% For checkmark
+\usepackage{hyperref}											% for href
 
 
 
 
+\newif\iftbftiny
 
 
 
@@ -75,7 +77,6 @@
 
 
 % Alias
-
 \newcommand\tbfflag[1]{
 	\PersonalEntry{Nat :}{#1}
 }
@@ -100,13 +101,13 @@
 % 2/ Environment
 \newenvironment{yearlist}{%
 	\tbfpart{Education}
-    \renewcommand\item[4][]{
+	\renewcommand\item[4][]{
 	\vspace{0.5cm}
-	\noindent \textbf{##1} \hfill 					% Study
-	\colorbox{black}{\color{white}##2} \par			% Duration
-	\noindent \textit{##3} \par						% School
-	\noindent\hangindent=2em\hangafter=0 \small ##4 	% Description
-	\normalsize \par
+	    \noindent \textbf{##1} \hfill 					% Study
+	    \colorbox{black}{\color{white}##2} \par				% Duration
+	    \noindent \textit{##3} \par						% School
+	    \noindent\hangindent=2em\hangafter=0 \small ##4 			% Description
+	    \normalsize \par
 	}
 }
 
