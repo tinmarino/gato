@@ -66,11 +66,11 @@
 
 % Font 
 \RequirePackage{fontawesome}
-\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
+\newcommand*{\fontdir}[1][../fonts/]{\def\@fontdir{#1}}
 \fontdir
 \definecolor{awesome-skyblue}{HTML}{0395DE}
 
-\fontdir[fonts/]
+\fontdir[../fonts/]
 \colorlet{awesome}{awesome-skyblue}
 
 
