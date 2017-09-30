@@ -10,11 +10,11 @@
 
 
 
-\usepackage[bottom=0in,top=1.5in]{geometry}    % Set geometry
+\usepackage[bottom=0in,top=0.5in]{geometry}    % Set geometry
     \addtolength{\oddsidemargin}{-0.25in}
     \addtolength{\evensidemargin}{-0.25in}
     \addtolength{\textwidth}{0.5in}
-    \addtolength{\textheight}{3in}
+    % \addtolength{\textheight}{3in}
     
 \usepackage[absolute]{textpos}
     \setlength{\TPHorizModule}{1cm}     % sets our horizontal unit of measuring
@@ -55,11 +55,17 @@
     \begin{textblock}{10}(7, 2)
     \centering\huge\bfseries {#1 #2}
     \end{textblock}  
+    \vspace*{2.7cm}
 }
 
 % 2 lines describing my mood, speciality
-\newcommand{\tbfdescription}[1]{
-    #1
+\newcommand\tbfdescription[1]{
+	\begin{textblock}{10}(7 ,3)
+	\begin{center}
+	{\fontsize{14pt}{5em}\scshape\bfseries #1}
+	\vspace{5pt}
+	\end{center}
+	\end{textblock}  
 }
 
 % Foto
@@ -69,6 +75,7 @@
     \includegraphics[width=3cm]{#1}
     \end{textblock}  
 }
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,12 +140,14 @@
 \newenvironment{yearlist}{
     \tbfpart{Education}
     \renewcommand\item[4][]{
-    \vspace{0.5cm}
-        \noindent \textbf{##1} \hfill                       % Study
-        \colorbox{black}{\color{white}##2} \par             % Duration
-        \noindent \textit{##3} \par                         % School
+        \begin{samepage}
+        \hangindent=0em\noindent \textbf{##1} \hfill        % Study
+        \colorbox{black}{\color{white}##2} \par\nopagebreak % Duration
+        \noindent \textit{##3} \par\nopagebreak             % School
         \noindent\hangindent=2em\hangafter=0 \small ##4     % Description
         \normalsize \par
+        \end{samepage}
+        \vspace{0.5cm}
     }
 }
 
@@ -158,14 +167,17 @@
 \newenvironment{joblist}{
     \tbfpart{Work}
     \renewcommand\item[4][]{
-    \hangindent=0em\noindent \textbf{##1} \hfill        % Jobname
-    \colorbox{black}{\color{white}##2} \par             % Duration
-    \hangindent=0em\noindent\textit{##3}\par            % Company
-    \hangindent=2em\hangafter=0\small
-    {##4 }                                              % Description
+    \begin{samepage}
+    \hangindent=0em\noindent \textbf{##1} \hfill            % Jobname
+    \colorbox{black}{\color{white}##2} \par\nopagebreak     % Duration
+    \hangindent=0em\noindent\textit{##3}\par\nopagebreak    % Company
+    \hangindent=0em\hangafter=0\small
+    {##4}                                                   % Description
     \par
-    \hspace{0.5cm}
+    \end{samepage}
+    \vspace{0.5cm}
     }
+
 }
 
 
@@ -183,6 +195,7 @@
 % 1: Language (French)
 % 2: Level (native)
 \newenvironment{languagelist}{
+    \begin{samepage}
     \renewcommand\item[2]{
     ##1 & ##2 \\
     }
@@ -191,12 +204,15 @@
     \begin{tabular}{@{}ll}
 }{
     \end{tabular}
+    \end{samepage}
 }
 
 % 1: Categorie of skill (Logiciels)
 % 2: Enumerations of skills (Word, Excel, Python)
 \newcommand{\tbfskilltwo}[2]{
+    \begin{samepage}
     \tbfpart{#1}
     \hangafter=0{#2}
     \par
+    \end{samepage}
 }
