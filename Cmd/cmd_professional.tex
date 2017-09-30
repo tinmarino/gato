@@ -145,14 +145,17 @@ ItalicFont = Fontin-Italic.otf
 
 
 \newenvironment{languagelist}{
+    \begin{samepage}
     \section{Languages}
     \renewcommand\item[2]{
     ##1 & ##2 \\
     }
     % Note: tabular must be after the defition
-    \begin{longtable}{p{.20\textwidth} p{.80\textwidth}} 
+    % Note: The @{} is to remove indentation
+    \begin{longtable}{@{}p{.20\textwidth} p{.80\textwidth}} 
 }{
     \end{longtable}
+    \end{samepage}
 }
 
 
