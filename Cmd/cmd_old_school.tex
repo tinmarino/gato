@@ -10,7 +10,6 @@
 
 
 
-
 \usepackage[bottom=0in,top=1.5in]{geometry}    % Set geometry
     \addtolength{\oddsidemargin}{-0.25in}
     \addtolength{\evensidemargin}{-0.25in}
@@ -43,7 +42,7 @@
 
 % New command mission for Rocio: em is the width of a "M"
 \providecommand\mission[1]{
-    \noindent\makebox[3cm][l]{\textbf{#1}}
+    \noindent\makebox[2cm][l]{\textbf{#1}}
 }
 
 
@@ -135,10 +134,10 @@
     \tbfpart{Education}
     \renewcommand\item[4][]{
     \vspace{0.5cm}
-        \noindent \textbf{##1} \hfill                     % Study
-        \colorbox{black}{\color{white}##2} \par                % Duration
-        \noindent \textit{##3} \par                        % School
-        \noindent\hangindent=2em\hangafter=0 \small ##4             % Description
+        \noindent \textbf{##1} \hfill                       % Study
+        \colorbox{black}{\color{white}##2} \par             % Duration
+        \noindent \textit{##3} \par                         % School
+        \noindent\hangindent=2em\hangafter=0 \small ##4     % Description
         \normalsize \par
     }
 }
@@ -159,26 +158,16 @@
 \newenvironment{joblist}{
     \tbfpart{Work}
     \renewcommand\item[4][]{
-    \hangindent=0em\noindent \textbf{##1} \hfill                       % Jobname
+    \hangindent=0em\noindent \textbf{##1} \hfill        % Jobname
     \colorbox{black}{\color{white}##2} \par             % Duration
-    \hangindent=0em\noindent\textit{##3}\par                         % Company
-    \hangindent=2em\hangafter=0\small          
-    {##4 }                                            % Description
-    %\normalsize \par
+    \hangindent=0em\noindent\textit{##3}\par            % Company
+    \hangindent=2em\hangafter=0\small
+    {##4 }                                              % Description
+    \par
+    \hspace{0.5cm}
     }
 }
 
-% Language: What you spoke
-% 1: Language (French)
-% 2: Level (native)
-\newenvironment{languagelist}{
-    \renewcommand\item[2]{
-    ##1 & ##2 \\
-    }
-    \begin{tabular}[t]{ll}
-}{
-    \end{tabular}
-}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -187,14 +176,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Skill, just like that
-\newenvironment{skilllist}{
-    \tbfpart{Skills}
+\newenvironment{skilllist}{}
+
+
+% Language: What you spoke
+% 1: Language (French)
+% 2: Level (native)
+\newenvironment{languagelist}{
+    \renewcommand\item[2]{
+    ##1 & ##2 \\
+    }
+    \tbfpart{Language}
+    % Note: The @{} is to remove indentation
+    \begin{tabular}{@{}ll}
+}{
+    \end{tabular}
 }
 
 % 1: Categorie of skill (Logiciels)
 % 2: Enumerations of skills (Word, Excel, Python)
 \newcommand{\tbfskilltwo}[2]{
-    \noindent
-    \parbox[0cm][1.5cm][t]{2cm}{\textit{#1}\vfill}
-    \parbox[5cm][1.5cm][t]{15cm}{#2}
+    \tbfpart{#1}
+    \hangafter=0{#2}
+    \par
 }
