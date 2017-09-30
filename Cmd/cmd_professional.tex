@@ -8,14 +8,14 @@
 
 %A Few Useful Packages
 \usepackage{marvosym}
-\usepackage{fontspec} 					%for loading fonts
-\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\usepackage{fontspec}                     %for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip}     %other packages for formatting
 \RequirePackage{color,graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[big]{layaureo} 				%better formatting of the A4 page
+\usepackage[big]{layaureo}                 %better formatting of the A4 page
 % an alternative to Layaureo can be ** \usepackage{fullpage} **
-\usepackage{supertabular} 				%for Grades
-\usepackage{titlesec}					%custom \section
+\usepackage{supertabular}                 %for Grades
+\usepackage{titlesec}                    %custom \section
 
 %Setup hyperref package, and colours for links
 \usepackage{hyperref}
@@ -50,8 +50,8 @@ ItalicFont = Fontin-Italic.otf
 
 
 % Now I add 
-\usepackage{amsfonts} 											% For checkmark
-\usepackage{longtable}											% Spread table on multiple pages
+\usepackage{amsfonts}                                             % For checkmark
+\usepackage{longtable}                                            % Spread table on multiple pages
 \newif\iftbftiny
 
 
@@ -65,12 +65,12 @@ ItalicFont = Fontin-Italic.otf
 
 
 %%
-%		Name
+%        Name
 %% 
 \newcommand{\tbfname}[2]{
     \par{\centering
-		{\Huge Rocio \textsc{Sanhueza}
-	}\bigskip\par
+        {\Huge Rocio \textsc{Sanhueza}
+    }\bigskip\par
     }
 }
 \newcommand{\tbffoto}[1]{}
@@ -78,7 +78,7 @@ ItalicFont = Fontin-Italic.otf
 
 
 %%
-%		Coordinates
+%        Coordinates
 %% 
 \newenvironment{coordinatelist}{
     \section{Informations personnels}
@@ -90,32 +90,32 @@ ItalicFont = Fontin-Italic.otf
     \textsc{#1} & #2 \\
 }
 \newcommand\tbfflag[1]{
-	\PersonalEntry{Nat :}{#1}
+    \PersonalEntry{Nat :}{#1}
 }
 \newcommand\tbfbirth[1]{
-	\PersonalEntry{Place and Date of Birth:}{#1}
+    \PersonalEntry{Place and Date of Birth:}{#1}
 }
 \newcommand\tbfmail[1]{
-	\PersonalEntry{Email :}{#1}
+    \PersonalEntry{Email :}{#1}
 }
 \newcommand\tbftel[1]{
-	\PersonalEntry{Phone:}{#1}
+    \PersonalEntry{Phone:}{#1}
 }
 \newcommand\tbfaddr[1]{
-	\PersonalEntry{Address:}{#1}
+    \PersonalEntry{Address:}{#1}
 }
 \newcommand\tbfvoidpersonal[1]{
-	\PersonalEntry{}{#1}
+    \PersonalEntry{}{#1}
 }
 
 
 
 \newenvironment{yearlist}{
     \renewcommand\item[4][]{
-    ##2 & \large\textbf{##1} 			\\*
-    & \normalsize\textbf{##3}	        \\*
-    & ##4 			                    \\*
-    \multicolumn{2}{c}{} 	            \\
+    ##2 & \large\textbf{##1}                \\*
+    & \normalsize\textbf{##3}               \\*
+    & ##4                                   \\*
+    \multicolumn{2}{c}{}                    \\
     }
     \section{Education}
     \begin{longtable}{p{.20\textwidth} p{.80\textwidth}} 
@@ -126,12 +126,12 @@ ItalicFont = Fontin-Italic.otf
 
 \newenvironment{joblist}{
     \renewcommand\item[4][]{
-    ##2 & \large\textbf{##1} 			    \\*
-    & \emph{##3}		                    \\*
+    ##2 & \large\textbf{##1}                \\*
+    & \emph{##3}                            \\*
     & \begin{minipage}[b]{0.8\textwidth}
        ##4
-      \end{minipage} 		                \\*
-    \multicolumn{2}{c}{} 	                \\
+      \end{minipage}                        \\*
+    \multicolumn{2}{c}{}                    \\
     }
     % Note: tabular must be after the defition
     \section{Experience profesionnelle}
@@ -147,7 +147,7 @@ ItalicFont = Fontin-Italic.otf
 \newenvironment{languagelist}{
     \section{Languages}
     \renewcommand\item[2]{
-	##1 & ##2 \\
+    ##1 & ##2 \\
     }
     % Note: tabular must be after the defition
     \begin{longtable}{p{.20\textwidth} p{.80\textwidth}} 
