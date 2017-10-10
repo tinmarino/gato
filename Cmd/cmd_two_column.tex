@@ -26,6 +26,8 @@
 
 % -1/ Config from tccv.cls
 
+\def\tbflanguage{}
+  	  
 
 
 \providecommand\mission[1]{\makebox[1.6cm][l]{\textbf{#1}}}
@@ -117,6 +119,12 @@
 	\section{#1} 
 	#2
 }
+
+%\ifnum\pdfstrcmp{\tbflanguage}{english}=0
+%   String equales
+%\else
+%   String not equales
+%\fi
 
 
 % 2/ Formation
