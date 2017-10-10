@@ -24,12 +24,34 @@
 % -2/ must be configured
 \newif\iftbftiny
 
+% Language
+\def\wordeducation{}
+\def\wordwork{}
+\def\wordskill{}
+\def\wordsoftware{}
+\def\wordlanguage{}
+\ifnum\pdfstrcmp{\tbflanguage}{english}=0
+\def\wordeducation{Education}
+\def\wordwork{Work Experience}
+\def\wordskill{Skill}
+\def\wordsoftware{Software}
+\def\wordlanguage{Language}
+\fi
+\ifnum\pdfstrcmp{\tbflanguage}{french}=0
+\def\wordeducation{Formation}
+\def\wordwork{Expérience Professionnelle}
+\def\wordskill{Compétences}
+\def\wordsoftware{Logiciel}
+\def\wordlanguage{Langue}
+\fi
+\ifnum\pdfstrcmp{\tbflanguage}{spanish}=0
+\def\wordeducation{}
+\def\wordwork{}
+\def\wordskill{}
+\fi
+
+
 % -1/ Config from tccv.cls
-
-\def\tbflanguage{}
-  	  
-
-
 \providecommand\mission[1]{\makebox[1.6cm][l]{\textbf{#1}}}
 \let\cvitem\item
 
@@ -120,16 +142,11 @@
 	#2
 }
 
-%\ifnum\pdfstrcmp{\tbflanguage}{english}=0
-%   String equales
-%\else
-%   String not equales
-%\fi
 
 
 % 2/ Formation
 \newenvironment{yearlist}{
-	\begin{rounded_frame}{Formation}{7.5}{0.5}{3.5}{}
+	\begin{rounded_frame}{\wordeducation}{7.5}{0.5}{3.5}{}
 	\relscale{1.2}
     \renewcommand\item[4][]{
 		\textsc{\bodyfont{##2}} \hspace{0.2cm} \bodyfont{##3} \\[1pt]
@@ -144,7 +161,7 @@
 % [job] { years }  {company } { more }
 %                                                      Width, X (horizontal), Y (vertical)
 \newenvironment{joblist}{
-	\begin{flat_frame}{Expérience Professionnelle}{12.8}{8.0}{3.5}{}
+	\begin{flat_frame}{\wordwork}{12.8}{8.0}{3.5}{}
 	\relscale{1.27}
 	\renewcommand\item[4][]{
 		\vspace*{0.3cm}
@@ -158,8 +175,9 @@
 	\end{flat_frame}
 }
 
+% Here I put language cause langauges are first
 \newenvironment{skilllist}{
-	\begin{rounded_frame}{Compétences}{ 7.5 } { 0.5 }{ 15.3 }{}
+	\begin{rounded_frame}{\wordlanguage}{ 7.5 } { 0.5 }{ 15.3 }{}
 	\relscale{1.2}
 }{
 	\end{rounded_frame}
