@@ -19,3 +19,8 @@ cv_13/
 2016
 Awesome CV/Bck/
 CV para pasar a Latex.odt
+*.swp
+*.bbl
+*.blg
+2_Colonnes/.fuse_hid*
+*.zip
