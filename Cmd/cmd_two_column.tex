@@ -142,24 +142,10 @@
 
 
 
-% 2/ Formation
-\newenvironment{yearlist}{
-	\begin{rounded_frame}{\wordeducation}{7.5}{0.6}{3.5}{}
-	\relscale{1.2}
-    \renewcommand\item[4][]{
-		\textsc{\bodyfont{##2}} \hspace{0.2cm} \bodyfont{##3} \\[1pt]
-		\bodyfont{\bfseries{##1}} 	\\					
-		\textit{\descriptionstyle{##4}} \\
-    }  
-}{
-	\end{rounded_frame}
-}
-
-
 % [job] { years }  {company } { more }
 %                                Width, X (horizontal), Y (vertical)
 \newenvironment{joblist}{
-	\begin{flat_frame}{\wordwork}{12.8}{8.2}{3.5}{}
+	\begin{flat_frame}{\wordwork}{13.3}{7.8}{3.5}{}
 	\relscale{1.27}
 	\renewcommand\item[4][]{
 		\vspace*{0.3cm}
@@ -173,9 +159,23 @@
 	\end{flat_frame}
 }
 
-% Here I put language cause langauges are first
+% 2/ Formation
+\newenvironment{yearlist}{
+	\begin{rounded_frame}{\wordeducation}{7.2}{0.6}{3.5}{}
+	\relscale{1.2}
+    \renewcommand\item[4][]{
+		\textsc{\bodyfont{##2}} \hspace{0.2cm} \bodyfont{##3} \\[1pt]
+		\bodyfont{\bfseries{##1}} 	\\					
+		\textit{\descriptionstyle{##4}} \\
+    }  
+}{
+	\end{rounded_frame}
+}
+
+
+% 3/ Compétence
 \newenvironment{skilllist}{
-	\begin{rounded_frame}{\wordlanguage}{ 7.5 } { 0.6 }{ 15.7 }{}
+	\begin{rounded_frame}{\wordlanguage}{ 7.2 } { 0.6 }{ 15.7 }{}
 	\relscale{1.2}
 }{
 	\end{rounded_frame}
