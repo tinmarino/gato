@@ -22,12 +22,10 @@
 \usepackage{amsfonts} 											% For checkmark
 \usepackage{relsize}		                                    % Scale font
 \usepackage{everysel}                                           % For font for all
-%\renewcommand*\familydefault{\ttdefault}
-%\EverySelectfont{%
-    %\fontdimen2\font=0.4em  % interword space
+%\EverySelectfont{                                               % More readable
+    %\fontdimen2\font=0.3em  % interword space
     %\fontdimen3\font=0.2em  % interword stretch
     %\fontdimen4\font=0.1em % interword shrink
-    %\fontdimen7\font=0.1em % extra space
 %}
 
 
@@ -128,7 +126,7 @@
 \newcommand\tbfpart[1]{#1}
 \newcommand\tbfname[2]{
 	\begin{textblock}{23}( 0 , 1 )
-		 \centering{\headerfirstnamestyle{#1}   \headerlastnamestyle{#2}}
+		 \centering{\headerfirstnamestyle{#1} \hspace{5pt} \headerlastnamestyle{#2}}
 	\end{textblock}
 }
 
@@ -164,10 +162,12 @@
 	\renewcommand\item[4][]{
 		\vspace*{0.3cm}
   		\iftbftiny \setlength{\parskip}{-10pt} \fi
-		{\raggedleft\textsc{\bodyfont{##2}}\\[1pt]}                 % YEAR 
-		\textsc\bfseries{\bodyfont{##1}}\\[1pt]             	% POSTE 
-		\textsc\bodyfont{##3}\\[1pt]		                % COMPANY
-		\bodyfontlight\upshape{##4}
+		{\raggedleft\textsc{\bodyfont{##2}}\\[1pt]}                 % YEAR
+		
+        %\hspace*{-0.325cm}                                          % TODO : remove me : Countermesure : interword space (font) move me to the right)
+		\textsc\bfseries{\bodyfont{##1}}\\[1pt]             	    % POSTE 
+		\textsc\bodyfont{##3}\\[1pt]		                        % COMPANY
+		\bodyfontlight\upshape{##4}                                 % DESCRIPTION  
     }
 }{
 	\end{flat_frame}
