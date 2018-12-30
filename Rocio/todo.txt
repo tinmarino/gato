@@ -1,5 +1,3 @@
-Skill : Left align  lists even if line continuatino (that tend to center the line and desalign the begining)
-
 MORE
 =================
 

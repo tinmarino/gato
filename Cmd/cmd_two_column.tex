@@ -154,10 +154,7 @@
 	\end{textblock}  
 }
 
-\newcommand\tbfskilltwo[2]{
-	\section{#1} 
-	#2
-}
+\newcommand\tbfskilltwo[1]{\section{#1}}
 
 
 
@@ -243,3 +240,14 @@
 }{
 	\end{tabular}
 }
+
+\newenvironment{stufflist}{
+	\renewcommand\item[2]{
+		##1 & ##2 \\
+	}
+	\setlength\tabcolsep{1.5pt} % default value: 6pt
+	\begin{tabular}[]{p{0.1cm}p{6cm}}
+}{
+	\end{tabular}
+}
+
