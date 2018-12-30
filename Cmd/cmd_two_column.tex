@@ -26,7 +26,7 @@
 % Doc : https://texfaq.org/FAQ-patch && http://texblog.net/latex-archive/plaintex/full-justification-with-typewriter-font/ && https://tex.stackexchange.com/questions/264224/increase-word-space-between-words-in-small-caps/264248#264248
 \usepackage{everysel}
 \EverySelectfont{%
-    \fontdimen2\font=0.4em% interword space
+    \fontdimen2\font=0.3em% interword space
     \hyphenchar\font=`\-% to allow hyphenation
     \xspaceskip=0em
 }
@@ -164,7 +164,7 @@
 % [job] { years }  {company } { more }
 %                                Width, X (horizontal), Y (vertical)
 \newenvironment{joblist}{
-	\begin{flat_frame}{\wordwork}{13.2}{7.8}{3.5}{}
+	\begin{flat_frame}{\wordwork}{13.2}{7.8}{3.9}{}
 	\relscale{1.27}
 	\renewcommand\item[4][]{
 		\vspace*{0.3cm}
@@ -181,11 +181,11 @@
 
 % 2/ Formation
 \newenvironment{yearlist}{
-	\begin{rounded_frame}{\wordeducation}{7.1}{0.7}{3.5}{}
+	\begin{rounded_frame}{\wordeducation}{7.1}{0.7}{3.9}{}
 	\relscale{1.2}
     \renewcommand\item[4][]{
 		\textsc{\bodyfont{##2}}                                     % YEAR
-            \hspace{0.2cm}                                          % TODO align them because letter 0 takes more space then 1
+            \hspace*{0.2cm}                                          % TODO align them because letter 0 takes more space then 1
             \textsc\bfseries{\bodyfont{##1}} \\[1pt]                % DIPLOME                           
 		\textsc\bodyfont{##3} 	\\					                % ETABLISSEMENT
 		\textit\descriptionstyle{##4} \\                            % DESCRIPTION
@@ -198,7 +198,7 @@
 
 % 3/ Compétence
 \newenvironment{skilllist}{
-	\begin{rounded_frame}{\wordlanguage}{ 7.1 } { 0.7 }{ 15.0 }{}
+	\begin{rounded_frame}{\wordlanguage}{ 7.1 } { 0.7 }{ 14.8 }{}
 	\relscale{1.2}
 }{
 	\end{rounded_frame}
