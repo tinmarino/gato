@@ -18,15 +18,17 @@
 \hypersetup{hidelinks}
 
 % Font
+% \namefont \titlefont \addressfont \sectionfont \subsectionfont \hintfont \quotefont \bodyfont
 \usepackage{fontspec}											% For extended fonts
 \usepackage{amsfonts} 											% For checkmark
 \usepackage{relsize}		                                    % Scale font
-\usepackage{everysel}                                           % For font for all
-%\EverySelectfont{                                               % More readable
-    %\fontdimen2\font=0.3em  % interword space
-    %\fontdimen3\font=0.2em  % interword stretch
-    %\fontdimen4\font=0.1em % interword shrink
-%}
+% Doc : https://texfaq.org/FAQ-patch && http://texblog.net/latex-archive/plaintex/full-justification-with-typewriter-font/ && https://tex.stackexchange.com/questions/264224/increase-word-space-between-words-in-small-caps/264248#264248
+\usepackage{everysel}
+\EverySelectfont{%
+    \fontdimen2\font=0.4em% interword space
+    \hyphenchar\font=`\-% to allow hyphenation
+    \xspaceskip=0em
+}
 
 
 % -2/ must be configured
@@ -41,7 +43,7 @@
 \ifnum\pdfstrcmp{\tbflanguage}{french}=0
 \def\wordeducation{Formation}
 \def\wordwork{Expérience Professionnelle}
-\def\wordskill{Compétences}
+\def\wordskill{Compétence}
 \def\wordsoftware{Logiciel}
 \def\wordlanguage{Langue}
 \fi
@@ -55,7 +57,7 @@
 \ifnum\pdfstrcmp{\tbflanguage}{spanish}=0
 \def\wordeducation{Formacion}
 \def\wordwork{Experiencia Profesional}
-\def\wordskill{Competencias}
+\def\wordskill{Competencia}
 \def\wordsoftware{Software}
 \def\wordlanguage{Idiomas}
 \fi
@@ -219,7 +221,7 @@
     	\Telefon     & \normalsize  \bodyfont{#1}\smallskip\\
 	}
 	\newcommand\tbfvoidpersonal[1]{
-    		\hspace{1mm}		& \normalsize  \bodyfont{#1}\smallskip\\
+        \hspace{1mm}		& \normalsize  \bodyfont{#1}\smallskip\\
 	}
 	\newcommand\tbfflag[1]{
     	\includegraphics[width=0.05\textwidth]{../Figure/flag.png}    & \normalsize  \bodyfont{#1} \smallskip\\
