@@ -1,6 +1,6 @@
 \documentclass[paper=a4, fontsize=11pt]{tccv}					% Unfortynately must keep some stuff in class for now
 
-\usepackage{fontspec}											% For extended fonts
+% Drawings
 \usepackage{graphicx}											% include foto
 \usepackage{tabularx}											% for coordinates
 \usepackage[framemethod=TikZ]{mdframed}							% For box around text
@@ -9,15 +9,27 @@
 	\setlength{\TPVertModule}{1cm}
 \usepackage{enumitem}											% For aptitudes enumeration 
 \usepackage{genealogytree}										% Born 
-\frenchspacing													% Better looking spacings after periods
 
+% French
+\frenchspacing													% Better looking spacings after periods
 \usepackage{polyglossia}										% french
 \setmainlanguage{francais}
 \usepackage{url}												% Clickable URL's
 \hypersetup{hidelinks}
-\usepackage{amsfonts} 											% For checkmark
 
-\usepackage{relsize}		% Scale font 
+% Font
+\usepackage{fontspec}											% For extended fonts
+\usepackage{amsfonts} 											% For checkmark
+\usepackage{relsize}		                                    % Scale font
+\usepackage{everysel}                                           % For font for all
+%\renewcommand*\familydefault{\ttdefault}
+%\EverySelectfont{%
+    %\fontdimen2\font=0.4em  % interword space
+    %\fontdimen3\font=0.2em  % interword stretch
+    %\fontdimen4\font=0.1em % interword shrink
+    %\fontdimen7\font=0.1em % extra space
+%}
+
 
 % -2/ must be configured
 \newif\iftbftiny
