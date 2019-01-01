@@ -1,5 +1,8 @@
 \documentclass[paper=a4, fontsize=11pt]{tccv}					% Unfortynately must keep some stuff in class for now
 
+% API
+\usepackage{xargs}									            % Key - value parameters
+
 % Drawings
 \usepackage{graphicx}											% include foto
 \usepackage{tabularx}											% for coordinates
@@ -57,7 +60,7 @@
 \def\wordwork{Working Experience}
 \def\wordskill{Skill}
 \def\wordsoftware{Software}
-\def\wordlanguage{Language profiency}
+\def\wordlanguage{Language}
 \fi
 \ifnum\pdfstrcmp{\tbflanguage}{spanish}=0
 \def\wordeducation{Formacion}
@@ -130,6 +133,10 @@
 
 
 % 1/ Commands
+\newcommand\tbflogo[1]{
+    \includegraphics[width=0.35cm, height=0.35cm]{#1}
+}
+
 \newcommand\tbfpart[1]{#1}
 \newcommand\tbfname[2]{
 	\begin{textblock}{23}( 0 , 1 )
@@ -160,7 +167,7 @@
 
 % [job] { years }  {company } { more }
 %                                Width, X (horizontal), Y (vertical)
-\newenvironment{joblist}{
+\newenvironmentx{joblist}{
 	\begin{flat_frame}{\wordwork}{13.2}{7.8}{3.9}{}
 	\relscale{1.27}
 	\renewcommand\item[4][]{
