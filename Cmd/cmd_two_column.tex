@@ -3,6 +3,7 @@
 % API
 \usepackage{xargs}									            % Key - value parameters
 
+
 % Drawings
 \usepackage{graphicx}											% include foto
 \usepackage{tabularx}											% for coordinates
@@ -13,13 +14,21 @@
 \usepackage{enumitem}											% For aptitudes enumeration 
 \usepackage{genealogytree}										% Born 
 
-% Display + Margin + French
+% Display + Margin
 \tolerance=1000
-\frenchspacing													% Better looking spacings after periods
-\usepackage{polyglossia}										% french
-\setmainlanguage{francais}
 \usepackage{url}												% Clickable URL's
 \hypersetup{hidelinks}
+
+% Language
+\usepackage{polyglossia}										% Language
+\ifnum\pdfstrcmp{\tbflanguage}{french}=0
+\frenchspacing													% Better looking spacings after periods
+\setmainlanguage{francais}
+\fi
+\ifnum\pdfstrcmp{\tbflanguage}{english}=0
+\setmainlanguage{english}
+\fi
+
 
 % Font
 % \namefont \titlefont \addressfont \sectionfont \subsectionfont \hintfont \quotefont \bodyfont
