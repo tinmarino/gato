@@ -167,8 +167,8 @@
 
 % [job] { years }  {company } { more }
 %                                Width, X (horizontal), Y (vertical)
-\newenvironmentx{joblist}{
-	\begin{flat_frame}{\wordwork}{13.2}{7.8}{3.9}{}
+\newenvironmentx{joblist}[3][1=13.2, 2=7.8, 3=3.9]{
+	\begin{flat_frame}{\wordwork}{#1}{#2}{#3}{}
 	\relscale{1.27}
 	\renewcommand\item[4][]{
 		\vspace*{0.3cm}
@@ -184,8 +184,8 @@
 }
 
 % 2/ Formation
-\newenvironment{yearlist}{
-	\begin{rounded_frame}{\wordeducation}{7.1}{0.7}{3.9}{}
+\newenvironmentx{yearlist}[3][1=7.1, 2=0.7, 3=3.9]{
+	\begin{rounded_frame}{\wordeducation}{#1}{#2}{#3}{}
 	\relscale{1.2}
     \renewcommand\item[4][]{
 		\textsc{\bodyfont{##2}}                                     % YEAR
@@ -201,8 +201,8 @@
 
 
 % 3/ Compétence
-\newenvironment{skilllist}{
-	\begin{rounded_frame}{\wordlanguage}{ 7.1 } { 0.7 }{ 14.8 }{}
+\newenvironmentx{skilllist}[3][1=7.1, 2=0.7, 3=14.8]{
+	\begin{rounded_frame}{\wordlanguage}{#1}{#2}{#3}{}
 	\relscale{1.2}
 }{
 	\end{rounded_frame}
