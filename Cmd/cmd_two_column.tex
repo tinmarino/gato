@@ -75,7 +75,41 @@
 \providecommand\mission[1]{\makebox[1.6cm][l]{\textbf{#1}}}
 \let\cvitem\item
 
-% 0/ TOOLS
+
+% 1/ Commands
+\newcommand\tbflogo[1]{\includegraphics[width=0.35cm, height=0.35cm]{#1}}
+\newcommand\tbfimflag[1]{\includegraphics[height=0.3cm]{#1}\phantom{\tiny{1}}}
+\newcommand\tbfsoft[2]{\includegraphics[height=0.3cm]{#2}\phantom{\tiny{1}}#1}
+
+\newcommand\tbfpart[1]{#1}
+\newcommand\tbfname[2]{
+	\begin{textblock}{23}( 0 , 1 )
+		 \centering{\headerfirstnamestyle{#1} \hspace{5pt} \headerlastnamestyle{#2}}
+	\end{textblock}
+}
+
+\newcommand\tbffoto[1]{
+	\begin{textblock}{23}( 17.2 , 0.6 )
+		\includegraphics[width=3cm]{#1}
+	\end{textblock}  
+}
+
+
+\newcommand\tbfdescription[1]{
+	\begin{textblock}{23}(0,2.3)
+	\begin{center}
+
+	{\fontsize{12,5pt}{0.5cm}\scshape\bfseries #1}
+
+	\end{center}
+	\end{textblock}  
+}
+
+\newcommand\tbfskilltwo[1]{\section{#1}}
+
+
+
+% 2/ TOOLS
 % Name, size, x, y, nada 
 \newenvironment*{internal}[5]
 {
@@ -107,10 +141,6 @@
 }
 
 
-
-
-
-
 \newenvironment{flat_frame}[5]
 {
     \mdfsetup{
@@ -132,39 +162,9 @@
 
 
 
-% 1/ Commands
-\newcommand\tbflogo[1]{
-    \includegraphics[width=0.35cm, height=0.35cm]{#1}
-}
-
-\newcommand\tbfpart[1]{#1}
-\newcommand\tbfname[2]{
-	\begin{textblock}{23}( 0 , 1 )
-		 \centering{\headerfirstnamestyle{#1} \hspace{5pt} \headerlastnamestyle{#2}}
-	\end{textblock}
-}
-
-\newcommand\tbffoto[1]{
-	\begin{textblock}{23}( 17.2 , 0.6 )
-		\includegraphics[width=3cm]{#1}
-	\end{textblock}  
-}
 
 
-\newcommand\tbfdescription[1]{
-	\begin{textblock}{23}(0,2.3)
-	\begin{center}
-
-	{\fontsize{12,5pt}{0.5cm}\scshape\bfseries #1}
-
-	\end{center}
-	\end{textblock}  
-}
-
-\newcommand\tbfskilltwo[1]{\section{#1}}
-
-
-
+% 3/ ENVIRONMENT
 % [job] { years }  {company } { more }
 %                                Width, X (horizontal), Y (vertical)
 \newenvironmentx{joblist}[3][1=13.2, 2=7.8, 3=3.9]{
@@ -183,7 +183,7 @@
 	\end{flat_frame}
 }
 
-% 2/ Formation
+% Formation
 \newenvironmentx{yearlist}[3][1=7.1, 2=0.7, 3=3.9]{
 	\begin{rounded_frame}{\wordeducation}{#1}{#2}{#3}{}
 	\relscale{1.2}
@@ -200,7 +200,7 @@
 }
 
 
-% 3/ Compétence
+% Compétence
 \newenvironmentx{skilllist}[3][1=7.1, 2=0.7, 3=14.8]{
 	\begin{rounded_frame}{\wordlanguage}{#1}{#2}{#3}{}
 	\relscale{1.2}
@@ -219,24 +219,24 @@
     \end{tabular}
 	\end{textblock}
 }
-	\newcommand\tbfbirth[1]{
-    	\gtrsymBorn & \normalsize  \bodyfont{#1}\smallskip\\
-	}
-	\newcommand\tbfmail[1]{
-    	\Letter      & \normalsize  \bodyfont{#1}\smallskip\\
-	}
-	\newcommand\tbfaddr[1]{
-    	\Writinghand & \normalsize  \bodyfont{#1}\smallskip\\
-	}
-	\newcommand\tbftel[1]{
-    	\Telefon     & \normalsize  \bodyfont{#1}\smallskip\\
-	}
-	\newcommand\tbfvoidpersonal[1]{
-        \hspace{1mm}		& \normalsize  \bodyfont{#1}\smallskip\\
-	}
-	\newcommand\tbfflag[1]{
-    	\includegraphics[width=0.05\textwidth]{../Figure/flag.png}    & \normalsize  \bodyfont{#1} \smallskip\\
-	}
+\newcommand\tbfbirth[1]{
+    \gtrsymBorn & \normalsize  \bodyfont{#1}\smallskip\\
+}
+\newcommand\tbfmail[1]{
+    \Letter      & \normalsize  \bodyfont{#1}\smallskip\\
+}
+\newcommand\tbfaddr[1]{
+    \Writinghand & \normalsize  \bodyfont{#1}\smallskip\\
+}
+\newcommand\tbftel[1]{
+    \Telefon     & \normalsize  \bodyfont{#1}\smallskip\\
+}
+\newcommand\tbfvoidpersonal[1]{
+    \hspace{1mm}		& \normalsize  \bodyfont{#1}\smallskip\\
+}
+\newcommand\tbfflag[1]{
+    \includegraphics[width=0.05\textwidth]{../Figure/flag.png}    & \normalsize  \bodyfont{#1} \smallskip\\
+}
 
 
 \newenvironment{languagelist}{

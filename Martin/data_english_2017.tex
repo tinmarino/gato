@@ -2,7 +2,8 @@
 
 % TODO 
 % Image victor grignard sans fond
-% API
+% Chercher un mot plus approprié pour ``myself'' (autodidact)
+% changer la font de l'émail
 
 % 0/ Header
 \tbfname{Martin}{Tourneboeuf}
@@ -10,7 +11,7 @@
 %\tbffoto{../Figure/martin2015.jpg}
 
 \begin{coordinatelist}
-	\tbfmail{\url{martin.tourneboeuf@gmail.com}}
+	\tbfmail{martin.tourneboeuf@gmail.com}
 	\tbfbirth{25 Décembre 1988}
 	\tbftel{07 83 54 64 41} 
 	\tbfaddr{49 Quai de la Prévalaye}
@@ -21,7 +22,7 @@
 
 
 % 1/ Education
-\begin{yearlist}
+\begin{yearlist}[7.1][0.7][3]
 \item[Astronomy (Master)]{2011 -- 2013}
 	{
     \tbflogo{../Figure/logo/puc_128.png}
@@ -58,7 +59,7 @@
 
 
 % 2/ Job
-\begin{joblist}
+\begin{joblist}[13.2][7.8][3]
 
 \item[Security Informatician]{2015 -- 2017}
 	{
@@ -119,28 +120,44 @@
 
 
 % 3/ Skill
-\begin{skilllist}[7.1][0.7][19.8]
+\begin{skilllist}[7.1][0.7][18]
 
 \begin{languagelist}
-\item{French} 	{mother tongue}
-\item{Spanish} 	{bilingual}
-\item{English} 	{fluent} 
+\item{\tbfimflag{../Figure/flag/france_128x85.png}French} 	{mother tongue}
+\item{\tbfimflag{../Figure/flag/spain_128x85.png}Spanish} 	{bilingual}
+\item{\tbfimflag{../Figure/flag/great_britain_128x85.png}English} 	{fluent} 
 \end{languagelist}
 
 
 \tbfskilltwo{Software}
-		Java,
-		C++, 
-		Python, 
-		BaSh, 
-		IRAF, 
-		Assembly (x86, ARM), 
-		Vim, 
-		\LaTeX
+		\textbf{Interpreted:}
+		\tbfsoft{Python}{../Figure/language/128_python.png},
+		\tbfsoft{BaSh}{../Figure/language/128x145_bash.png},
+		\tbfsoft{Perl}{../Figure/language/128_perl.png},
+		\tbfsoft{JavaScript}{../Figure/language/128_js.png},
+		\tbfsoft{Iraf}{../Figure/language/128_iraf.png},
+		\\
+		\vspace{-0.3cm}
+		
+        \textbf{Compiled:}
+		\tbfsoft{Java}{../Figure/language/128_java.png},
+		\tbfsoft{C++}{../Figure/language/128_cpp.png},
+		Assembly (x86, Arm) \\
+		\vspace{-0.3cm}
+		
+		\textbf{Markup:}
+		\tbfsoft{\LaTeX}{../Figure/language/128_latex.png},
+		\tbfsoft{Html}{../Figure/language/128_html.png} \\
+		\vspace{-0.3cm}
+		
+		\textbf{Program:}
+		\tbfsoft{Vim}{../Figure/language/128_vim_white.png},
+		\tbfsoft{Ida}{../Figure/language/128_ida_white.jpg}
+		\vspace{-0.3cm}
 	
 
 \tbfskilltwo{Activity}
-	Swim, Bike, Climb, Sky-dive
+	Swim, Travel, Walk, Talk
 
 
 \end{skilllist}
