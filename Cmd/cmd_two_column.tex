@@ -2,7 +2,7 @@
 
 % API
 \usepackage{xargs}									            % Key - value parameters
-
+\usepackage{xcolor}
 
 % Drawings
 \usepackage{graphicx}											% include foto
@@ -20,15 +20,17 @@
 \hypersetup{hidelinks}
 
 % Language
+\typeout{tbf : language}
 \usepackage{polyglossia}										% Language
 \ifnum\pdfstrcmp{\tbflanguage}{french}=0
 \frenchspacing													% Better looking spacings after periods
-\setmainlanguage{francais}
+\setmainlanguage{french}
 \fi
 \ifnum\pdfstrcmp{\tbflanguage}{english}=0
 \setmainlanguage{english}
 \fi
 \ifnum\pdfstrcmp{\tbflanguage}{spanish}=0
+\typeout{tbf : spanish}
 \setmainlanguage{spanish}
 \fi
 
@@ -64,7 +66,7 @@
 \def\wordwork{Expérience Professionnelle}
 \def\wordskill{Compétence}
 \def\wordsoftware{Logiciel}
-\def\wordlanguage{Langue}
+\def\wordlanguage{Langues}
 \fi
 \ifnum\pdfstrcmp{\tbflanguage}{english}=0
 \def\wordeducation{Education}
@@ -74,7 +76,7 @@
 \def\wordlanguage{Language}
 \fi
 \ifnum\pdfstrcmp{\tbflanguage}{spanish}=0
-\def\wordeducation{Formacion}
+\def\wordeducation{Formación}
 \def\wordwork{Experiencia Profesional}
 \def\wordskill{Competencia}
 \def\wordsoftware{Software}
@@ -100,8 +102,8 @@
 }
 
 \newcommand\tbffoto[1]{
-	\begin{textblock}{23}( 17.2 , 0.6 )
-		\includegraphics[width=3cm]{#1}
+	\begin{textblock}{23}( 17.7 , 0.6 )
+		\includegraphics[width=2.8cm]{#1}
 	\end{textblock}  
 }
 
@@ -110,7 +112,7 @@
 	\begin{textblock}{23}(0,2.3)
 	\begin{center}
 
-	{\fontsize{12,5pt}{0.5cm}\scshape\bfseries #1}
+	{\fontsize{15pt}{0.6cm}\scshape\bfseries #1}
 
 	\end{center}
 	\end{textblock}  
@@ -200,7 +202,7 @@
 	\relscale{1.2}
     \renewcommand\item[4][]{
 		\textsc{\bodyfont{##2}}                                     % YEAR
-            \hspace*{0.2cm}                                          % TODO align them because letter 0 takes more space then 1
+            \hspace*{0.2cm}                                         % TODO align them because letter 0 takes more space than 1
             \textsc\bfseries{\bodyfont{##1}} \\[1pt]                % DIPLOME                           
 		\textsc\bodyfont{##3} 	\\					                % ETABLISSEMENT
 		\textit\descriptionstyle{##4} \\                            % DESCRIPTION
@@ -211,8 +213,8 @@
 }
 
 
-% Compétence
-\newenvironmentx{skilllist}[3][1=7.1, 2=0.7, 3=14.8]{
+% Compétence width, x, y
+\newenvironmentx{skilllist}[3][1=7.1, 2=0.7, 3=15.2]{
 	\begin{rounded_frame}{\wordlanguage}{#1}{#2}{#3}{}
 	\relscale{1.2}
 }{
@@ -231,7 +233,7 @@
 	\end{textblock}
 }
 \newcommand\tbfbirth[1]{
-    \gtrsymBorn & \normalsize  \bodyfont{#1}\smallskip\\
+    \includegraphics[width=0.05\textwidth]{../Figure/logo/birthday1_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
 }
 \newcommand\tbfmail[1]{
     \Letter      & \normalsize  \bodyfont{#1}\smallskip\\
@@ -247,6 +249,9 @@
 }
 \newcommand\tbfflag[1]{
     \includegraphics[width=0.05\textwidth]{../Figure/flag.png}    & \normalsize  \bodyfont{#1} \smallskip\\
+}
+\newcommand\tbfcar[1]{
+    \includegraphics[width=0.05\textwidth]{../Figure/logo/car1_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
 }
 
 
