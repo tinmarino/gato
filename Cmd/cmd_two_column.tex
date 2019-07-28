@@ -108,11 +108,11 @@
 }
 
 
-\newcommand\tbfdescription[1]{
+\newcommand\tbfdescription[2][16pt]{
 	\begin{textblock}{23}(0,2.3)
 	\begin{center}
 
-	{\fontsize{16pt}{0.6cm}\scshape\bfseries #1}
+    {\fontsize{#1}{0.6cm} \scshape\bfseries #2}
 
 	\end{center}
 	\end{textblock}  
