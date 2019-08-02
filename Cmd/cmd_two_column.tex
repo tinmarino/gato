@@ -1,29 +1,29 @@
-\documentclass[paper=a4, fontsize=11pt]{tccv}					% Unfortynately must keep some stuff in class for now
+\documentclass[paper=a4, fontsize=11pt]{tccv}          % Unfortynately must keep some stuff in class for now
 
 % API
-\usepackage{xargs}									            % Key - value parameters
+\usepackage{xargs}                              % Key - value parameters
 \usepackage{xcolor}
 
 % Drawings
-\usepackage{graphicx}											% include foto
-\usepackage{tabularx}											% for coordinates
-\usepackage[framemethod=TikZ]{mdframed}							% For box around text
-\usepackage[overlay,absolute]{textpos}							% For Textblock
-	\setlength{\TPHorizModule}{1cm}
-	\setlength{\TPVertModule}{1cm}
-\usepackage{enumitem}											% For aptitudes enumeration 
-\usepackage{genealogytree}										% Born 
+\usepackage{graphicx}                      % include foto
+\usepackage{tabularx}                      % for coordinates
+\usepackage[framemethod=TikZ]{mdframed}              % For box around text
+\usepackage[overlay,absolute]{textpos}              % For Textblock
+  \setlength{\TPHorizModule}{1cm}
+  \setlength{\TPVertModule}{1cm}
+\usepackage{enumitem}                      % For aptitudes enumeration
+\usepackage{genealogytree}                    % Born
 
 % Display + Margin
 \tolerance=1000
-\usepackage{url}												% Clickable URL's
+\usepackage{url}                        % Clickable URL's
 \hypersetup{hidelinks}
 
 % Language
 \typeout{tbf : language}
-\usepackage{polyglossia}										% Language
+\usepackage{polyglossia}                    % Language
 \ifnum\pdfstrcmp{\tbflanguage}{french}=0
-\frenchspacing													% Better looking spacings after periods
+\frenchspacing                          % Better looking spacings after periods
 \setmainlanguage{french}
 \fi
 \ifnum\pdfstrcmp{\tbflanguage}{english}=0
@@ -36,9 +36,9 @@
 
 % Font
 % \namefont \titlefont \addressfont \sectionfont \subsectionfont \hintfont \quotefont \bodyfont
-\usepackage{fontspec}											% For extended fonts
-\usepackage{amsfonts} 											% For checkmark
-\usepackage{relsize}		                                    % Scale font
+\usepackage{fontspec}                      % For extended fonts
+\usepackage{amsfonts}                       % For checkmark
+\usepackage{relsize}                                        % Scale font
 % Doc : https://texfaq.org/FAQ-patch && http://texblog.net/latex-archive/plaintex/full-justification-with-typewriter-font/ && https://tex.stackexchange.com/questions/264224/increase-word-space-between-words-in-small-caps/264248#264248
 \usepackage{everysel}
 \EverySelectfont{%
@@ -96,26 +96,26 @@
 
 \newcommand\tbfpart[1]{#1}
 \newcommand\tbfname[2]{
-	\begin{textblock}{23}( 0 , 1 )
-		 \centering{\headerfirstnamestyle{#1} \hspace{5pt} \headerlastnamestyle{#2}}
-	\end{textblock}
+  \begin{textblock}{23}( 0 , 1 )
+     \centering{\headerfirstnamestyle{#1} \hspace{5pt} \headerlastnamestyle{#2}}
+  \end{textblock}
 }
 
 \newcommand\tbffoto[1]{
-	\begin{textblock}{23}( 17.7 , 0.6 )
-		\includegraphics[width=2.8cm]{#1}
-	\end{textblock}  
+  \begin{textblock}{23}( 17.7 , 0.6 )
+    \includegraphics[width=2.8cm]{#1}
+  \end{textblock}
 }
 
 
 \newcommand\tbfdescription[2][16pt]{
-	\begin{textblock}{23}(0,2.3)
-	\begin{center}
+  \begin{textblock}{23}(0,2.3)
+  \begin{center}
 
     {\fontsize{#1}{0.6cm} \scshape\bfseries #2}
 
-	\end{center}
-	\end{textblock}  
+  \end{center}
+  \end{textblock}
 }
 
 \newcommand\tbfskilltwo[1]{\section{#1}}
@@ -123,7 +123,7 @@
 
 
 % 2/ TOOLS
-% Name, size, x, y, nada 
+% Name, size, x, y, nada
 \newenvironment*{internal}[5]
 {
     \begin{textblock}{#2}(#3, #4)
@@ -167,7 +167,7 @@
       innerrightmargin=17pt,
       middlelinecolor=white!0
     }
-    \begin{internal}{#1}{#2}{#3}{#4}{#5}    
+    \begin{internal}{#1}{#2}{#3}{#4}{#5}
 }
 {
     \end{internal}
@@ -181,44 +181,44 @@
 % [job] { years }  {company } { more }
 %                                Width, X (horizontal), Y (vertical)
 \newenvironmentx{joblist}[3][1=13.2, 2=7.8, 3=3.9]{
-	\begin{flat_frame}{\wordwork}{#1}{#2}{#3}{}
-	\relscale{1.27}
-	\renewcommand\item[4][]{
-		\vspace*{0.3cm}
-  		\iftbftiny \setlength{\parskip}{-10pt} \fi
-		{\raggedleft\textsc{\bodyfont{##2}}\\[1pt]}                 % YEAR
-		
-		\textsc\bfseries{\bodyfont{##1}}\\[1pt]             	    % POSTE 
-		\textsc\bodyfont{##3}\\[1pt]		                        % COMPANY
-		\bodyfontlight\upshape{##4}                                 % DESCRIPTION  
+  \begin{flat_frame}{\wordwork}{#1}{#2}{#3}{}
+  \relscale{1.27}
+  \renewcommand\item[4][]{
+    \vspace*{0.3cm}
+      \iftbftiny \setlength{\parskip}{-10pt} \fi
+    {\raggedleft\textsc{\bodyfont{##2}}\\[1pt]}                 % YEAR
+
+    \textsc\bfseries{\bodyfont{##1}}\\[1pt]                   % POSTE
+    \textsc\bodyfont{##3}\\[1pt]                            % COMPANY
+    \bodyfontlight\upshape{##4}                                 % DESCRIPTION
     }
 }{
-	\end{flat_frame}
+  \end{flat_frame}
 }
 
 % Formation
 \newenvironmentx{yearlist}[3][1=7.1, 2=0.7, 3=3.9]{
-	\begin{rounded_frame}{\wordeducation}{#1}{#2}{#3}{}
-	\relscale{1.2}
+  \begin{rounded_frame}{\wordeducation}{#1}{#2}{#3}{}
+  \relscale{1.2}
     \renewcommand\item[4][]{
-		\textsc{\bodyfont{##2}}                                     % YEAR
+    \textsc{\bodyfont{##2}}                                     % YEAR
             \hspace*{0.2cm}                                         % TODO align them because letter 0 takes more space than 1
-            \textsc\bfseries{\bodyfont{##1}} \\[1pt]                % DIPLOME                           
-		\textsc\bodyfont{##3} 	\\					                % ETABLISSEMENT
-		\textit\descriptionstyle{##4} \\                            % DESCRIPTION
-		\vspace{-0.3cm} % reduce horizontal space
-    }  
+            \textsc\bfseries{\bodyfont{##1}} \\[1pt]                % DIPLOME
+    \textsc\bodyfont{##3}   \\                          % ETABLISSEMENT
+    \textit\descriptionstyle{##4} \\                            % DESCRIPTION
+    \vspace{-0.3cm} % reduce horizontal space
+    }
 }{
-	\end{rounded_frame}
+  \end{rounded_frame}
 }
 
 
 % Compétence width, x, y
 \newenvironmentx{skilllist}[3][1=7.1, 2=0.7, 3=15.2]{
-	\begin{rounded_frame}{\wordlanguage}{#1}{#2}{#3}{}
-	\relscale{1.2}
+  \begin{rounded_frame}{\wordlanguage}{#1}{#2}{#3}{}
+  \relscale{1.2}
 }{
-	\end{rounded_frame}
+  \end{rounded_frame}
 }
 
 
@@ -226,11 +226,11 @@
     \needspace{0.5\textheight}
     \newdimen\boxwidth
     \boxwidth=\dimexpr\linewidth-2\fboxsep\relax
-	\begin{textblock}{6.5}( 0.6 , 0.6 )
+  \begin{textblock}{6.5}( 0.6 , 0.6 )
     \begin{tabular}{l|l}
 }{
     \end{tabular}
-	\end{textblock}
+  \end{textblock}
 }
 \newcommand\tbfbirth[1]{
     \includegraphics[width=0.05\textwidth]{../Figure/logo/birthday1_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
@@ -245,7 +245,7 @@
     \Telefon     & \normalsize  \bodyfont{#1}\smallskip\\
 }
 \newcommand\tbfvoidpersonal[1]{
-    \hspace{1mm}		& \normalsize  \bodyfont{#1}\smallskip\\
+    \hspace{1mm}    & \normalsize  \bodyfont{#1}\smallskip\\
 }
 \newcommand\tbfflag[1]{
     \includegraphics[width=0.05\textwidth]{../Figure/flag.png}    & \normalsize  \bodyfont{#1} \smallskip\\
@@ -259,21 +259,21 @@
 
 
 \newenvironment{languagelist}{
-	\renewcommand\item[2]{
-		##1 & ##2 \\
-	}
-	\begin{tabular}[t]{ll}
+  \renewcommand\item[2]{
+    ##1 & ##2 \\
+  }
+  \begin{tabular}[t]{ll}
 }{
-	\end{tabular}
+  \end{tabular}
 }
 
 \newenvironment{stufflist}{
-	\renewcommand\item[2]{
-		##1 & ##2 \\
-	}
-	\setlength\tabcolsep{1.5pt} % default value: 6pt
-	\begin{tabular}[]{p{0.1cm}p{6cm}}
+  \renewcommand\item[2]{
+    ##1 & ##2 \\
+  }
+  \setlength\tabcolsep{1.5pt} % default value: 6pt
+  \begin{tabular}[]{p{0.1cm}p{6cm}}
 }{
-	\end{tabular}
+  \end{tabular}
 }
 
