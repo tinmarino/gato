@@ -1,4 +1,11 @@
 
+% -2/ Language
+\def\tbflanguage{spanish}
+
+% -1/ Type of CV
+\input{../Cmd/cmd_two_column}
+
+\begin{document}
 
 % 0/ Header
 \tbfname{Martin}{Tourneboeuf}
@@ -26,9 +33,11 @@
 \begin{yearlist}[7.7][0.7][3.5]
 
 \relscale{1.15}
+\tolerance=10000
+
 \item[Astronomía (magíster)]{2011 -- 2013}
 	{
-    \tbflogo{../Figure/logo/puc_128.png}
+  \tbflogo{../Figure/logo/puc_128.png}
 	\href{http://www.uc.cl/}{PUC}, Santiago, Chile
 	}
     {Astrofísica, computación}
@@ -36,7 +45,7 @@
 
 \item[Ingeniería]{2008 -- 2011}
 	{
-    \tbflogo{../Figure/logo/x_black_128.png}	
+  \tbflogo{../Figure/logo/x_black_128.png}	
 	\href{https://www.polytechnique.edu/}{Polytechnique}, Paris, Francia
 	}
     {Matemáticas, física, informática}
@@ -45,7 +54,7 @@
 \item[Escuela preparatoria]{2006 -- 2008}
 	{
 	\tbflogo{../Figure/logo/grignard_128.png}	
-	\href{http://www.lycee-grignard.fr/}{Lyc\'ee Victor Grignard}, Cherbourg, Francia
+	\href{http://www.lycee-grignard.fr/}{Lycée Victor Grignard}, Cherbourg, Francia
 	}
 	{Matemáticas, física : especialización}
 
@@ -53,7 +62,7 @@
 \item[Baccalaur\'eat]{2003 -- 2005}
 	{
 	\tbflogo{../Figure/logo/grignard_128.png}	
-	\href{http://www.lycee-grignard.fr/}{Lyc\'ee Victor Grignard}, Cherbourg, Francia
+	\href{http://www.lycee-grignard.fr/}{Lycée Victor Grignard}, Cherbourg, Francia
 	}
   {Ciencias naturales : diploma de enseñanza media}
     
@@ -63,8 +72,8 @@
 % 2/ Job
 \begin{joblist}[12.8][8.4][3.5]
 
-\relscale{1.35}
-\setlength{\parskip}{0.4cm}
+\relscale{1.1}
+\setlength{\parskip}{0.6cm}
 \vspace{-0.4cm}
 
 \item[Analista de seguridad informática]{2015 -- 2019}
@@ -98,6 +107,12 @@
 	}
   {Desarrollo de un programa con interfaz gráfica para medir la calidad de imagen (Python)}
 
+\item[Astrónomo (practica)]{2012}
+	{
+	\tbflogo{../Figure/logo/cfht_128.png}
+\href{http://www.eso.org/public/}{Canada France Hawaii Telescope (CFHT)}, Waimea, USA
+  }
+  {Cosmología observacional : estudio estadístico de la historia de formación estellar (SFR)}
 	
 \item[Primeras experiencias laborales]{2006 -- 2009}
 	{
@@ -122,6 +137,7 @@
 
 % 3/ Skill
 \begin{skilllist}[7.7][0.7][18]
+
 \relscale{1.1}
 \tolerance=10000
 
@@ -164,3 +180,5 @@
 	
 
 \end{skilllist}
+
+\end{document}
