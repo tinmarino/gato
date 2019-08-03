@@ -1,6 +1,8 @@
 
 % -2/ Language
 \def\tbflanguage{spanish}
+\def\tbfbordertop{1}
+\def\tbfborderleft{0.7}
 
 % -1/ Type of CV
 \input{../Cmd/cmd_two_column}
@@ -8,7 +10,13 @@
 \begin{document}
 
 % 0/ Header
-\tbfname{Martin}{Tourneboeuf}
+\tbfname{\vspace{0.3cm}Martin}{Tourneboeuf}
+
+\tbfdescription[20pt]{
+    \vspace{0.4cm}
+    Físico,
+    Informático
+}
 
 \tbffoto{../Figure/martin2015.jpg}
 
@@ -22,16 +30,11 @@
 	\tbfvoidpersonal{35000 Rennes}
 \end{coordinatelist}
 
-\tbfdescription[20pt]{
-    Físico,
-    Informático
-}
 
 
 
 % 1/ Education
-\begin{yearlist}[7.7][0.7][3.5]
-
+\begin{yearlist}[7.7][\tbfborderleft][4]
 \relscale{1.1}
 \tolerance=100
 
@@ -70,10 +73,10 @@
 
 
 % 2/ Job
-\begin{joblist}[12.8][8.4][3.5]
+\begin{joblist}[12.8][8.4][4]
 
 \relscale{1.1}
-\setlength{\parskip}{0.1cm}
+\setlength{\parskip}{0.4cm}
 \vspace{-0.4cm}
 
 \item[Analista de seguridad informática]{2015 -- 2019}
@@ -138,7 +141,7 @@
 
 
 % 3/ Skill
-\begin{skilllist}[7.7][0.7][18]
+\begin{skilllist}[7.7][\tbfborderleft][16.8]
 
 \relscale{1.1}
 \tolerance=9999
