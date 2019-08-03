@@ -3,6 +3,8 @@
 % API
 \usepackage{xargs}                              % Key - value parameters
 \usepackage{xcolor}
+\usepackage{pgf}
+\usepackage{xifthen}
 
 % Drawings
 \usepackage{graphicx}                      % include foto
@@ -63,10 +65,10 @@
 \def\wordlanguage{}
 \ifnum\pdfstrcmp{\tbflanguage}{french}=0
 \def\wordeducation{Formation}
-\def\wordwork{Expériences Professionnelles}
+\def\wordwork{Expérience Professionnelle}
 \def\wordskill{Compétence}
 \def\wordsoftware{Logiciel}
-\def\wordlanguage{Langues}
+\def\wordlanguage{Langue}
 \fi
 \ifnum\pdfstrcmp{\tbflanguage}{english}=0
 \def\wordeducation{Education}
@@ -89,30 +91,38 @@
 \let\cvitem\item
 
 
+
+% 0/ Default settings
+\providecommand{\tbfbordertop}{0.6}
+\providecommand{\tbfborderleft}{0.6}
+
+
 % 1/ Commands
 \newcommand\tbflogo[1]{\includegraphics[width=0.35cm, height=0.35cm]{#1}}
 \newcommand\tbfimflag[1]{\includegraphics[height=0.3cm]{#1}\phantom{\tiny{1}}}
 \newcommand\tbfsoft[2]{\includegraphics[height=0.3cm]{#2}\phantom{\tiny{1}}#1}
-
 \newcommand\tbfpart[1]{#1}
+
 \newcommand\tbfname[2]{
-  \begin{textblock}{23}( 0 , 1 )
+  \pgfmathsetmacro{\tbftmp}{\tbfbordertop + 0.6}
+  \begin{textblock}{23}(0, \tbftmp)
      \centering{\headerfirstnamestyle{#1} \hspace{5pt} \headerlastnamestyle{#2}}
   \end{textblock}
 }
 
 \newcommand\tbffoto[1]{
-  \begin{textblock}{23}( 17.7 , 0.6 )
+  \begin{textblock}{23}(17.7, \tbfbordertop)
     \includegraphics[width=2.8cm]{#1}
   \end{textblock}
 }
 
 
 \newcommand\tbfdescription[2][16pt]{
-  \begin{textblock}{23}(0,2.3)
+  \pgfmathsetmacro{\tbftmp}{\tbfbordertop + 1.7}
+  \begin{textblock}{23}(0, \tbftmp)
   \begin{center}
 
-    {\fontsize{#1}{0.6cm} \scshape\bfseries #2}
+  {\fontsize{#1}{0.6cm} \scshape\bfseries #2}
 
   \end{center}
   \end{textblock}
@@ -178,6 +188,22 @@
 
 
 % 3/ ENVIRONMENT
+
+
+
+% [coordinate][Width, X, Y]
+\newenvironmentx{coordinatelist}{
+    \needspace{0.5\textheight}
+    \newdimen\boxwidth
+    \boxwidth=\dimexpr\linewidth-2\fboxsep\relax
+    \pgfmathsetmacro{\tbftmpleft}{\tbfborderleft + 1}
+    \begin{textblock}{7}(\tbfborderleft, \tbfbordertop)
+    \begin{tabular}{l|l}
+}{
+    \end{tabular}
+  \end{textblock}
+}
+
 % [job] { years }  {company } { more }
 %                                Width, X (horizontal), Y (vertical)
 \newenvironmentx{joblist}[3][1=13.2, 2=7.8, 3=3.9]{
@@ -222,16 +248,7 @@
 }
 
 
-\newenvironment{coordinatelist}{
-    \needspace{0.5\textheight}
-    \newdimen\boxwidth
-    \boxwidth=\dimexpr\linewidth-2\fboxsep\relax
-  \begin{textblock}{6.5}( 0.6 , 0.6 )
-    \begin{tabular}{l|l}
-}{
-    \end{tabular}
-  \end{textblock}
-}
+
 \newcommand\tbfbirth[1]{
     \includegraphics[width=0.05\textwidth]{../Figure/logo/birthday1_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
 }
