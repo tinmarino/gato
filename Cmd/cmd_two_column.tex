@@ -1,8 +1,5 @@
 \documentclass[paper=a4, fontsize=11pt]{tccv}          % Unfortynately must keep some stuff in class for now
 
-% Clean
-\usepackage[utf8]{inputenc}
-
 % API
 \usepackage{xargs}                              % Key - value parameters
 \usepackage{xcolor}
@@ -25,7 +22,11 @@
 \hypersetup{hidelinks}
 
 % Language
-\typeout{tbf : language}
+\ifcsname#1\endcsname
+\else
+   \def\tbflanguage{english}
+\fi
+\typeout{tbf : language \tbflanguage}
 \usepackage{polyglossia}                    % Language
 \ifnum\pdfstrcmp{\tbflanguage}{french}=0
 \frenchspacing                          % Better looking spacings after periods
@@ -40,7 +41,8 @@
 \fi
 
 % Font
-\usepackage{fontspec}                      % For extended fonts
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
 \usepackage{amsfonts}                      % For checkmark
 \usepackage{relsize}                       % Scale font
 % Doc : https://texfaq.org/FAQ-patch && http://texblog.net/latex-archive/plaintex/full-justification-with-typewriter-font/ && https://tex.stackexchange.com/questions/264224/increase-word-space-between-words-in-small-caps/264248#264248
