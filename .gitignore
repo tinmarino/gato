@@ -24,3 +24,14 @@ CV para pasar a Latex.odt
 *.blg
 2_Colonnes/.fuse_hid*
 *.zip
+
+# Html
+*.4ct
+*.4tc
+*.idv
+*.lg
+*.tmp
+*.xref
+*.xdv'
+*.css
+*.html
