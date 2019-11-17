@@ -1,5 +1,13 @@
 \documentclass[a4paper,10pt]{article}
 
+% Default settings
+\providecommand{\tbfcmd}{professional}
+
+\usepackage[utf8x]{inputenc}
+\usepackage{xargs}                              % Key - value parameters newenvironmentx
+\usepackage{marvosym}
+\usepackage{newunicodechar}
+
 \usepackage[overlay,absolute]{textpos}              % For Textblock
   \setlength{\TPHorizModule}{1cm}
   \setlength{\TPVertModule}{1cm}
@@ -12,7 +20,6 @@
 
 
 %A Few Useful Packages
-\usepackage{marvosym}
 \usepackage{fontspec}                     %for loading fonts
 \usepackage{xunicode,xltxtra,url,parskip}     %other packages for formatting
 \RequirePackage{color,graphicx}
@@ -98,6 +105,11 @@ ItalicFont = Fontin-Italic.otf
 %%
 %        Coordinates
 %% 
+% 1F4f1 : 📱
+% 1FE47 : 🹇
+% 2709 : ✉
+% 2706 : ✆
+\newfontfamily\emojifont{DejaVu Sans}
 \newenvironment{coordinatelist}{
     \section{Informations personnels}
     \begin{tabular}{rl}
@@ -105,25 +117,25 @@ ItalicFont = Fontin-Italic.otf
     \end{tabular}
 }
 \newcommand{\PersonalEntry}[2]{
-    \textsc{#1} & #2 \\
+    #1 & #2 \\
 }
 \newcommand\tbfflag[1]{
-    \PersonalEntry{Nat :}{#1}
+    \PersonalEntry{\includegraphics[height=10pt]{../Figure/flag.png}}{#1}
 }
 \newcommand\tbfbirth[1]{
-    \PersonalEntry{Place and Date of Birth:}{#1}
+    \PersonalEntry{\includegraphics[height=10pt]{../Figure/logo/birthday1_128.png}}{#1}
 }
 \newcommand\tbfmail[1]{
-    \PersonalEntry{Email :}{#1}
+    \PersonalEntry{\emojifont ✉}{#1}
 }
 \newcommand\tbftel[1]{
-    \PersonalEntry{Phone:}{#1}
+    \PersonalEntry{\emojifont ✆}{#1}
 }
 \newcommand\tbfaddr[1]{
-    \PersonalEntry{Address:}{#1}
+    \PersonalEntry{\Writtinghand}{#1}
 }
 \newcommand\tbfwww[1]{
-    \PersonalEntry{Site:}{#1}
+    \PersonalEntry{\includegraphics[height=10pt]{../Figure/logo/www_128.png}}{#1}
 }
 \newcommand\tbfvoidpersonal[1]{
     \PersonalEntry{}{#1}
@@ -131,38 +143,40 @@ ItalicFont = Fontin-Italic.otf
 
 
 
-\newenvironment{yearlist}{
+\newenvironmentx{yearlist}[3][1=0, 2=0, 3=0]{
     \renewcommand\item[4][]{
-    ##2 & \large\textbf{##1}                \\*
-    & \normalsize\textbf{##3}               \\*
-    & ##4                                   \\*
-    \multicolumn{2}{c}{}                    \\
+        ##2 & \large\textbf{##1}                \\*
+        & \normalsize\textbf{##3}               \\*
+        & \begin{minipage}[b]{0.8\textwidth}
+            ##4
+          \end{minipage}                        \\*
+        \multicolumn{2}{c}{}                    \\
     }
     \section{Education}
-    \begin{longtable}{p{.20\textwidth} | p{.80\textwidth}} 
+    \begin{longtable}[l]{p{.20\textwidth} | p{.80\textwidth}} 
 }{
     \end{longtable}
 }
 
 
-\newenvironment{joblist}{
+\newenvironmentx{joblist}[3][1=0, 2=0, 3=0]{
     \renewcommand\item[4][]{
-    ##2 & \large\textbf{##1}                \\*
-    & \emph{##3}                            \\*
-    & \begin{minipage}[b]{0.8\textwidth}
-       ##4
-      \end{minipage}                        \\*
-    \multicolumn{2}{c}{}                    \\
+        ##2 & \large\textbf{##1}                \\*
+        & \emph{##3}                            \\*
+        & \begin{minipage}[b]{0.8\textwidth}
+           ##4
+          \end{minipage}                        \\*
+        \multicolumn{2}{c}{}                    \\
     }
     % Note: tabular must be after the defition
     \section{Experience profesionnelle}
-    \begin{longtable}{p{.20\textwidth} | p{.80\textwidth}} 
+    \begin{longtable}[l]{p{.20\textwidth} | p{.80\textwidth}} 
 }{
     \end{longtable}
 }
 
 
-\newenvironment{skilllist}{}
+\newenvironmentx{skilllist}[3][1=0, 2=0, 3=0]{}
 
 
 \newenvironment{languagelist}{
@@ -173,7 +187,7 @@ ItalicFont = Fontin-Italic.otf
     }
     % Note: tabular must be after the defition
     % Note: The @{} is to remove indentation
-    \begin{longtable}{@{}p{.20\textwidth} p{.80\textwidth}} 
+    \begin{longtable}[l]{@{}p{.20\textwidth} p{.80\textwidth}} 
 }{
     \end{longtable}
     \end{samepage}
@@ -184,6 +198,3 @@ ItalicFont = Fontin-Italic.otf
     \section{#1}
     #2
 }
-
-
-
