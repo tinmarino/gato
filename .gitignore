@@ -32,6 +32,7 @@ CV para pasar a Latex.odt
 *.lg
 *.tmp
 *.xref
-*.xdv'
+*.xdv
 *.css
 *.html
+
