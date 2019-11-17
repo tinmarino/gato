@@ -4,11 +4,30 @@
 \def\tbfborderleft{0.7}
 
 % -1/ Type of CV
-\input{../Cmd/cmd_two_column}
+\ifx\HCode\undefined
+%\input{../Cmd/cmd_two_column}
+\input{../Cmd/cmd_professional}
+\else
+\input{../Cmd/cmd_professional}
+\fi
 
+% -0.9 Meta
+\title{CV Martin Tourneboeuf v1}
+\author{Martin Tourneboeuf}
+\date{\today}
+
+
+% 0/ Go
 \begin{document}
 
-% 0/ Header
+% 0.01 Maketiel if html
+\ifx\HCode\undefined \else
+\maketitle
+\fi
+
+
+
+% 0.1/ Header
 \tbfname{\vspace{0.3cm}Martin}{Tourneboeuf}
 
 
@@ -24,8 +43,8 @@
   \tbfmail{martin.tourneboeuf@gmail.com}
   \tbfbirth{25 december 1988}
   \tbfflag{French}
-  \tbfwww{\href{https://tinmarino.github.io/Page/}{tinmarino.github.io}}
-  \tbftel{+33 7 83 54 64 41} 
+  \tbfwww{\href{https://tinmarino.github.io/page/}{tinmarino.github.io}}
+  \tbftel{+33 7 83 54 64 41}
 \end{coordinatelist}
 
 
@@ -43,11 +62,11 @@
   \href{http://www.uc.cl/}{PUC}, Santiago, Chile
   }
   {   Observational comsmology}
-    
+
 
 \item[Engineering]{2008 -- 2011}
   {
-  \tbflogo{../Figure/logo/x_black_128.png}  
+  \tbflogo{../Figure/logo/x_black_128.png}
   \href{https://www.polytechnique.edu/}{Polytechnique}, Paris, France
   }
   {    Math, physics, computing}
@@ -55,7 +74,7 @@
 
 \item[Preparatory School]{2006 -- 2008}
   {
-  \tbflogo{../Figure/logo/grignard_128.png}  
+  \tbflogo{../Figure/logo/grignard_128.png}
   \href{http://www.lycee-grignard.fr/}{Lyc\'ee Victor Grignard}, Cherbourg, France
   }
   {    Math, Physics: Preparatory years for national examination}
@@ -63,11 +82,11 @@
 
 \item[High school diploma]{2003 -- 2005}
   {
-  \tbflogo{../Figure/logo/grignard_128.png}  
+  \tbflogo{../Figure/logo/grignard_128.png}
   \href{http://www.lycee-grignard.fr/}{Lyc\'ee Victor Grignard}, Cherbourg, France
   }
   {    Natural science}
-    
+
 \end{yearlist}
 
 
@@ -89,7 +108,7 @@
 \item[Developper]{2014}
   {
   \tbflogo{../Figure/logo/human_128.png}
-  \href{https://play.google.com/store/apps/developer?id=tinmarino&hl=en}{Self-employed}, Santiago, Chili
+  \href{https://tinmarino.github.io/page/}{Self-employed}, Santiago, Chili
   }
   {Programming: video games cross-plateform development (Java)}
 
@@ -109,7 +128,7 @@
   }
   {Observational cosmology: statistical study of the star formation rate (Supermongo)}
 
-  
+
 \item[Other professional experiences]{2006 -- 2009}
 	{
 	\tbflogo{../Figure/logo/michel_128.png}
@@ -122,7 +141,7 @@
     \setlength{\parskip}{0cm}
 		\begin{itemize}
 		\setlength\itemsep{0cm}
-  
+
     % Content
     \cvitem \href{http://www.insertcoin.cl/}{\tbflogo{../Figure/logo/insert_coin_less_than_128.png} Waiter, Barman : restaurant (8 month)}
     \cvitem \href{http://www.dupont.co.in/}{\tbflogo{../Figure/logo/dupont_128.png} Air conditioning technician : internship in India (1 month)}
@@ -146,7 +165,7 @@
 \begin{languagelist}
 \item{\tbfimflag{../Figure/flag/france_128x85.png}French}   {mother tongue}
 \item{\tbfimflag{../Figure/flag/spain_128x85.png}Spanish}   {bilingual}
-\item{\tbfimflag{../Figure/flag/great_britain_128x85.png}English}   {fluent} 
+\item{\tbfimflag{../Figure/flag/great_britain_128x85.png}English}   {fluent}
 \end{languagelist}
 \vspace{-0.3cm}
 
@@ -159,19 +178,19 @@
     \tbfsoft{JavaScript}{../Figure/language/128_js.png},
     \tbfsoft{Iraf}{../Figure/language/128_iraf.png} \\
     \vspace{-0.3cm}
-    
+
     \textbf{Compiled:}
     \tbfsoft{Java}{../Figure/language/128_java.png},
     \tbfsoft{C++}{../Figure/language/128_cpp.png},
     \tbfsoft{Asm (x86)}{../Figure/language/128x85_intel.png} \\
     \vspace{-0.3cm}
-    
+
     \textbf{Markup:}
 		\tbfsoft{Markdown}{../Figure/language/128_markdown.png},
     \tbfsoft{\LaTeX}{../Figure/language/128_latex.png},
     \tbfsoft{Html}{../Figure/language/128_html.png} \\
     \vspace{-0.3cm}
-    
+
     \textbf{Tool:}
 		\tbfsoft{Ida}{../Figure/language/128_ida_white.jpg},
 		\tbfsoft{Windbg}{../Figure/language/128_windbg.png},

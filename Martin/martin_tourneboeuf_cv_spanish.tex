@@ -5,7 +5,11 @@
 \def\tbfborderleft{0.7}
 
 % -1/ Type of CV
+\ifx\HCode\undefined
 \input{../Cmd/cmd_two_column}
+\else
+\input{../Cmd/cmd_professional}
+\fi
 
 \begin{document}
 
@@ -24,8 +28,8 @@
     \tbfmail{martin.tourneboeuf@gmail.com}
     \tbfbirth{25 de diciembre 1988}
     \tbfflag{francés}
-    \tbfwww{\href{https://tinmarino.github.io/Page/}{tinmarino.github.io}}
-    \tbftel{+33 7 83 54 64 41} 
+    \tbfwww{\href{https://tinmarino.github.io/page/}{tinmarino.github.io}}
+    \tbftel{+33 7 83 54 64 41}
     % \tbfaddr{49 Quai de la Prévalaye}
     % \tbfvoidpersonal{35000 Rennes}
 \end{coordinatelist}
@@ -44,11 +48,11 @@
     \href{http://www.uc.cl/}{PUC}, Santiago, Chile
     }
     {    Astrofísica, computación}
-    
+
 
 \item[Ingeniería]{2008 -- 2011}
     {
-  \tbflogo{../Figure/logo/x_black_128.png}    
+  \tbflogo{../Figure/logo/x_black_128.png}
     \href{https://www.polytechnique.edu/}{Polytechnique}, Paris, Francia
     }
     {    Matemáticas, física, informática}
@@ -56,7 +60,7 @@
 
 \item[Escuela preparatoria]{2006 -- 2008}
     {
-    \tbflogo{../Figure/logo/grignard_128.png}    
+    \tbflogo{../Figure/logo/grignard_128.png}
     \href{http://www.lycee-grignard.fr/}{Lycée Victor Grignard}, Cherbourg, Francia
     }
     {    Matemáticas, física: especialización}
@@ -64,11 +68,11 @@
 
 \item[Baccalaur\'eat]{2003 -- 2005}
     {
-    \tbflogo{../Figure/logo/grignard_128.png}    
+    \tbflogo{../Figure/logo/grignard_128.png}
     \href{http://www.lycee-grignard.fr/}{Lycée Victor Grignard}, Cherbourg, Francia
     }
     {    Ciencias naturales: diploma de enseñanza media}
-    
+
 \end{yearlist}
 
 
@@ -90,7 +94,7 @@
 \item[Programador informático]{2014}
     {
     \tbflogo{../Figure/logo/human_128.png}
-    \href{https://tinmarino.github.io/Page/}{Independiente}, Santiago, Chile
+    \href{https://tinmarino.github.io/page/}{Independiente}, Santiago, Chile
     }
     {Programacíon: desarrollo multiplataforma de videojuegos (Java)}
 
@@ -109,7 +113,7 @@
 \href{https://www.cfht.hawaii.edu/}{Canada France Hawaii Telescope (CFHT)}, Waimea, USA
     }
     {Cosmología observacional: estudio estadístico de la historia de formación estellar (SFR)}
-    
+
 \item[Primeras experiencias laborales]{2006 -- 2009}
     {
     \tbflogo{../Figure/logo/michel_128.png}
@@ -118,7 +122,9 @@
     {
     %\renewcommand\labelitemi{{\boldmath$\cdot$}}
     \renewcommand\labelitemi{{}}
-    \vspace{-0.8cm}
+    \ifnum\pdfstrcmp{\tbfcmd}{two_column}=0
+        \vspace{-0.8cm}
+    \fi
     \setlength{\parskip}{0cm}
 
     \begin{itemize}
@@ -133,7 +139,7 @@
     \end{itemize}
   }
 
-    
+
 \end{joblist}
 
 
@@ -149,7 +155,7 @@
 \begin{languagelist}
 \item{\tbfimflag{../Figure/flag/france_128x85.png}Francés}     {idioma materno}
 \item{\tbfimflag{../Figure/flag/spain_128x85.png}Español}     {bilingüe}
-\item{\tbfimflag{../Figure/flag/great_britain_128x85.png}Inglés}     {fluido} 
+\item{\tbfimflag{../Figure/flag/great_britain_128x85.png}Inglés}     {fluido}
 \end{languagelist}
 \vspace{-0.5cm}
 
