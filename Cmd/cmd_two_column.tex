@@ -4,22 +4,23 @@
 \providecommand{\tbfbordertop}{0.6}
 \providecommand{\tbfborderleft}{0.6}
 \providecommand{\tbflanguage}{english}
+\providecommand{\tbfcmd}{two_column}
 
 % API
-\usepackage{xargs}                              % Key - value parameters
+\usepackage{xargs}                          % Key - value parameters
 \usepackage{xcolor}
 \usepackage{pgf}
 \usepackage{xifthen}
 
 % Drawings
-\usepackage{graphicx}                      % include foto
-\usepackage{tabularx}                      % for coordinates
-\usepackage[framemethod=TikZ]{mdframed}              % For box around text
-\usepackage[overlay,absolute]{textpos}              % For Textblock
+\usepackage{graphicx}                       % include foto
+\usepackage{tabularx}                       % for coordinates
+\usepackage[framemethod=TikZ]{mdframed}     % For box around text
+\usepackage[overlay,absolute]{textpos}      % For Textblock
   \setlength{\TPHorizModule}{1cm}
   \setlength{\TPVertModule}{1cm}
-\usepackage{enumitem}                      % For aptitudes enumeration
-\usepackage{genealogytree}                    % Born
+\usepackage{enumitem}                       % For aptitudes enumeration
+\usepackage{genealogytree}                  % Born
 
 % Display + Margin
 \tolerance=1000
@@ -28,13 +29,11 @@
 
 
 % Font
-% TODO only if html to not disturb peacefull xealtex frined
 \usepackage{fontspec}
 \usepackage{polyglossia}                    % Language
 \usepackage{fontspec}
 \usepackage{amsfonts}                       % For checkmark
 \usepackage{relsize}                        % Scale font
-% Doc : https://texfaq.org/FAQ-patch && http://texblog.net/latex-archive/plaintex/full-justification-with-typewriter-font/ && https://tex.stackexchange.com/questions/264224/increase-word-space-between-words-in-small-caps/264248#264248
 \usepackage{everysel}
 \EverySelectfont{%
     \fontdimen2\font=0.3em                  % interword space
@@ -46,7 +45,7 @@
 % Language
 \typeout{tbf : language \tbflanguage}
 \ifnum\pdfstrcmp{\tbflanguage}{french}=0
-\frenchspacing                          % Better looking spacings after periods
+\frenchspacing                              % Better looking spacings after periods
 \setmainlanguage{french}
 \fi
 \ifnum\pdfstrcmp{\tbflanguage}{english}=0
