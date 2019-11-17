@@ -1,5 +1,10 @@
 \documentclass[a4paper,10pt]{article}
 
+\usepackage[overlay,absolute]{textpos}              % For Textblock
+  \setlength{\TPHorizModule}{1cm}
+  \setlength{\TPVertModule}{1cm}
+\usepackage{relsize}                        % Scale font (for relscale)
+
 \usepackage[a4paper,bindingoffset=0.2in,%
             left=-1cm,right=1cm,top=1cm,bottom=1cm,%
             footskip=.25in]{geometry}
@@ -69,13 +74,26 @@ ItalicFont = Fontin-Italic.otf
 %% 
 \newcommand{\tbfname}[2]{
     \par{\centering
-        {\Huge Rocio \textsc{Sanhueza}
+        {\Huge #1 \textsc{#2}
     }\bigskip\par
     }
 }
-\newcommand{\tbffoto}[1]{}
-\newcommand{\tbfdescription}[1]{}
+\newcommand\tbffoto[1]{
+  \begin{textblock}{23}(17.7, 1.5)
+    \includegraphics[width=2.8cm]{#1}
+  \end{textblock}
+}
 
+\newcommand{\tbfdescription}[2][16pt]{
+  \begin{center}
+  {\fontsize{#1}{0.6cm} \scshape\bfseries #2}
+  \end{center}
+}
+
+% Helper: commands
+\newcommand\tbflogo[1]{\includegraphics[width=0.35cm, height=0.35cm]{#1}}
+\newcommand\tbfimflag[1]{\includegraphics[height=0.3cm]{#1}\phantom{\tiny{1}}}
+\newcommand\tbfsoft[2]{\includegraphics[height=0.3cm]{#2}\phantom{\tiny{1}}#1}
 
 %%
 %        Coordinates
@@ -103,6 +121,9 @@ ItalicFont = Fontin-Italic.otf
 }
 \newcommand\tbfaddr[1]{
     \PersonalEntry{Address:}{#1}
+}
+\newcommand\tbfwww[1]{
+    \PersonalEntry{Site:}{#1}
 }
 \newcommand\tbfvoidpersonal[1]{
     \PersonalEntry{}{#1}
