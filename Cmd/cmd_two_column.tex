@@ -1,5 +1,10 @@
 \documentclass[paper=a4, fontsize=11pt]{tccv}          % Unfortynately must keep some stuff in class for now
 
+% 0/ Default settings
+\providecommand{\tbfbordertop}{0.6}
+\providecommand{\tbfborderleft}{0.6}
+\providecommand{\tbflanguage}{english}
+
 % API
 \usepackage{xargs}                              % Key - value parameters
 \usepackage{xcolor}
@@ -18,16 +23,28 @@
 
 % Display + Margin
 \tolerance=1000
-\usepackage{url}                        % Clickable URL's
+\usepackage{url}                            % Clickable URL's
 \hypersetup{hidelinks}
 
-% Language
-\ifcsname#1\endcsname
-\else
-   \def\tbflanguage{english}
-\fi
-\typeout{tbf : language \tbflanguage}
+
+% Font
+% TODO only if html to not disturb peacefull xealtex frined
+\usepackage{fontspec}
 \usepackage{polyglossia}                    % Language
+\usepackage{fontspec}
+\usepackage{amsfonts}                       % For checkmark
+\usepackage{relsize}                        % Scale font
+% Doc : https://texfaq.org/FAQ-patch && http://texblog.net/latex-archive/plaintex/full-justification-with-typewriter-font/ && https://tex.stackexchange.com/questions/264224/increase-word-space-between-words-in-small-caps/264248#264248
+\usepackage{everysel}
+\EverySelectfont{%
+    \fontdimen2\font=0.3em                  % interword space
+    \hyphenchar\font=`\-                    % to allow hyphenation
+    \xspaceskip=0em
+}
+
+
+% Language
+\typeout{tbf : language \tbflanguage}
 \ifnum\pdfstrcmp{\tbflanguage}{french}=0
 \frenchspacing                          % Better looking spacings after periods
 \setmainlanguage{french}
@@ -40,18 +57,6 @@
 \setmainlanguage{spanish}
 \fi
 
-% Font
-\usepackage[utf8]{inputenc}
-\usepackage{fontspec}
-\usepackage{amsfonts}                      % For checkmark
-\usepackage{relsize}                       % Scale font
-% Doc : https://texfaq.org/FAQ-patch && http://texblog.net/latex-archive/plaintex/full-justification-with-typewriter-font/ && https://tex.stackexchange.com/questions/264224/increase-word-space-between-words-in-small-caps/264248#264248
-\usepackage{everysel}
-\EverySelectfont{%
-    \fontdimen2\font=0.3em% interword space
-    \hyphenchar\font=`\-% to allow hyphenation
-    \xspaceskip=0em
-}
 
 
 
@@ -95,10 +100,6 @@
 \let\cvitem\item
 
 
-
-% 0/ Default settings
-\providecommand{\tbfbordertop}{0.6}
-\providecommand{\tbfborderleft}{0.6}
 
 
 % 1/ Commands
