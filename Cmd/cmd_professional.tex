@@ -1,9 +1,8 @@
-\documentclass[a4paper,10pt]{article}
-
+\documentclass[a4paper,12pt]{article}
 % Default settings
 \providecommand{\tbfcmd}{professional}
 
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{xargs}                              % Key - value parameters newenvironmentx
 \usepackage{marvosym}
 \usepackage{newunicodechar}
@@ -99,7 +98,8 @@ ItalicFont = Fontin-Italic.otf
 
 % Helper: commands
 \newcommand\tbflogo[1]{\includegraphics[width=0.35cm, height=0.35cm]{#1}}
-\newcommand\tbfimflag[1]{\includegraphics[height=0.3cm]{#1}\phantom{\tiny{1}}}
+\newcommand\tbfimflag[1]{
+    \includegraphics[height=0.3cm]{#1}\phantom{\tiny{1}}}
 \newcommand\tbfsoft[2]{\includegraphics[height=0.3cm]{#2}\phantom{\tiny{1}}#1}
 
 %%
@@ -109,7 +109,7 @@ ItalicFont = Fontin-Italic.otf
 % 1FE47 : 🹇
 % 2709 : ✉
 % 2706 : ✆
-\newfontfamily\emojifont{DejaVu Sans}
+\newfontfamily\emojifont{Symbola}
 \newenvironment{coordinatelist}{
     \section{Informations personnels}
     \begin{tabular}{rl}
@@ -120,10 +120,10 @@ ItalicFont = Fontin-Italic.otf
     #1 & #2 \\
 }
 \newcommand\tbfflag[1]{
-    \PersonalEntry{\includegraphics[height=10pt]{../Figure/flag.png}}{#1}
+    \PersonalEntry{\emojifont ⚐}{#1}
 }
 \newcommand\tbfbirth[1]{
-    \PersonalEntry{\includegraphics[height=10pt]{../Figure/logo/birthday1_128.png}}{#1}
+    \PersonalEntry{\includegraphics[height=12pt]{../Figure/logo/birthday1_white_128.png}}{#1}
 }
 \newcommand\tbfmail[1]{
     \PersonalEntry{\emojifont ✉}{#1}
@@ -135,7 +135,7 @@ ItalicFont = Fontin-Italic.otf
     \PersonalEntry{\Writtinghand}{#1}
 }
 \newcommand\tbfwww[1]{
-    \PersonalEntry{\includegraphics[height=10pt]{../Figure/logo/www_128.png}}{#1}
+    \PersonalEntry{\includegraphics[height=12pt]{../Figure/logo/www_base3_128.png}}{#1}
 }
 \newcommand\tbfvoidpersonal[1]{
     \PersonalEntry{}{#1}
@@ -153,7 +153,7 @@ ItalicFont = Fontin-Italic.otf
         \multicolumn{2}{c}{}                    \\
     }
     \section{Education}
-    \begin{longtable}[l]{p{.20\textwidth} | p{.80\textwidth}} 
+    \begin{longtable}[l]{@{}p{.20\textwidth} p{.80\textwidth}} 
 }{
     \end{longtable}
 }
@@ -170,7 +170,7 @@ ItalicFont = Fontin-Italic.otf
     }
     % Note: tabular must be after the defition
     \section{Experience profesionnelle}
-    \begin{longtable}[l]{p{.20\textwidth} | p{.80\textwidth}} 
+    \begin{longtable}[l]{@{}p{.20\textwidth} p{.80\textwidth}} 
 }{
     \end{longtable}
 }
