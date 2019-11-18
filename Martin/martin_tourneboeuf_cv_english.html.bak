@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+ 
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head> <title>CV Martin Tourneboeuf</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- html,css-in,charset=utf-8,xhtml,mathml --> 
+<meta name="src" content="martin_tourneboeuf_cv_english.tex" /> 
+ 
+<style type="text/css"> 
+<!--  
+ 
+/* start css.sty */  
+.cmbsy-10x-x-120{font-weight: bold;}  
+.cmbsy-10x-x-120{font-weight: bold;}  
+.cmbsy-10x-x-120{font-weight: bold;}  
+.cmbsy-8{font-size:66%;font-weight: bold;}  
+.cmbsy-8{font-weight: bold;}  
+.cmbsy-8{font-weight: bold;}  
+.cmbsy-6{font-size:50%;font-weight: bold;}  
+.cmbsy-6{font-weight: bold;}  
+.cmbsy-6{font-weight: bold;}  
+.cmex-8{font-size:66%;}  
+.cmex-7x-x-85{font-size:49%;}  
+.cmr-8{font-size:66%;}  
+.cmr-6{font-size:50%;}  
+.cmmi-12{font-style: italic;}  
+.cmmi-8{font-size:66%;font-style: italic;}  
+.cmmi-6{font-size:50%;font-style: italic;}  
+.cmsy-8{font-size:66%;}  
+.cmsy-6{font-size:50%;}  
+.rm-lmr-17x-x-120{font-size:170%;}  
+.rm-lmr-12x-x-120{font-size:120%;}  
+.rm-lmr-17x-x-143{font-size:202%;}  
+.rm-lmcsc-10x-x-248{font-size:206%;}  
+.rm-lmbx-12x-x-166{font-size:166%; font-weight: bold;}  
+.rm-lmtt-12{ font-family: monospace;}  
+.rm-lmtt-12{ font-family: monospace;}  
+.rm-lmr-12x-x-110{font-size:110%;}  
+.rm-lmbx-12x-x-120{font-size:120%; font-weight: bold;}  
+.rm-lmbx-12{ font-weight: bold;}  
+.rm-lmr-12x-x-113{font-size:113%;}  
+.rm-lmri-12{ font-style:italic;}  
+.rm-lmtt-12x-x-110{font-size:110%; font-family: monospace;}  
+.rm-lmtt-12x-x-110{ font-family: monospace;}  
+.rm-lmbx-12x-x-110{font-size:110%; font-weight: bold;}  
+p.noindent { text-indent: 0em }  
+td p.noindent { text-indent: 0em; margin-top:0em; }  
+p.nopar { text-indent: 0em; }  
+p.indent{ text-indent: 1.5em }  
+@media print {div.crosslinks {visibility:hidden;}}  
+a img { border-top: 0; border-left: 0; border-right: 0; }  
+center { margin-top:1em; margin-bottom:1em; }  
+td center { margin-top:0em; margin-bottom:0em; }  
+.Canvas { position:relative; }  
+math { text-indent: 0em; }  
+li p.indent { text-indent: 0em }  
+li p:first-child{ margin-top:0em; }  
+li p:last-child, li div:last-child { margin-bottom:0.5em; }  
+li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; }  
+.enumerate1 {list-style-type:decimal;}  
+.enumerate2 {list-style-type:lower-alpha;}  
+.enumerate3 {list-style-type:lower-roman;}  
+.enumerate4 {list-style-type:upper-alpha;}  
+div.newtheorem { margin-bottom: 2em; margin-top: 2em;}  
+.obeylines-h,.obeylines-v {white-space: nowrap; }  
+div.obeylines-v p { margin-top:0; margin-bottom:0; }  
+.overline{ text-decoration:overline; }  
+.overline img{ border-top: 1px solid black; }  
+td.displaylines {text-align:center; white-space:nowrap;}  
+.centerline {text-align:center;}  
+.rightline {text-align:right;}  
+div.verbatim {font-family: monospace; white-space: nowrap; text-align:left; clear:both; }  
+.fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }  
+div.fbox {display:table}  
+div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }  
+div.minipage{width:100%;}  
+div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;}  
+div.center div {text-align: left;}  
+div.flushright, div.flushright div.flushright {text-align: right;}  
+div.flushright div {text-align: left;}  
+div.flushleft {text-align: left;}  
+.underline{ text-decoration:underline; }  
+.underline img{ border-bottom: 1px solid black; margin-bottom:1pt; }  
+.framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }  
+.framebox-c {text-align:center;}  
+.framebox-l {text-align:left;}  
+.framebox-r {text-align:right;}  
+span.thank-mark{ vertical-align: super }  
+span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }  
+div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }  
+table.tabular td p{margin-top:0em;}  
+table.tabular {margin-left: auto; margin-right: auto;}  
+td p:first-child{ margin-top:0em; }  
+td p:last-child{ margin-bottom:0em; }  
+div.td00{ margin-left:0pt; margin-right:0pt; }  
+div.td01{ margin-left:0pt; margin-right:5pt; }  
+div.td10{ margin-left:5pt; margin-right:0pt; }  
+div.td11{ margin-left:5pt; margin-right:5pt; }  
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }  
+td.td00{ padding-left:0pt; padding-right:0pt; }  
+td.td01{ padding-left:0pt; padding-right:5pt; }  
+td.td10{ padding-left:5pt; padding-right:0pt; }  
+td.td11{ padding-left:5pt; padding-right:5pt; }  
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }  
+.hline hr, .cline hr{ height : 1px; margin:0px; }  
+.tabbing-right {text-align:right;}  
+span.TEX {letter-spacing: -0.125em; }  
+span.TEX span.E{ position:relative;top:0.5ex;left:-0.0417em;}  
+a span.TEX span.E {text-decoration: none; }  
+span.LATEX span.A{ position:relative; top:-0.5ex; left:-0.4em; font-size:85%;}  
+span.LATEX span.TEX{ position:relative; left: -0.4em; }  
+div.float, div.figure {margin-left: auto; margin-right: auto;}  
+div.float img {text-align:center;}  
+div.figure img {text-align:center;}  
+.marginpar,.reversemarginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;}  
+.marginpar p,.reversemarginpar p{margin-top:0.4em; margin-bottom:0.4em;}  
+.reversemarginpar{float:left;}  
+.equation td{text-align:center; vertical-align:middle; }  
+td.eq-no{ width:5%; }  
+table.equation { width:100%; }  
+div.math-display, div.par-math-display{text-align:center;}  
+mtr.hline mtd{ border-bottom:black solid 1px; padding-top:2px; padding-bottom:0em; }  
+mtr.hline mtd mo{ display:none }  
+math .texttt { font-family: monospace; }  
+math .textit { font-style: italic; }  
+math .textsl { font-style: oblique; }  
+math .textsf { font-family: sans-serif; }  
+math .textbf { font-weight: bold; }  
+mo.MathClass-op + mi{margin-left:0.3em}  
+mi + mo.MathClass-op{margin-left:0.3em}  
+math mi[mathvariant="bold"] { font-weight: bold; font-style: normal; }  
+math mi[mathvariant="normal"] { font-weight: normal; font-style: normal; }  
+.partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}  
+.index-item, .index-subitem, .index-subsubitem {display:block}  
+div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}  
+div.caption span.id{font-weight: bold; white-space: nowrap; }  
+h1.partHead{text-align: center}  
+p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }  
+p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }  
+.paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;}  
+.subparagraphHead, .likesubparagraphHead { font-weight: bold;}  
+.quote {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; margin-right:1em; text-align:justify;}  
+.verse{white-space:nowrap; margin-left:2em}  
+div.maketitle {text-align:center;}  
+h2.titleHead{text-align:center;}  
+div.maketitle{ margin-bottom: 2em; }  
+div.author, div.date {text-align:center;}  
+div.thanks{text-align:left; margin-left:10%; font-size:85%; font-style:italic; }  
+div.author{white-space: nowrap;}  
+.quotation {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; }  
+.abstract p {margin-left:5%; margin-right:5%;}  
+div.abstract {width:100%;}  
+.small-caps{font-variant: small-caps;}  
+.rotatebox{display: inline-block;}  
+.figure img.graphics {margin-left:10%;}  
+.supertabular {text-align:center}  
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }  
+div.longtable{text-align:center;}  
+table.longtable{margin-left:auto; margin-right: auto;}  
+table.longtable{margin-left:0; margin-right:0;!important;}  
+table.tabular{margin-left:0; margin-right:0;!important;}  
+.titleHead{display: none;}  
+.author{display: none;}  
+div.date{ text-align: right; margin-right: 20px; margin-bottom: 0px; }  
+div.maketitle{ text-align: right; position: absolute; bottom: -100px; left: 0; right: 0; }  
+body { position: relative; }  
+html, body, p { margin: 0; background-color: #002b36 }  
+/* end css.sty */  
+ 
+ 
+--> 
+</style> 
+<link rel="stylesheet" type="text/css" href="../../../../../../home2/tourneboeuf/Software/Css/color_dark_solarized.css" /> 
+</head><body 
+>
+<div class="maketitle">
+                                                                                               
+                                                                                               
+                                                                                               
+                                                                                               
+
+<h2 class="titleHead">CV Martin Tourneboeuf</h2>
+<div class="author" ><span 
+class="rm-lmr-12x-x-120">Martin Tourneboeuf</span></div>
+<br />
+<div class="date" ><span 
+class="rm-lmr-12x-x-120">November 18, 2019</span></div>
+</div>
+<!--l. 31--><p class="noindent" ><span 
+class="rm-lmr-17x-x-143">Martin</span> <span class="small-caps"><span 
+class="rm-lmcsc-10x-x-248">Tourneboeuf</span></span>
+</p>
+<div class="center" 
+>
+<!--l. 38--><p class="noindent" >
+</p><!--l. 38--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-166">Physicist, cyber analyst</span> </p></div><a 
+ id="x1-2r1"></a>
+</p>
+<h3 class="sectionHead"><span class="titlemark">1 </span> <a 
+ id="x1-10001"></a>Informations personnels</h3>
+<div class="tabular"><table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1" /><col 
+id="TBL-2-2" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="text-align:right; white-space:nowrap;" id="TBL-2-1-1"  
+class="td11"> ✉</td><td  style="text-align:left; white-space:nowrap;" id="TBL-2-1-2"  
+class="td11">martin.tourneboeuf@gmail.com</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="text-align:right; white-space:nowrap;" id="TBL-2-2-1"  
+class="td11"><img 
+src="../Figure/logo/birthday1_white_128.png" alt="PIC"  
+width="11" height="12"  /></td><td  style="text-align:left; white-space:nowrap;" id="TBL-2-2-2"  
+class="td11">25 december 1988                  </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="text-align:right; white-space:nowrap;" id="TBL-2-3-1"  
+class="td11"> ⚐</td><td  style="text-align:left; white-space:nowrap;" id="TBL-2-3-2"  
+class="td11">French</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="text-align:right; white-space:nowrap;" id="TBL-2-4-1"  
+class="td11"><img 
+src="../Figure/logo/www_base3_128.png" alt="PIC"  
+width="12" height="12"  /></td><td  style="text-align:left; white-space:nowrap;" id="TBL-2-4-2"  
+class="td11"><a 
+href="https://tinmarino.github.io/page/" >tinmarino.github.io</a>                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="text-align:right; white-space:nowrap;" id="TBL-2-5-1"  
+class="td11"> ✆</td><td  style="text-align:left; white-space:nowrap;" id="TBL-2-5-2"  
+class="td11">+33 7 83 54 64 41                 </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="text-align:right; white-space:nowrap;" id="TBL-2-6-1"  
+class="td11"> </td>
+</tr></table></div>
+<a 
+ id="x1-1001r1"></a>
+<h3 class="sectionHead"><span class="titlemark">2 </span> <a 
+ id="x1-20002"></a>Education</h3>
+<a 
+ id="x1-2001r1"></a><!--l. 56--><div class="longtable"><table id="TBL-3" class="longtable" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1" /><col 
+id="TBL-3-2" /></colgroup>
+<tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td  style="text-align:left;" id="TBL-3-1-1"  
+class="td01">
+<!--l. 64--><p class="noindent" ><span 
+class="rm-lmr-12x-x-110">2011 – 2013</span>        </p></td><td  style="text-align:left;" id="TBL-3-1-2"  
+class="td11">
+<strong>
+<!--l. 64--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-120">Astronomy (Master)</span></strong>                                               </p></td>
+<td  id="TBL-3-1-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-2-"><td  style="text-align:left;" id="TBL-3-2-1"  
+class="td01">
+<!--l. 64--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="text-align:left;" id="TBL-3-3-1"  
+class="td01">
+<!--l. 64--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-3-3-2"  
+class="td11">
+<strong>
+<!--l. 64--><p class="noindent" > <img 
+src="../Figure/logo/puc_128.png" alt="PIC"  
+width="9" height="9"  /> <a 
+href="http://www.uc.cl/" ><span 
+class="rm-lmbx-12">PUC</span></a><span 
+class="rm-lmbx-12">, Santiago, Chile</span> </strong>                                                    </p></td>
+<td  id="TBL-3-3-3"  
+class="td10">                </td>
+                                                                                               
+                                                                                               
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-4-"><td  style="text-align:left;" id="TBL-3-4-1"  
+class="td01">
+<!--l. 64--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-5-"><td  style="text-align:left;" id="TBL-3-5-1"  
+class="td01">
+<!--l. 64--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-3-5-2"  
+class="td11">
+<div class="minipage"><!--l. 64--><p class="noindent" >Observational comsmology
+</p></div>                                                                                                      </td>
+<td  id="TBL-3-5-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-6-"><td  style="text-align:left;" id="TBL-3-6-1"  
+class="td01">
+<!--l. 64--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-7-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-3-7-1"  
+class="td01">                                         <div class="multicolumn"  style="text-align:center; white-space:nowrap;"></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-8-"><td  style="text-align:left;" id="TBL-3-8-1"  
+class="td01">
+<!--l. 72--><p class="noindent" >2008 – 2011          </p></td><td  style="text-align:left;" id="TBL-3-8-2"  
+class="td11">
+<strong>
+<!--l. 72--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-120">Engineering</span></strong>                                                          </p></td>
+<td  id="TBL-3-8-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-9-"><td  style="text-align:left;" id="TBL-3-9-1"  
+class="td01">
+<!--l. 72--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-10-"><td  style="text-align:left;" id="TBL-3-10-1"  
+class="td01">
+<!--l. 72--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-3-10-2"  
+class="td11">
+<strong>
+<!--l. 72--><p class="noindent" > <img 
+src="../Figure/logo/x_black_128.png" alt="PIC"  
+width="9" height="9"  /> <a 
+href="https://www.polytechnique.edu/" ><span 
+class="rm-lmbx-12">Polytechnique</span></a><span 
+class="rm-lmbx-12">, Paris, France</span> </strong>                                           </p></td>
+<td  id="TBL-3-10-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-11-"><td  style="text-align:left;" id="TBL-3-11-1"  
+class="td01">
+<!--l. 72--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-12-"><td  style="text-align:left;" id="TBL-3-12-1"  
+class="td01">
+<!--l. 72--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-3-12-2"  
+class="td11">
+<div class="minipage"><!--l. 72--><p class="noindent" >Math, physics, computing
+</p></div>                                                                                                      </td>
+<td  id="TBL-3-12-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-13-"><td  style="text-align:left;" id="TBL-3-13-1"  
+class="td01">
+<!--l. 72--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-14-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-3-14-1"  
+class="td01">                                         <div class="multicolumn"  style="text-align:center; white-space:nowrap;"></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-15-"><td  style="text-align:left;" id="TBL-3-15-1"  
+class="td01">
+<!--l. 80--><p class="noindent" >2006 – 2008          </p></td><td  style="text-align:left;" id="TBL-3-15-2"  
+class="td11">
+<strong>
+<!--l. 80--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-120">Preparatory School</span></strong>                                                </p></td>
+<td  id="TBL-3-15-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-16-"><td  style="text-align:left;" id="TBL-3-16-1"  
+class="td01">
+<!--l. 80--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-17-"><td  style="text-align:left;" id="TBL-3-17-1"  
+class="td01">
+<!--l. 80--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-3-17-2"  
+class="td11">
+<strong>
+<!--l. 80--><p class="noindent" > <img 
+src="../Figure/logo/grignard_128.png" alt="PIC"  
+width="9" height="9"  /> <a 
+href="http://www.lycee-grignard.fr/" ><span 
+class="rm-lmbx-12">Lyc</span><span 
+class="rm-lmbx-12">é</span><span 
+class="rm-lmbx-12">e Victor Grignard</span></a><span 
+class="rm-lmbx-12">, Cherbourg, France</span> </strong>                      </p></td>
+<td  id="TBL-3-17-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-18-"><td  style="text-align:left;" id="TBL-3-18-1"  
+class="td01">
+<!--l. 80--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-19-"><td  style="text-align:left;" id="TBL-3-19-1"  
+class="td01">
+<!--l. 80--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-3-19-2"  
+class="td11">
+<div class="minipage"><!--l. 80--><p class="noindent" >Math, Physics: Preparatory years for national examination
+</p></div>                                                                                                      </td>
+<td  id="TBL-3-19-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-20-"><td  style="text-align:left;" id="TBL-3-20-1"  
+class="td01">
+<!--l. 80--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-21-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-3-21-1"  
+class="td01">                                         <div class="multicolumn"  style="text-align:center; white-space:nowrap;"></div>
+                                                                                               
+                                                                                               
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-22-"><td  style="text-align:left;" id="TBL-3-22-1"  
+class="td01">
+<!--l. 88--><p class="noindent" >2003 – 2005          </p></td><td  style="text-align:left;" id="TBL-3-22-2"  
+class="td11">
+<strong>
+<!--l. 88--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-120">High school diploma</span></strong>                                               </p></td>
+<td  id="TBL-3-22-3"  
+class="td10">            </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-23-"><td  style="text-align:left;" id="TBL-3-23-1"  
+class="td01">
+<!--l. 88--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-24-"><td  style="text-align:left;" id="TBL-3-24-1"  
+class="td01">
+<!--l. 88--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-3-24-2"  
+class="td11">
+<strong>
+<!--l. 88--><p class="noindent" > <img 
+src="../Figure/logo/grignard_128.png" alt="PIC"  
+width="9" height="9"  /> <a 
+href="http://www.lycee-grignard.fr/" ><span 
+class="rm-lmbx-12">Lyc</span><span 
+class="rm-lmbx-12">é</span><span 
+class="rm-lmbx-12">e Victor Grignard</span></a><span 
+class="rm-lmbx-12">, Cherbourg, France</span> </strong>                      </p></td>
+<td  id="TBL-3-24-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-25-"><td  style="text-align:left;" id="TBL-3-25-1"  
+class="td01">
+<!--l. 88--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-26-"><td  style="text-align:left;" id="TBL-3-26-1"  
+class="td01">
+<!--l. 88--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-3-26-2"  
+class="td11">
+<div class="minipage"><!--l. 88--><p class="noindent" >Natural science
+</p></div>                                                                                                      </td>
+<td  id="TBL-3-26-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-27-"><td  style="text-align:left;" id="TBL-3-27-1"  
+class="td01">
+<!--l. 88--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-28-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-3-28-1"  
+class="td01">                                         <div class="multicolumn"  style="text-align:center; white-space:nowrap;"></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-29-"><td  style="text-align:left;" id="TBL-3-29-1"  
+class="td01">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-30-"><td  style="text-align:left;" id="TBL-3-30-1"  
+class="td01">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-31-"><td  style="text-align:left;" id="TBL-3-31-1"  
+class="td01">
+<!--l. 90--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-32-"><td  style="text-align:left;" id="TBL-3-32-1"  
+class="td01">
+<!--l. 90--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-33-"><td  style="text-align:left;" id="TBL-3-33-1"  
+class="td01">              </td><td  style="text-align:left;" id="TBL-3-33-2"  
+class="td11">
+</td></tr>
+</table></div>
+<a 
+ id="x1-2002r2"></a>
+<h3 class="sectionHead"><span class="titlemark">3 </span> <a 
+ id="x1-30003"></a>Experience profesionnelle</h3>
+<a 
+ id="x1-3001r2"></a><!--l. 96--><div class="longtable"><table id="TBL-4" class="longtable" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-4-1g"><col 
+id="TBL-4-1" /><col 
+id="TBL-4-2" /></colgroup>
+<tr  
+ style="vertical-align:baseline;" id="TBL-4-1-"><td  style="text-align:left;" id="TBL-4-1-1"  
+class="td01">
+<!--l. 105--><p class="noindent" ><span 
+class="rm-lmr-12x-x-113">2015 – 2019</span>       </p></td><td  style="text-align:left;" id="TBL-4-1-2"  
+class="td11">
+<strong>
+<!--l. 105--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-120">Cyber security analyst</span></strong>                                            </p></td>
+<td  id="TBL-4-1-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-2-"><td  style="text-align:left;" id="TBL-4-2-1"  
+class="td01">
+<!--l. 105--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-3-"><td  style="text-align:left;" id="TBL-4-3-1"  
+class="td01">
+<!--l. 105--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-4-3-2"  
+class="td11">
+<!--l. 105--><p class="noindent" > <img 
+src="../Figure/logo/dga_128.jpg" alt="PIC"  
+width="9" height="9"  /> <a 
+href="http://www.defense.gouv.fr/dga/" ><span 
+class="rm-lmri-12">Direction G</span><span 
+class="rm-lmri-12">én</span><span 
+class="rm-lmri-12">érale de l’Armement (DGA)</span></a><span 
+class="rm-lmri-12">, Rennes, France</span>                </p></td>
+<td  id="TBL-4-3-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-4-"><td  style="text-align:left;" id="TBL-4-4-1"  
+class="td01">
+<!--l. 105--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-5-"><td  style="text-align:left;" id="TBL-4-5-1"  
+class="td01">
+<!--l. 105--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-4-5-2"  
+class="td11">
+<div class="minipage"><!--l. 105--><p class="noindent" >Reverse  engineering:  analyse  of  malwares  and  vulnerabilities  for  Windows
+security (C, Asm)
+</p></div>                                                                                                      </td>
+                                                                                               
+                                                                                               
+<td  id="TBL-4-5-3"  
+class="td10">            </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-6-"><td  style="text-align:left;" id="TBL-4-6-1"  
+class="td01">
+<!--l. 105--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-7-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-4-7-1"  
+class="td01">                                         <div class="multicolumn"  style="text-align:center; white-space:nowrap;"></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-8-"><td  style="text-align:left;" id="TBL-4-8-1"  
+class="td01">
+<!--l. 113--><p class="noindent" >2014                   </p></td><td  style="text-align:left;" id="TBL-4-8-2"  
+class="td11">
+<strong>
+<!--l. 113--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-120">Developper</span></strong>                                                           </p></td>
+<td  id="TBL-4-8-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-9-"><td  style="text-align:left;" id="TBL-4-9-1"  
+class="td01">
+<!--l. 113--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-10-"><td  style="text-align:left;" id="TBL-4-10-1"  
+class="td01">
+<!--l. 113--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-4-10-2"  
+class="td11">
+<!--l. 113--><p class="noindent" > <img 
+src="../Figure/logo/human_128.png" alt="PIC"  
+width="9" height="9"  /> <a 
+href="https://tinmarino.github.io/page/" ><span 
+class="rm-lmri-12">Self-employed</span></a><span 
+class="rm-lmri-12">, Santiago, Chili</span>                                                   </p></td>
+<td  id="TBL-4-10-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-11-"><td  style="text-align:left;" id="TBL-4-11-1"  
+class="td01">
+<!--l. 113--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-12-"><td  style="text-align:left;" id="TBL-4-12-1"  
+class="td01">
+<!--l. 113--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-4-12-2"  
+class="td11">
+<div class="minipage"><!--l. 113--><p class="noindent" >Programming: video games cross-plateform development (Java)
+</p></div>                                                                                                      </td>
+<td  id="TBL-4-12-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-13-"><td  style="text-align:left;" id="TBL-4-13-1"  
+class="td01">
+<!--l. 113--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-14-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-4-14-1"  
+class="td01">                                         <div class="multicolumn"  style="text-align:center; white-space:nowrap;"></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-15-"><td  style="text-align:left;" id="TBL-4-15-1"  
+class="td01">
+<!--l. 121--><p class="noindent" >2013                   </p></td><td  style="text-align:left;" id="TBL-4-15-2"  
+class="td11">
+<strong>
+<!--l. 121--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-120">Astronomer</span></strong>                                                          </p></td>
+<td  id="TBL-4-15-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-16-"><td  style="text-align:left;" id="TBL-4-16-1"  
+class="td01">
+<!--l. 121--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-17-"><td  style="text-align:left;" id="TBL-4-17-1"  
+class="td01">
+<!--l. 121--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-4-17-2"  
+class="td11">
+<!--l. 121--><p class="noindent" > <img 
+src="../Figure/logo/eso_128.jpg" alt="PIC"  
+width="9" height="9"  /> <a 
+href="http://www.eso.org/public/" ><span 
+class="rm-lmri-12">European Southern Observatory (ESO)</span></a><span 
+class="rm-lmri-12">, Santiago, Chile</span>                    </p></td>
+<td  id="TBL-4-17-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-18-"><td  style="text-align:left;" id="TBL-4-18-1"  
+class="td01">
+<!--l. 121--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-19-"><td  style="text-align:left;" id="TBL-4-19-1"  
+class="td01">
+<!--l. 121--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-4-19-2"  
+class="td11">
+<div class="minipage"><!--l. 121--><p class="noindent" >Adaptative optics: development of a GUI software to measure image quality
+(Python)
+</p></div>                                                                                                      </td>
+<td  id="TBL-4-19-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-20-"><td  style="text-align:left;" id="TBL-4-20-1"  
+class="td01">
+<!--l. 121--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-21-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-4-21-1"  
+class="td01">                                         <div class="multicolumn"  style="text-align:center; white-space:nowrap;"></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-22-"><td  style="text-align:left;" id="TBL-4-22-1"  
+class="td01">
+<!--l. 129--><p class="noindent" >2012                   </p></td><td  style="text-align:left;" id="TBL-4-22-2"  
+class="td11">
+<strong>
+<!--l. 129--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-120">Astronomer (internship)</span></strong>                                          </p></td>
+<td  id="TBL-4-22-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-23-"><td  style="text-align:left;" id="TBL-4-23-1"  
+class="td01">
+<!--l. 129--><p class="noindent" >                </p></td>
+                                                                                               
+                                                                                               
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-24-"><td  style="text-align:left;" id="TBL-4-24-1"  
+class="td01">
+<!--l. 129--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-4-24-2"  
+class="td11">
+<!--l. 129--><p class="noindent" > <img 
+src="../Figure/logo/cfht_128.png" alt="PIC"  
+width="9" height="9"  /> <a 
+href="https://www.cfht.hawaii.edu/" ><span 
+class="rm-lmri-12">Canada France Hawaii Telescope (CFHT)</span></a><span 
+class="rm-lmri-12">, Waimea, USA</span>                 </p></td>
+<td  id="TBL-4-24-3"  
+class="td10">            </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-25-"><td  style="text-align:left;" id="TBL-4-25-1"  
+class="td01">
+<!--l. 129--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-26-"><td  style="text-align:left;" id="TBL-4-26-1"  
+class="td01">
+<!--l. 129--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-4-26-2"  
+class="td11">
+<div class="minipage"><!--l. 129--><p class="noindent" >Observational  cosmology:  statistical  study  of  the  star  formation  rate
+(Supermongo)
+</p></div>                                                                                                      </td>
+<td  id="TBL-4-26-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-27-"><td  style="text-align:left;" id="TBL-4-27-1"  
+class="td01">
+<!--l. 129--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-28-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-4-28-1"  
+class="td01">                                         <div class="multicolumn"  style="text-align:center; white-space:nowrap;"></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-29-"><td  style="text-align:left;" id="TBL-4-29-1"  
+class="td01">
+<!--l. 152--><p class="noindent" >2006 – 2009          </p></td><td  style="text-align:left;" id="TBL-4-29-2"  
+class="td11">
+<strong>
+<!--l. 152--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-120">Other professional experiences</span></strong>                                  </p></td>
+<td  id="TBL-4-29-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-30-"><td  style="text-align:left;" id="TBL-4-30-1"  
+class="td01">
+<!--l. 152--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-31-"><td  style="text-align:left;" id="TBL-4-31-1"  
+class="td01">
+<!--l. 152--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-4-31-2"  
+class="td11">
+<!--l. 152--><p class="noindent" > <img 
+src="../Figure/logo/michel_128.png" alt="PIC"  
+width="9" height="9"  /> <span 
+class="rm-lmri-12">France, India, Chile</span>                                                                </p></td>
+<td  id="TBL-4-31-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-32-"><td  style="text-align:left;" id="TBL-4-32-1"  
+class="td01">
+<!--l. 152--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-33-"><td  style="text-align:left;" id="TBL-4-33-1"  
+class="td01">
+<!--l. 152--><p class="noindent" >                </p></td><td  style="text-align:left;" id="TBL-4-33-2"  
+class="td11">
+<div class="minipage">     <ul class="itemize1">
+     <li class="itemize"><a 
+href="http://www.insertcoin.cl/" ><img 
+src="../Figure/logo/insert_coin_less_than_128.png" alt="PIC"  
+width="9" height="9"  /> Waiter, Barman : restaurant (8 month)</a>
+        </li>
+        <li class="itemize"><a 
+href="http://www.dupont.co.in/" ><img 
+src="../Figure/logo/dupont_128.png" alt="PIC"  
+width="9" height="9"  /> Air conditioning technician : internship in India (1 month)</a>
+        </li>
+        <li class="itemize"><a 
+href="http://www.defense.gouv.fr/marine/organisation/forces/fusiliers-marins-et-commandos/force-maritime-des-fusiliers-marins-et-commandos" ><img 
+src="../Figure/logo/jaubert_article_demi_colonne_128.jpg" alt="PIC"  
+width="9" height="9"  /> Commando marine : lieutenant (8 months)</a>
+        </li>
+        <li class="itemize"><a 
+href="http://www.vacances-pour-tous.org/" ><img 
+src="../Figure/logo/vacances_pour_tous_128.jpg" alt="PIC"  
+width="9" height="9"  /> Summer camp leader (5 <!--l. 152--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">×</mo></math>
+   1 month)</a>
+        </li>
+        <li class="itemize"><a 
+href="http://huitresdesaintvaast.fr/" ><img 
+src="../Figure/logo/Oyster_128.png" alt="PIC"  
+width="9" height="9"  /> Oyster farmer (5 <!--l. 152--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">×</mo></math>
+   2 weeks)</a></li></ul>
+</div>                                                                                                      </td>
+<td  id="TBL-4-33-3"  
+class="td10">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-34-"><td  style="text-align:left;" id="TBL-4-34-1"  
+class="td01">
+<!--l. 152--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-35-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-4-35-1"  
+class="td01">                                         <div class="multicolumn"  style="text-align:center; white-space:nowrap;"></div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-36-"><td  style="text-align:left;" id="TBL-4-36-1"  
+class="td01">              </td><td  style="text-align:left;" id="TBL-4-36-2"  
+class="td11">
+</td></tr>
+<tr  
+ style="vertical-align:baseline;" id="TBL-4-37-"><td  style="text-align:left;" id="TBL-4-37-1"  
+class="td01">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-38-"><td  style="text-align:left;" id="TBL-4-38-1"  
+class="td01">                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-39-"><td  style="text-align:left;" id="TBL-4-39-1"  
+class="td01">
+<!--l. 154--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-40-"><td  style="text-align:left;" id="TBL-4-40-1"  
+class="td01">
+<!--l. 154--><p class="noindent" >                </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-41-"><td  style="text-align:left;" id="TBL-4-41-1"  
+class="td01">
+<!--l. 154--><p class="noindent" >                </p></td>
+</tr>
+                                                                                               
+                                                                                               
+</table></div>
+<a 
+ id="x1-3002r3"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="rm-lmr-12x-x-110">4 </span></span> <a 
+ id="x1-40004"></a><span 
+class="rm-lmr-12x-x-110">Languages</span></h3>
+<a 
+ id="x1-4001r3"></a><!--l. 166--><div class="longtable"><table id="TBL-5" class="longtable" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-5-1g"><col 
+id="TBL-5-1" /><col 
+id="TBL-5-2" /></colgroup>
+<tr  
+ style="vertical-align:baseline;" id="TBL-5-1-"><td  style="text-align:left;" id="TBL-5-1-1"  
+class="td01">
+<!--l. 166--><p class="noindent" ><img 
+src="../Figure/flag/france_128x85.png" alt="PIC"  
+width="12" height="8"  /> <span 
+class="rm-lmr-12x-x-110">French</span>        </p></td><td  style="text-align:left;" id="TBL-5-1-2"  
+class="td11">
+<!--l. 166--><p class="noindent" ><span 
+class="rm-lmr-12x-x-110">mother tongue</span>                                                                         </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-2-"><td  style="text-align:left;" id="TBL-5-2-1"  
+class="td01">
+<!--l. 167--><p class="noindent" ><img 
+src="../Figure/flag/spain_128x85.png" alt="PIC"  
+width="12" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Spanish</span>       </p></td><td  style="text-align:left;" id="TBL-5-2-2"  
+class="td11">
+<!--l. 167--><p class="noindent" ><span 
+class="rm-lmr-12x-x-110">bilingual</span>                                                                                 </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-3-"><td  style="text-align:left;" id="TBL-5-3-1"  
+class="td01">
+<!--l. 168--><p class="noindent" ><img 
+src="../Figure/flag/great_britain_128x85.png" alt="PIC"  
+width="12" height="8"  /> <span 
+class="rm-lmr-12x-x-110">English</span>       </p></td><td  style="text-align:left;" id="TBL-5-3-2"  
+class="td11">
+<!--l. 168--><p class="noindent" ><span 
+class="rm-lmr-12x-x-110">ﬂuent</span>                                                                                     </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-4-"><td  style="text-align:left;" id="TBL-5-4-1"  
+class="td01">               </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-5-"><td  style="text-align:left;" id="TBL-5-5-1"  
+class="td01">               </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-6-"><td  style="text-align:left;" id="TBL-5-6-1"  
+class="td01">
+<!--l. 169--><p class="noindent" >               </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-7-"><td  style="text-align:left;" id="TBL-5-7-1"  
+class="td01">
+<!--l. 169--><p class="noindent" >               </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-8-"><td  style="text-align:left;" id="TBL-5-8-1"  
+class="td01">               </td><td  style="text-align:left;" id="TBL-5-8-2"  
+class="td11">
+</td></tr>
+</table></div>
+<a 
+ id="x1-4002r4"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="rm-lmr-12x-x-110">5 </span></span> <a 
+ id="x1-50005"></a><span 
+class="rm-lmr-12x-x-110">Programming</span></h3>
+<strong>
+<!--l. 201--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-110">Interpreted:</span></strong> <img 
+src="../Figure/language/128_python.png" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Python, </span><img 
+src="../Figure/language/128x145_bash.png" alt="PIC"  
+width="7" height="8"  /> <span 
+class="rm-lmr-12x-x-110">BaSh, </span><img 
+src="../Figure/language/128_perl.png" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Perl, </span><img 
+src="../Figure/language/128_js.png" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">JavaScript, </span><img 
+src="../Figure/language/128_iraf.png" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Iraf </span><br 
+class="newline" />
+<strong>
+</p><!--l. 201--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-110">Compiled:</span></strong> <img 
+src="../Figure/language/128_java.png" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Java, </span><img 
+src="../Figure/language/128_cpp.png" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">C++, </span><img 
+src="../Figure/language/128x85_intel.png" alt="PIC"  
+width="12" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Asm (x86) </span><br 
+class="newline" />
+<strong>
+</p><!--l. 201--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-110">Markup:</span></strong> <img 
+src="../Figure/language/128_markdown.png" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Markdown, </span><img 
+src="../Figure/language/128_latex.png" alt="PIC"  
+width="8" height="8"  /> <span class="LATEX"><span 
+class="rm-lmr-12x-x-110">L</span><span class="A"><span 
+class="rm-lmr-12x-x-110">A</span></span><span class="TEX"><span 
+class="rm-lmr-12x-x-110">T</span><span 
+class="E"><span 
+class="rm-lmr-12x-x-110">E</span></span><span 
+class="rm-lmr-12x-x-110">X</span></span></span><span 
+class="rm-lmr-12x-x-110">, </span><img 
+src="../Figure/language/128_html.png" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Html </span><br 
+class="newline" />
+<strong>
+</p><!--l. 201--><p class="noindent" ><span 
+class="rm-lmbx-12x-x-110">Tool:</span></strong> <img 
+src="../Figure/language/128_ida_white.jpg" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Ida, </span><img 
+src="../Figure/language/128_windbg.png" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Windbg, </span><img 
+src="../Figure/language/128_vim_white.png" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Vim, </span><img 
+src="../Figure/language/128_git.png" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Git, </span><img 
+src="../Figure/language/28_ds9.png" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Ds9, </span><img 
+src="../Figure/language/128_firefox.png" alt="PIC"  
+width="8" height="8"  /> <span 
+class="rm-lmr-12x-x-110">Firefox </span><br 
+class="newline" />
+</p>
+ 
+</body></html> 
+
+                                                                                               
+
+

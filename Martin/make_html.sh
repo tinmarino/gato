@@ -1,14 +1,18 @@
 
-compile() {
+mcompile() {
     htxelatex martin_tourneboeuf_cv_english.tex "to_html.cfg,html,css-in,charset=utf-8" " -cunihtf -utf8"
 }
 
-configure() {
+mconfigure() {
+    perl -0777 -pe ' s/\<!DOCTYPE.*?\>//s' -i.bak martin_tourneboeuf_cv_english.html
+    # Fix de merde
+    perl -0777 -pe ' s:\s*(\</?(td|ul|li)):$1:gs' -i.bak martin_tourneboeuf_cv_english.html
+    cp martin_tourneboeuf_cv_english.html martin_tourneboeuf_cv_english_1.html
+
     cat martin_tourneboeuf_cv_english.html \
-        | perl -0777 -pe 's/\<!DOCTYPE.*?\>//s' \
-        | pandoc --self-contained -o martin_tourneboeuf_cv_english.html
+        | pandoc --no-highlight --standalone --self-contained -o martin_tourneboeuf_cv_english.html
 }
 
-#         | iconv -t utf-8  \
-# <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" 
-# "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd" > 
+mmove(){
+    cp martin_tourneboeuf_cv_english.html ~/Software/Html/Page/cv/
+}
