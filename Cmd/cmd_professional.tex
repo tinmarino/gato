@@ -63,6 +63,16 @@ ItalicFont = Fontin-Italic.otf
 % Now I add 
 \usepackage{amsfonts}                                             % For checkmark
 \usepackage{longtable}                                            % Spread table on multiple pages
+
+
+
+
+
+\input{../Cmd/cmd_include}
+%End of include
+
+
+
 \newif\iftbftiny
 
 
@@ -111,7 +121,7 @@ ItalicFont = Fontin-Italic.otf
 % 2706 : ✆
 \newfontfamily\emojifont{Symbola}
 \newenvironment{coordinatelist}{
-    \section{Informations personnels}
+    \section{\wordinfo}
     \begin{tabular}{rl}
 }{
     \end{tabular}
@@ -152,7 +162,7 @@ ItalicFont = Fontin-Italic.otf
           \end{minipage}                        \\*
         \multicolumn{2}{c}{}                    \\
     }
-    \section{Education}
+    \section{\wordeducation}
     \begin{longtable}[l]{@{}p{.20\textwidth} p{.80\textwidth}} 
 }{
     \end{longtable}
@@ -169,7 +179,7 @@ ItalicFont = Fontin-Italic.otf
         \multicolumn{2}{c}{}                    \\
     }
     % Note: tabular must be after the defition
-    \section{Experience profesionnelle}
+    \section{\wordwork}
     \begin{longtable}[l]{@{}p{.20\textwidth} p{.80\textwidth}} 
 }{
     \end{longtable}
@@ -181,7 +191,7 @@ ItalicFont = Fontin-Italic.otf
 
 \newenvironment{languagelist}{
     \begin{samepage}
-    \section{Languages}
+    \section{\wordlanguage}
     \renewcommand\item[2]{
     ##1 & ##2 \\
     }

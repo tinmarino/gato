@@ -64,34 +64,7 @@
 
 % -2/ must be configured
 \newif\iftbftiny
-
-% Language
-\def\wordeducation{}
-\def\wordwork{}
-\def\wordskill{}
-\def\wordsoftware{}
-\def\wordlanguage{}
-\ifnum\pdfstrcmp{\tbflanguage}{french}=0
-\def\wordeducation{Formation}
-\def\wordwork{Expérience Professionnelle}
-\def\wordskill{Compétence}
-\def\wordsoftware{Logiciel}
-\def\wordlanguage{Langue}
-\fi
-\ifnum\pdfstrcmp{\tbflanguage}{english}=0
-\def\wordeducation{Education}
-\def\wordwork{Working Experience}
-\def\wordskill{Skill}
-\def\wordsoftware{Software}
-\def\wordlanguage{Language}
-\fi
-\ifnum\pdfstrcmp{\tbflanguage}{spanish}=0
-\def\wordeducation{Formación}
-\def\wordwork{Experiencia Profesional}
-\def\wordskill{Competencia}
-\def\wordsoftware{Software}
-\def\wordlanguage{Idioma}
-\fi
+\input{../Cmd/cmd_include}
 
 
 % -1/ Config from tccv.cls
