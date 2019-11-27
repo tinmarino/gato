@@ -4,7 +4,13 @@
 \def\tbfborderleft{0.7}
 
 % -1/ Type of CV
+\ifx\HCode\undefined
 \input{../Cmd/cmd_two_column}
+%\input{../Cmd/cmd_professional}
+\else
+\input{../Cmd/cmd_professional}
+\fi
+
 
 \begin{document}
 
@@ -20,11 +26,11 @@
 \tbffoto{../Figure/martin2015.jpg}
 
 \begin{coordinatelist}
-	\tbfmail{\url{martin.tourneboeuf@gmail.com}}
- 	\tbfbirth{25 décembre 1988}
+  \tbfwww{\href{https://tinmarino.github.io/page/}{https://tinmarino.github.io/page/}}
+  \tbfmail{\url{martin.tourneboeuf@gmail.com}}
+  \tbfbirth{25 décembre 1988}
   \tbfflag{Français}
-  \tbfwww{\href{https://tinmarino.github.io/page/}{tinmarino.github.io}}
- 	\tbftel{+33 7 83 54 64 41}
+  \tbftel{+56 9 79 58 90 76}
  	% \tbfaddr{49 Quai de la Prévalaye}
  	% \tbfvoidpersonal{35000 Rennes}
 \end{coordinatelist}
