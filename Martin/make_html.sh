@@ -12,7 +12,7 @@ myconfigure() {
         perl -0777 -pe ' s/\<!DOCTYPE.*?\>//s' -i.bak $f.html
         # Fix de merde
         perl -0777 -pe ' s:\s*(\</?(td|ul|li)):$1:gs' -i.bak $f.html
-        cp $f.html $f.html
+        cp $f.html $f_1.html
 
         cat $f.html \
             | pandoc --no-highlight --standalone --self-contained -o $f.html

@@ -1,3 +1,21 @@
+
+\ifx\HCode\undefined
+\else
+    \usepackage{polyglossia}                    % Language
+    \typeout{tbf : language \tbflanguage}
+    \ifnum\pdfstrcmp{\tbflanguage}{french}=0
+    \frenchspacing                              % Better looking spacings after periods
+    \setmainlanguage{french}
+    \fi
+    \ifnum\pdfstrcmp{\tbflanguage}{english}=0
+    \setmainlanguage{english}
+    \fi
+    \ifnum\pdfstrcmp{\tbflanguage}{spanish}=0
+    \typeout{tbf : spanish}
+    \setmainlanguage{spanish}
+    \fi
+\fi
+
 % Language
 \def\wordeducation{}
 \def\wordwork{}
