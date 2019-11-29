@@ -89,17 +89,17 @@ ItalicFont = Fontin-Italic.otf
 %        Name
 %% 
 \newcommand{\tbfname}[2]{
-    \par{\centering
-        {\Huge #1 \textsc{#2}
-    }\bigskip\par
-    }
+    \par{\centering{
+        \Huge{#1 \textsc{#2}}
+    }\bigskip\par}
 }
+
 \newcommand\tbffoto[1]{
     \ifx\HCode\undefined
-    \else
         \begin{textblock}{23}(17.7, 1.5)
             \includegraphics[width=2.8cm]{#1}
         \end{textblock}
+    \else
     \fi
 }
 
@@ -112,7 +112,7 @@ ItalicFont = Fontin-Italic.otf
 % Helper: commands
 \newcommand\tbflogo[1]{\includegraphics[width=0.35cm, height=0.35cm]{#1}}
 \newcommand\tbfimflag[1]{
-    \includegraphics[height=0.3cm]{#1}\phantom{\tiny{1}}}
+    \includegraphics[height=12pt]{#1}\phantom{\tiny{1}}}
 \newcommand\tbfsoft[2]{\includegraphics[height=0.3cm]{#2}\phantom{\tiny{1}}#1}
 
 %%
