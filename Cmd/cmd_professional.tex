@@ -95,9 +95,12 @@ ItalicFont = Fontin-Italic.otf
     }
 }
 \newcommand\tbffoto[1]{
-  \begin{textblock}{23}(17.7, 1.5)
-    \includegraphics[width=2.8cm]{#1}
-  \end{textblock}
+    \ifx\HCode\undefined
+    \else
+        \begin{textblock}{23}(17.7, 1.5)
+            \includegraphics[width=2.8cm]{#1}
+        \end{textblock}
+    \fi
 }
 
 \newcommand{\tbfdescription}[2][16pt]{
