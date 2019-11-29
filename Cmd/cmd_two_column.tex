@@ -9,29 +9,32 @@
 % API
 \usepackage{xargs}                          % Key - value parameters
 \usepackage{xcolor}
-\usepackage{pgf}
-\usepackage{xifthen}
+\usepackage{pgf}                            % Math macro
+\usepackage{xifthen}                        % If, else block
+
+% Switch Html / Pdf for mdframe
+\ifx\HCode\undefined
+\else
+    \usepackage{fontspec}                       % Awesome font not available on html
+    \usepackage{url}                            % Clickable URL's
+    \hypersetup{hidelinks}                      % Hide links
+\fi
 
 % Drawings
+\usepackage[framemethod=TikZ]{mdframed}     % For box around text
+\usepackage[overlay, absolute]{textpos}     % For Textblock
+        \setlength{\TPHorizModule}{1cm}
+        \setlength{\TPVertModule}{1cm}
 \usepackage{graphicx}                       % include foto
 \usepackage{tabularx}                       % for coordinates
-\usepackage[framemethod=TikZ]{mdframed}     % For box around text
-\usepackage[overlay,absolute]{textpos}      % For Textblock
-  \setlength{\TPHorizModule}{1cm}
-  \setlength{\TPVertModule}{1cm}
 \usepackage{enumitem}                       % For aptitudes enumeration
 \usepackage{genealogytree}                  % Born
 
 % Display + Margin
 \tolerance=1000
-\usepackage{url}                            % Clickable URL's
-\hypersetup{hidelinks}
 
 
 % Font
-\usepackage{fontspec}
-\usepackage{polyglossia}                    % Language
-\usepackage{fontspec}
 \usepackage{amsfonts}                       % For checkmark
 \usepackage{relsize}                        % Scale font
 \usepackage{everysel}
@@ -100,13 +103,24 @@
 % Name, size, x, y, nada
 \newenvironment*{internal}[5]
 {
-    \begin{textblock}{#2}(#3, #4)
-    \begin{mdframed}
+    \ifx\HCode\undefined
+        \begin{textblock}{#2}(#3, #4)
+        \begin{mdframed}
+    \else
+        \begin{minipage}{#2 cm}
+    \fi
+
     \section{#1}
 }
 {
-    \end{mdframed}
-    \end{textblock}
+
+    \ifx\HCode\undefined
+        \end{mdframed}
+        \end{textblock}
+    \else
+        \end{minipage}
+    \fi
+
 }
 
 \newenvironment*{rounded_frame}[5]
