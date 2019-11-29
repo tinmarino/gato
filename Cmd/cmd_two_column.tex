@@ -14,20 +14,25 @@
 
 % Switch Html / Pdf for mdframe
 \ifx\HCode\undefined
-\else
     \usepackage{fontspec}                       % Awesome font not available on html
     \usepackage{url}                            % Clickable URL's
     \hypersetup{hidelinks}                      % Hide links
+\else
 \fi
 
 % Drawings
-\usepackage[framemethod=TikZ]{mdframed}     % For box around text
-\usepackage[overlay, absolute]{textpos}     % For Textblock
-        \setlength{\TPHorizModule}{1cm}
-        \setlength{\TPVertModule}{1cm}
-\usepackage{graphicx}                       % include foto
-\usepackage{tabularx}                       % for coordinates
-\usepackage{enumitem}                       % For aptitudes enumeration
+\usepackage[framemethod=TikZ]{mdframed}     % Box around text
+\usepackage[absolute, overlay]{textpos}     % For Textblock
+\ifx\HCode\undefined
+    \setlength{\TPHorizModule}{1cm}
+    \setlength{\TPVertModule}{1cm}
+\else
+    \setlength{\TPHorizModule}{28pt}
+    \setlength{\TPVertModule}{28pt}
+\fi
+\usepackage{graphicx}                       % Include foto
+\usepackage{tabularx}                       % Coordinates
+\usepackage{enumitem}                       % Aptitudes enumeration
 \usepackage{genealogytree}                  % Born
 
 % Display + Margin
@@ -35,18 +40,19 @@
 
 
 % Font
-\usepackage{amsfonts}                       % For checkmark
+\usepackage{amsfonts}                       % Checkmark
 \usepackage{relsize}                        % Scale font
 \usepackage{everysel}
 \EverySelectfont{%
-    \fontdimen2\font=0.3em                  % interword space
-    \hyphenchar\font=`\-                    % to allow hyphenation
+    \fontdimen2\font=0.3em                  % Interword space
+    \hyphenchar\font=`\-                    % Allow hyphenation
     \xspaceskip=0em
 }
 
 
-% Language
-
+% Helper
+\providecommand\mission[1]{\makebox[1.6cm][l]{\textbf{#1}}}
+\let\cvitem\item
 
 
 % ===========================================================================================================================
@@ -55,11 +61,6 @@
 % -2/ must be configured
 \newif\iftbftiny
 \input{../Cmd/cmd_include}
-
-
-% -1/ Config from tccv.cls
-\providecommand\mission[1]{\makebox[1.6cm][l]{\textbf{#1}}}
-\let\cvitem\item
 
 
 
