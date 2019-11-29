@@ -1,5 +1,6 @@
 *.bak
 Martin/*.jpg
+*.dvi
 
 
 *.fdb_latexmk
