@@ -22,11 +22,12 @@
 
 % Drawings
 \usepackage[framemethod=TikZ]{mdframed}     % Box around text
-\usepackage[absolute, overlay]{textpos}     % For Textblock
 \ifx\HCode\undefined
+    \usepackage[absolute, overlay]{textpos}     % For Textblock
     \setlength{\TPHorizModule}{1cm}
     \setlength{\TPVertModule}{1cm}
 \else
+    \usepackage[overlay]{textpos}               % For Textblock
     \setlength{\TPHorizModule}{28pt}
     \setlength{\TPVertModule}{28pt}
 \fi
