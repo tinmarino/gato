@@ -44,7 +44,7 @@
 \usepackage{amsfonts}                       % Checkmark
 \usepackage{relsize}                        % Scale font
 \usepackage{everysel}
-\EverySelectfont{%
+\EverySelectfont{%                          % This percent is important otherwise I got space befor paragph
     \fontdimen2\font=0.3em                  % Interword space
     \hyphenchar\font=`\-                    % Allow hyphenation
     \xspaceskip=0em
@@ -101,7 +101,6 @@
 }
 
 \newcommand\tbfskilltwo[1]{\section{#1}}
-
 
 
 % 2/ Helpers
