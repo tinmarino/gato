@@ -78,9 +78,12 @@
 }
 
 \newcommand\tbffoto[1]{
-  \begin{textblock}{23}(17.7, \tbfbordertop)
-    \includegraphics[width=2.8cm]{#1}
-  \end{textblock}
+    \ifx\HCode\undefined
+        \begin{textblock}{23}(17.7, \tbfbordertop)
+            \includegraphics[width=2.8cm]{#1}
+        \end{textblock}
+    \else
+    \fi
 }
 
 
@@ -107,7 +110,7 @@
         \begin{textblock}{#2}(#3, #4)
         \begin{mdframed}
     \else
-        \begin{minipage}{#2 cm}
+        \begin{textblock}{#2}(#3, #4)
     \fi
 
     \section{#1}
@@ -118,7 +121,7 @@
         \end{mdframed}
         \end{textblock}
     \else
-        \end{minipage}
+        \end{textblock}
     \fi
 
 }
