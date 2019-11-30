@@ -74,9 +74,16 @@
 % Helper : tbfblock : textblock for html
 % from https://tex.stackexchange.com/questions/185933/is-there-an-alternative-to-textpos-when-using-pgfpages
 \makeatletter
-\def\@tbfblock#1(#2, #3){\begin{textblock}{#1}(#2, #3)}
+\ifx\HCode\undefined
+    \def\@tbfblock#1(#2, #3){\begin{textblock}{#1}(#2, #3)}
+    \def\@endtbfblock{\end{textblock}}
+\else
+    \def\@tbfblock#1(#2, #3){
+        \begin{minipage}[t]{0.5\textwidth}
+    }
+    \def\@endtbfblock{\end{minipage}}
+\fi
 \expandafter\let\csname tbfblock\endcsname\@tbfblock
-\def\@endtbfblock{\end{textblock}}
 \expandafter\let\csname endtbfblock\endcsname\@endtbfblock
 \makeatother
 
@@ -86,12 +93,10 @@
 \newsavebox{\internalbox}
 \newenvironment*{internal}[5]
 {
+    \begin{tbfblock}{#2}(#3, #4)
     \ifx\HCode\undefined
-        \begin{tbfblock}{#2}(#3, #4)
         \begin{mdframed}
     \else
-        \begin{lrbox}{\internalbox}
-        \begin{minipage}[t]{0.5\textwidth}
     \fi
 
     \section{#1}
@@ -100,12 +105,9 @@
 
     \ifx\HCode\undefined
         \end{mdframed}
-        \end{tbfblock}
     \else
-        \end{minipage}
-        \end{lrbox}
-        \usebox{\internalbox}
     \fi
+    \end{tbfblock}
 
 }
 
