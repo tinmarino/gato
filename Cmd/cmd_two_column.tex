@@ -268,9 +268,6 @@
     \begin{flat_frame}{\wordwork}{#1}{#2}{#3}{}
     \relscale{1.27}
     \renewcommand\item[4][]{
-        \ifx\HCode\undefined\else
-            \phantom{a}                                     % Html restore font
-        \fi
         \tbfvspace{10pt}
         \iftbftiny \setlength{\parskip}{-10pt} \fi
         {\raggedleft{\textsc{\bodyfont{##2}}}\\[1pt]}         % YEAR
@@ -299,9 +296,6 @@
     }
     \relscale{1.2}
     \renewcommand\item[4][]{
-        \ifx\HCode\undefined\else
-            \phantom{a}                                     % Html restore font
-        \fi
         \textsc{\bodyfont{##2}}                             % YEAR
         \textsc{\bfseries{\bodyfont{##1}}} \\[1pt]          % DIPLOME
         \textsc{\bodyfont{##3}}   \\                        % ETABLISSEMENT
