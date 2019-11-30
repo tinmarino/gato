@@ -74,6 +74,7 @@
 \ifx\HCode\undefined
     \def\@tbfblock#1(#2, #3){\begin{textblock}{#1}(#2, #3)}
     \def\@endtbfblock{\end{textblock}}
+    \newcommand\tbfvspace[1]{\vspace{#1}}
 \else
     \def\@tbfblock#1(#2, #3){
         \pgfmathsetmacro{\tmpfactor}{2} % lager in html
@@ -97,6 +98,7 @@
         %\end{minipage}
     }
 
+    \newcommand\tbfvspace[1]{\vspace{#1}}
 \fi
 \expandafter\let\csname tbfblock\endcsname\@tbfblock
 \expandafter\let\csname endtbfblock\endcsname\@endtbfblock
@@ -111,10 +113,12 @@
     \begin{tbfblock}{#2}(#3, #4)
     \ifx\HCode\undefined
         \begin{mdframed}
+        \section{#1}
     \else
+        \HCode{<h3>#1</h3>}
+        % \section{#1} No becuase the bar is ugly : I must define it TODO
     \fi
 
-    \section{#1}
 }
 {
 
@@ -123,10 +127,46 @@
     \else
     \fi
     \end{tbfblock}
-
 }
 
+% Helper: frame without border
+\newenvironment{flat_frame}[5]
+{
+    \mdfsetup{
+      middlelinecolor=mybluegrey,
+      middlelinewidth=1pt,
+      backgroundcolor=white!0,
+      roundcorner=10pt,
+      skipabove=30,
+      fontcolor=black,
+      innertopmargin=-10pt,
+      innerrightmargin=17pt,
+      middlelinecolor=white!0
+    }
+    \begin{internal}{#1}{#2}{#3}{#4}{#5}
+}
+{
+    \end{internal}
+}
 
+% Helper: frame with border
+\newenvironment*{rounded_frame}[5]
+{
+    \mdfsetup{
+      middlelinecolor=mybluegrey,
+      middlelinewidth=1pt,
+      backgroundcolor=white!0,
+      roundcorner=10pt,
+      skipabove=30,
+      fontcolor=black,
+      innertopmargin=-10pt,
+      innerrightmargin=17pt,
+    }
+    \begin{internal}{#1}{#2}{#3}{#4}{#5}
+}
+{
+    \end{internal}
+}
 
 
 % 1/ Commands
@@ -172,48 +212,6 @@
 \newcommand\tbfskilltwo[1]{\section{#1}}
 
 
-\newenvironment*{rounded_frame}[5]
-{
-    \mdfsetup{
-      middlelinecolor=mybluegrey,
-      middlelinewidth=1pt,
-      backgroundcolor=white!0,
-      roundcorner=10pt,
-      skipabove=30,
-      fontcolor=black,
-      innertopmargin=-10pt,
-      innerrightmargin=17pt,
-    }
-    \begin{internal}{#1}{#2}{#3}{#4}{#5}
-}
-{
-    \end{internal}
-}
-
-
-\newenvironment{flat_frame}[5]
-{
-    \mdfsetup{
-      middlelinecolor=mybluegrey,
-      middlelinewidth=1pt,
-      backgroundcolor=white!0,
-      roundcorner=10pt,
-      skipabove=30,
-      fontcolor=black,
-      innertopmargin=-10pt,
-      innerrightmargin=17pt,
-      middlelinecolor=white!0
-    }
-    \begin{internal}{#1}{#2}{#3}{#4}{#5}
-}
-{
-    \end{internal}
-}
-
-
-
-
-
 % 3/ ENVIRONMENT
 
 
@@ -233,16 +231,16 @@
 % [job] { years }  {company } { more }
 %                                Width, X (horizontal), Y (vertical)
 \newenvironmentx{joblist}[3][1=13.2, 2=7.8, 3=3.9]{
-  \begin{flat_frame}{\wordwork}{#1}{#2}{#3}{}
-  \relscale{1.27}
-  \renewcommand\item[4][]{
-    \vspace*{10pt}
-      \iftbftiny \setlength{\parskip}{-10pt} \fi
-    {\raggedleft\textsc{\bodyfont{##2}}\\[1pt]}                 % YEAR
+    \begin{flat_frame}{\wordwork}{#1}{#2}{#3}{}
+    \relscale{1.27}
+    \renewcommand\item[4][]{
+        \vspace*{10pt}
+        \iftbftiny \setlength{\parskip}{-10pt} \fi
+        {\raggedleft\textsc{\bodyfont{##2}}\\[1pt]}                 % YEAR
 
-    \textsc\bfseries{\bodyfont{##1}}\\[1pt]                   % POSTE
-    \textsc\bodyfont{##3}\\[1pt]                            % COMPANY
-    \bodyfontlight\upshape{##4}                                 % DESCRIPTION
+        \textsc\bfseries{\bodyfont{##1}}\\[1pt]                   % POSTE
+        \textsc\bodyfont{##3}\\[1pt]                            % COMPANY
+        \bodyfontlight\upshape{##4}                                 % DESCRIPTION
     }
 }{
   \end{flat_frame}
@@ -253,15 +251,18 @@
     \begin{rounded_frame}{\wordeducation}{#1}{#2}{#3}{}
     \relscale{1.2}
     \renewcommand\item[4][]{
+        \ifx\HCode\undefined\else
+            \phantom{a}                                     % Html restore font
+        \fi
         \textsc{\bodyfont{##2}}                             % YEAR
-        \hspace*{0.2cm}                                     % TODO align them because letter 0 takes more space than 1
+        \hspace*{6pt}                                       % TODO align them because letter 0 takes more space than 1
         \textsc\bfseries{\bodyfont{##1}} \\[1pt]            % DIPLOME
         \textsc\bodyfont{##3}   \\                          % ETABLISSEMENT
         \textit\descriptionstyle{##4} \\                    % DESCRIPTION
-        \vspace{-0.3cm}                                     % reduce horizontal space
+        \vspace{-9pt}                                       % reduce horizontal space
     }
 }{
-  \end{rounded_frame}
+    \end{rounded_frame}
 }
 
 
