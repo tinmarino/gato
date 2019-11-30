@@ -23,13 +23,14 @@
 % Drawings
 \usepackage[framemethod=TikZ]{mdframed}     % Box around text
 \ifx\HCode\undefined
-    \usepackage[absolute, overlay]{textpos}     % For Textblock
+    \usepackage[absolute, overlay]{textpos}     % Textblock
     \setlength{\TPHorizModule}{1cm}
     \setlength{\TPVertModule}{1cm}
 \else
-    \usepackage[overlay]{textpos}               % For Textblock
+    \usepackage[overlay]{textpos}               % Textblock
     \setlength{\TPHorizModule}{28pt}
     \setlength{\TPVertModule}{28pt}
+    \usepackage{calc}                           % New lenght
 \fi
 \usepackage{graphicx}                       % Include foto
 \usepackage{tabularx}                       % Coordinates
@@ -59,9 +60,54 @@
 % ===========================================================================================================================
 
 
-% -2/ must be configured
+% 0.1/ must be configured
 \newif\iftbftiny
 \input{../Cmd/cmd_include}
+
+
+% 0.2/ Helpers
+% Helper: position for html
+% Args: size, x, y
+\newenvironment*{tbfpos}[3]
+
+
+% Helper : tbfblock : textblock for html
+% from https://tex.stackexchange.com/questions/185933/is-there-an-alternative-to-textpos-when-using-pgfpages
+\makeatletter
+\def\@tbfblock#1(#2, #3){\begin{textblock}{#1}(#2, #3)}
+\expandafter\let\csname tbfblock\endcsname\@tbfblock
+\def\@endtbfblock{\end{textblock}}
+\expandafter\let\csname endtbfblock\endcsname\@endtbfblock
+\makeatother
+
+
+% Helper: internal to position 
+% Args: Name, size, x, y, nada
+\newsavebox{\internalbox}
+\newenvironment*{internal}[5]
+{
+    \ifx\HCode\undefined
+        \begin{tbfblock}{#2}(#3, #4)
+        \begin{mdframed}
+    \else
+        \begin{lrbox}{\internalbox}
+        \begin{minipage}[t]{0.5\textwidth}
+    \fi
+
+    \section{#1}
+}
+{
+
+    \ifx\HCode\undefined
+        \end{mdframed}
+        \end{tbfblock}
+    \else
+        \end{minipage}
+        \end{lrbox}
+        \usebox{\internalbox}
+    \fi
+
+}
 
 
 
@@ -77,16 +123,16 @@
 
 \newcommand\tbfname[2]{
   \pgfmathsetmacro{\tbftmp}{\tbfbordertop + 0.6}
-  \begin{textblock}{23}(0, \tbftmp)
+  \begin{tbfblock}{23}(0, \tbftmp)
      \centering{\headerfirstnamestyle{#1} \hspace{5pt} \headerlastnamestyle{#2}}
-  \end{textblock}
+  \end{tbfblock}
 }
 
 \newcommand\tbffoto[1]{
     \ifx\HCode\undefined
-        \begin{textblock}{23}(17.7, \tbfbordertop)
+        \begin{tbfblock}{23}(17.7, \tbfbordertop)
             \includegraphics[width=2.8cm]{#1}
-        \end{textblock}
+        \end{tbfblock}
     \else
     \fi
 }
@@ -94,45 +140,17 @@
 
 \newcommand\tbfdescription[2][16pt]{
   \pgfmathsetmacro{\tbftmp}{\tbfbordertop + 1.7}
-  \begin{textblock}{23}(0, \tbftmp)
+  \begin{tbfblock}{23}(0, \tbftmp)
   \begin{center}
 
   {\fontsize{#1}{0.6cm} \scshape\bfseries #2}
 
   \end{center}
-  \end{textblock}
+  \end{tbfblock}
 }
 
 \newcommand\tbfskilltwo[1]{\section{#1}}
 
-
-% 2/ Helpers
-% Name, size, x, y, nada
-\newsavebox{\internalbox}
-\newenvironment*{internal}[5]
-{
-    \ifx\HCode\undefined
-        \begin{textblock}{#2}(#3, #4)
-        \begin{mdframed}
-    \else
-        \begin{lrbox}{\internalbox}
-        \begin{minipage}[t]{0.5\textwidth}
-    \fi
-
-    \section{#1}
-}
-{
-
-    \ifx\HCode\undefined
-        \end{mdframed}
-        \end{textblock}
-    \else
-        \end{minipage}
-        \end{lrbox}
-        \usebox{\internalbox}
-    \fi
-
-}
 
 \newenvironment*{rounded_frame}[5]
 {
@@ -186,11 +204,11 @@
     \newdimen\boxwidth
     \boxwidth=\dimexpr\linewidth-2\fboxsep\relax
     \pgfmathsetmacro{\tbftmpleft}{\tbfborderleft + 1}
-    \begin{textblock}{7}(\tbfborderleft, \tbfbordertop)
+    \begin{tbfblock}{7}(\tbfborderleft, \tbfbordertop)
     \begin{tabular}{l|l}
 }{
     \end{tabular}
-  \end{textblock}
+  \end{tbfblock}
 }
 
 % [job] { years }  {company } { more }
