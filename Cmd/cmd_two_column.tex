@@ -237,7 +237,7 @@
   \begin{tbfblock}{23}(0, \tbftmp)
   \begin{center}
 
-      {\fontsize{#1}{17pt} \scshape{ \bfseries{ #2 }}}
+      {\fontsize{#1}{17pt} \scshape{ \textbf{ #2 }}}
 
   \end{center}
   \end{tbfblock}
@@ -271,7 +271,7 @@
         \tbfvspace{10pt}
         \iftbftiny \setlength{\parskip}{-10pt} \fi
         {\raggedleft{\textsc{\bodyfont{##2}}}\\[1pt]}         % YEAR
-        \bodyfont{\textsc{\bfseries{##1}}}\\[1pt]           % POSTE
+        \textsc{\textbf{\bodyfont{##1}}}\\[1pt]           % POSTE
         \textsc{\bodyfont{##3}}\\[1pt]                      % COMPANY
         \bodyfontlight{\upshape{##4}}                       % DESCRIPTION
     }
@@ -297,7 +297,7 @@
     \relscale{1.2}
     \renewcommand\item[4][]{
         \textsc{\bodyfont{##2}}                             % YEAR
-        \textsc{\bfseries{\bodyfont{##1}}} \\[1pt]          % DIPLOME
+        \textsc{\textbf{\bodyfont{##1}}} \\[1pt]          % DIPLOME
         \textsc{\bodyfont{##3}}   \\                        % ETABLISSEMENT
         \bodyfontlight{\upshape{##4}}                       % DESCRIPTION
         \tbfvspace{10pt}                                    % Increase horizontal space
