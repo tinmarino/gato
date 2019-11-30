@@ -79,9 +79,25 @@
     \def\@endtbfblock{\end{textblock}}
 \else
     \def\@tbfblock#1(#2, #3){
-        \begin{minipage}[t]{0.5\textwidth}
+        \pgfmathsetmacro{\tmpwidth}{#1 / 21 * 100}
+        \pgfmathsetmacro{\tmpleft}{#2 / 21 * 100}
+        \pgfmathsetmacro{\tmptop}{#3 / 29.7 * 100}
+        \HCode{<div class="textblock"
+            style="float: left;
+                position: absolute;
+                width: \tmpwidth\%;
+                margin-left: \tmpleft\%;
+                margin-top: \tmptop\%;
+            "
+        >\Hnewline}
+        %\begin{minipage}[]{ \tbftmp\textwidth }
+        % \begin{flushleft}
     }
-    \def\@endtbfblock{\end{minipage}}
+    \def\@endtbfblock{
+        \HCode{</div>\Hnewline}
+        % \end{flushleft}
+        %\end{minipage}
+    }
 \fi
 \expandafter\let\csname tbfblock\endcsname\@tbfblock
 \expandafter\let\csname endtbfblock\endcsname\@endtbfblock
