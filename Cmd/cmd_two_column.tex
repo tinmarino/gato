@@ -68,8 +68,11 @@
 
 % 1/ Commands
 \newcommand\tbflogo[1]{\includegraphics[width=12pt, height=12pt]{#1}}
+
 \newcommand\tbfimflag[1]{\includegraphics[height=12pt]{#1}\phantom{\tiny{1}}}
+
 \newcommand\tbfsoft[2]{\includegraphics[height=12pt]{#2}\phantom{\tiny{1}}#1}
+
 \newcommand\tbfpart[1]{#1}
 
 \newcommand\tbfname[2]{
@@ -105,13 +108,15 @@
 
 % 2/ Helpers
 % Name, size, x, y, nada
+\newsavebox{\internalbox}
 \newenvironment*{internal}[5]
 {
     \ifx\HCode\undefined
         \begin{textblock}{#2}(#3, #4)
         \begin{mdframed}
     \else
-        \begin{textblock}{#2}(#3, #4)
+        \begin{lrbox}{\internalbox}
+        \begin{minipage}[t]{0.5\textwidth}
     \fi
 
     \section{#1}
@@ -122,7 +127,9 @@
         \end{mdframed}
         \end{textblock}
     \else
-        \end{textblock}
+        \end{minipage}
+        \end{lrbox}
+        \usebox{\internalbox}
     \fi
 
 }
