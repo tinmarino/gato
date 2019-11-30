@@ -27,10 +27,7 @@
     \setlength{\TPHorizModule}{1cm}
     \setlength{\TPVertModule}{1cm}
 \else
-    \usepackage[overlay]{textpos}               % Textblock
-    \setlength{\TPHorizModule}{28pt}
-    \setlength{\TPVertModule}{28pt}
-    \usepackage{calc}                           % New lenght
+    % No package for tex4ht
 \fi
 \usepackage{graphicx}                       % Include foto
 \usepackage{tabularx}                       % Coordinates
@@ -79,15 +76,16 @@
     \def\@endtbfblock{\end{textblock}}
 \else
     \def\@tbfblock#1(#2, #3){
-        \pgfmathsetmacro{\tmpwidth}{#1 / 21 * 100}
-        \pgfmathsetmacro{\tmpleft}{#2 / 21 * 100}
-        \pgfmathsetmacro{\tmptop}{#3 / 29.7 * 100}
+        \pgfmathsetmacro{\tmpfactor}{2} % lager in html
+        \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \tmpfactor)}
+        \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \tmpfactor)}
+        \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \tmpfactor)}
         \HCode{<div class="textblock"
             style="float: left;
                 position: absolute;
-                width: \tmpwidth\%;
-                margin-left: \tmpleft\%;
-                margin-top: \tmptop\%;
+                width: \tmpwidth px;
+                margin-left: \tmpleft px;
+                margin-top: \tmptop px;
             "
         >\Hnewline}
         %\begin{minipage}[]{ \tbftmp\textwidth }
@@ -98,6 +96,7 @@
         % \end{flushleft}
         %\end{minipage}
     }
+
 \fi
 \expandafter\let\csname tbfblock\endcsname\@tbfblock
 \expandafter\let\csname endtbfblock\endcsname\@endtbfblock
@@ -140,10 +139,12 @@
 \newcommand\tbfpart[1]{#1}
 
 \newcommand\tbfname[2]{
-  \pgfmathsetmacro{\tbftmp}{\tbfbordertop + 0.6}
-  \begin{tbfblock}{23}(0, \tbftmp)
-     \centering{\headerfirstnamestyle{#1} \hspace{5pt} \headerlastnamestyle{#2}}
-  \end{tbfblock}
+    \pgfmathsetmacro{\tbftmp}{\tbfbordertop}
+    \begin{tbfblock}{23}(0, \tbftmp)
+    \begin{center}
+        \headerfirstnamestyle{#1} \hspace{5pt} \headerlastnamestyle{#2}
+    \end{center}
+    \end{tbfblock}
 }
 
 \newcommand\tbffoto[1]{
@@ -152,6 +153,7 @@
             \includegraphics[width=2.8cm]{#1}
         \end{tbfblock}
     \else
+    % Do not include foto in html
     \fi
 }
 
@@ -161,7 +163,7 @@
   \begin{tbfblock}{23}(0, \tbftmp)
   \begin{center}
 
-  {\fontsize{#1}{0.6cm} \scshape\bfseries #2}
+  {\fontsize{#1}{17pt} \scshape\bfseries #2}
 
   \end{center}
   \end{tbfblock}
@@ -215,7 +217,6 @@
 % 3/ ENVIRONMENT
 
 
-
 % [coordinate][Width, X, Y]
 \newenvironmentx{coordinatelist}{
     \needspace{0.5\textheight}
@@ -235,7 +236,7 @@
   \begin{flat_frame}{\wordwork}{#1}{#2}{#3}{}
   \relscale{1.27}
   \renewcommand\item[4][]{
-    \vspace*{0.3cm}
+    \vspace*{10pt}
       \iftbftiny \setlength{\parskip}{-10pt} \fi
     {\raggedleft\textsc{\bodyfont{##2}}\\[1pt]}                 % YEAR
 
@@ -249,15 +250,15 @@
 
 % Formation
 \newenvironmentx{yearlist}[3][1=7.1, 2=0.7, 3=3.9]{
-  \begin{rounded_frame}{\wordeducation}{#1}{#2}{#3}{}
-  \relscale{1.2}
+    \begin{rounded_frame}{\wordeducation}{#1}{#2}{#3}{}
+    \relscale{1.2}
     \renewcommand\item[4][]{
-    \textsc{\bodyfont{##2}}                                     % YEAR
-            \hspace*{0.2cm}                                         % TODO align them because letter 0 takes more space than 1
-            \textsc\bfseries{\bodyfont{##1}} \\[1pt]                % DIPLOME
-    \textsc\bodyfont{##3}   \\                          % ETABLISSEMENT
-    \textit\descriptionstyle{##4} \\                            % DESCRIPTION
-    \vspace{-0.3cm} % reduce horizontal space
+        \textsc{\bodyfont{##2}}                             % YEAR
+        \hspace*{0.2cm}                                     % TODO align them because letter 0 takes more space than 1
+        \textsc\bfseries{\bodyfont{##1}} \\[1pt]            % DIPLOME
+        \textsc\bodyfont{##3}   \\                          % ETABLISSEMENT
+        \textit\descriptionstyle{##4} \\                    % DESCRIPTION
+        \vspace{-0.3cm}                                     % reduce horizontal space
     }
 }{
   \end{rounded_frame}
