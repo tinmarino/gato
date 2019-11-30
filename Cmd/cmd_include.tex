@@ -1,22 +1,27 @@
 
+% Language (Latex)
 \ifx\HCode\undefined
 \else
     \usepackage{polyglossia}                    % Language
     \typeout{tbf : language \tbflanguage}
     \ifnum\pdfstrcmp{\tbflanguage}{french}=0
     \frenchspacing                              % Better looking spacings after periods
-    \setmainlanguage{french}
+    \setmainlanguage{French}
     \fi
     \ifnum\pdfstrcmp{\tbflanguage}{english}=0
-    \setmainlanguage{english}
+    \setmainlanguage{English}
     \fi
     \ifnum\pdfstrcmp{\tbflanguage}{spanish}=0
     \typeout{tbf : spanish}
-    \setmainlanguage{spanish}
+    \setmainlanguage{Spanish}
     \fi
 \fi
 
-% Language
+
+
+
+
+% Language (Tbf words)
 \def\wordeducation{}
 \def\wordwork{}
 \def\wordskill{}
