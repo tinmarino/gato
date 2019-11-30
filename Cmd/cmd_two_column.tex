@@ -273,10 +273,10 @@
         \fi
         \tbfvspace{10pt}
         \iftbftiny \setlength{\parskip}{-10pt} \fi
-        {\raggedleft\textsc{\bodyfont{##2}}\\[1pt]}         % YEAR
-        \textsc\bfseries{\bodyfont{##1}}\\[1pt]             % POSTE
-        \textsc\bodyfont{##3}\\[1pt]                        % COMPANY
-        \bodyfontlight\upshape{##4}                         % DESCRIPTION
+        {\raggedleft{\textsc{\bodyfont{##2}}}\\[1pt]}         % YEAR
+        \bodyfont{\textsc{\bfseries{##1}}}\\[1pt]           % POSTE
+        \textsc{\bodyfont{##3}}\\[1pt]                      % COMPANY
+        \bodyfontlight{\upshape{##4}}                       % DESCRIPTION
     }
 }{
   \end{flat_frame}
@@ -303,15 +303,10 @@
             \phantom{a}                                     % Html restore font
         \fi
         \textsc{\bodyfont{##2}}                             % YEAR
-        \tbfhspace{6pt}                                     % TODO align them because letter 0 takes more space than 1
-        \textsc\bfseries{\bodyfont{##1}} \\[1pt]            % DIPLOME
-        \textsc\bodyfont{##3}   \\                          % ETABLISSEMENT
-        \textit\descriptionstyle{##4} \\                    % DESCRIPTION
-        \ifx\HCode\undefined
-            \tbfvspace{-10pt}                               % reduce horizontal space
-        \else
-            \tbfvspace{10pt}                                % Html increase horizontal space
-        \fi
+        \textsc{\bfseries{\bodyfont{##1}}} \\[1pt]          % DIPLOME
+        \textsc{\bodyfont{##3}}   \\                        % ETABLISSEMENT
+        \bodyfontlight{\upshape{##4}}                       % DESCRIPTION
+        \tbfvspace{10pt}                                    % Increase horizontal space
     }
 }{
     \end{rounded_frame}
