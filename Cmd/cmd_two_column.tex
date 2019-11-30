@@ -74,13 +74,14 @@
 \ifx\HCode\undefined
     \def\@tbfblock#1(#2, #3){\begin{textblock}{#1}(#2, #3)}
     \def\@endtbfblock{\end{textblock}}
-    \newcommand\tbfvspace[1]{\vspace{#1}}
+    \newcommand\tbfvspace[1]{\vspace*{#1}}
+    \newcommand\tbfhspace[1]{\hspace*{#1}}
 \else
+    \pgfmathsetmacro{\htmlfactor}{2.3} % lager in html
     \def\@tbfblock#1(#2, #3){
-        \pgfmathsetmacro{\tmpfactor}{2} % lager in html
-        \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \tmpfactor)}
-        \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \tmpfactor)}
-        \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \tmpfactor)}
+        \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \htmlfactor)}
+        \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \htmlfactor)}
+        \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \htmlfactor)}
         \HCode{<div class="textblock"
             style="float: left;
                 position: absolute;
@@ -98,7 +99,18 @@
         %\end{minipage}
     }
 
-    \newcommand\tbfvspace[1]{\vspace{#1}}
+    \newcommand\tbfvspace[1]{
+        \pgfmathsetmacro{\tmpmargintop}{int(#1 * \htmlfactor)}
+        \HCode{<br style="display: block; margin-top: \tmpmargintop px;">}
+    }
+    \newcommand\tbfhspace[1]{
+        \pgfmathsetmacro{\tmpmarginleft}{int(#1 * \htmlfactor)}
+        \HtmlParOff
+        \HCode{<span class="hspace" style="
+            display:inline-block;
+            margin-right: \tmpmarginleft px;"></span>
+        }
+    }
 \fi
 \expandafter\let\csname tbfblock\endcsname\@tbfblock
 \expandafter\let\csname endtbfblock\endcsname\@endtbfblock
@@ -182,7 +194,7 @@
     \pgfmathsetmacro{\tbftmp}{\tbfbordertop}
     \begin{tbfblock}{23}(0, \tbftmp)
     \begin{center}
-        \headerfirstnamestyle{#1} \hspace{5pt} \headerlastnamestyle{#2}
+        \headerfirstnamestyle{#1} \tbfhspace{5pt} \headerlastnamestyle{#2}
     \end{center}
     \end{tbfblock}
 }
@@ -225,7 +237,7 @@
     \begin{tabular}{l|l}
 }{
     \end{tabular}
-  \end{tbfblock}
+    \end{tbfblock}
 }
 
 % [job] { years }  {company } { more }
@@ -234,13 +246,15 @@
     \begin{flat_frame}{\wordwork}{#1}{#2}{#3}{}
     \relscale{1.27}
     \renewcommand\item[4][]{
-        \vspace*{10pt}
+        \ifx\HCode\undefined\else
+            \phantom{a}                                     % Html restore font
+        \fi
+        \tbfvspace{10pt}
         \iftbftiny \setlength{\parskip}{-10pt} \fi
-        {\raggedleft\textsc{\bodyfont{##2}}\\[1pt]}                 % YEAR
-
-        \textsc\bfseries{\bodyfont{##1}}\\[1pt]                   % POSTE
-        \textsc\bodyfont{##3}\\[1pt]                            % COMPANY
-        \bodyfontlight\upshape{##4}                                 % DESCRIPTION
+        {\raggedleft\textsc{\bodyfont{##2}}\\[1pt]}         % YEAR
+        \textsc\bfseries{\bodyfont{##1}}\\[1pt]             % POSTE
+        \textsc\bodyfont{##3}\\[1pt]                        % COMPANY
+        \bodyfontlight\upshape{##4}                         % DESCRIPTION
     }
 }{
   \end{flat_frame}
@@ -255,11 +269,15 @@
             \phantom{a}                                     % Html restore font
         \fi
         \textsc{\bodyfont{##2}}                             % YEAR
-        \hspace*{6pt}                                       % TODO align them because letter 0 takes more space than 1
+        \tbfhspace{6pt}                                     % TODO align them because letter 0 takes more space than 1
         \textsc\bfseries{\bodyfont{##1}} \\[1pt]            % DIPLOME
         \textsc\bodyfont{##3}   \\                          % ETABLISSEMENT
         \textit\descriptionstyle{##4} \\                    % DESCRIPTION
-        \vspace{-9pt}                                       % reduce horizontal space
+        \ifx\HCode\undefined
+            \tbfvspace{10pt}                                % reduce horizontal space
+        \else
+            \tbfvspace{10pt}                                % reduce horizontal space
+        \fi
     }
 }{
     \end{rounded_frame}
@@ -275,33 +293,7 @@
 }
 
 
-
-\newcommand\tbfbirth[1]{
-    \includegraphics[width=0.05\textwidth]{../Figure/logo/birthday1_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
-}
-\newcommand\tbfmail[1]{
-    \Letter      & \normalsize  \bodyfont{#1}\smallskip\\
-}
-\newcommand\tbfaddr[1]{
-    \Writinghand & \normalsize  \bodyfont{#1}\smallskip\\
-}
-\newcommand\tbftel[1]{
-    \Telefon     & \normalsize  \bodyfont{#1}\smallskip\\
-}
-\newcommand\tbfvoidpersonal[1]{
-    \hspace{1mm}    & \normalsize  \bodyfont{#1}\smallskip\\
-}
-\newcommand\tbfflag[1]{
-    \includegraphics[width=0.05\textwidth]{../Figure/flag.png}    & \normalsize  \bodyfont{#1} \smallskip\\
-}
-\newcommand\tbfcar[1]{
-    \includegraphics[width=0.05\textwidth]{../Figure/logo/car1_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
-}
-\newcommand\tbfwww[1]{
-    \includegraphics[width=0.05\textwidth]{../Figure/logo/www_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
-}
-
-
+% Language
 \newenvironment{languagelist}{
   \renewcommand\item[2]{
     ##1 & ##2 \\
@@ -321,3 +313,29 @@
   \end{tabular}
 }
 
+
+% Icon coordinate
+\newcommand\tbfbirth[1]{
+    \includegraphics[width=0.05\textwidth]{../Figure/logo/birthday1_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
+}
+\newcommand\tbfmail[1]{
+    \Letter      & \normalsize  \bodyfont{#1}\smallskip\\
+}
+\newcommand\tbfaddr[1]{
+    \Writinghand & \normalsize  \bodyfont{#1}\smallskip\\
+}
+\newcommand\tbftel[1]{
+    \Telefon     & \normalsize  \bodyfont{#1}\smallskip\\
+}
+\newcommand\tbfvoidpersonal[1]{
+    \tbfhspace{4pt}    & \normalsize  \bodyfont{#1}\smallskip\\
+}
+\newcommand\tbfflag[1]{
+    \includegraphics[width=0.05\textwidth]{../Figure/flag.png}    & \normalsize  \bodyfont{#1} \smallskip\\
+}
+\newcommand\tbfcar[1]{
+    \includegraphics[width=0.05\textwidth]{../Figure/logo/car1_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
+}
+\newcommand\tbfwww[1]{
+    \includegraphics[width=0.05\textwidth]{../Figure/logo/www_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
+}
