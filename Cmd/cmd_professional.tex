@@ -109,52 +109,6 @@ ItalicFont = Fontin-Italic.otf
   \end{center}
 }
 
-% Helper: commands
-\newcommand\tbflogo[1]{\includegraphics[width=0.35cm, height=0.35cm]{#1}}
-\newcommand\tbfimflag[1]{
-    \includegraphics[height=12pt]{#1}\phantom{\tiny{1}}}
-\newcommand\tbfsoft[2]{\includegraphics[height=0.3cm]{#2}\phantom{\tiny{1}}#1}
-
-%%
-%        Coordinates
-%% 
-% 1F4f1 : 📱
-% 1FE47 : 🹇
-% 2709 : ✉
-% 2706 : ✆
-\newfontfamily\emojifont{Symbola}
-\newenvironment{coordinatelist}{
-    \section{\wordinfo}
-    \begin{tabular}{rl}
-}{
-    \end{tabular}
-}
-\newcommand{\PersonalEntry}[2]{
-    #1 & #2 \\
-}
-\newcommand\tbfflag[1]{
-    \PersonalEntry{\emojifont ⚐}{#1}
-}
-\newcommand\tbfbirth[1]{
-    \PersonalEntry{\includegraphics[height=12pt]{../Figure/logo/birthday1_white_128.png}}{#1}
-}
-\newcommand\tbfmail[1]{
-    \PersonalEntry{\emojifont ✉}{#1}
-}
-\newcommand\tbftel[1]{
-    \PersonalEntry{\emojifont ✆}{#1}
-}
-\newcommand\tbfaddr[1]{
-    \PersonalEntry{\Writtinghand}{#1}
-}
-\newcommand\tbfwww[1]{
-    \PersonalEntry{\includegraphics[height=12pt]{../Figure/logo/www_base3_128.png}}{#1}
-}
-\newcommand\tbfvoidpersonal[1]{
-    \PersonalEntry{}{#1}
-}
-
-
 
 \newenvironmentx{yearlist}[3][1=0, 2=0, 3=0]{
     \renewcommand\item[4][]{
@@ -206,6 +160,13 @@ ItalicFont = Fontin-Italic.otf
     \end{samepage}
 }
 
+
+\newenvironment{coordinatelist}{
+    \section{\wordinfo}
+    \begin{tabular}{rl}
+}{
+    \end{tabular}
+}
 
 \newcommand{\tbfskilltwo}[2]{
     \section{#1}

@@ -1,4 +1,3 @@
-
 % Language (Latex)
 \ifx\HCode\undefined
 \else
@@ -51,4 +50,92 @@
 \def\wordsoftware{Software}
 \def\wordlanguage{Idioma}
 \fi
+
+
+
+
+
+% Coordinate elements
+%%
+%        Coordinates
+%% 
+% 1F4f1 : 📱
+% 1FE47 : 🹇
+% 2709 : ✉
+% 2706 : ✆
+% Must be in  a tabular with 2 col
+
+% Helpers
+\newfontfamily\emojifont{Symbola}
+\newcommand{\PersonalEntry}[2]{
+    \normalsize \bodyfont{#1} & \normalsize \bodyfont{#2} \smallskip \\
+}
+
+% Helper : iMage size of text
+% <- https://tex.stackexchange.com/questions/139143/how-to-set-an-inline-figure-matching-the-text-height
+\newcommand\tbfimg[1]{\includegraphics[width=12pt, height=12pt]{#1}}
+
+% Go
+
+\newcommand\tbfflag[1]{
+    \ifx\HCode\undefined
+        \PersonalEntry{\tbfimg{../Figure/flag.png}}{#1}
+    \else
+        \PersonalEntry{\emojifont ⚐}{#1}
+    \fi
+}
+
+\newcommand\tbfbirth[1]{
+    \ifx\HCode\undefined
+        \PersonalEntry{\tbfimg{../Figure/logo/birthday1_128.png}}{#1}
+    \else
+        \PersonalEntry{\tbfimg{../Figure/logo/birthday1_white_128.png}}{#1}
+    \fi
+}
+
+\newcommand\tbfmail[1]{
+    \ifx\HCode\undefined
+        \PersonalEntry{\Letter}{#1}
+    \else
+        \PersonalEntry{\emojifont ✉}{#1}
+    \fi
+}
+
+\newcommand\tbftel[1]{
+    \ifx\HCode\undefined
+        \PersonalEntry{\Telefon}{#1}
+    \else
+        \PersonalEntry{\emojifont ✆}{#1}
+    \fi
+}
+
+\newcommand\tbfaddr[1]{
+    \PersonalEntry{\Writtinghand}{#1}
+}
+
+\newcommand\tbfwww[1]{
+    \ifx\HCode\undefined
+        \PersonalEntry{\tbfimg{../Figure/logo/www_128.png}}{#1}
+    \else
+        \PersonalEntry{\tbfimg{../Figure/logo/www_base3_128.png}}{#1}
+    \fi
+}
+
+\newcommand\tbfvoidpersonal[1]{
+    \PersonalEntry{}{#1}
+}
+
+\newcommand\tbfcar[1]{
+    \includegraphics[width=0.05\textwidth]{../Figure/logo/car1_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
+}
+
+
+
+% Skill
+\newcommand\tbflogo[1]{\includegraphics[width=12pt, height=12pt]{#1}}
+
+\newcommand\tbfimflag[1]{\includegraphics[height=12pt]{#1}\phantom{\tiny{1}}}
+
+\newcommand\tbfsoft[2]{\includegraphics[height=12pt]{#2}\phantom{\tiny{1}}#1}
+
 

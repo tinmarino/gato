@@ -63,6 +63,7 @@
 
 
 % 0.2/ Helpers
+
 % Helper: position for html
 % Args: size, x, y
 \newenvironment*{tbfpos}[3]
@@ -71,19 +72,20 @@
 % Helper : tbfblock : textblock for html
 % from https://tex.stackexchange.com/questions/185933/is-there-an-alternative-to-textpos-when-using-pgfpages
 \makeatletter
+\pgfmathsetmacro{\htmlfactor}{2.3} % lager in html
 \ifx\HCode\undefined
     \def\@tbfblock#1(#2, #3){\begin{textblock}{#1}(#2, #3)}
     \def\@endtbfblock{\end{textblock}}
     \newcommand\tbfvspace[1]{\vspace*{#1}}
     \newcommand\tbfhspace[1]{\hspace*{#1}}
 \else
-    \pgfmathsetmacro{\htmlfactor}{2.3} % lager in html
     \def\@tbfblock#1(#2, #3){
         \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \htmlfactor)}
         \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \htmlfactor)}
         \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \htmlfactor)}
         \HCode{<div class="textblock"
-            style="float: left;
+            style="
+                float: left;
                 position: absolute;
                 width: \tmpwidth px;
                 margin-left: \tmpleft px;
@@ -93,11 +95,19 @@
         %\begin{minipage}[]{ \tbftmp\textwidth }
         % \begin{flushleft}
     }
-    \def\@endtbfblock{
-        \HCode{</div>\Hnewline}
-        % \end{flushleft}
-        %\end{minipage}
+    \def\@endtbfblock{\HCode{</div>\Hnewline}}
+
+
+    % Custom html Block with custom attribute (i.e. style)
+    \def\@tbfhtmlblock#1(#2, #3, #4){
+        \def\htmlstyle{#4}
+        \HCode{<div class="textcustomblock"
+            \htmlstyle
+        >\Hnewline}
     }
+    \expandafter\let\csname tbfhtmlblock\endcsname\@tbfhtmlblock
+    \def\@endtbfhtmlblock{\HCode{</div>\Hnewline}}
+    \expandafter\let\csname endtbfhtmlblock\endcsname\@endtbfhtmlblock
 
     \newcommand\tbfvspace[1]{
         \pgfmathsetmacro{\tmpmargintop}{int(#1 * \htmlfactor)}
@@ -122,13 +132,30 @@
 \newsavebox{\internalbox}
 \newenvironment*{internal}[5]
 {
-    \begin{tbfblock}{#2}(#3, #4)
     \ifx\HCode\undefined
+        \begin{tbfblock}{#2}(#3, #4)
         \begin{mdframed}
         \section{#1}
     \else
-        \HCode{<h3>#1</h3>}
-        % \section{#1} No becuase the bar is ugly : I must define it TODO
+        \ifx&#5&%
+            \pgfmathsetmacro{\tmpwidth}{int(#2 * 28.45 * \htmlfactor)}
+            \pgfmathsetmacro{\tmpleft}{int(#3 * 28.45 * \htmlfactor)}
+            \pgfmathsetmacro{\tmptop}{int(#4 * 28.45 * \htmlfactor)}
+            \def\tmparg{style="
+                float: left;
+                position: absolute;
+                width: \tmpwidth px;
+                margin-left: \tmpleft px;
+                margin-top: \tmptop px;
+            "}
+        \else
+            \def\tmparg{#5}
+        \fi
+        \begin{tbfhtmlblock}{#2}(#3, #4, \tmparg)
+
+        % Font size 132 as section
+        % \section{#1} No because the bar is ugly : I must define it TODO
+        \HCode{<h3 style="font-size: 132\%;"> #1</h3>}
     \fi
 
 }
@@ -136,9 +163,10 @@
 
     \ifx\HCode\undefined
         \end{mdframed}
+        \end{tbfblock}
     \else
+        \end{tbfhtmlblock}
     \fi
-    \end{tbfblock}
 }
 
 % Helper: frame without border
@@ -182,12 +210,6 @@
 
 
 % 1/ Commands
-\newcommand\tbflogo[1]{\includegraphics[width=12pt, height=12pt]{#1}}
-
-\newcommand\tbfimflag[1]{\includegraphics[height=12pt]{#1}\phantom{\tiny{1}}}
-
-\newcommand\tbfsoft[2]{\includegraphics[height=12pt]{#2}\phantom{\tiny{1}}#1}
-
 \newcommand\tbfpart[1]{#1}
 
 \newcommand\tbfname[2]{
@@ -262,7 +284,19 @@
 
 % Formation
 \newenvironmentx{yearlist}[3][1=7.1, 2=0.7, 3=3.9]{
-    \begin{rounded_frame}{\wordeducation}{#1}{#2}{#3}{}
+    % Html stuff
+    \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \htmlfactor)}
+    \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \htmlfactor)}
+    \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \htmlfactor)}
+    \begin{rounded_frame}{\wordeducation}{#1}{#2}{#3}{
+        style="
+            % No position absolute so I push skill
+            float: left;
+            width: \tmpwidth px;
+            margin-left: \tmpleft px;
+            margin-top: \tmptop px;
+        "
+    }
     \relscale{1.2}
     \renewcommand\item[4][]{
         \ifx\HCode\undefined\else
@@ -274,9 +308,9 @@
         \textsc\bodyfont{##3}   \\                          % ETABLISSEMENT
         \textit\descriptionstyle{##4} \\                    % DESCRIPTION
         \ifx\HCode\undefined
-            \tbfvspace{10pt}                                % reduce horizontal space
+            \tbfvspace{-10pt}                               % reduce horizontal space
         \else
-            \tbfvspace{10pt}                                % reduce horizontal space
+            \tbfvspace{10pt}                                % Html increase horizontal space
         \fi
     }
 }{
@@ -286,10 +320,23 @@
 
 % Compétence width, x, y
 \newenvironmentx{skilllist}[3][1=7.1, 2=0.7, 3=15.2]{
-  \begin{rounded_frame}{\wordlanguage}{#1}{#2}{#3}{}
-  \relscale{1.2}
+    \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \htmlfactor)}
+    \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \htmlfactor)}
+    \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \htmlfactor)}
+    \begin{rounded_frame}{\wordlanguage}{#1}{#2}{#3}{
+        style="
+            % No position absolute so I ampushed
+            % No margin top so I am under edu
+            % Clear both otherwise I push jobs
+            clear: both;
+            float: left;
+            width: \tmpwidth px;
+            margin-left: \tmpleft px;
+        "
+    }
+    \relscale{1.2}
 }{
-  \end{rounded_frame}
+    \end{rounded_frame}
 }
 
 
@@ -305,28 +352,3 @@
 
 
 
-% Icon coordinate
-\newcommand\tbfbirth[1]{
-    \includegraphics[width=0.05\textwidth]{../Figure/logo/birthday1_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
-}
-\newcommand\tbfmail[1]{
-    \Letter      & \normalsize  \bodyfont{#1}\smallskip\\
-}
-\newcommand\tbfaddr[1]{
-    \Writinghand & \normalsize  \bodyfont{#1}\smallskip\\
-}
-\newcommand\tbftel[1]{
-    \Telefon     & \normalsize  \bodyfont{#1}\smallskip\\
-}
-\newcommand\tbfvoidpersonal[1]{
-    \tbfhspace{4pt}    & \normalsize  \bodyfont{#1}\smallskip\\
-}
-\newcommand\tbfflag[1]{
-    \includegraphics[width=0.05\textwidth]{../Figure/flag.png}    & \normalsize  \bodyfont{#1} \smallskip\\
-}
-\newcommand\tbfcar[1]{
-    \includegraphics[width=0.05\textwidth]{../Figure/logo/car1_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
-}
-\newcommand\tbfwww[1]{
-    \includegraphics[width=0.05\textwidth]{../Figure/logo/www_128.png}    & \normalsize  \bodyfont{#1} \smallskip\\
-}
