@@ -1,5 +1,15 @@
 \documentclass[paper=a4, fontsize=11pt]{tccv}          % Unfortynately must keep some stuff in class for now
 
+\iffalse IDEA
+================================================================================
+Pretty : 1h Html : make var margin left
+Pretty : 2h define macro interface, can be textual or test class nam
+Pretty : 5h make package, even class insted of ugly input
+
+
+================================================================================
+\fi
+
 % 0/ Default settings
 \providecommand{\tbfbordertop}{0.6}
 \providecommand{\tbfborderleft}{0.6}
@@ -81,6 +91,7 @@
             style="
                 float: left;
                 position: absolute;
+                % display: inline-block;
                 width: \tmpwidth px;
                 margin-left: \tmpleft px;
                 margin-top: \tmptop px;
@@ -252,7 +263,6 @@
 \newcommand\tbfskilltwo[1]{\section{#1}}
 
 
-% 3/ ENVIRONMENT
 \newcommand*{\tbfstyledegree}[1]{
     \ifx\HCode\undefined
         \bodyfont{#1}
@@ -267,6 +277,13 @@
         \textsc{\bodyfont{#1}}
     \fi
 }
+
+
+
+%%%%%%%%%%%%%%%%
+% 3/ ENVIRONMENT
+%%%%%%%%%%%%%%%%
+
 
 
 % [coordinate][Width, X, Y]
@@ -284,10 +301,20 @@
 
 \newcommand\ralign[1]{\begin{center} #1 \end{center}}
 
-% [job] { years }  {company } { more }
-%                                Width, X (horizontal), Y (vertical)
+
+% Jobs { years }  {company } { more }
+% Width, X (horizontal), Y (vertical)
 \newenvironmentx{joblist}[3][1=13.2, 2=7.8, 3=3.9]{
-    \begin{flat_frame}{\wordwork}{#1}{#2}{#3}{}
+    \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \htmlfactor)}
+    \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \htmlfactor)}
+    \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \htmlfactor)}
+    \begin{flat_frame}{\wordwork}{#1}{#2}{#3}{
+        style="
+            display: inline-block;
+            max-width: \tmpwidth px;
+            margin-left: 45px;
+        "
+    }
     \relscale{1.27}
     \renewcommand\item[4][]{
         \tbfvspace{10pt}
@@ -311,19 +338,23 @@
   \end{flat_frame}
 }
 
+
 % Formation
 \newenvironmentx{yearlist}[3][1=7.1, 2=0.7, 3=3.9]{
     % Html stuff
     \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \htmlfactor)}
     \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \htmlfactor)}
     \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \htmlfactor)}
+    % Append div at top to push me down
+    \HCode{<div class="textcustomblock" style="display: inline-block; width:100\%; margin-left: 45px; margin-top: 261px;"></div>}
+    % Create my space
     \begin{rounded_frame}{\wordeducation}{#1}{#2}{#3}{
         style="
             % No position absolute so I push skill
+            display:inline-block;
             float: left;
-            width: \tmpwidth px;
+            max-width: \tmpwidth px;
             margin-left: \tmpleft px;
-            margin-top: \tmptop px;
         "
     }
     \relscale{1.2}
@@ -349,9 +380,10 @@
             % No position absolute so I ampushed
             % No margin top so I am under edu
             % Clear both otherwise I push jobs
+            display:inline-block;
             clear: both;
             float: left;
-            width: \tmpwidth px;
+            max-width: \tmpwidth px;
             margin-left: \tmpleft px;
         "
     }
