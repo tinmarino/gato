@@ -253,6 +253,20 @@
 
 
 % 3/ ENVIRONMENT
+\newcommand*{\tbfstyledegree}[1]{
+    \ifx\HCode\undefined
+        \bodyfont{#1}
+    \else
+        \textbf{\textsc{\bodyfont{#1}}}
+    \fi
+}
+\newcommand*{\tbfstyleinstitution}[1]{
+    \ifx\HCode\undefined
+        \bodyfontlight{#1}
+    \else
+        \textsc{\bodyfont{#1}}
+    \fi
+}
 
 
 % [coordinate][Width, X, Y]
@@ -289,8 +303,8 @@
             \textsc{\bodyfont{##2}}\\[1pt]
             \HCode{</div>}\\[1pt]
         \fi
-        \textbf{\textsc{\bodyfont{##1}}}\\[1pt]           % POSTE
-        \textsc{\bodyfont{##3}}\\[1pt]                      % COMPANY
+        \tbfstyledegree{##1}\\[1pt]                         % Poste
+        \tbfstyleinstitution{##3}\\[1pt]                    % Company
         \bodyfontlight{\upshape{##4}}                       % DESCRIPTION
     }
 }{
@@ -315,8 +329,8 @@
     \relscale{1.2}
     \renewcommand\item[4][]{
         \textsc{\bodyfont{##2}}                             % YEAR
-        \textbf{\textsc{\bodyfont{##1}}}\\[1pt]          % DIPLOME
-        \textsc{\bodyfont{##3}}\\                        % ETABLISSEMENT
+        \tbfstyledegree{##1}\\[1pt]                         % Diplome
+        \tbfstyleinstitution{##3}\\                         % Scholl
         \bodyfontlight{\upshape{##4}}                       % DESCRIPTION
         \tbfvspace{10pt}                                    % Increase horizontal space
     }
