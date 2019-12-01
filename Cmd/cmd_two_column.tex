@@ -262,6 +262,8 @@
     \end{tbfblock}
 }
 
+\newcommand\ralign[1]{\begin{center} #1 \end{center}}
+
 % [job] { years }  {company } { more }
 %                                Width, X (horizontal), Y (vertical)
 \newenvironmentx{joblist}[3][1=13.2, 2=7.8, 3=3.9]{
@@ -270,8 +272,18 @@
     \renewcommand\item[4][]{
         \tbfvspace{10pt}
         \iftbftiny \setlength{\parskip}{-10pt} \fi
-        {\raggedleft{\textsc{\bodyfont{##2}}}\\[1pt]}         % YEAR
-        \textsc{\textbf{\bodyfont{##1}}}\\[1pt]           % POSTE
+        \ifx\HCode\undefined
+            {\raggedleft{\textsc{\bodyfont{##2}}}\\[1pt]}         % YEAR
+        \else
+            \HCode{<div class="tex-fill" style="
+                display:inline-block;
+                width: 100\%;
+                text-align: right;
+            ">}
+            \textsc{\bodyfont{##2}}\\[1pt]
+            \HCode{</div>}\\[1pt]
+        \fi
+        \textbf{\textsc{\bodyfont{##1}}}\\[1pt]           % POSTE
         \textsc{\bodyfont{##3}}\\[1pt]                      % COMPANY
         \bodyfontlight{\upshape{##4}}                       % DESCRIPTION
     }
@@ -297,8 +309,8 @@
     \relscale{1.2}
     \renewcommand\item[4][]{
         \textsc{\bodyfont{##2}}                             % YEAR
-        \textsc{\textbf{\bodyfont{##1}}} \\[1pt]          % DIPLOME
-        \textsc{\bodyfont{##3}}   \\                        % ETABLISSEMENT
+        \textbf{\textsc{\bodyfont{##1}}}\\[1pt]          % DIPLOME
+        \textsc{\bodyfont{##3}}\\                        % ETABLISSEMENT
         \bodyfontlight{\upshape{##4}}                       % DESCRIPTION
         \tbfvspace{10pt}                                    % Increase horizontal space
     }
