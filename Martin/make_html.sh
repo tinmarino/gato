@@ -15,10 +15,10 @@ myhtml() {
 myconfigure() {
     for f in $myfiles; do
 
+        # Remove doctype
         perl -0777 -pe ' s/\<!DOCTYPE.*?\>//s' -i.bak $f.html
-        # Fix de merde for table
-        perl -0777 -pe ' s:\s*(\</?(td|ul|li)):$1:gs' -i.bak $f.html
-        cp $f.html $f_1.html
+        # Fix de merde to remove prefix sapce and avoid <pre> inserted by pandoc
+        perl -0777 -pe ' s:\s*(\</?(td|ul|li|span|div)):$1:gs' -i.bak $f.html
 
         cat $f.html \
             | pandoc --no-highlight --standalone --self-contained -o $f.html
