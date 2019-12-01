@@ -16,7 +16,7 @@ myconfigure() {
     for f in $myfiles; do
 
         perl -0777 -pe ' s/\<!DOCTYPE.*?\>//s' -i.bak $f.html
-        # Fix de merde
+        # Fix de merde for table
         perl -0777 -pe ' s:\s*(\</?(td|ul|li)):$1:gs' -i.bak $f.html
         cp $f.html $f_1.html
 
