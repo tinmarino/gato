@@ -347,7 +347,7 @@ Pretty : 5h make package, even class insted of ugly input
     \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \htmlfactor)}
     % Append div at top to push me down
     \ifx\HCode\undefined\else
-        \HCode{<div class="textcustomblock" style="display: inline-block; width:100\%; margin-left: 45px; margin-top: 261px;">\Hnewline</div>\Hnewline}
+        \HCode{<div class="textcustomblock" style="display: inline-block; width:100\%; overflow: hidden; margin-left: 45px; margin-top: 261px;">\Hnewline</div>\Hnewline}
     \fi
     % Create my space
     \begin{rounded_frame}{\wordeducation}{#1}{#2}{#3}{
