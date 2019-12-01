@@ -1,6 +1,12 @@
 myfiles="martin_tourneboeuf_cv_english martin_tourneboeuf_cv_french martin_tourneboeuf_cv_spanish"
 
-mycompile() {
+mypdf() {
+    for f in $myfiles; do
+        xelatex $f.tex
+    done
+}
+
+myhtml() {
     for f in $myfiles; do
         htxelatex $f.tex "to_html.cfg,html,css-in,charset=utf-8" " -cunihtf -utf8"
     done

@@ -139,3 +139,55 @@
 \newcommand\tbfsoft[2]{\includegraphics[height=12pt]{#2}\phantom{\tiny{1}}#1}
 
 
+
+% Image
+
+\newcommand\tbfix{
+    \ifx\HCode\undefined
+        \tbflogo{../Figure/logo/x_black_128.png}
+    \else
+        \tbflogo{../Figure/logo/x_white_128.png}
+    \fi
+}
+
+
+\newcommand\tbfsmd{
+    \ifx\HCode\undefined
+        \tbfsoft{Markdown}{../Figure/language/128_markdown.png}
+    \else
+        \tbfsoft{Markdown}{../Figure/language/128_markdown_white.png}
+    \fi
+}
+
+\newcommand\tbfsida{
+    \ifx\HCode\undefined
+        \tbfsoft{Ida}{../Figure/language/128_ida_on_white.png}
+    \else
+        \tbfsoft{Ida}{../Figure/language/128_ida_white.png}
+    \fi
+}
+
+\newcommand\tbfihuman{
+    \ifx\HCode\undefined
+        \tbflogo{../Figure/logo/human_128.png}
+    \else
+        \tbflogo{../Figure/logo/human_white_128.png}
+    \fi
+}
+
+\newcommand\tbfiic{%
+    \ifx\HCode\undefined%
+        \tbflogo{../Figure/logo/insert_coin_less_than_128.png}%
+    \else%
+        \tbflogo{../Figure/logo/insert_coin_less_than_white_128.png}%
+    \fi%
+}
+
+\newcommand\tbfioyster{%
+    \ifx\HCode\undefined%
+        \tbflogo{../Figure/logo/Oyster_128.png}
+    \else%
+        \tbflogo{../Figure/logo/Oyster_white_128.png}
+    \fi%
+}
+
