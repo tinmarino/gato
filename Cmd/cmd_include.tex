@@ -87,9 +87,9 @@
 
 \newcommand\tbfbirth[1]{
     \ifx\HCode\undefined
-        \PersonalEntry{\tbfimg{../Figure/logo/birthday1_32.png}}{#1}
+        \PersonalEntry{\tbfimg{../Figure/logo32/birthday1_32.png}}{#1}
     \else
-        \PersonalEntry{\tbfimg{../Figure/logo/birthday1_white_32.png}}{#1}
+        \PersonalEntry{\tbfimg{../Figure/logo32/birthday1_white_32.png}}{#1}
     \fi
 }
 
@@ -115,9 +115,9 @@
 
 \newcommand\tbfwww[1]{
     \ifx\HCode\undefined
-        \PersonalEntry{\tbfimg{../Figure/logo/www_32.png}}{#1}
+        \PersonalEntry{\tbfimg{../Figure/logo32/www_32.png}}{#1}
     \else
-        \PersonalEntry{\tbfimg{../Figure/logo/www_base3_32.png}}{#1}
+        \PersonalEntry{\tbfimg{../Figure/logo32/www_base3_32.png}}{#1}
     \fi
 }
 
@@ -126,7 +126,7 @@
 }
 
 \newcommand\tbfcar[1]{
-    \includegraphics[width=0.05\textwidth]{../Figure/logo/car1_32.png}    & \normalsize  \bodyfont{#1} \smallskip\\
+    \includegraphics[width=0.05\textwidth]{../Figure/logo32/car1_32.png}    & \normalsize  \bodyfont{#1} \smallskip\\
 }
 
 
@@ -144,9 +144,9 @@
 
 \newcommand\tbfix{
     \ifx\HCode\undefined
-        \tbflogo{../Figure/logo/x_black_32.png}
+        \tbflogo{../Figure/logo32/x_black_32.png}
     \else
-        \tbflogo{../Figure/logo/x_white_32.png}
+        \tbflogo{../Figure/logo32/x_white_32.png}
     \fi
 }
 
@@ -169,30 +169,30 @@
 
 \newcommand\tbfihuman{
     \ifx\HCode\undefined
-        \tbflogo{../Figure/logo/human_32.png}
+        \tbflogo{../Figure/logo32/human_32.png}
     \else
-        \tbflogo{../Figure/logo/human_white_32.png}
+        \tbflogo{../Figure/logo32/human_white_32.png}
     \fi
 }
 
 \newcommand\tbfiic{%
     \ifx\HCode\undefined%
-        \tbflogo{../Figure/logo/insert_coin_32.png}%
+        \tbflogo{../Figure/logo32/insert_coin_32.png}%
     \else%
-        \tbflogo{../Figure/logo/insert_coin_white_32.png}%
+        \tbflogo{../Figure/logo32/insert_coin_white_32.png}%
     \fi%
 }
 
 \newcommand\tbfioyster{%
     \ifx\HCode\undefined%
-        \tbflogo{../Figure/logo/Oyster_32.png}
+        \tbflogo{../Figure/logo32/Oyster_32.png}
     \else%
-        \tbflogo{../Figure/logo/Oyster_white_32.png}
+        \tbflogo{../Figure/logo32/Oyster_white_32.png}
     \fi%
 }
 
 
-\newcommand\tbfsoftinterpreted{
+\newcommand\tbfsoftinterpreted{%
     \tbfsoft{Python}{../Figure/language/python_32.png},
     \tbfsoft{BaSh}{../Figure/language/bash_32x145.png},
     \tbfsoft{Perl}{../Figure/language/perl_32.png},
@@ -201,20 +201,20 @@
 }
 
 
-\newcommand\tbfsoftcompiled{
+\newcommand\tbfsoftcompiled{%
     \tbfsoft{Java}{../Figure/language/java_32.png},
     \tbfsoft{C++}{../Figure/language/cpp_32.png},
     \tbfsoft{Asm (x86)}{../Figure/language/intel_32x85.png} \\
 }
 
 
-\newcommand\tbfsoftmarkup{
+\newcommand\tbfsoftmarkup{%
     \tbfsmd,
     \tbfsoft{\LaTeX}{../Figure/language/latex_32.png},
     \tbfsoft{Html}{../Figure/language/html_32.png} \\
 }
 
-\newcommand\tbfsofttool{
+\newcommand\tbfsofttool{%
     \tbfsida,
     \tbfsoft{Windbg}{../Figure/language/windbg_32.png},
     \tbfsoft{Vim}{../Figure/language/vim_32.png},
