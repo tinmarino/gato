@@ -63,12 +63,6 @@
 
 
 % 0.2/ Helpers
-
-% Helper: position for html
-% Args: size, x, y
-\newenvironment*{tbfpos}[3]
-
-
 % Helper : tbfblock : textblock for html
 % from https://tex.stackexchange.com/questions/185933/is-there-an-alternative-to-textpos-when-using-pgfpages
 \makeatletter
@@ -216,7 +210,19 @@
     \pgfmathsetmacro{\tbftmp}{\tbfbordertop}
     \begin{tbfblock}{23}(0, \tbftmp)
     \begin{center}
-        \headerfirstnamestyle{#1} \tbfhspace{5pt} \headerlastnamestyle{#2}
+    \ifx\HCode\undefined
+        \headerfirstnamestyle{#1}
+    \else
+        \HCode{<span style="
+            font-size: 319\%;
+            font-color: \#3A3A3A;
+            font-weight: lighter;
+        ">}
+        #1
+        \HCode{</span>}
+    \fi
+        \tbfhspace{5pt}
+        \headerlastnamestyle{#2}
     \end{center}
     \end{tbfblock}
 }
@@ -227,7 +233,7 @@
             \includegraphics[width=2.8cm]{#1}
         \end{tbfblock}
     \else
-    % Do not include foto in html
+        % Do not include foto in html
     \fi
 }
 
