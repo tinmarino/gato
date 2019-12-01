@@ -153,17 +153,17 @@
 
 \newcommand\tbfsmd{
     \ifx\HCode\undefined
-        \tbfsoft{Markdown}{../Figure/language/128_markdown.png}
+        \tbfsoft{Markdown}{../Figure/language/markdown_32.png}
     \else
-        \tbfsoft{Markdown}{../Figure/language/128_markdown_white.png}
+        \tbfsoft{Markdown}{../Figure/language/markdown_white_32.png}
     \fi
 }
 
 \newcommand\tbfsida{
     \ifx\HCode\undefined
-        \tbfsoft{Ida}{../Figure/language/128_ida_on_white.png}
+        \tbfsoft{Ida}{../Figure/language/ida_on_white_32.png}
     \else
-        \tbfsoft{Ida}{../Figure/language/128_ida_white.png}
+        \tbfsoft{Ida}{../Figure/language/ida_white_32.png}
     \fi
 }
 
@@ -191,3 +191,34 @@
     \fi%
 }
 
+
+\newcommand\tbfsoftinterpreted{
+    \tbfsoft{Python}{../Figure/language/python_32.png},
+    \tbfsoft{BaSh}{../Figure/language/bash_32x145.png},
+    \tbfsoft{Perl}{../Figure/language/perl_32.png},
+    \tbfsoft{JavaScript}{../Figure/language/js_32.png},
+    \tbfsoft{Iraf}{../Figure/language/iraf_32.png} \\
+}
+
+
+\newcommand\tbfsoftcompiled{
+    \tbfsoft{Java}{../Figure/language/java_32.png},
+    \tbfsoft{C++}{../Figure/language/cpp_32.png},
+    \tbfsoft{Asm (x86)}{../Figure/language/intel_32x85.png} \\
+}
+
+
+\newcommand\tbfsoftmarkup{
+    \tbfsmd,
+    \tbfsoft{\LaTeX}{../Figure/language/latex_32.png},
+    \tbfsoft{Html}{../Figure/language/html_32.png} \\
+}
+
+\newcommand\tbfsofttool{
+    \tbfsida,
+    \tbfsoft{Windbg}{../Figure/language/windbg_32.png},
+    \tbfsoft{Vim}{../Figure/language/vim_32.png},
+    \tbfsoft{Git}{../Figure/language/git_32.png},
+    \tbfsoft{Ds9}{../Figure/language/28_ds9.png},
+    \tbfsoft{Firefox}{../Figure/language/firefox_32.png} \\
+}
