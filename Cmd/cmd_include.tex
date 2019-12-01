@@ -150,23 +150,6 @@
     \fi
 }
 
-
-\newcommand\tbfsmd{
-    \ifx\HCode\undefined
-        \tbfsoft{Markdown}{../Figure/language/markdown_32.png}
-    \else
-        \tbfsoft{Markdown}{../Figure/language/markdown_white_32.png}
-    \fi
-}
-
-\newcommand\tbfsida{
-    \ifx\HCode\undefined
-        \tbfsoft{Ida}{../Figure/language/ida_on_white_32.png}
-    \else
-        \tbfsoft{Ida}{../Figure/language/ida_white_32.png}
-    \fi
-}
-
 \newcommand\tbfihuman{
     \ifx\HCode\undefined
         \tbflogo{../Figure/logo32/human_32.png}
@@ -209,13 +192,21 @@
 
 
 \newcommand\tbfsoftmarkup{%
-    \tbfsmd,
+    \ifx\HCode\undefined%
+        \tbfsoft{Markdown}{../Figure/language/markdown_32.png}%
+    \else%
+        \tbfsoft{Markdown}{../Figure/language/markdown_white_32.png}%
+    \fi,
     \tbfsoft{\LaTeX}{../Figure/language/latex_32.png},
     \tbfsoft{Html}{../Figure/language/html_32.png} \\
 }
 
 \newcommand\tbfsofttool{%
-    \tbfsida,
+    \ifx\HCode\undefined%
+        \tbfsoft{Ida}{../Figure/language/ida_on_white_32.png}%
+    \else%
+        \tbfsoft{Ida}{../Figure/language/ida_white_32.png}%
+    \fi,
     \tbfsoft{Windbg}{../Figure/language/windbg_32.png},
     \tbfsoft{Vim}{../Figure/language/vim_32.png},
     \tbfsoft{Git}{../Figure/language/git_32.png},
