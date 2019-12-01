@@ -21,13 +21,6 @@
 % 0/ Go
 \begin{document}
 
-% 0.01 Maketiel if html
-\ifx\HCode\undefined
-\else
-    \maketitle
-\fi
-
-
 
 % 0.1/ Header
 \tbfname{\vspace{0.3cm}Martin}{Tourneboeuf}
@@ -204,6 +197,13 @@
   }
 
 \end{joblist}
+
+
+% 10 Maketitle if html -> footer
+\ifx\HCode\undefined
+\else
+    \maketitle
+\fi
 
 
 
