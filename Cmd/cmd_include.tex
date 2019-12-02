@@ -136,11 +136,18 @@
 
 
 % Skill
-\newcommand\tbflogo[1]{\includegraphics[width=12pt, height=12pt]{#1}}
+\ifx\HCode\undefined
+    \newcommand\tbfimgsize{10pt}
+\else
+    \newcommand\tbfimgsize{12pt}
+\fi
 
-\newcommand\tbfimflag[1]{\includegraphics[height=12pt]{#1}\phantom{\tiny{1}}}
 
-\newcommand\tbfsoft[2]{\includegraphics[height=12pt]{#2}\phantom{\tiny{1}}#1}
+\newcommand\tbflogo[1]{\includegraphics[width=\tbfimgsize, height=\tbfimgsize]{#1}}
+
+\newcommand\tbfimflag[1]{\includegraphics[width=\tbfimgsize]{#1}\phantom{\tiny{1}}}
+
+\newcommand\tbfsoft[2]{\includegraphics[height=\tbfimgsize]{#2}\phantom{\tiny{1}}#1}
 
 
 
