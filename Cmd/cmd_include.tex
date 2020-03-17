@@ -1,5 +1,5 @@
 \usepackage{marvosym}                       % Writinghand
-
+\usepackage{fontawesome}                    % \faMapMarker
 
 
 % Language (Latex)
@@ -41,7 +41,7 @@
 \ifnum\pdfstrcmp{\tbflanguage}{english}=0
 \def\wordinfo{Personal Informations}
 \def\wordeducation{Education}
-\def\wordwork{Working Experience}
+\def\wordwork{Professional Experience}
 \def\wordskill{Skill}
 \def\wordsoftware{Software}
 \def\wordlanguage{Language}
@@ -114,7 +114,7 @@
 }
 
 \newcommand\tbfaddr[1]{
-    \PersonalEntry{\Writinghand}{#1}
+    \PersonalEntry{\faMapMarker}{#1}
 }
 
 \newcommand\tbfwww[1]{
