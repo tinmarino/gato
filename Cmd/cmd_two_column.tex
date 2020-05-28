@@ -321,13 +321,13 @@
 \newcommand\ralign[1]{\begin{center} #1 \end{center}}
 
 
-% Jobs { years }  {company } { more }
-% Width, X (horizontal), Y (vertical)
-\newenvironmentx{joblist}[3][1=13.2, 2=7.8, 3=3.9]{
-    \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \htmlfactor)}
-    \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \htmlfactor)}
-    \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \htmlfactor)}
-    \begin{flat_frame}{\wordwork}{#1}{#2}{#3}{
+% Jobs
+\NewDocumentEnvironment{joblist}{O{}}{%
+    \setkeys{tbfarg}{x={7.8},y={3.9},width={13.2},#1}
+    \pgfmathsetmacro{\tmpwidth}{int(\mmwidth * 28.45 * \htmlfactor)}
+    \pgfmathsetmacro{\tmpleft}{int(\mmx * 28.45 * \htmlfactor)}
+    \pgfmathsetmacro{\tmptop}{int(\mmy * 28.45 * \htmlfactor)}
+    \begin{flat_frame}{\wordwork}{\mmwidth}{\mmx}{\mmy}{
         style="
             display: inline-block;
             max-width: \tmpwidth px;
@@ -357,18 +357,20 @@
   \end{flat_frame}
 }
 
+
 % Formation
-\newenvironmentx{yearlist}[3][1=7.1, 2=0.7, 3=3.9]{
+\NewDocumentEnvironment{yearlist}{O{}}{%
+    \setkeys{tbfarg}{x={0.7},y={3.9},width={7.1},#1}
     % Html stuff
-    \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \htmlfactor)}
-    \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \htmlfactor)}
-    \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \htmlfactor)}
+    \pgfmathsetmacro{\tmpwidth}{int(\mmwidth * 28.45 * \htmlfactor)}
+    \pgfmathsetmacro{\tmpleft}{int(\mmx * 28.45 * \htmlfactor)}
+    \pgfmathsetmacro{\tmptop}{int(\mmy * 28.45 * \htmlfactor)}
     % Append div at top to push me down
     \ifx\HCode\undefined\else
         \HCode{<div class="textcustomblock" style="display: inline-block; width:100\%; overflow: hidden; margin-left: 45px; margin-top: 261px;">\Hnewline</div>\Hnewline}
     \fi
     % Create my space
-    \begin{rounded_frame}{\wordeducation}{#1}{#2}{#3}{
+    \begin{rounded_frame}{\wordeducation}{\mmwidth}{\mmx}{\mmy}{
         style="
             % No position absolute so I push skill
             display:inline-block;
@@ -390,12 +392,14 @@
 }
 
 
-% Compétence width, x, y
-\newenvironmentx{skilllist}[3][1=7.1, 2=0.7, 3=15.2]{
-    \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \htmlfactor)}
-    \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \htmlfactor)}
-    \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \htmlfactor)}
-    \begin{rounded_frame}{\wordlanguage}{#1}{#2}{#3}{
+% Skill
+\NewDocumentEnvironment{skilllist}{O{}}{%
+    \setkeys{tbfarg}{x={0.7},y={15.2},width={7.1},#1}
+%\newenvironmentx{skilllist}[3][1=7.1, 2=0.7, 3=15.2]{
+    \pgfmathsetmacro{\tmpwidth}{int(\mmwidth * 28.45 * \htmlfactor)}
+    \pgfmathsetmacro{\tmpleft}{int(\mmx * 28.45 * \htmlfactor)}
+    \pgfmathsetmacro{\tmptop}{int(\mmy * 28.45 * \htmlfactor)}
+    \begin{rounded_frame}{\wordlanguage}{\mmwidth}{\mmx}{\mmy}{
         style="
             % No position absolute so I ampushed
             % No margin top so I am under edu
@@ -422,6 +426,3 @@
 }{
   \end{tabular}
 }
-
-
-
