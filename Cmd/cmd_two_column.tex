@@ -50,7 +50,7 @@
 \define@key{tbfarg}{width}{\def\mmwidth{#1}}
 \define@key{tbfarg}{x}{\def\mmx{#1}}
 \define@key{tbfarg}{y}{\def\mmy{#1}}
-\define@key{tbfarg}{content}{\def\mmcontent{#1}}
+\define@key{tbfarg}{fontsize}{\def\mmfontsize{#1}}
 %\define@key{tbfarg}{fonsize}{\def\mmfontsize{#1}}
 \makeatother
 
@@ -59,105 +59,6 @@
 \providecommand\mission[1]{\makebox[1.6cm][l]{\textbf{#1}}}
 \let\cvitem\item
 
-
-% ===========================================================================================================================
-
-
-% 0.1/ must be configured
-\newif\iftbftiny
-\input{../Cmd/cmd_include}
-
-
-% 1/ Commands
-\newcommand\tbfpart[1]{#1}
-
-\NewDocumentCommand{\myMacro}{m}{%
-    % https://stackoverflow.com/questions/1812214/latex-optional-arguments
-    %\begingroup%
-    % ========= KEY DEFAULTS + new ones =========
-    \setkeys{tbfarg}{x={x default arg},y={y defaults},width={width default},#1}%
-    toto
-    x arg: \mmx \par
-    y arg: \mmy \par
-    %\endgroup%
-}
-
-\NewDocumentCommand{\tbfname}{O{} m m}{%
-    \setkeys{tbfarg}{x={0},y={\tbfbordertop},width={23},#1}
-    \begin{tbfblock}{\mmwidth}(\mmx, \mmy)
-    \begin{center}
-    \ifx\HCode\undefined
-        \headerfirstnamestyle{#2}
-    \else
-        \HCode{<span style="
-            font-size: 319\%;
-            font-color: \#3A3A3A;
-            font-weight: lighter;
-        ">}
-        #2
-        \HCode{</span>}
-    \fi
-        \tbfhspace{5pt}
-        \headerlastnamestyle{#3}
-    \end{center}
-    \end{tbfblock}
-}
-
-\newcommand\tbffoto[1]{
-    \ifx\HCode\undefined
-        \begin{tbfblock}{23}(17.7, \tbfbordertop)
-            \includegraphics[width=2.8cm]{#1}
-        \end{tbfblock}
-    \else
-        % Do not include foto in html
-    \fi
-}
-
-
-\newcommand\tbfdescription[2][16pt]{
-  \pgfmathsetmacro{\tbftmp}{\tbfbordertop + 1.7}
-  \begin{tbfblock}{23}(0, \tbftmp)
-  \begin{center}
-
-      {\fontsize{#1}{17pt} \textbf{\textsc{#2}}}
-
-  \end{center}
-  \end{tbfblock}
-}
-
-\newcommand\tbfskilltwo[1]{\section{#1}}
-
-% Even with floating environment
-\newcommand\tbfpage{
-    \clearpage
-    \newpage
-    \mbox{~}
-    \clearpage
-    \newpage
-}
-
-\newcommand*{\tbfstyledegree}[1]{
-    \ifx\HCode\undefined
-        \bodyfont{#1}
-    \else
-        \textbf{\textsc{\bodyfont{#1}}}
-    \fi
-}
-\newcommand*{\tbfstyleinstitution}[1]{
-    \ifx\HCode\undefined
-        \bodyfontlight{#1}
-    \else
-        \textsc{\bodyfont{#1}}
-    \fi
-}
-
-
-
-%%%%%%%%%%%%%%%%
-% 3/ ENVIRONMENT
-%%%%%%%%%%%%%%%%
-
-% 0.2/ Helpers
 % Helper : tbfblock : textblock for html
 % from https://tex.stackexchange.com/questions/185933/is-there-an-alternative-to-textpos-when-using-pgfpages
 \makeatletter
@@ -215,6 +116,111 @@
 \expandafter\let\csname tbfblock\endcsname\@tbfblock
 \expandafter\let\csname endtbfblock\endcsname\@endtbfblock
 \makeatother
+
+% ===========================================================================================================================
+
+
+% 0.1/ must be configured
+\newif\iftbftiny
+\input{../Cmd/cmd_include}
+
+
+% 1/ Commands
+\newcommand\tbfskilltwo[1]{\section{#1}}
+
+% Test
+\NewDocumentCommand{\tbftest}{m}{%
+    % https://stackoverflow.com/questions/1812214/latex-optional-arguments
+    %\begingroup%
+    % ========= KEY DEFAULTS + new ones =========
+    \setkeys{tbfarg}{x={x default arg},y={y defaults},width={width default},#1}%
+    toto
+    x arg: \mmx \par
+    y arg: \mmy \par
+    %\endgroup%
+}
+
+% Name
+\NewDocumentCommand{\tbfname}{O{} m m}{%
+    \setkeys{tbfarg}{x={0},y={\tbfbordertop},width={23},#1}
+    \begin{tbfblock}{\mmwidth}(\mmx, \mmy)
+    \begin{center}
+    \ifx\HCode\undefined
+        \headerfirstnamestyle{#2}
+    \else
+        \HCode{<span style="
+            font-size: 319\%;
+            font-color: \#3A3A3A;
+            font-weight: lighter;
+        ">}
+        #2
+        \HCode{</span>}
+    \fi
+        \tbfhspace{5pt}
+        \headerlastnamestyle{#3}
+    \end{center}
+    \end{tbfblock}
+}
+
+% Foto
+\NewDocumentCommand{\tbffoto}{O{} m}{%
+    \setkeys{tbfarg}{x={17.7},y={\tbfbordertop},width={23},#1}
+    \ifx\HCode\undefined
+        \begin{tbfblock}{\mmwidth}(\mmx, \mmy)
+            \includegraphics[width=2.8cm]{#2}
+        \end{tbfblock}
+    \else
+        % Do not include foto in html
+    \fi
+}
+
+
+% Decrition
+%\newcommand\tbfdescription[2][16pt]{
+\NewDocumentCommand{\tbfdescription}{O{} m}{%
+    \pgfmathsetmacro{\tbftmp}{\tbfbordertop + 1.7}
+    \setkeys{tbfarg}{fontsize={16pt},x={0},y={\tbftmp},width={23},#1}
+    %\newcommand\tbfdescription[2][16pt]{
+    \begin{tbfblock}{\mmwidth}(\mmx, \mmy)
+    \begin{center}
+
+        {\fontsize{\mmfontsize}{17pt} \textbf{\textsc{#2}}}
+
+    \end{center}
+    \end{tbfblock}
+}
+
+
+% Even with floating environment
+\newcommand\tbfpage{
+    \clearpage
+    \newpage
+    \mbox{~}
+    \clearpage
+    \newpage
+}
+
+\newcommand*{\tbfstyledegree}[1]{
+    \ifx\HCode\undefined
+        \bodyfont{#1}
+    \else
+        \textbf{\textsc{\bodyfont{#1}}}
+    \fi
+}
+\newcommand*{\tbfstyleinstitution}[1]{
+    \ifx\HCode\undefined
+        \bodyfontlight{#1}
+    \else
+        \textsc{\bodyfont{#1}}
+    \fi
+}
+
+
+
+%%%%%%%%%%%%%%%%
+% 3/ ENVIRONMENT
+%%%%%%%%%%%%%%%%
+
 
 
 % Helper: internal to position 
@@ -299,15 +305,13 @@
 }
 
 
-
-
-% [coordinate][Width, X, Y]
-\newenvironmentx{coordinatelist}{
+% Coordinates
+\NewDocumentEnvironment{coordinatelist}{O{}}{%
+    \setkeys{tbfarg}{x={\tbfborderleft},y={\tbfbordertop},width={7},#1}
     \needspace{0.5\textheight}
     \newdimen\boxwidth
     \boxwidth=\dimexpr\linewidth-2\fboxsep\relax
-    \pgfmathsetmacro{\tbftmpleft}{\tbfborderleft + 1}
-    \begin{tbfblock}{7}(\tbfborderleft, \tbfbordertop)
+    \begin{tbfblock}{\mmwidth}(\mmx, \mmy)
     \begin{tabular}{l|l}
 }{
     \end{tabular}
