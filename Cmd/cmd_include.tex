@@ -1,6 +1,15 @@
 \usepackage{marvosym}                       % Writinghand
 \usepackage{fontawesome}                    % \faMapMarker
 
+% Switch Html / Pdf for mdframe
+\ifx\HCode\undefined
+    \usepackage{fontspec}                       % Awesome font not available on html
+    \usepackage{url}                            % Clickable URL's
+    \hypersetup{hidelinks}                      % Hide links
+\else
+\fi
+
+
 
 % Language (Latex)
 \ifx\HCode\undefined
@@ -41,7 +50,7 @@
 \ifnum\pdfstrcmp{\tbflanguage}{english}=0
 \def\wordinfo{Personal Informations}
 \def\wordeducation{Education}
-\def\wordwork{Professional Experience}
+\def\wordwork{Working Experience}
 \def\wordskill{Skill}
 \def\wordsoftware{Software}
 \def\wordlanguage{Language}

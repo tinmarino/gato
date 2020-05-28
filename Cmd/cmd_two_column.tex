@@ -1,4 +1,4 @@
-\documentclass[paper=a4, fontsize=11pt]{tccv}          % Unfortynately must keep some stuff in class for now
+\documentclass[paper=a4, fontsize=11pt]{tccv}          % Unfortunately must keep some stuff in class for now
 
 \iffalse IDEA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -21,14 +21,6 @@ Pretty : 5h make package, even class insted of ugly input
 \usepackage{xcolor}
 \usepackage{pgf}                            % Math macro
 \usepackage{xifthen}                        % If, else block
-
-% Switch Html / Pdf for mdframe
-\ifx\HCode\undefined
-    \usepackage{fontspec}                       % Awesome font not available on html
-    \usepackage{url}                            % Clickable URL's
-    \hypersetup{hidelinks}                      % Hide links
-\else
-\fi
 
 % Drawings
 \usepackage[framemethod=TikZ]{mdframed}     % Box around text
@@ -262,6 +254,14 @@ Pretty : 5h make package, even class insted of ugly input
 
 \newcommand\tbfskilltwo[1]{\section{#1}}
 
+% Even with floating environment
+\newcommand\tbfpage {
+    \clearpage
+    \newpage
+    \mbox{~}
+    \clearpage
+    \newpage
+}
 
 \newcommand*{\tbfstyledegree}[1]{
     \ifx\HCode\undefined
@@ -337,7 +337,6 @@ Pretty : 5h make package, even class insted of ugly input
 }{
   \end{flat_frame}
 }
-
 
 % Formation
 \newenvironmentx{yearlist}[3][1=7.1, 2=0.7, 3=3.9]{
