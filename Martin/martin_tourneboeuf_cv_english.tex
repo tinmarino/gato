@@ -2,13 +2,14 @@
 \def\tbflanguage{english}
 
 \ifx\HCode\undefined
-  \providecommand{\tbfbordertop}{1.2}
+  \providecommand\tbfbordertop{1.2}
   \providecommand\tbfborderleft{0.7}
   \providecommand\tbfwidth{12.4}
 \else
-  \providecommand{\tbfbordertop}{1}
+  \providecommand\tbfbordertop{1}
   \providecommand\tbfborderleft{0.7}
   \providecommand\tbfwidth{12.4}
+\fi
 
 % -1/ Type of CV
 \ifx\HCode\undefined
@@ -151,15 +152,6 @@
   }
   {Reverse engineering: analysis of malwares and vulnerabilities for Windows security (Cpp, Asm)}
 
-
-%\item[Developper]{2014}
-%  {
-%  \tbfihuman
-%  \href{https://tinmarino.github.io/page/}{Self-employed}, Santiago, Chili
-%  }
-%  {Programming: video games cross-plateform development (Java)}
-
-
 \item[Astronomer]{2013}
   {
   \tbflogo{../Figure/logo32/eso_32.png}
@@ -192,7 +184,7 @@
 
     % Content
 
-    \cvitem \href{https://tinmarino.github.io/page/}{Developper: video games (6 months)}
+    \cvitem \href{https://tinmarino.github.io}{Developer: video games (6 months)}
     \cvitem \href{http://www.insertcoin.cl/}{Waiter, Barman: restaurant (8 months)}
     \cvitem \href{http://www.dupont.co.in/}{Air conditioning technician: internship in India (1 month)}
     \cvitem \href{http://www.defense.gouv.fr/marine/organisation/forces/fusiliers-marins-et-commandos/force-maritime-des-fusiliers-marins-et-commandos}{Commando marine: lieutenant (8 months)}
@@ -209,14 +201,13 @@
     %\cvitem \href{http://huitresdesaintvaast.fr/}{\tbfioyster Oyster farmer (5 $\times$ 2 weeks)}
     \end{itemize}
   }
-
 \end{joblist}
 
 
 % 10 Maketitle if html -> footer
 \ifx\HCode\undefined
 \else
-    \maketitle
+  \maketitle
 \fi
 
 

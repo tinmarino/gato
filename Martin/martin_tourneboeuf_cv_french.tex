@@ -1,15 +1,23 @@
 % -2/ Language, toremove
 \def\tbflanguage{french}
-\def\tbfbordertop{1}
-\def\tbfborderleft{0.7}
+
+\ifx\HCode\undefined
+  \providecommand{\tbfbordertop}{1.2}
+  \providecommand\tbfborderleft{0.7}
+  \providecommand\tbfwidth{12.4}
+\else
+  \providecommand{\tbfbordertop}{1}
+  \providecommand\tbfborderleft{0.7}
+  \providecommand\tbfwidth{12.4}
+\fi
 
 % -1/ Type of CV
 \ifx\HCode\undefined
 \input{../Cmd/cmd_two_column}
 %\input{../Cmd/cmd_professional}
 \else
-%\input{../Cmd/cmd_professional}
 \input{../Cmd/cmd_two_column}
+%\input{../Cmd/cmd_professional}
 \fi
 
 % -0.9 Meta
@@ -17,6 +25,9 @@
 \author{Martin Tourneboeuf}
 \date{\today}
 
+
+
+% 0/ Go
 \begin{document}
 
 
@@ -25,27 +36,25 @@
 
 \tbfdescription[20pt]{
     \vspace{0.4cm}
-    Physicien,
     Informaticien
 }
 
 \tbffoto{../Figure/martin2015.jpg}
 
 \begin{coordinatelist}
-  \tbfwww{\href{https://tinmarino.github.io/page/}{https://tinmarino.github.io/page/}}
-  \tbfmail{\url{martin.tourneboeuf@gmail.com}}
+  \tbfmail{martin.tourneboeuf@gmail.com}
+  \tbfwww{\href{https://tinmarino.github.io}{https://tinmarino.github.io}}
   \tbfbirth{25 décembre 1988}
+  \tbftel{+56 9 7958 9076}
   \tbfflag{Français}
-  \tbftel{+56 9 79 58 90 76}
-   % \tbfaddr{49 Quai de la Prévalaye}
-   % \tbfvoidpersonal{35000 Rennes}
 \end{coordinatelist}
 
 
 
-
 % 1/ Education
-\begin{yearlist}[7.7][\tbfborderleft][4]
+\pgfmathsetmacro{\tbfyeary}{\tbfbordertop+3.1}
+
+\begin{yearlist}[7.7][\tbfborderleft][\tbfyeary]
 
 \relscale{1.1}
 \tolerance=100
@@ -85,7 +94,8 @@
 
 
 % 3/ Compétence
-\begin{skilllist}[7.7][\tbfborderleft][16.8]
+\pgfmathsetmacro{\tbfskilly}{\tbfbordertop+14.6}
+\begin{skilllist}[7.7][\tbfborderleft][\tbfskilly]
 
 \relscale{1.1}
 \tolerance=9999
@@ -118,11 +128,18 @@
 
 
 % 2/ Expérience
-\begin{joblist}[12.8][8.4][4]
+\begin{joblist}[\tbfwidth][8.4][\tbfyeary]
 
-\relscale{1.13}
+\relscale{1.1}
 \setlength{\parskip}{0.3cm}
 \vspace{-0.4cm}
+
+\item[Testeur de logiciel]{2019 -- 2023}
+  {
+  \tbflogo{../Figure/logo32/alma_32.png}
+  \href{https://www.almaobservatory.org}{Atacama Large Millimeter Array (ALMA)}, Santiago, Chili
+  }
+  {Test: intégration et validation des versions mensuelles du logiciel d'ALMA (Cpp, Java, Bash)}
 
 \item[Analyste cyber sécurité]{2015 -- 2019}
   {
@@ -164,14 +181,21 @@
     \renewcommand\labelitemi{{}}
     \vspace{-0.8cm}
     \setlength{\parskip}{0cm}
-    \begin{itemize}
+    \begin{itemize}[leftmargin=*, label=\textbullet]
     \setlength\itemsep{0cm}
-    \cvitem \href{http://www.insertcoin.cl/}{\tbfiic Serveur: restaurant (8 mois)}
-    \cvitem \href{http://www.dupont.co.in/}{\tbflogo{../Figure/logo32/dupont_32.png} Climaticien : stage en Inde (1 mois)}
-    \cvitem \href{http://www.defense.gouv.fr/marine/organisation/forces/fusiliers-marins-et-commandos/force-maritime-des-fusiliers-marins-et-commandos}{\tbflogo{../Figure/logo32/jaubert_article_demi_colonne_32.png} Commando marine : aspirant (8 mois)}
 
-    \cvitem \href{http://www.vacances-pour-tous.org/}{\tbflogo{../Figure/logo32/vacances_pour_tous_32.png} Animateur de colonie de vacances (5 $\times$ 1 mois)}
-    \cvitem \href{http://huitresdesaintvaast.fr/}{\tbfioyster Ostréiculteur (5 $\times$ 2 semaines)}
+    \cvitem \href{https://tinmarino.github.io/page/}{Developpeur: jeux videos (6 mois)}
+    \cvitem \href{http://www.insertcoin.cl/}{Serveur: restaurant (8 mois)}
+    \cvitem \href{http://www.dupont.co.in/}{Climaticien : stage en Inde (1 mois)}
+    \cvitem \href{http://www.defense.gouv.fr/marine/organisation/forces/fusiliers-marins-et-commandos/force-maritime-des-fusiliers-marins-et-commandos}{Commando marine : aspirant (8 mois)}
+    \cvitem \href{http://www.vacances-pour-tous.org/}{Animateur de colonie de vacances (5 $\times$ 1 mois)}
+
+    % \cvitem \href{http://www.insertcoin.cl/}{Serveur: restaurant (8 mois)}
+    % \cvitem \href{http://www.dupont.co.in/}{\tbflogo{../Figure/logo32/dupont_32.png} Climaticien : stage en Inde (1 mois)}
+    % \cvitem \href{http://www.defense.gouv.fr/marine/organisation/forces/fusiliers-marins-et-commandos/force-maritime-des-fusiliers-marins-et-commandos}{\tbflogo{../Figure/logo32/jaubert_article_demi_colonne_32.png} Commando marine : aspirant (8 mois)}
+
+    % \cvitem \href{http://www.vacances-pour-tous.org/}{\tbflogo{../Figure/logo32/vacances_pour_tous_32.png} Animateur de colonie de vacances (5 $\times$ 1 mois)}
+    % \cvitem \href{http://huitresdesaintvaast.fr/}{\tbfioyster Ostréiculteur (5 $\times$ 2 semaines)}
     \end{itemize}
   }
 \end{joblist}
@@ -179,8 +203,9 @@
 
 
 % 10 Maketitle if html
-\ifx\HCode\undefined \else
-\maketitle
+\ifx\HCode\undefined
+\else
+  \maketitle
 \fi
 
 

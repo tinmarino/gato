@@ -7,7 +7,9 @@ a_in=(
 )
 
 a_in=(
-  martin_tourneboeuf_cv_english
+  #martin_tourneboeuf_cv_english
+  #martin_tourneboeuf_cv_french
+  martin_tourneboeuf_cv_spanish
 )
 
 mypdf() {
@@ -25,15 +27,17 @@ myhtml() {
 myconfigure() {
   for f in "${a_in[@]}"; do
 
-    # Remove doctype
-    perl -0777 -pe ' s/\<!DOCTYPE.*?\>//s' -i.bak $f.html
-    # Fix de merde to remove prefix sapce and avoid <pre> inserted by pandoc
-    perl -0777 -pe ' s:\s*(\</?(td|ul|li|span|div)):$1:gs' -i.bak $f.html
-    # Fix de merde avoid: <p class="noindent">
-    perl -0777 -pe ' s:<p class="noindent">::gs' -i.bak $f.html
+    mv $f.html $f.tmp.html
 
-    cat $f.html \
-      | pandoc --no-highlight --standalone --self-contained --title "CV Martin Tourneboeuf"-o $f.html
+    # Remove doctype
+    perl -0777 -pe ' s/\<!DOCTYPE.*?\>//s' -i $f.tmp.html
+    # Fix de merde to remove prefix sapce and avoid <pre> inserted by pandoc
+    perl -0777 -pe ' s:\s*(\</?(td|ul|li|span|div)):$1:gs' -i $f.tmp.html
+    # Fix de merde avoid: <p class="noindent">
+    perl -0777 -pe ' s:<p class="noindent">::gs' -i $f.tmp.html
+
+    cat $f.tmp.html \
+      | pandoc --no-highlight --standalone --self-contained --title "CV Martin Tourneboeuf" -o $f.html
   done
 }
 

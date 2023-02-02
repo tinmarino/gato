@@ -262,18 +262,28 @@ Pretty : 5h make package, even class insted of ugly input
 }
 
 
-\newcommand\tbfdescription[2][16pt]{
+\ifx\HCode\undefined
+  \def\descsize{16pt}
+\else
+  \def\descsize{33pt}
+\fi
+\newcommand\tbfdescription[2][\descsize]{
   \pgfmathsetmacro{\tbftmp}{\tbfbordertop + 1.7}
   \begin{tbfblock}{23}(0, \tbftmp)
   \begin{center}
 
       {
         \ifx\HCode\undefined
-          \fontsize{20pt}{23pt}
+          \fontsize{#1}{23pt}
+          \textbf{\textsc{#2}}
         \else
-          \fontsize{23pt}{30pt}
+          \tbfvspace{-10pt}
+          \myendpar\HCode{<span style="
+              font-size: 200\%;
+          ">}
+          \textbf{\textsc{#2}}
+          \myendpar\HCode{</span>}
         \fi
-        \textbf{\textsc{#2}}
       }
 
   \end{center}

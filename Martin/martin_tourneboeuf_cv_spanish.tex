@@ -1,15 +1,23 @@
-
-% -2/ Language
+% -2/ Language, toremove
 \def\tbflanguage{spanish}
-\def\tbfbordertop{1}
-\def\tbfborderleft{0.7}
+
+\ifx\HCode\undefined
+  \providecommand\tbfbordertop{1.2}
+  \providecommand\tbfborderleft{0.7}
+  \providecommand\tbfwidth{12.4}
+\else
+  \providecommand\tbfbordertop{1}
+  \providecommand\tbfborderleft{0.7}
+  \providecommand\tbfwidth{12.4}
+\fi
 
 % -1/ Type of CV
 \ifx\HCode\undefined
 \input{../Cmd/cmd_two_column}
-\else
 %\input{../Cmd/cmd_professional}
+\else
 \input{../Cmd/cmd_two_column}
+%\input{../Cmd/cmd_professional}
 \fi
 
 % -0.9 Meta
@@ -17,92 +25,94 @@
 \author{Martin Tourneboeuf}
 \date{\today}
 
+
+
+% 0/ Go
 \begin{document}
 
+% 0.1/ Header
+\tbfname{\vspace{0.3cm}\hspace{0.8cm}Martin}{Tourneboeuf}
 
-
-% 0/ Header
-\tbfname{\vspace{0.3cm}Martin}{Tourneboeuf}
 
 \tbfdescription[20pt]{
     \vspace{0.4cm}
-    Físico,
     Informático
+    %Físico
 }
 
 \tbffoto{../Figure/martin2015.jpg}
 
 \begin{coordinatelist}
-    \tbfwww{\href{https://tinmarino.github.io/page/}{https://tinmarino.github.io/page/}}
-    \tbfmail{martin.tourneboeuf@gmail.com}
-    \tbfbirth{25 de diciembre 1988}
-    \tbfflag{francés}
-    \tbftel{+56 9 79 58 90 76}
-    % \tbfaddr{49 Quai de la Prévalaye}
-    % \tbfvoidpersonal{35000 Rennes}
+  \tbfmail{martin.tourneboeuf@gmail.com}
+  \tbfwww{\href{https://tinmarino.github.io}{https://tinmarino.github.io}}
+  \tbfbirth{25 de diciembre 1988}
+  \tbftel{+56 9 7958 9076}
+  \tbfflag{Francés}
 \end{coordinatelist}
 
 
 
-
 % 1/ Education
-\begin{yearlist}[7.7][\tbfborderleft][4]
+\pgfmathsetmacro{\tbfyeary}{\tbfbordertop+3.1}
+
+\begin{yearlist}[7.7][\tbfborderleft][\tbfyeary]
+
 \relscale{1.1}
 \tolerance=100
 
 \item[Astronomía (magíster)]{2011 -- 2013}
-    {
-    \tbflogo{../Figure/logo32/puc_32.png}
-    \href{http://www.uc.cl/}{PUC}, Santiago, Chile
-    }
-    {    Astrofísica, computación}
+  {
+  \tbflogo{../Figure/logo32/puc_32.png}
+  \href{http://www.uc.cl/}{PUC}, Santiago, Chile
+  }
+  {    Astrofísica, computación}
 
 
 \item[Ingeniería]{2008 -- 2011}
-    {
-    \tbfix
-    \href{https://www.polytechnique.edu/}{Polytechnique}, Paris, Francia
-    }
-    {    Matemáticas, física, informática}
+  {
+  \tbfix
+  \href{https://www.polytechnique.edu/}{Polytechnique}, Paris, Francia
+  }
+  {    Matemáticas, física, informática}
 
 
 \item[Escuela preparatoria]{2006 -- 2008}
-    {
-    \tbflogo{../Figure/logo32/grignard_32.png}
-    \href{http://www.lycee-grignard.fr/}{Lycée Victor Grignard}, Cherbourg, Francia
-    }
-    {    Matemáticas, física: especialización}
+  {
+  \tbflogo{../Figure/logo32/grignard_32.png}
+  \href{http://www.lycee-grignard.fr/}{Lycée Victor Grignard}, Cherbourg, Francia
+  }
+  {    Matemáticas, física: especialización}
 
 
 \item[Baccalaur\'eat]{2003 -- 2005}
-    {
-    \tbflogo{../Figure/logo32/grignard_32.png}
-    \href{http://www.lycee-grignard.fr/}{Lycée Victor Grignard}, Cherbourg, Francia
-    }
-    {    Ciencias naturales: diploma de enseñanza media}
+  {
+  \tbflogo{../Figure/logo32/grignard_32.png}
+  \href{http://www.lycee-grignard.fr/}{Lycée Victor Grignard}, Cherbourg, Francia
+  }
+  {    Ciencias naturales: diploma de enseñanza media}
 
 \end{yearlist}
 
 
 
 % 3/ Skill
-\begin{skilllist}[7.7][\tbfborderleft][17]
+\pgfmathsetmacro{\tbfskilly}{\tbfbordertop+14.6}
+\begin{skilllist}[7.7][\tbfborderleft][\tbfskilly]
 
 \relscale{1.1}
 \tolerance=9999
 \emergencystretch 0.1cm
 
-
-\vspace{0.3cm}
+\vspace{0.2cm}
 \begin{languagelist}
-\item{\tbfimflag{../Figure/flag/france_32x85.png}Francés}     {idioma materno}
-\item{\tbfimflag{../Figure/flag/spain_32x85.png}Español}     {bilingüe}
-\item{\tbfimflag{../Figure/flag/great_britain_32x85.png}Inglés}     {fluido}
+\item{\tbfimflag{../Figure/flag/france_32x85.png}Francés}{Idioma materno}
+\item{\tbfimflag{../Figure/flag/spain_32x85.png}Español}{Bilingüe}
+\item{\tbfimflag{../Figure/flag/great_britain_32x85.png}Inglés}{Fluido}
 \end{languagelist}
-\vspace{-0.5cm}
+\vspace{-0.3cm}
 
 
-\tbfskilltwo{Informática}
+\tbfskilltwo{Informática}{
     \textbf{Interpretado:}\tbfsoftinterpreted
     \vspace{-0.3cm}
 
@@ -113,33 +123,32 @@
     \vspace{-0.3cm}
 
     \textbf{Herramienta:}\tbfsofttool
-
-
+}
 \end{skilllist}
 
 
 
 % 2/ Job
-\begin{joblist}[12.8][8.4][4]
+\begin{joblist}[\tbfwidth][8.4][\tbfyeary]
 
-\relscale{1.13}
+\relscale{1.1}
 \setlength{\parskip}{0.3cm}
 \vspace{-0.4cm}
 
+\item[Probador de software]{2019 -- 2023}
+  {
+  \tbflogo{../Figure/logo32/alma_32.png}
+  \href{https://www.almaobservatory.org}{Atacama Large Millimeter Array (ALMA)}, Santiago, Chile
+  }
+  {Pruebas: integración y validación de las versiones mensuales del software ALMA (Cpp, Java, Bash)}
+
 \item[Analista cyber seguridad]{2015 -- 2019}
-    {
-    \tbflogo{../Figure/logo32/dga_32.png}
+  {
+  \tbflogo{../Figure/logo32/dga_32.png}
   \href{http://www.defense.gouv.fr/dga/}{Direction Générale de l'Armement (DGA)}, Rennes, Francia
-    }
-    {Ingeniería inversa: análisis de programas maliciosos y de vulnerabilidades para la seguridad Windows (C, Asm)}
+  }
+  {Ingeniería inversa: análisis de programas maliciosos y de vulnerabilidades para la seguridad Windows (C, Asm)}
 
-
-\item[Programador informático]{2014}
-    {
-    \tbfihuman
-    \href{https://tinmarino.github.io/page/}{Independiente}, Santiago, Chile
-    }
-    {Programacíon: desarrollo multiplataforma de videojuegos (Java)}
 
 
 
@@ -151,45 +160,42 @@
     {Óptica adaptativa: desarrollo de un programa con interfaz gráfica para medir la calidad de imagen (Python)}
 
 \item[Astrónomo (práctica)]{2012}
-    {
-    \tbflogo{../Figure/logo32/cfht_32.png}
+  {
+  \tbflogo{../Figure/logo32/cfht_32.png}
 \href{https://www.cfht.hawaii.edu/}{Canada France Hawaii Telescope (CFHT)}, Waimea, USA
-    }
-    {Cosmología observacional: estudio estadístico de la historia de formación estellar (SFR)}
+  }
+  {Cosmología observacional: estudio estadístico de la historia de formación estellar (SFR)}
 
 \item[Primeras experiencias laborales]{2006 -- 2009}
-    {
-    \tbflogo{../Figure/logo32/michel_32.png}
-    Francia, India, Chile
-    }
-    {
+  {
+  \tbflogo{../Figure/logo32/michel_32.png}
+  Francia, India, Chile
+  }
+  {
     %\renewcommand\labelitemi{{\boldmath$\cdot$}}
     \renewcommand\labelitemi{{}}
-    \ifnum\pdfstrcmp{\tbfcmd}{two_column}=0
-        \vspace{-0.8cm}
-    \fi
+    \vspace{-0.8cm}
     \setlength{\parskip}{0cm}
-
-    \begin{itemize}
+    % See: https://tex.stackexchange.com/questions/301008/itemize-environment-change-only-size-of-the-bullet-not-the-text
+    \begin{itemize}[leftmargin=*, label=\textbullet]
     \setlength\itemsep{0cm}
 
     % Content
-    \cvitem \href{http://www.insertcoin.cl/}{\tbfiic Camarero : restaurante (8 meses)}
-    \cvitem \href{http://www.dupont.co.in/}{\tbflogo{../Figure/logo32/dupont_32.png} Tecnico en aire acondicionado : práctica en India (1 mes)}
-    \cvitem \href{http://www.defense.gouv.fr/marine/organisation/forces/fusiliers-marins-et-commandos/force-maritime-des-fusiliers-marins-et-commandos}{\tbflogo{../Figure/logo32/jaubert_article_demi_colonne_32.png} Commandos Marine : teniente (8 meses)}
-    \cvitem \href{http://www.vacances-pour-tous.org/}{\tbflogo{../Figure/logo32/vacances_pour_tous_32.png} Animador : campamentos de verano (5 $\times$ 1 mes)}
-    \cvitem \href{http://huitresdesaintvaast.fr/}{\tbfioyster Ostrícultor (5 $\times$ 2 semanas)}
+    \cvitem \href{https://tinmarino.github.io}{Desarrollador: videojuegos (6 meses)}
+    \cvitem \href{http://www.insertcoin.cl/}{Camarero: restaurante (8 meses)}
+    \cvitem \href{http://www.dupont.co.in/}{Tecnico en aire acondicionado: práctica en India (1 mes)}
+    \cvitem \href{http://www.defense.gouv.fr/marine/organisation/forces/fusiliers-marins-et-commandos/force-maritime-des-fusiliers-marins-et-commandos}{Commandos Marine: teniente (8 meses)}
+    \cvitem \href{http://www.vacances-pour-tous.org/}{Animador: campamentos de verano (5 $\times$ 1 mes)}
+    \cvitem \href{http://huitresdesaintvaast.fr/}{Ostrícultor (5 $\times$ 2 semanas)}
     \end{itemize}
   }
-
-
 \end{joblist}
 
 
-
-% 10 Maketitle if html
-\ifx\HCode\undefined \else
-\maketitle
+% 10 Maketitle if html -> footer
+\ifx\HCode\undefined
+\else
+  \maketitle
 \fi
 
 
