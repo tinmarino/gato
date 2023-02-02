@@ -7,8 +7,8 @@ a_in=(
 )
 
 a_in=(
-  #martin_tourneboeuf_cv_english
-  #martin_tourneboeuf_cv_french
+  martin_tourneboeuf_cv_english
+  martin_tourneboeuf_cv_french
   martin_tourneboeuf_cv_spanish
 )
 
@@ -36,8 +36,7 @@ myconfigure() {
     # Fix de merde avoid: <p class="noindent">
     perl -0777 -pe ' s:<p class="noindent">::gs' -i $f.tmp.html
 
-    cat $f.tmp.html \
-      | pandoc --no-highlight --standalone --self-contained --title "CV Martin Tourneboeuf" -o $f.html
+    pandoc --no-highlight --standalone --self-contained -o $f.html $f.tmp.html
   done
 }
 
