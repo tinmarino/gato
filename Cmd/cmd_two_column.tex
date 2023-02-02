@@ -1,4 +1,8 @@
-\documentclass[paper=a4, fontsize=11pt]{tccv}          % Unfortynately must keep some stuff in class for now
+\ifx\HCode\undefined
+  \documentclass[paper=a4, fontsize=11pt]{tccv2}          % Unfortynately must keep some stuff in class for now
+\else
+  \documentclass[paper=a4, fontsize=11pt]{tccv2}       % Unfortynately must keep some stuff in class for now
+\fi
 
 \iffalse IDEA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -63,6 +67,9 @@ Pretty : 5h make package, even class insted of ugly input
 \providecommand\mission[1]{\makebox[1.6cm][l]{\textbf{#1}}}
 \let\cvitem\item
 
+\def\myendpar{\ifvmode\IgnorePar\fi\EndP}
+%\def\myendpar{}
+
 
 % ===========================================================================================================================
 
@@ -87,7 +94,7 @@ Pretty : 5h make package, even class insted of ugly input
         \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \htmlfactor)}
         \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \htmlfactor)}
         \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \htmlfactor)}
-        \HCode{<div class="textblock"
+        \myendpar\HCode{<div class="textblock"
             style="
                 float: left;
                 position: absolute;
@@ -100,18 +107,18 @@ Pretty : 5h make package, even class insted of ugly input
         %\begin{minipage}[]{ \tbftmp\textwidth }
         % \begin{flushleft}
     }
-    \def\@endtbfblock{\HCode{</div>\Hnewline}}
+    \def\@endtbfblock{\myendpar\HCode{</div>\Hnewline}}
 
 
     % Custom html Block with custom attribute (i.e. style)
     \def\@tbfhtmlblock#1(#2, #3, #4){
         \def\htmlstyle{#4}
-        \HCode{<div class="textcustomblock"
+        \myendpar\HCode{<div class="textcustomblock"
             \htmlstyle
         >\Hnewline}
     }
     \expandafter\let\csname tbfhtmlblock\endcsname\@tbfhtmlblock
-    \def\@endtbfhtmlblock{\HCode{</div>\Hnewline}}
+    \def\@endtbfhtmlblock{\myendpar\HCode{</div>\Hnewline}}
     \expandafter\let\csname endtbfhtmlblock\endcsname\@endtbfhtmlblock
 
     \newcommand\tbfvspace[1]{
@@ -217,30 +224,36 @@ Pretty : 5h make package, even class insted of ugly input
 % 1/ Commands
 \newcommand\tbfpart[1]{#1}
 
+%\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
+\newcommand*{\headernamestyle}[1]{{\fontsize{28pt}{1em}\headerfont\color{text} #1}}
 \newcommand\tbfname[2]{
     \pgfmathsetmacro{\tbftmp}{\tbfbordertop}
     \begin{tbfblock}{23}(0, \tbftmp)
     \begin{center}
     \ifx\HCode\undefined
-        \headerfirstnamestyle{#1}
+        \headernamestyle{#1}
     \else
-        \HCode{<span style="
+        \myendpar\HCode{<span style="
             font-size: 319\%;
             font-color: \#3A3A3A;
             font-weight: lighter;
         ">}
         #1
-        \HCode{</span>}
+        \myendpar\HCode{</span>}
     \fi
-        \tbfhspace{5pt}
+    \tbfhspace{5pt}
+    \ifx\HCode\undefined
+        \headernamestyle{#2}
+    \else
         \headerlastnamestyle{#2}
+    \fi
     \end{center}
     \end{tbfblock}
 }
 
 \newcommand\tbffoto[1]{
     \ifx\HCode\undefined
-        \begin{tbfblock}{23}(17.7, \tbfbordertop)
+        \begin{tbfblock}{23}(17.4, \tbfbordertop)
             \includegraphics[width=2.8cm]{#1}
         \end{tbfblock}
     \else
@@ -254,7 +267,14 @@ Pretty : 5h make package, even class insted of ugly input
   \begin{tbfblock}{23}(0, \tbftmp)
   \begin{center}
 
-      {\fontsize{#1}{17pt} \textbf{\textsc{#2}}}
+      {
+        \ifx\HCode\undefined
+          \fontsize{20pt}{23pt}
+        \else
+          \fontsize{23pt}{30pt}
+        \fi
+        \textbf{\textsc{#2}}
+      }
 
   \end{center}
   \end{tbfblock}
@@ -289,10 +309,12 @@ Pretty : 5h make package, even class insted of ugly input
 % [coordinate][Width, X, Y]
 \newenvironmentx{coordinatelist}{
     \needspace{0.5\textheight}
+    %\relscale{0.7}
     \newdimen\boxwidth
     \boxwidth=\dimexpr\linewidth-2\fboxsep\relax
-    \pgfmathsetmacro{\tbftmpleft}{\tbfborderleft + 1}
-    \begin{tbfblock}{7}(\tbfborderleft, \tbfbordertop)
+    \pgfmathsetmacro{\tbftmpleft}{\tbfborderleft - 0}
+    \pgfmathsetmacro{\tbftmptop}{\tbfbordertop - 0}
+    \begin{tbfblock}{7}(\tbftmpleft, \tbftmptop)
     \begin{tabular}{l|l}
 }{
     \end{tabular}
@@ -320,15 +342,16 @@ Pretty : 5h make package, even class insted of ugly input
         \tbfvspace{10pt}
         \iftbftiny \setlength{\parskip}{-10pt} \fi
         \ifx\HCode\undefined
-            {\raggedleft{\textsc{\bodyfont{##2}}}\\[1pt]}         % YEAR
+            %{\raggedleft{\textsc{\bodyfont{##2}}}\\[1pt]}   % YEAR
+            {\raggedleft{\relscale{0.9}\bodyfont{##2}}\\[1pt]}   % YEAR
         \else
-            \HCode{<div class="tex-fill" style="
+            \myendpar\HCode{<div class="tex-fill" style="
                 display:inline-block;
                 width: 100\%;
                 text-align: right;
             ">}
             \textsc{\bodyfont{##2}}\\[1pt]
-            \HCode{</div>}\\[1pt]
+            \myendpar\HCode{</div>}\\[1pt]
         \fi
         \tbfstyledegree{##1}\\[1pt]                         % Poste
         \tbfstyleinstitution{##3}\\[1pt]                    % Company
@@ -340,14 +363,23 @@ Pretty : 5h make package, even class insted of ugly input
 
 
 % Formation
+
 \newenvironmentx{yearlist}[3][1=7.1, 2=0.7, 3=3.9]{
     % Html stuff
     \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \htmlfactor)}
     \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \htmlfactor)}
     \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \htmlfactor)}
     % Append div at top to push me down
-    \ifx\HCode\undefined\else
-        \HCode{<div class="textcustomblock" style="display: inline-block; width:100\%; overflow: hidden; margin-left: 45px; margin-top: 261px;">\Hnewline</div>\Hnewline}
+    \ifx\HCode\undefined
+    \else
+        \myendpar\HCode{<div class="textcustomblock" style="
+          display: inline-block;
+          width:100\%;
+          overflow: hidden;
+          margin-left: 45px;
+          /* This is just by hand to push the body, at bottom */
+          margin-top: 200px;
+        ">\Hnewline</div>\Hnewline}
     \fi
     % Create my space
     \begin{rounded_frame}{\wordeducation}{#1}{#2}{#3}{
@@ -361,7 +393,8 @@ Pretty : 5h make package, even class insted of ugly input
     }
     \relscale{1.2}
     \renewcommand\item[4][]{
-        \textsc{\bodyfont{##2}}                             % YEAR
+        %\textsc{\bodyfont{##2}}                             % YEAR
+        {\relscale{0.9}\bodyfont{##2}}                             % YEAR
         \tbfstyledegree{##1}\\[1pt]                         % Diplome
         \tbfstyleinstitution{##3}\\                         % Scholl
         \bodyfontlight{\upshape{##4}}                       % DESCRIPTION

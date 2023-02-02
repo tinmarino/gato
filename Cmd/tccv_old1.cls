@@ -23,12 +23,15 @@
 %   with the usual tools, latex and pdflatex included.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{tccv} [2012/11/09 v1.0 Two Column Curriculum Vitae]
+\ProvidesClass{tccv_old1}
+              [2012/11/09 v1.0
+ Two Column Curriculum Vitae]
 
 \LoadClass[10pt]{scrartcl}
 
 \setcounter{secnumdepth}{-1}
 \RequirePackage{bookman,etoolbox,hyperref,marvosym,needspace,tabularx,xcolor}
+\RequirePackage{sourcesanspro}
 
 
 % Capitalize words of at least a minimum length (default to 3 chars).
@@ -64,11 +67,11 @@
 
 % Font 
 \RequirePackage{fontawesome}
-\newcommand*{\fontdir}[1][../Font/]{\def\@fontdir{#1}}
+\newcommand*{\fontdir}[1][../fonts/]{\def\@fontdir{#1}}
 \fontdir
 \definecolor{awesome-skyblue}{HTML}{0395DE}
 
-\fontdir[../Font/]
+\fontdir[../fonts/]
 \colorlet{awesome}{awesome-skyblue}
 
 
@@ -129,110 +132,59 @@
 %-------------------------------------------------------------------------------
 % Set font for header (default is Roboto)
 \newfontfamily\headerfont[
-  Path=\@fontdir,
-  UprightFont=*-Regular,
-  ItalicFont=*-It,
-  BoldFont=*-Bold,
-  BoldItalicFont=*-BoldIt,
-]{GillSansNova}
-
-\newfontfamily\headerfontlight[
-  Path=\@fontdir,
-  UprightFont=*-Light,
-  ItalicFont=*-LightIt,
-  BoldFont=*-Regular,
-  BoldItalicFont=*-It,
-]{GillSansNova}
-
-% Set font for footer (default is Source Sans Pro)
-\newfontfamily\footerfont[
-  Path=\@fontdir,
-  UprightFont=*-Regular,
-  ItalicFont=*-It,
-  BoldFont=*-Bold
-]{GillSansNova}
-
-% Set font for body (default is Source Sans Pro)
-\newfontfamily\bodyfont[
-  Path=\@fontdir,
-  UprightFont=*-Regular,
-  ItalicFont=*-It,
-  BoldFont=*-Bold,
-  BoldItalicFont=*-BoldIt
-]{GillSansNova}
-
-\newfontfamily\bodyfontlight[
-  Path=\@fontdir,
-  UprightFont=*-Light,
-  ItalicFont=*-LightIt,
-  BoldFont=*-Bold,
-  BoldItalicFont=*-BoldIt
-]{GillSansNova}
-
-% Main roman font 
-\setromanfont[
-  Path=\@fontdir,
-  UprightFont=*-Light,
-  ItalicFont=*-LightIt,
-  BoldFont=*-Bold,
-  BoldItalicFont=*-BoldIt,
-]{GillSansNova}
-
-
-
-
-% Backup
-\iffalse
-\newfontfamily\headerfont[
-  Path=\@fontdir,
-  UprightFont=*-Regular,
-  ItalicFont=*-Italic,
-  BoldFont=*-Bold,
-  BoldItalicFont=*-BoldItalic,
+  %Path=\@fontdir,
+  %UprightFont=*-Regular,
+  %ItalicFont=*-Italic,
+  %BoldFont=*-Bold,
+  %BoldItalicFont=*-BoldItalic,
 ]{Roboto}
 
 \newfontfamily\headerfontlight[
-  Path=\@fontdir,
-  UprightFont=*-Thin,
-  ItalicFont=*-ThinItalic,
-  BoldFont=*-Medium,
-  BoldItalicFont=*-MediumItalic,
+  %Path=\@fontdir,
+  %UprightFont=*-Thin,
+  %ItalicFont=*-ThinItalic,
+  %BoldFont=*-Medium,
+  %BoldItalicFont=*-MediumItalic,
 ]{Roboto}
 
-% Set font for footer (default is Source Sans Pro)
-\newfontfamily\footerfont[
-  Path=\@fontdir,
-  UprightFont=*-Regular,
-  ItalicFont=*-It,
-  BoldFont=*-Bold
-]{SourceSansPro}
+\newcommand\footerfont\sourcesanspro
+\newcommand\bodyfont\sourcesanspro
+\newcommand\bodyfontlight\sourcesansprolight
 
-% Set font for body (default is Source Sans Pro)
-\newfontfamily\bodyfont[
-  Path=\@fontdir,
-  UprightFont=*-Regular,
-  ItalicFont=*-It,
-  BoldFont=*-Bold,
-  BoldItalicFont=*-BoldIt
-]{SourceSansPro}
+%% Set font for footer (default is Source Sans Pro)
+%\newfontfamily\footerfont[
+%  %Path=\@fontdir,
+%  %UprightFont=*-Regular,
+%  %ItalicFont=*-It,
+%  %BoldFont=*-Bold
+%]{SourceSansPro}
 
-\newfontfamily\bodyfontlight[
-  Path=\@fontdir,
-  UprightFont=*-Light,
-  ItalicFont=*-LightIt,
-  BoldFont=*-Semibold,
-  BoldItalicFont=*-SemiboldIt
-]{SourceSansPro}
+%% Set font for body (default is Source Sans Pro)
+%\newfontfamily\bodyfont[
+%  %Path=\@fontdir,
+%  %UprightFont=*-Regular,
+%  %ItalicFont=*-It,
+%  %BoldFont=*-Bold,
+%  %BoldItalicFont=*-BoldIt
+%]{SourceSansPro-TLF}
+%
+%\newfontfamily\bodyfontlight[
+%  %Path=\@fontdir,
+%  %UprightFont=*-Light,
+%  %ItalicFont=*-LightIt,
+%  %BoldFont=*-Semibold,
+%  %BoldItalicFont=*-SemiboldIt
+%]{SourceSansPro}
+%
+%% Main roman font 
+%\setromanfont[
+%  %Path=\@fontdir,
+%  %UprightFont=*-Light,
+%  %ItalicFont=*-LightIt,
+%  %BoldFont=*-Semibold,
+%  %BoldItalicFont=*-SemiboldIt,
+%]{SourceSansPro}
 
-% Main roman font 
-\setromanfont[
-  Path=\@fontdir,
-  UprightFont=*-Light,
-  ItalicFont=*-LightIt,
-  BoldFont=*-Semibold,
-  BoldItalicFont=*-SemiboldIt,
-]{SourceSansPro}
-\fi
 
 
 

@@ -5,14 +5,14 @@
     \typeout{tbf : language \tbflanguage}
     \ifnum\pdfstrcmp{\tbflanguage}{french}=0
     \frenchspacing                              % Better looking spacings after periods
-    \setmainlanguage{French}
+    \setmainlanguage{french}
     \fi
     \ifnum\pdfstrcmp{\tbflanguage}{english}=0
-    \setmainlanguage{English}
+    \setmainlanguage{english}
     \fi
     \ifnum\pdfstrcmp{\tbflanguage}{spanish}=0
     \typeout{tbf : spanish}
-    \setmainlanguage{Spanish}
+    \setmainlanguage{spanish}
     \fi
 \fi
 
@@ -176,18 +176,20 @@
 
 
 \newcommand\tbfsoftinterpreted{%
-    \tbfsoft{Python}{../Figure/language/python_32.png},
     \tbfsoft{BaSh}{../Figure/language/bash_32x145.png},
-    \tbfsoft{Perl}{../Figure/language/perl_32.png},
+    \tbfsoft{SQL}{../Figure/language/sql_32.png},
     \tbfsoft{JavaScript}{../Figure/language/js_32.png},
-    \tbfsoft{Iraf}{../Figure/language/iraf_32.png} \\
+    \tbfsoft{Python}{../Figure/language/python_32.png},
+    \tbfsoft{Perl}{../Figure/language/perl_32.png},
+    \tbfsoft{Iraf}{../Figure/language/iraf_32.png}\\
 }
 
 
 \newcommand\tbfsoftcompiled{%
     \tbfsoft{Java}{../Figure/language/java_32.png},
-    \tbfsoft{C++}{../Figure/language/cpp_32.png}, \\
-    \tbfsoft{Asm (x86)}{../Figure/language/intel_32x85.png} \\
+    \tbfsoft{Rust}{../Figure/language/rust_32.png},
+    \tbfsoft{C++}{../Figure/language/cpp_32.png},
+    \tbfsoft{Asm (x86)}{../Figure/language/intel_32x85.png}\\
 }
 
 
@@ -198,10 +200,14 @@
         \tbfsoft{Markdown}{../Figure/language/markdown_white_32.png}%
     \fi,
     \tbfsoft{\LaTeX}{../Figure/language/latex_32.png},
-    \tbfsoft{Html}{../Figure/language/html_32.png} \\
+    \tbfsoft{Html}{../Figure/language/html_32.png}\\
 }
 
 \newcommand\tbfsofttool{%
+    \tbfsoft{Firefox}{../Figure/language/firefox_32.png},
+    \tbfsoft{Vim}{../Figure/language/vim_32.png},
+    \tbfsoft{Git}{../Figure/language/git_32.png},
+    \tbfsoft{Docker}{../Figure/language/docker_32.png},
     \tbfsoft{Casa}{../Figure/logo32/casa_32.png},
     \tbfsoft{Ds9}{../Figure/language/28_ds9.png},
     \ifx\HCode\undefined%
@@ -209,8 +215,5 @@
     \else%
         \tbfsoft{Ida}{../Figure/language/ida_white_32.png}%
     \fi,
-    \tbfsoft{Windbg}{../Figure/language/windbg_32.png},
-    \tbfsoft{Vim}{../Figure/language/vim_32.png},
-    \tbfsoft{Git}{../Figure/language/git_32.png},
-    \tbfsoft{Firefox}{../Figure/language/firefox_32.png} \\
+    \tbfsoft{Windbg}{../Figure/language/windbg_32.png}\\
 }

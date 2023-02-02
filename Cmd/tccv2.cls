@@ -23,7 +23,7 @@
 %   with the usual tools, latex and pdflatex included.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{tccv} [2012/11/09 v1.0 Two Column Curriculum Vitae]
+\ProvidesClass{tccv2} [2012/11/09 v1.0 Two Column Curriculum Vitae]
 
 \LoadClass[10pt]{scrartcl}
 
@@ -154,6 +154,14 @@
 
 % Set font for body (default is Source Sans Pro)
 \newfontfamily\bodyfont[
+  Path=\@fontdir,
+  UprightFont=*-Regular,
+  ItalicFont=*-It,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldIt
+]{GillSansNova}
+
+\setmainfont[
   Path=\@fontdir,
   UprightFont=*-Regular,
   ItalicFont=*-It,
