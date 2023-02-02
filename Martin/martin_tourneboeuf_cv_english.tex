@@ -1,7 +1,14 @@
 % -2/ Language, toremove
 \def\tbflanguage{english}
-\def\tbfbordertop{1}
-\def\tbfborderleft{0.7}
+
+\ifx\HCode\undefined
+  \providecommand{\tbfbordertop}{1.2}
+  \providecommand\tbfborderleft{0.7}
+  \providecommand\tbfwidth{12.4}
+\else
+  \providecommand{\tbfbordertop}{1}
+  \providecommand\tbfborderleft{0.7}
+  \providecommand\tbfwidth{12.4}
 
 % -1/ Type of CV
 \ifx\HCode\undefined
@@ -22,14 +29,14 @@
 % 0/ Go
 \begin{document}
 
-
 % 0.1/ Header
 \tbfname{\vspace{0.3cm}\hspace{0.8cm}Martin}{Tourneboeuf}
 
 
 \tbfdescription[20pt]{
     \vspace{0.4cm}
-    Astro-engineer
+    Software Engineer
+    %Astro-engineer
     %Physicist,
     %Engineer
 }
@@ -37,17 +44,19 @@
 \tbffoto{../Figure/martin2015.jpg}
 
 \begin{coordinatelist}
-  \tbfwww{\href{https://tinmarino.github.io/page/}{https://tinmarino.github.io/page/}}
   \tbfmail{martin.tourneboeuf@gmail.com}
+  \tbfwww{\href{https://tinmarino.github.io}{https://tinmarino.github.io}}
   \tbfbirth{25 december 1988}
+  \tbftel{+56 9 7958 9076}
   \tbfflag{French}
-  \tbftel{+56 9 79 58 90 76}
 \end{coordinatelist}
 
 
 
 % 1/ Education
-\begin{yearlist}[7.7][\tbfborderleft][4]
+\pgfmathsetmacro{\tbfyeary}{\tbfbordertop+3.1}
+
+\begin{yearlist}[7.7][\tbfborderleft][\tbfyeary]
 
 \relscale{1.1}
 \tolerance=100
@@ -57,7 +66,7 @@
   \tbflogo{../Figure/logo32/puc_32.png}
   \href{http://www.uc.cl/}{PUC}, Santiago, Chile
   }
-  {   Observational comsmology}
+  {   Observational Cosmology}
 
 
 \item[Engineering]{2008 -- 2011}
@@ -65,15 +74,15 @@
   \tbfix
   \href{https://www.polytechnique.edu/}{Polytechnique}, Paris, France
   }
-  {    Mathematics, physics}
+  {    Mathematics, Physics}
 
 
-\item[Preparatory School]{2006 -- 2008}
+\item[Mathematics]{2006 -- 2008}
   {
   \tbflogo{../Figure/logo32/grignard_32.png}
   \href{http://www.lycee-grignard.fr/}{Lyc\'ee Victor Grignard}, Cherbourg, France
   }
-  {    Mathematics, physics: preparatory \\ years for national examination}
+  {    Mathematics, Physics: preparatory \\ years for national examination}
 
 
 \item[High school diploma]{2003 -- 2005}
@@ -88,7 +97,8 @@
 
 
 % 3/ Skill
-\begin{skilllist}[7.7][\tbfborderleft][16.8]
+\pgfmathsetmacro{\tbfskilly}{\tbfbordertop+14.6}
+\begin{skilllist}[7.7][\tbfborderleft][\tbfskilly]
 
 \relscale{1.1}
 \tolerance=9999
@@ -96,9 +106,9 @@
 
 \vspace{0.2cm}
 \begin{languagelist}
-\item{\tbfimflag{../Figure/flag/france_32x85.png}French}   {mother tongue}
-\item{\tbfimflag{../Figure/flag/spain_32x85.png}Spanish}   {bilingual}
-\item{\tbfimflag{../Figure/flag/great_britain_32x85.png}English}   {fluent}
+\item{\tbfimflag{../Figure/flag/france_32x85.png}French}{Mother tongue}
+\item{\tbfimflag{../Figure/flag/spain_32x85.png}Spanish}{Bilingual}
+\item{\tbfimflag{../Figure/flag/great_britain_32x85.png}English}{Fluent}
 \end{languagelist}
 \vspace{-0.3cm}
 
@@ -121,25 +131,25 @@
 
 
 % 2/ Job
-\begin{joblist}[12.8][8.4][4]
+\begin{joblist}[\tbfwidth][8.4][\tbfyeary]
 
 \relscale{1.1}
 \setlength{\parskip}{0.3cm}
 \vspace{-0.4cm}
 
-\item[Software tester]{2019 -- present}
+\item[Software Tester]{2019 -- 2023}
   {
   \tbflogo{../Figure/logo32/alma_32.png}
   \href{https://www.almaobservatory.org}{Atacama Large Millimeter Array (ALMA)}, Santiago, Chile
   }
-  {Testing: integration and validation of ALMA software monthly releases (Bash)}
+  {Testing: integration and validation of ALMA software monthly releases (Cpp, Java, Bash)}
 
-\item[Cyber security analyst]{2015 -- 2019}
+\item[Cyber Security Analyst]{2015 -- 2019}
   {
   \tbflogo{../Figure/logo32/dga_32.png}
   \href{http://www.defense.gouv.fr/dga/}{Direction Générale de l'Armement (DGA)}, Rennes, France
   }
-  {Reverse engineering: analysis of malwares and vulnerabilities for Windows security (C, Asm)}
+  {Reverse engineering: analysis of malwares and vulnerabilities for Windows security (Cpp, Asm)}
 
 
 %\item[Developper]{2014}
@@ -176,21 +186,27 @@
     \renewcommand\labelitemi{{}}
     \vspace{-0.8cm}
     \setlength{\parskip}{0cm}
-    \begin{itemize}
+    % See: https://tex.stackexchange.com/questions/301008/itemize-environment-change-only-size-of-the-bullet-not-the-text
+    \begin{itemize}[leftmargin=*, label=\textbullet]
     \setlength\itemsep{0cm}
 
     % Content
 
-      \cvitem \tbfihuman Developper: video games (6 months)
-%  {
-%  \href{https://tinmarino.github.io/page/}{Self-employed}, Santiago, Chili
-%  }
-%  {Programming: video games cross-plateform development (Java)}
-    \cvitem \href{http://www.insertcoin.cl/}{\tbfiic Waiter, Barman: restaurant (8 months)}
-    \cvitem \href{http://www.dupont.co.in/}{\tbflogo{../Figure/logo32/dupont_32.png} Air conditioning technician: internship in India (1 month)}
-    \cvitem \href{http://www.defense.gouv.fr/marine/organisation/forces/fusiliers-marins-et-commandos/force-maritime-des-fusiliers-marins-et-commandos}{\tbflogo{../Figure/logo32/jaubert_article_demi_colonne_32.png} Commando marine: lieutenant (8 months)}
-    \cvitem \href{http://www.vacances-pour-tous.org/}{\tbflogo{../Figure/logo32/vacances_pour_tous_32.png} Summer camp leader (5 $\times$ 1 month)}
-    \cvitem \href{http://huitresdesaintvaast.fr/}{\tbfioyster Oyster farmer (5 $\times$ 2 weeks)}
+    \cvitem \href{https://tinmarino.github.io/page/}{Developper: video games (6 months)}
+    \cvitem \href{http://www.insertcoin.cl/}{Waiter, Barman: restaurant (8 months)}
+    \cvitem \href{http://www.dupont.co.in/}{Air conditioning technician: internship in India (1 month)}
+    \cvitem \href{http://www.defense.gouv.fr/marine/organisation/forces/fusiliers-marins-et-commandos/force-maritime-des-fusiliers-marins-et-commandos}{Commando marine: lieutenant (8 months)}
+    \cvitem \href{http://www.vacances-pour-tous.org/}{Summer camp leader (5 $\times$ 1 month)}
+    \cvitem \href{http://huitresdesaintvaast.fr/}{Oyster farmer (5 $\times$ 2 weeks)}
+
+
+    % Backup
+    %\cvitem \tbfihuman Developper: video games (6 months)
+    %\cvitem \href{http://www.insertcoin.cl/}{\tbfiic Waiter, Barman: restaurant (8 months)}
+    %\cvitem \href{http://www.dupont.co.in/}{\tbflogo{../Figure/logo32/dupont_32.png} Air conditioning technician: internship in India (1 month)}
+    %\cvitem \href{http://www.defense.gouv.fr/marine/organisation/forces/fusiliers-marins-et-commandos/force-maritime-des-fusiliers-marins-et-commandos}{\tbflogo{../Figure/logo32/jaubert_article_demi_colonne_32.png} Commando marine: lieutenant (8 months)}
+    %\cvitem \href{http://www.vacances-pour-tous.org/}{\tbflogo{../Figure/logo32/vacances_pour_tous_32.png} Summer camp leader (5 $\times$ 1 month)}
+    %\cvitem \href{http://huitresdesaintvaast.fr/}{\tbfioyster Oyster farmer (5 $\times$ 2 weeks)}
     \end{itemize}
   }
 
