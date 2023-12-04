@@ -59,8 +59,8 @@
 
 
 
-% 1/ Education {{{1
-\pgfmathsetmacro{\tbfyeary}{\tbfbordertop+2.8}
+% 1/ Education
+\pgfmathsetmacro{\tbfyeary}{\tbfbordertop+3.1}
 
 \begin{yearlist}[7.7][\tbfborderleft][\tbfyeary]
 
@@ -102,8 +102,8 @@
 
 
 
-% 3/ Skill {{{1
-\pgfmathsetmacro{\tbfskilly}{\tbfbordertop+14.9}
+% 3/ Skill
+\pgfmathsetmacro{\tbfskilly}{\tbfbordertop+14.6}
 \begin{skilllist}[7.7][\tbfborderleft][\tbfskilly]
 
 \relscale{1.1}
@@ -135,32 +135,64 @@
 
 
 
-% 2/ Job {{{1
+% 2/ Job
 \begin{joblist}[\tbfwidth][8.4][\tbfyeary]
 
 \relscale{1.1}
-%\setlength{\parskip}{0.3cm}
+\setlength{\parskip}{0.3cm}
 \vspace{-0.4cm}
+
 \item[Software Pentester]{2023 -- present}
   {
   \tbflogo{../Figure/logo32/dreamlab_32.png}
   \href{https://dreamlab.net}{Dreamlab Technologies}, Santiago, Chile
   }
-  {Pentesting: Identification of security breaches and enhancement of security awareness through penetration testing and vulnerability assessments (C, Asm, Shell)}
+  {Pentesting: Identification of security breaches (C, Asm, Shell)
+    \vspace*{-0.2cm}
+    \normalsize
+    \begin{itemize}[leftmargin=*, label=\textbullet]
+      \setlength\itemsep{-0.3cm}
+      \cvitem Praparation of cyber security workshops (Latex, C)
+      \cvitem Leadership in the development of tools to automate security audits (Bash, C)
+    \end{itemize}
+  % and enhancement of security awareness through penetration testing and vulnerability assessments (C, Asm, Shell)}
+  }
+
+
 
 \item[Software Tester]{2019 -- 2023}
   {
   \tbflogo{../Figure/logo32/alma_32.png}
   \href{https://www.almaobservatory.org}{Atacama Large Millimeter Array (ALMA)}, Santiago, Chile
   }
-  {Testing: integration and validation of ALMA software monthly releases (Cpp, Java, Bash)}
+  {Testing: integration and validation of ALMA software monthly releases (Cpp, Java, Bash)
+    \vspace*{-0.2cm}
+    \normalsize
+    \begin{itemize}[leftmargin=*, label=\textbullet]
+      \setlength\itemsep{-0.3cm}
+      \cvitem Leadership in the development of an automated integration and testing framework (Java, Bash)
+      \cvitem Collaboration with the database team for database migrations and with the IT team during OS update (Java, Bash)
+      \cvitem Standardization of the testing steps in the ALMA software development pipeline (Txt)
+      %\cvitem Integration and testing of new software and development of bug fixes (Cpp, Java, Python)
+      %\cvitem Development of database query programs and microservices components (Java)
+    \end{itemize}
+  }
 
 \item[Cyber Security Analyst]{2015 -- 2019}
   {
   \tbflogo{../Figure/logo32/dga_32.png}
   \href{http://www.defense.gouv.fr/dga/}{Direction Générale de l'Armement (DGA)}, Rennes, France
   }
-  {Reverse engineering: analysis of malwares and vulnerabilities for Windows security (Cpp, Asm)}
+  {Reverse engineering: analysis of malwares and vulnerabilities for Windows security (Cpp, Asm)
+    \vspace*{-0.2cm}
+    \normalsize
+    \begin{itemize}[leftmargin=*, label=\textbullet]
+      \setlength\itemsep{-0.3cm}
+      \cvitem Management of the development of \href{https://github.com/DGA-MI-SSI/YaCo}{YaDiff} a reverse analysis function namer (Cpp)
+      \cvitem Development of multiple vulnerability proof of concepts (Cpp, Asm)
+      \cvitem Reverse engineering of several security products, using a static based methodology with some opportunistic dynamic support from debuggers and fuzzers (Cpp, Asm).
+    \end{itemize}
+  }
 
 \item[Astronomer]{2013}
   {
@@ -186,15 +218,16 @@
   {
     %\renewcommand\labelitemi{{\boldmath$\cdot$}}
     \renewcommand\labelitemi{{}}
-    \vspace{-0.8cm}
-    \setlength{\parskip}{0cm}
+    \vspace{-0.5cm}
+    %\setlength{\parskip}{0cm}
     % See: https://tex.stackexchange.com/questions/301008/itemize-environment-change-only-size-of-the-bullet-not-the-text
+    \normalsize
     \begin{itemize}[leftmargin=*, label=\textbullet]
-    \setlength\itemsep{0cm}
+    \setlength\itemsep{-0.3cm}
 
     % Content
 
-    \cvitem \href{https://tinmarino.github.io}{Developer: video games (6 months)}
+    \cvitem \href{https://tinmarino.github.io}{Developer: video games en Java con \href{https://libgdx.com/}{LibGdx} (6 months)}
     \cvitem \href{http://www.insertcoin.cl/}{Waiter, Barman: restaurant (8 months)}
     \cvitem \href{http://www.dupont.co.in/}{Air conditioning technician: internship in India (1 month)}
     \cvitem \href{http://www.defense.gouv.fr/marine/organisation/forces/fusiliers-marins-et-commandos/force-maritime-des-fusiliers-marins-et-commandos}{Commando marine: lieutenant (8 months)}
@@ -223,4 +256,3 @@
 
 
 \end{document}
-% vim: sw=2:ts=2:fdm=marker

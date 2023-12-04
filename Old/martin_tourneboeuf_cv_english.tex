@@ -59,8 +59,8 @@
 
 
 
-% 1/ Education {{{1
-\pgfmathsetmacro{\tbfyeary}{\tbfbordertop+2.8}
+% 1/ Education
+\pgfmathsetmacro{\tbfyeary}{\tbfbordertop+3.1}
 
 \begin{yearlist}[7.7][\tbfborderleft][\tbfyeary]
 
@@ -102,8 +102,8 @@
 
 
 
-% 3/ Skill {{{1
-\pgfmathsetmacro{\tbfskilly}{\tbfbordertop+14.9}
+% 3/ Skill
+\pgfmathsetmacro{\tbfskilly}{\tbfbordertop+14.6}
 \begin{skilllist}[7.7][\tbfborderleft][\tbfskilly]
 
 \relscale{1.1}
@@ -135,18 +135,12 @@
 
 
 
-% 2/ Job {{{1
+% 2/ Job
 \begin{joblist}[\tbfwidth][8.4][\tbfyeary]
 
 \relscale{1.1}
-%\setlength{\parskip}{0.3cm}
+\setlength{\parskip}{0.3cm}
 \vspace{-0.4cm}
-\item[Software Pentester]{2023 -- present}
-  {
-  \tbflogo{../Figure/logo32/dreamlab_32.png}
-  \href{https://dreamlab.net}{Dreamlab Technologies}, Santiago, Chile
-  }
-  {Pentesting: Identification of security breaches and enhancement of security awareness through penetration testing and vulnerability assessments (C, Asm, Shell)}
 
 \item[Software Tester]{2019 -- 2023}
   {
@@ -223,4 +217,3 @@
 
 
 \end{document}
-% vim: sw=2:ts=2:fdm=marker

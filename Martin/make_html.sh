@@ -26,6 +26,13 @@ myhtml() {
 
 myconfigure() {
   for f in "${a_in[@]}"; do
+    # Declare title
+    title="CV Martin Tourneboeuf"
+    case $f in
+      *english) title="CV_en @ Tin";;
+      *french) title="CV_fr @ Tin";;
+      *spanish) title="CV_sp @ Tin";;
+    esac
 
     mv $f.html $f.tmp.html
 
@@ -36,7 +43,13 @@ myconfigure() {
     # Fix de merde avoid: <p class="noindent">
     perl -0777 -pe ' s:<p class="noindent">::gs' -i $f.tmp.html
 
-    pandoc --no-highlight --standalone --self-contained -o $f.html $f.tmp.html
+    cat $f.tmp.html \
+      | pandoc \
+      --no-highlight \
+      --standalone \
+      --self-contained \
+      --metadata pagetitle="$title" \
+      -o $f.html
   done
 }
 
