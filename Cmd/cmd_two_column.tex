@@ -340,7 +340,7 @@ Pretty : 5h make package, even class insted of ugly input
     \pgfmathsetmacro{\tmpwidth}{int(#1 * 28.45 * \htmlfactor)}
     \pgfmathsetmacro{\tmpleft}{int(#2 * 28.45 * \htmlfactor)}
     \pgfmathsetmacro{\tmptop}{int(#3 * 28.45 * \htmlfactor)}
-    \begin{flat_frame}{\wordwork}{#1}{#2}{#3}{
+    \begin{flat_frame}{\wordwork}{#1}{#2}{#3}{%
         style="
             display: inline-block;
             max-width: \tmpwidth px;
@@ -348,13 +348,12 @@ Pretty : 5h make package, even class insted of ugly input
         "
     }
     \relscale{1.27}
-    \renewcommand\item[4][]{
-        \tbfvspace{10pt}
-        \iftbftiny \setlength{\parskip}{-10pt} \fi
-        \ifx\HCode\undefined
-            %{\raggedleft{\textsc{\bodyfont{##2}}}\\[1pt]}   % YEAR
-            {\raggedleft{\relscale{0.9}\bodyfont{##2}}\\[1pt]}   % YEAR
-        \else
+    \renewcommand\item[4][]{%
+        \tbfvspace{6pt}  % used to be 10 for Not long (not condensed)
+        \iftbftiny\setlength{\parskip}{-10pt}\fi
+        \ifx\HCode\undefined{%
+            \raggedleft{\relscale{0.9}\bodyfont{##2}}\\[1pt]   % YEAR
+        }\else
             \myendpar\HCode{<div class="tex-fill" style="
                 display:inline-block;
                 width: 100\%;
@@ -364,10 +363,11 @@ Pretty : 5h make package, even class insted of ugly input
             \myendpar\HCode{</div>}\\[1pt]
         \fi
         \tbfstyledegree{##1}\\[1pt]                         % Poste
+            %\hfill{\relscale{0.9}\bodyfont{##2}}\\[1pt]   % YEAR
         \tbfstyleinstitution{##3}\\[1pt]                    % Company
         \bodyfontlight{\upshape{##4}}                       % DESCRIPTION
     }
-}{
+}{%
   \end{flat_frame}
 }
 

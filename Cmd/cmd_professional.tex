@@ -126,9 +126,10 @@ ItalicFont = Fontin-Italic.otf
 }
 
 
+% 1 title 2 date, 3 small 4 desc
 \newenvironmentx{joblist}[3][1=0, 2=0, 3=0]{
     \renewcommand\item[4][]{
-        ##2 & \large\textbf{##1}                \\*
+        & \large\textbf{##1}                \\*
         & \emph{##3}                            \\*
         & \begin{minipage}[b]{0.8\textwidth}
            ##4
